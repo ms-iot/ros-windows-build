@@ -1,0 +1,31 @@
+steps:
+- powershell: |
+    choco sources add -n=roswin -s https://roswin.azurewebsites.net/api/v2/ --priority 1
+  displayName: Configure Chocolatey sources
+- script: |
+    choco upgrade -y ros-catkin-tools
+  displayName: Install catkin tools
+- script: |
+    call "setup.bat"
+    md c:\catkin_ws\src
+    pushd c:\catkin_ws
+    rosinstall_generator %BUILD_ROS_PACKAGE% %BUILD_ROS_ADDITIONAL_PACKAGE% --rosdistro %ROS_DISTRO% --deps --upstream-development > build.rosinstall
+    type build.rosinstall
+    wstool init src
+    wstool merge -r -y -t src build.rosinstall
+    wstool merge -r -y -t src %ROSWIN_CATKIN_BUILD_WORKING_DIRECTORY%\%ROS_DISTRO%\%ROSWIN_ADDITIONAL_ROSINSTALL%
+    wstool update -t src
+  workingDirectory: $(ROSWIN_CATKIN_BUILD_WORKING_DIRECTORY)
+  displayName: 'Checkout ROS source tree'
+- powershell: |
+    Invoke-WebRequest -Uri "$env:ROSWIN_ROSDEP_LIST_URI" -OutFile "10-ms-iot.list"
+  workingDirectory: $(ROSWIN_CATKIN_BUILD_WORKING_DIRECTORY)
+  displayName: 'Download ROS system dependencies metafile'
+- script: |
+    call "setup.bat"
+    rosdep init
+    copy "10-ms-iot.list" %ROS_ETC_DIR%\rosdep\sources.list.d
+    rosdep update
+    call "rosdep_install.bat"
+  workingDirectory: $(ROSWIN_CATKIN_BUILD_WORKING_DIRECTORY)
+  displayName: 'Install ROS system dependencies'

@@ -1,0 +1,78 @@
+trigger: none
+
+variables:
+  ROSWIN_CATKIN_BUILD_WORKING_DIRECTORY: $(Build.SourcesDirectory)\ros-catkin-build
+  ROSWIN_ADDITIONAL_ROSINSTALL: build.rosinstall
+
+jobs:
+- job: Build
+  strategy:
+    matrix:
+      melodic-ros_core:
+        BUILD_ROS_PACKAGE: 'ros_core'
+      melodic-ros_base:
+        BUILD_ROS_PACKAGE: 'ros_base'
+      melodic-robot:
+        BUILD_ROS_PACKAGE: 'robot'
+        BUILD_ROS_ADDITIONAL_PACKAGE: 'navigation'
+      melodic-perception:
+        BUILD_ROS_PACKAGE: 'perception'
+        BUILD_ROS_ADDITIONAL_PACKAGE: 'diagnostic_updater'
+      melodic-navigation:
+        BUILD_ROS_PACKAGE: 'navigation'
+        BUILD_ROS_ADDITIONAL_PACKAGE: 'diagnostic_updater'
+      melodic-viz:
+        BUILD_ROS_PACKAGE: 'viz'
+      melodic-simulators:
+        BUILD_ROS_PACKAGE: 'simulators'
+      melodic-desktop:
+        BUILD_ROS_PACKAGE: 'desktop'
+        BUILD_ROS_ADDITIONAL_PACKAGE: 'rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu image_transport_plugins'
+      melodic-desktop_full:
+        BUILD_ROS_PACKAGE: 'desktop_full'
+        BUILD_ROS_ADDITIONAL_PACKAGE: 'rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu ros_controllers'
+      melodic-moveit:
+        BUILD_ROS_PACKAGE: 'moveit'
+        BUILD_ROS_ADDITIONAL_PACKAGE: 'moveit_resources moveit_visual_tools perception desktop ros_control industrial_core descartes'
+      melodic-cartographer_ros:
+        BUILD_ROS_PACKAGE: 'cartographer_ros'
+        BUILD_ROS_ADDITIONAL_PACKAGE: 'cartographer_rviz'
+  timeoutInMinutes: 300
+  pool:
+    vmImage: 'vs2017-win2016'
+  variables:
+    ROS_DISTRO: 'melodic'
+    ROS_ETC_DIR: 'c:\opt\ros\melodic\x64\etc\ros'
+    ROSDISTRO_INDEX_URL: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/index.yaml'
+    ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/rosdep/sources.list.d/10-ms-iot.list'
+    ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
+  steps:
+  #- template: ..\common\agent-clean.yml
+  - template: common\checkout.yml
+  - template: common\build.yml
+  - template: common\symbols.yml
+  - template: ..\package-build\package-build.yml
+- job: TestInstall
+  dependsOn: Build
+  strategy:
+    matrix:
+      melodic-ros_core:
+        ROS_DISTRO: 'melodic'
+        BUILD_ROS_PACKAGE: 'ros_core'
+  timeoutInMinutes: 300
+  pool:
+    vmImage: 'vs2017-win2016'
+  steps:
+  - task: DownloadBuildArtifacts@0
+    inputs:
+      artifactName: 'package-build-drop-prerelease'
+  - script: |
+      choco sources add -n=roswin-prerelease -s %System_ArtifactsDirectory% --priority 1
+      choco sources add -n=roswin -s https://roswin.azurewebsites.net/api/v2/ --priority 2
+    displayName: Configure Chocolatey sources
+  - script: |
+      choco install ros-%ROS_DISTRO%-%BUILD_ROS_PACKAGE% -y
+    displayName: Install Chocolatey packages
+  - script: |
+      call "c:\opt\ros\melodic\x64\setup.bat"
+    displayName: Install Chocolatey packages

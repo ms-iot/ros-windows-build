@@ -1,0 +1,20 @@
+- git:
+    local-name: filters
+    uri: https://github.com/ms-iot/filters.git
+    version: init_windows
+- git:
+    local-name: laser_geometry
+    uri: https://github.com/ms-iot/laser_geometry.git
+    version: init_windows
+- git:
+    local-name: laser_assembler
+    uri: https://github.com/ms-iot/laser_assembler.git
+    version: init_windows
+- git:
+    local-name: laser_filters
+    uri: https://github.com/ms-iot/laser_filters.git
+    version: init_windows
+- git:
+    local-name: diagnostics
+    uri: https://github.com/ms-iot/diagnostics.git
+    version: init_windows

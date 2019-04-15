@@ -1,0 +1,24 @@
+trigger: none
+
+variables:
+  ROSWIN_CATKIN_BUILD_WORKING_DIRECTORY: $(Build.SourcesDirectory)\ros-catkin-build
+  ROSWIN_ADDITIONAL_ROSINSTALL: runtests.rosinstall
+
+jobs:
+- job: Test
+  strategy:
+    matrix:
+      melodic-ros_base:
+        BUILD_ROS_PACKAGE: 'ros_base'
+  timeoutInMinutes: 300
+  pool:
+    vmImage: 'vs2017-win2016'
+  variables:
+    ROS_DISTRO: 'melodic'
+    ROS_ETC_DIR: 'c:\opt\ros\melodic\x64\etc\ros'
+    ROSDISTRO_INDEX_URL: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/index.yaml'
+    ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/rosdep/sources.list.d/10-ms-iot.list'
+    ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
+  steps:
+  - template: common\checkout.yml
+  - template: common\runtests.yml

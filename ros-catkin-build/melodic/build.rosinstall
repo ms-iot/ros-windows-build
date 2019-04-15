@@ -1,0 +1,8 @@
+- git:
+    local-name: robotiq
+    uri: https://github.com/ms-iot/robotiq
+    version: init_windows
+- git:
+    local-name: descartes
+    uri: https://github.com/ms-iot/descartes
+    version: init_windows

@@ -1,0 +1,46 @@
+steps:
+- script: |
+    choco sources add -n=roswin -s https://roswin.azurewebsites.net/api/v2/ --priority 1
+    choco install -y ros-python37
+  workingDirectory: $(ROSWIN_COLCON_BUILD_WORKING_DIRECTORY)
+  displayName: 'Install ROS build tools'
+- script: |
+    call "setup.bat"
+    python -m pip install -U setuptools pip
+    pip install -U vcstool rosdep rosinstall_generator wstool
+    pip install -U colcon-common-extensions
+    pip install -U --no-deps --force-reinstall git+https://github.com/ms-iot/rosdep@init_windows_rebase_py3#egg=rosdep
+    pip install -U --no-deps --force-reinstall git+https://github.com/ms-iot/vcstools@init_windows#egg=vcstools
+    pip install -U --no-deps --force-reinstall git+https://github.com/ms-iot/wstool@init_windows#egg=wstool
+  workingDirectory: $(ROSWIN_COLCON_BUILD_WORKING_DIRECTORY)
+  displayName: 'Install ROS build tools (pip)'
+- script: |
+    call "setup.bat"
+    md c:\colcon_ws\src
+    rosinstall_generator %ROSWIN_METAPACKAGE% --rosdistro %ROS_DISTRO% --deps --upstream-development > build.rosinstall
+    pushd c:\colcon_ws
+    wstool init src
+    wstool merge -r -y -t src %ROSWIN_COLCON_BUILD_WORKING_DIRECTORY%\build.rosinstall
+    wstool merge -r -y -t src %ROSWIN_COLCON_BUILD_WORKING_DIRECTORY%\%ROS_DISTRO%\build.rosinstall
+    wstool update -t src
+    :: vcs import c:\colcon_ws\src < merged.rosinstall
+  workingDirectory: $(ROSWIN_COLCON_BUILD_WORKING_DIRECTORY)
+  displayName: 'Checkout ROS source tree'
+  continueOnError: 'true'
+- powershell: |
+    Invoke-WebRequest -Uri "$env:ROSWIN_ROSDEP_LIST_URI" -OutFile "10-ms-iot.list"
+  workingDirectory: $(ROSWIN_COLCON_BUILD_WORKING_DIRECTORY)
+  displayName: 'Download ROS system dependencies metafile'
+- script: |
+    call "setup.bat"
+    rosdep init
+    copy "10-ms-iot.list" %ROS_ETC_DIR%\rosdep\sources.list.d
+    rosdep update
+    call "rosdep_install.bat"
+  workingDirectory: $(ROSWIN_COLCON_BUILD_WORKING_DIRECTORY)
+  displayName: 'Install ROS system dependencies'
+- script: |
+    call "setup.bat"
+    call "%ROS_DISTRO%\rosdep.bat"
+  workingDirectory: $(ROSWIN_COLCON_BUILD_WORKING_DIRECTORY)
+  displayName: 'Install ROS system dependencies (additional)'

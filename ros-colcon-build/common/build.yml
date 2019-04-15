@@ -1,0 +1,7 @@
+steps:
+- script: |
+    call "setup.bat"
+    call "%ROSWIN_VSTOOL%"
+    call "build.bat"
+  workingDirectory: $(ROSWIN_COLCON_BUILD_WORKING_DIRECTORY)
+  displayName: 'Build ROS source tree'

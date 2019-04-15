@@ -1,0 +1,16 @@
+trigger: none
+
+variables:
+  ROS_DISTRO: 'melodic'
+  BUILD_ROS_PACKAGE: 'ros_core'
+
+jobs:
+- job: Build
+  timeoutInMinutes: 300
+  pool:
+    vmImage: 'vs2017-win2016'
+  steps:
+  - script: |
+      md C:\opt\ros\melodic\x64
+      echo "" > C:\opt\ros\melodic\x64\dummp_test
+  - template: package-build.yml

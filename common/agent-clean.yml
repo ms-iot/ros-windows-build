@@ -1,0 +1,4 @@
+steps:
+- script: |
+    call "common\docker-clean.bat"
+  displayName: 'Clean docker images'
