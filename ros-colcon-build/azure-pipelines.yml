@@ -50,3 +50,8 @@ jobs:
   - template: ..\common\agent-clean.yml
   - template: common\checkout.yml
   - template: common\build.yml
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: 'c:\opt\ros'
+      artifactName: 'colcon-build-drop-$(ROS_DISTRO)-$(ROSWIN_METAPACKAGE)'
+    displayName: 'Publish built binaries'
