@@ -71,7 +71,7 @@ jobs:
       choco sources add -n=roswin -s https://roswin.azurewebsites.net/api/v2/ --priority 2
     displayName: Configure Chocolatey sources
   - script: |
-      choco install ros-%ROS_DISTRO%-%BUILD_ROS_PACKAGE% -y
+      choco install ros-%ROS_DISTRO%-%BUILD_ROS_PACKAGE% -y --pre
     displayName: Install Chocolatey packages
   - script: |
       call "c:\opt\ros\melodic\x64\setup.bat"
