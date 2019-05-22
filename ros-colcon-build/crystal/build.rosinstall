@@ -1,6 +1,6 @@
 - git:
     local-name: fastrtps
-    uri: https://github.com/eProsima/Fast-RTPS.git
+    uri: https://github.com/seanyen/Fast-RTPS.git
     version: v1.7.2_init_windows
 - git:
     local-name: rviz
