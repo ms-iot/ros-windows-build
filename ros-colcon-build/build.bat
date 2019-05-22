@@ -5,9 +5,9 @@ set "ROSWIN_COLCON_PACKAGE_UP_TO=--packages-up-to %ROSWIN_METAPACKAGE%"
 if "%ROSWIN_METAPACKAGE%"=="ALL" (
     set ROSWIN_COLCON_PACKAGE_UP_TO=
 )
-set "ROSWIN_COLCON_PACKAGE_SKIP_UP_TO=--packages-skip-up-to %ROSWIN_PACKAGE_SKIP%"
+set "ROSWIN_COLCON_PACKAGE_SKIP_BY_DEP=--packages-skip-by-dep %ROSWIN_PACKAGE_SKIP%"
 if "%ROSWIN_PACKAGE_SKIP%"=="" (
-    set ROSWIN_COLCON_PACKAGE_SKIP_UP_TO=
+    set ROSWIN_COLCON_PACKAGE_SKIP_BY_DEP=
 )
 :: workaround has_target assert failure in colcon-cmake
 set ROSWIN_COLCON_CMAKE_TARGET=
@@ -16,7 +16,7 @@ if "%ROS_DISTRO%"=="melodic" (
 )
 colcon --log-level info build ^
        %ROSWIN_COLCON_PACKAGE_UP_TO% ^
-       %ROSWIN_COLCON_PACKAGE_SKIP_UP_TO% ^
+       %ROSWIN_COLCON_PACKAGE_SKIP_BY_DEP% ^
        --merge-install --parallel-workers 1 ^
        --event-handlers console_cohesion+ ^
        --install-base "%ROSWIN_CMAKE_INSTALL_PREFIX%" ^
