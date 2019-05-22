@@ -1,0 +1,12 @@
+- git:
+    local-name: fastrtps
+    uri: https://github.com/eProsima/Fast-RTPS.git
+    version: v1.8.0
+- git:
+    local-name: vision_opencv
+    uri: https://github.com/ms-iot/vision_opencv.git
+    version: ros2_init_windows
+- git:
+    local-name: depthimage_to_laserscan
+    uri: https://github.com/ms-iot/depthimage_to_laserscan.git
+    version: ros2_init_windows
