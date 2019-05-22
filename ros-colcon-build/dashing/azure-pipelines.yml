@@ -19,7 +19,7 @@ jobs:
         ROS_DISTRO: 'dashing'
         ROS_ETC_DIR: 'c:\opt\ros\dashing\x64\etc\ros'
         ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/dashing/x64'
-        ROSWIN_PACKAGE_SKIP: 'apriltag behaviortree_cpp_v3 cartographer'
+        ROSWIN_PACKAGE_SKIP: 'apriltag behaviortree_cpp_v3 cartographer gazebo_ros'
   steps:
   # - template: ..\common\agent-clean.yml
   - template: ..\common\checkout.yml
