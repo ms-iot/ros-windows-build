@@ -1,0 +1,31 @@
+trigger: none
+pr: none
+
+variables:
+  ROSWIN_COLCON_BUILD_WORKING_DIRECTORY: $(Build.SourcesDirectory)\ros-colcon-build
+
+jobs:
+- job: Build
+  timeoutInMinutes: 300
+  pool:
+    vmImage: 'vs2017-win2016'
+  variables:
+    ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows_py37/rosdep/sources.list.d/10-ms-iot.list'
+    ROSWIN_METAPACKAGE: 'ALL'
+    ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
+  strategy:
+    matrix:
+      dashing-ALL:
+        ROS_DISTRO: 'dashing'
+        ROS_ETC_DIR: 'c:\opt\ros\dashing\x64\etc\ros'
+        ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/dashing/x64'
+        ROSWIN_PACKAGE_SKIP: 'apriltag behaviortree_cpp_v3 cartographer'
+  steps:
+  # - template: ..\common\agent-clean.yml
+  - template: ..\common\checkout.yml
+  - template: ..\common\build.yml
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: 'c:\opt\ros'
+      artifactName: 'colcon-build-drop-$(ROS_DISTRO)-$(ROSWIN_METAPACKAGE)'
+    displayName: 'Publish built binaries'
