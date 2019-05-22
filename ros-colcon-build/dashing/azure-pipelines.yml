@@ -13,12 +13,18 @@ jobs:
     ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows_py37/rosdep/sources.list.d/10-ms-iot.list'
     ROSWIN_METAPACKAGE: 'ALL'
     ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
+    ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/dashing/x64'
+    ROS_DISTRO: 'dashing'
+    ROS_ETC_DIR: 'c:\opt\ros\dashing\x64\etc\ros'
   strategy:
     matrix:
+      dashing-ros_core:
+        ROSWIN_METAPACKAGE: 'ros_core'
+      dashing-ros_base:
+        ROSWIN_METAPACKAGE: 'ros_base'
+      dashing-desktop:
+        ROSWIN_METAPACKAGE: 'desktop'
       dashing-ALL:
-        ROS_DISTRO: 'dashing'
-        ROS_ETC_DIR: 'c:\opt\ros\dashing\x64\etc\ros'
-        ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/dashing/x64'
         ROSWIN_PACKAGE_SKIP: 'apriltag behaviortree_cpp_v3 cartographer gazebo_ros'
   steps:
   # - template: ..\common\agent-clean.yml
