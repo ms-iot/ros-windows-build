@@ -1,7 +1,7 @@
 - git:
     local-name: fastrtps
     uri: https://github.com/eProsima/Fast-RTPS.git
-    version: master
+    version: v1.7.2_init_windows
 - git:
     local-name: rviz
     uri: https://github.com/ms-iot/rviz.git
