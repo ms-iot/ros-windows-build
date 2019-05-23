@@ -25,7 +25,7 @@ jobs:
       dashing-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
       dashing-ALL:
-        ROSWIN_PACKAGE_SKIP: 'apriltag behaviortree_cpp_v3 cartographer gazebo_ros'
+        ROSWIN_PACKAGE_SKIP: 'apriltag behaviortree_cpp_v3 cartographer gazebo_ros ros_workspace'
   steps:
   # - template: ..\common\agent-clean.yml
   - template: ..\common\checkout.yml
