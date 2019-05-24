@@ -9,7 +9,7 @@ jobs:
   strategy:
     matrix:
       melodic-ros_base:
-        BUILD_ROS_PACKAGE: 'ros_base'
+        ROSWIN_METAPACKAGE: 'ros_base'
   timeoutInMinutes: 300
   pool:
     vmImage: 'vs2017-win2016'

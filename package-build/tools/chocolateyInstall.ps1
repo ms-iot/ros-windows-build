@@ -17,4 +17,4 @@ Get-ChocolateyUnzip @packageArgs
 Write-Host 'running rosdep...'
 $ErrorActionPreference = 'SilentlyContinue';
 $rosdepInstall = Join-Path $toolsDir 'rosdepInstall.bat'
-c:\opt\ros\melodic\x64\env.bat "$rosdepInstall"
+Start-Process -FilePath "$env:comspec" -Wait -NoNewWindow -ArgumentList "/c", $rosdepInstall

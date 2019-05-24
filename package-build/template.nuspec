@@ -9,7 +9,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$name$</description>
     <dependencies>
-      <dependency id="ros-catkin-tools" version="0.0.1" />
+      <dependency id="$build_tools$" version="0.0.1" />
     </dependencies>
   </metadata>
   <files>

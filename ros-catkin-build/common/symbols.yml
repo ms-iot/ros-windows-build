@@ -10,4 +10,5 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: $(Build.ArtifactStagingDirectory)\symbols
-    artifactName: symbols-$(ROS_DISTRO)-$(BUILD_ROS_PACKAGE)
+    artifactName: symbols-$(ROS_DISTRO)-$(ROSWIN_METAPACKAGE)
+  continueOnError: 'true'

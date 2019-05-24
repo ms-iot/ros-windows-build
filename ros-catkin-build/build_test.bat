@@ -1,5 +1,5 @@
 @echo off
-set BUILD_MERGED_ROS_PACKAGES=%BUILD_ROS_PACKAGE% %BUILD_ROS_ADDITIONAL_PACKAGE%
+set BUILD_MERGED_ROS_PACKAGES=%ROSWIN_METAPACKAGE% %ROSWIN_ADDITIONAL_PACKAGE%
 pushd c:\catkin_ws
 copy src\catkin\bin\catkin_make_isolated src\catkin\bin\catkin_make_isolated.py
 python src\catkin\bin\catkin_make_isolated.py ^

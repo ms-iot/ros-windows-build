@@ -9,34 +9,34 @@ jobs:
   strategy:
     matrix:
       melodic-ros_core:
-        BUILD_ROS_PACKAGE: 'ros_core'
+        ROSWIN_METAPACKAGE: 'ros_core'
       melodic-ros_base:
-        BUILD_ROS_PACKAGE: 'ros_base'
+        ROSWIN_METAPACKAGE: 'ros_base'
       melodic-robot:
-        BUILD_ROS_PACKAGE: 'robot'
-        BUILD_ROS_ADDITIONAL_PACKAGE: 'navigation'
+        ROSWIN_METAPACKAGE: 'robot'
+        ROSWIN_ADDITIONAL_PACKAGE: 'navigation'
       melodic-perception:
-        BUILD_ROS_PACKAGE: 'perception'
-        BUILD_ROS_ADDITIONAL_PACKAGE: 'diagnostic_updater'
+        ROSWIN_METAPACKAGE: 'perception'
+        ROSWIN_ADDITIONAL_PACKAGE: 'diagnostic_updater'
       melodic-navigation:
-        BUILD_ROS_PACKAGE: 'navigation'
-        BUILD_ROS_ADDITIONAL_PACKAGE: 'diagnostic_updater'
+        ROSWIN_METAPACKAGE: 'navigation'
+        ROSWIN_ADDITIONAL_PACKAGE: 'diagnostic_updater'
       melodic-viz:
-        BUILD_ROS_PACKAGE: 'viz'
+        ROSWIN_METAPACKAGE: 'viz'
       melodic-simulators:
-        BUILD_ROS_PACKAGE: 'simulators'
+        ROSWIN_METAPACKAGE: 'simulators'
       melodic-desktop:
-        BUILD_ROS_PACKAGE: 'desktop'
-        BUILD_ROS_ADDITIONAL_PACKAGE: 'rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu image_transport_plugins'
+        ROSWIN_METAPACKAGE: 'desktop'
+        ROSWIN_ADDITIONAL_PACKAGE: 'rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu image_transport_plugins'
       melodic-desktop_full:
-        BUILD_ROS_PACKAGE: 'desktop_full'
-        BUILD_ROS_ADDITIONAL_PACKAGE: 'rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu ros_controllers'
+        ROSWIN_METAPACKAGE: 'desktop_full'
+        ROSWIN_ADDITIONAL_PACKAGE: 'rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu ros_controllers'
       melodic-moveit:
-        BUILD_ROS_PACKAGE: 'moveit'
-        BUILD_ROS_ADDITIONAL_PACKAGE: 'moveit_resources moveit_visual_tools perception desktop ros_control industrial_core descartes'
+        ROSWIN_METAPACKAGE: 'moveit'
+        ROSWIN_ADDITIONAL_PACKAGE: 'moveit_resources moveit_visual_tools perception desktop ros_control industrial_core descartes'
       melodic-cartographer_ros:
-        BUILD_ROS_PACKAGE: 'cartographer_ros'
-        BUILD_ROS_ADDITIONAL_PACKAGE: 'cartographer_rviz'
+        ROSWIN_METAPACKAGE: 'cartographer_ros'
+        ROSWIN_ADDITIONAL_PACKAGE: 'cartographer_rviz'
   timeoutInMinutes: 300
   pool:
     vmImage: 'vs2017-win2016'
@@ -46,6 +46,8 @@ jobs:
     ROSDISTRO_INDEX_URL: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/index.yaml'
     ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/rosdep/sources.list.d/10-ms-iot.list'
     ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
+    BUILD_TOOL_PACKAGE: 'ros-catkin-tools'
+    PYTHON_LOCATION: 'c:\opt\python27amd64'
   steps:
   #- template: ..\common\agent-clean.yml
   - template: common\checkout.yml
@@ -58,21 +60,9 @@ jobs:
     matrix:
       melodic-ros_core:
         ROS_DISTRO: 'melodic'
-        BUILD_ROS_PACKAGE: 'ros_core'
+        ROSWIN_METAPACKAGE: 'ros_core'
   timeoutInMinutes: 300
   pool:
     vmImage: 'vs2017-win2016'
   steps:
-  - task: DownloadBuildArtifacts@0
-    inputs:
-      artifactName: 'package-build-drop-prerelease'
-  - script: |
-      choco sources add -n=roswin-prerelease -s %System_ArtifactsDirectory% --priority 1
-      choco sources add -n=roswin -s https://roswin.azurewebsites.net/api/v2/ --priority 2
-    displayName: Configure Chocolatey sources
-  - script: |
-      choco install ros-%ROS_DISTRO%-%BUILD_ROS_PACKAGE% -y --pre
-    displayName: Install Chocolatey packages
-  - script: |
-      call "c:\opt\ros\melodic\x64\setup.bat"
-    displayName: Install Chocolatey packages
+  - template: ..\package-build\package-test.yml

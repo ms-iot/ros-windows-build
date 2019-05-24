@@ -9,7 +9,7 @@ jobs:
   strategy:
     matrix:
       melodic-desktop_full:
-        BUILD_ROS_PACKAGE: 'desktop_full'
+        ROSWIN_METAPACKAGE: 'desktop_full'
   timeoutInMinutes: 300
   pool:
     vmImage: 'vs2017-win2016'

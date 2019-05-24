@@ -1,6 +1,12 @@
 @echo off
-copy template.nuspec ros-%ROS_DISTRO%-%BUILD_ROS_PACKAGE%.nuspec
+:: seed ROS_DISTRO for the install scripts.
+echo set "ROS_DISTRO=%ROS_DISTRO%" >> tools\setup.bat
+echo set "ROS_ETC_DIR=%ROS_ETC_DIR%" >> tools\setup.bat
+echo set "PYTHONHOME=%PYTHON_LOCATION%" >> tools\setup.bat
+
+:: create Chocolatey packages.
+copy template.nuspec ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE%.nuspec
 md output
-choco pack --trace --out output ros-%ROS_DISTRO%-%BUILD_ROS_PACKAGE%.nuspec name=ros-%ROS_DISTRO%-%BUILD_ROS_PACKAGE% version=%Build_BuildNumber%
+choco pack --trace --out output ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE%.nuspec name=ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE% version=%Build_BuildNumber% build_tools=%BUILD_TOOL_PACKAGE%
 md output-pre
-choco pack --trace --out output-pre ros-%ROS_DISTRO%-%BUILD_ROS_PACKAGE%.nuspec name=ros-%ROS_DISTRO%-%BUILD_ROS_PACKAGE% version=%Build_BuildNumber%-pre
+choco pack --trace --out output-pre ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE%.nuspec name=ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE% version=%Build_BuildNumber%-pre build_tools=%BUILD_TOOL_PACKAGE%

@@ -16,6 +16,8 @@ jobs:
     ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/dashing/x64'
     ROS_DISTRO: 'dashing'
     ROS_ETC_DIR: 'c:\opt\ros\dashing\x64\etc\ros'
+    BUILD_TOOL_PACKAGE: 'ros-colcon-tools'
+    PYTHON_LOCATION: 'c:\opt\python37amd64'
   strategy:
     matrix:
       dashing-ros_core:
@@ -24,14 +26,22 @@ jobs:
         ROSWIN_METAPACKAGE: 'ros_base'
       dashing-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
-      dashing-ALL:
-        ROSWIN_PACKAGE_SKIP: 'apriltag behaviortree_cpp_v3 cartographer gazebo_ros ros_workspace'
+      # dashing-ALL:
+      #   ROSWIN_PACKAGE_SKIP: 'apriltag behaviortree_cpp_v3 cartographer gazebo_ros ros_workspace'
   steps:
   # - template: ..\common\agent-clean.yml
   - template: ..\common\checkout.yml
   - template: ..\common\build.yml
-  - task: PublishBuildArtifacts@1
-    inputs:
-      pathtoPublish: 'c:\opt\ros'
-      artifactName: 'colcon-build-drop-$(ROS_DISTRO)-$(ROSWIN_METAPACKAGE)'
-    displayName: 'Publish built binaries'
+  - template: ..\..\package-build\package-build.yml
+- job: TestInstall
+  dependsOn: Build
+  strategy:
+    matrix:
+      dashing-ros_core:
+        ROS_DISTRO: 'dashing'
+        ROSWIN_METAPACKAGE: 'ros_core'
+  timeoutInMinutes: 300
+  pool:
+    vmImage: 'vs2017-win2016'
+  steps:
+  - template: ..\..\package-build\package-test.yml

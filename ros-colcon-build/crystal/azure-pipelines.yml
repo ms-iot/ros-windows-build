@@ -13,6 +13,8 @@ jobs:
     ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows_py37/rosdep/sources.list.d/10-ms-iot.list'
     ROSWIN_METAPACKAGE: 'ALL'
     ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
+    BUILD_TOOL_PACKAGE: 'ros-colcon-tools'
+    PYTHON_LOCATION: 'c:\opt\python37amd64'
   strategy:
     matrix:
       crystal-ros_core:
@@ -34,8 +36,16 @@ jobs:
   # - template: ..\..\common\agent-clean.yml
   - template: ..\common\checkout.yml
   - template: ..\common\build.yml
-  - task: PublishBuildArtifacts@1
-    inputs:
-      pathtoPublish: 'c:\opt\ros'
-      artifactName: 'colcon-build-drop-$(ROS_DISTRO)-$(ROSWIN_METAPACKAGE)'
-    displayName: 'Publish built binaries'
+  - template: ..\..\package-build\package-build.yml
+- job: TestInstall
+  dependsOn: Build
+  strategy:
+    matrix:
+      crystal-ros_core:
+        ROS_DISTRO: 'crystal'
+        ROSWIN_METAPACKAGE: 'ros_core'
+  timeoutInMinutes: 300
+  pool:
+    vmImage: 'vs2017-win2016'
+  steps:
+  - template: ..\..\package-build\package-test.yml
