@@ -1,7 +1,7 @@
 @echo off
 pushd c:\colcon_ws
 set CMAKE_PREFIX_PATH=C:/opt/rosdeps/x64
-set "ROSWIN_COLCON_PACKAGE_UP_TO=--packages-up-to %ROSWIN_METAPACKAGE%"
+set "ROSWIN_COLCON_PACKAGE_UP_TO=--packages-up-to %ROSWIN_METAPACKAGE% %ROSWIN_ADDITIONAL_PACKAGE%"
 if "%ROSWIN_METAPACKAGE%"=="ALL" (
     set ROSWIN_COLCON_PACKAGE_UP_TO=
 )
