@@ -6,3 +6,7 @@
     local-name: geometry2
     uri: https://github.com/ms-iot/geometry2.git
     version: init_windows_msbuild_fix
+- git:
+    local-name: ros_rosdeps
+    uri: https://github.com/seanyen/ros_rosdeps.git
+    version: master
