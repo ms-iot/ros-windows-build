@@ -1,19 +1,12 @@
 steps:
 - script: |
     choco sources add -n=roswin -s https://roswin.azurewebsites.net/api/v2/ --priority 1
-    choco install -y ros-python37
+  workingDirectory: $(ROSWIN_COLCON_BUILD_WORKING_DIRECTORY)
+  displayName: 'Configure Chocolatey sources'
+- script: |
+    choco install -y ros-colcon-tools
   workingDirectory: $(ROSWIN_COLCON_BUILD_WORKING_DIRECTORY)
   displayName: 'Install ROS build tools'
-- script: |
-    call "setup.bat"
-    python -m pip install -U setuptools pip
-    pip install -U vcstool rosdep rosinstall_generator wstool
-    pip install -U colcon-common-extensions
-    pip install -U --no-deps --force-reinstall git+https://github.com/ms-iot/rosdep@init_windows_rebase_py3#egg=rosdep
-    pip install -U --no-deps --force-reinstall git+https://github.com/ms-iot/vcstools@init_windows#egg=vcstools
-    pip install -U --no-deps --force-reinstall git+https://github.com/ms-iot/wstool@init_windows#egg=wstool
-  workingDirectory: $(ROSWIN_COLCON_BUILD_WORKING_DIRECTORY)
-  displayName: 'Install ROS build tools (pip)'
 - script: |
     call "setup.bat"
     md c:\colcon_ws\src
