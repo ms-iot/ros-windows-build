@@ -4,6 +4,7 @@ steps:
   displayName: Configure Chocolatey sources
 - script: |
     choco upgrade -y ros-catkin-tools
+    choco upgrade -y ros-vcpkg
   displayName: Install catkin tools
 - script: |
     call "setup.bat"

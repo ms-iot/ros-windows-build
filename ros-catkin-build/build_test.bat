@@ -8,7 +8,7 @@ python src\catkin\bin\catkin_make_isolated.py ^
     --install ^
     --only-pkg-with-deps %BUILD_MERGED_ROS_PACKAGES% ^
     -DCMAKE_BUILD_TYPE=RelWithDebInfo ^
-    -DCMAKE_PREFIX_PATH="C:/opt/ros/melodic/x64;C:/opt/rosdeps/x64" ^
+    -DCMAKE_PREFIX_PATH="%ROSWIN_CMAKE_PREFIX_PATH%" ^
     -DCMAKE_VERBOSE_MAKEFILE=ON ^
     -DPYTHON_VERSION=2.7 ^
     -DPYTHON_EXECUTABLE=C:\opt\python27amd64\python.exe ^
@@ -21,7 +21,7 @@ python src\catkin\bin\catkin_make_isolated.py ^
     --install ^
     --only-pkg-with-deps %BUILD_MERGED_ROS_PACKAGES% ^
     -DCMAKE_BUILD_TYPE=RelWithDebInfo ^
-    -DCMAKE_PREFIX_PATH="C:/opt/ros/melodic/x64;C:/opt/rosdeps/x64" ^
+    -DCMAKE_PREFIX_PATH="%ROSWIN_CMAKE_PREFIX_PATH%" ^
     -DCMAKE_VERBOSE_MAKEFILE=ON ^
     -DPYTHON_VERSION=2.7 ^
     -DPYTHON_EXECUTABLE=C:\opt\python27amd64\python.exe ^
