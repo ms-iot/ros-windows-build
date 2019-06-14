@@ -3,10 +3,6 @@
     uri: https://github.com/seanyen/Fast-RTPS.git
     version: v1.7.2_init_windows
 - git:
-    local-name: rviz
-    uri: https://github.com/ms-iot/rviz.git
-    version: crystal_windows_fix
-- git:
     local-name: depthimage_to_laserscan
     uri: https://github.com/ms-iot/depthimage_to_laserscan.git
     version: ros2_init_windows
