@@ -28,10 +28,10 @@ jobs:
         ROSWIN_METAPACKAGE: 'simulators'
       melodic-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
-        ROSWIN_ADDITIONAL_PACKAGE: 'ros_vcpkg rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu image_transport_plugins'
+        ROSWIN_ADDITIONAL_PACKAGE: 'rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu image_transport_plugins'
       melodic-desktop_full:
         ROSWIN_METAPACKAGE: 'desktop_full'
-        ROSWIN_ADDITIONAL_PACKAGE: 'ros_vcpkg rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu ros_controllers'
+        ROSWIN_ADDITIONAL_PACKAGE: 'rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu ros_controllers'
       melodic-moveit:
         ROSWIN_METAPACKAGE: 'moveit'
         ROSWIN_ADDITIONAL_PACKAGE: 'moveit_resources moveit_visual_tools perception desktop ros_control industrial_core descartes'
