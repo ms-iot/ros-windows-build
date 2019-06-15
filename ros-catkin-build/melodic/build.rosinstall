@@ -6,3 +6,7 @@
     local-name: descartes
     uri: https://github.com/ms-iot/descartes
     version: init_windows
+- git:
+    local-name: ros_vcpkg
+    uri: https://github.com/seanyen/ros_vcpkg
+    version: master
