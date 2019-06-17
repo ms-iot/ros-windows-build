@@ -8,11 +8,11 @@ jobs:
 - job: Build
   timeoutInMinutes: 300
   pool:
-    vmImage: 'vs2017-win2016'
+    vmImage: 'windows-2019'
   variables:
     ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows_py37/rosdep/sources.list.d/10-ms-iot.list'
     ROSWIN_METAPACKAGE: 'ALL'
-    ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
+    ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
     ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/dashing/x64'
     ROSWIN_ADDITIONAL_PACKAGE: 'ros_rosdeps'
     ROS_DISTRO: 'dashing'
@@ -43,6 +43,6 @@ jobs:
         ROSWIN_METAPACKAGE: 'ros_core'
   timeoutInMinutes: 300
   pool:
-    vmImage: 'vs2017-win2016'
+    vmImage: 'windows-2019'
   steps:
   - template: ..\..\package-build\package-test.yml

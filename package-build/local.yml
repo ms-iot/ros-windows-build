@@ -8,7 +8,7 @@ jobs:
 - job: Build
   timeoutInMinutes: 300
   pool:
-    vmImage: 'vs2017-win2016'
+    vmImage: 'windows-2019'
   steps:
   - script: |
       md C:\opt\ros\melodic\x64
