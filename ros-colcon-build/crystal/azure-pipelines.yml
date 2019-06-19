@@ -8,12 +8,12 @@ jobs:
 - job: Build
   timeoutInMinutes: 300
   pool:
-    vmImage: 'windows-2019'
+    vmImage: 'vs2017-win2016'
   variables:
     ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows_py37/rosdep/sources.list.d/10-ms-iot.list'
     ROSWIN_METAPACKAGE: 'ALL'
     ROSWIN_ADDITIONAL_PACKAGE: 'ros_rosdeps'
-    ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
+    ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
     BUILD_TOOL_PACKAGE: 'ros-colcon-tools'
     PYTHON_LOCATION: 'c:\opt\python37amd64'
   strategy:
