@@ -50,7 +50,7 @@ jobs:
     BUILD_TOOL_PACKAGE: 'ros-catkin-tools'
     PYTHON_LOCATION: 'c:\opt\python27amd64'
   steps:
-  #- template: ..\common\agent-clean.yml
+  - template: ..\common\agent-clean.yml
   - template: common\checkout.yml
   - template: common\build.yml
   - template: common\symbols.yml
