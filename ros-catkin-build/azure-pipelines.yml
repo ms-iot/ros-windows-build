@@ -26,7 +26,7 @@ jobs:
         ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs diagnostic_updater'
       melodic-viz:
         ROSWIN_METAPACKAGE: 'viz'
-        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
+        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs roslint'
       melodic-simulators:
         ROSWIN_METAPACKAGE: 'simulators'
         ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
