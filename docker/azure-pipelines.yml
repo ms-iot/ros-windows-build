@@ -1,0 +1,27 @@
+trigger: none
+
+jobs:
+- job: Build
+  strategy:
+    matrix:
+      melodic-desktop_full:
+        repository: 'ros/windowsservercore/melodic-desktop_full'
+        dockerfile: 'docker/melodic/windowsservercore/desktop-full/dockerfile'
+  timeoutInMinutes: 240
+  pool:
+    vmImage: 'windows-2019'
+  steps:
+  - template: ..\common\agent-clean.yml
+  - script: |
+      rmdir /q /s "C:\Program Files (x86)\Microsoft Visual Studio"
+  - script: |
+      copy docker\daemon.json C:\ProgramData\Docker\config\daemon.json
+  - powershell: |
+      restart-service *docker*
+  - task: Docker@2
+    inputs:
+      containerRegistry: $(containerRegistry)
+      repository: $(repository)
+      command: 'buildAndPush'
+      Dockerfile: $(dockerfile)
+      tags: 'latest'
