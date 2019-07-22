@@ -1,8 +1,4 @@
 - git:
-    local-name: catkin
-    uri: https://github.com/ms-iot/catkin.git
-    version: init_windows_catkin_workspaces
-- git:
     local-name: geometry2
     uri: https://github.com/ms-iot/geometry2.git
     version: init_windows_msbuild_fix
