@@ -1,0 +1,8 @@
+steps: 
+- script: |
+    call "setup.bat"
+    mkdir ..\cgscan\
+    python ..\common\rospkg2cgmanifest.py > ..\cgscan\cgmanifest.json
+    pip freeze > ..\cgscan\requirements.txt
+  workingDirectory: $(ROSWIN_CATKIN_BUILD_WORKING_DIRECTORY)
+  displayName: 'Component Governance Scanning'
