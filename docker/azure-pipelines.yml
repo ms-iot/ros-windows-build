@@ -5,7 +5,7 @@ jobs:
   strategy:
     matrix:
       melodic-desktop_full:
-        repository: 'ros/windowsservercore/melodic-desktop_full'
+        repository: 'public/ros/windowsservercore/melodic-desktop_full'
         dockerfile: 'docker/melodic/windowsservercore/desktop-full/dockerfile'
   timeoutInMinutes: 240
   pool:
