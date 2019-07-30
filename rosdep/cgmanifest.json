@@ -8,7 +8,7 @@
                     "commitHash": "c227ae01ce16d73facb477644d9c25a5ddb166fa"
                 }
             },
-            "license": "BSD",
+            "license": "BSD-3-Clause",
             "description": "A ROS-independent package for logging that seamlessly pipes into rosconsole/rosout for ROS-dependent packages.",
             "version": "0.4.0"
         },
@@ -21,7 +21,7 @@
                     "version": "1.66.0"
                 }
             },
-            "license": "Boost Software License",
+            "license": "BSL-1.0",
             "description": "Boost provides free peer-reviewed portable C++ source libraries.",
             "version": "1.66.0"
         },
@@ -34,7 +34,7 @@
                     "version": "1.0.6"
                 }
             },
-            "license": "BSD",
+            "license": "BSD-3-Clause",
             "description": "A file compressor/decompressor utility",
             "version": "1.0.6"
         },
@@ -47,7 +47,7 @@
                     "commitHash": "6e4707df5fa1f9927109e89a7cd2a6d6a6ddd072"
                 }
             },
-            "license": "ZLib",
+            "license": "Zlib",
             "description": "Bullet Physics SDK: real-time collision detection and multi-physics simulation for VR, games, visual effects, robotics, machine learning etc.",
             "version": "2.87.0"
         },
@@ -60,7 +60,7 @@
                     "commitHash": "eb8639d7c8a056d1c1b1cd42598c84ba3974c41b"
                 }
             },
-            "license": "BSD",
+            "license": "BSD-3-Clause",
             "description": "Official Open Asset Import Library Repository. Loads 40+ 3D file formats into one unified and clean data structure.",
             "version": "4.0.1"
         },
@@ -73,7 +73,7 @@
                     "commitHash": "22afb86087a77037cd296d27134756c9b0d2cb75"
                 }
             },
-            "license": "Boost Software License",
+            "license": "BSL-1.0",
             "description": "Asio C++ Library",
             "version": "1.12.2"
         },
@@ -86,7 +86,7 @@
                     "version": "1.12.1"
                 }
             },
-            "license": "LGPL",
+            "license": "LGPL-2.1",
             "description": "C++ port of JUnit",
             "version": "1.12.1"
         },
@@ -99,7 +99,7 @@
                     "version": "0.10.0"
                 }
             },
-            "license": "Apache License 2.0",
+            "license": "Apache-2.0",
             "description": "Apache log4cxx is a logging framework for C++ patterned after Apache log4j, which uses Apache Portable Runtime for most platform-specific code and should be usable on any platform supported by APR.",
             "version": "0.10.0"
         },
@@ -112,7 +112,7 @@
                     "commitHash": "8b27e0b6fbddbb4cc670156961bd52b4d5ea632b"
                 }
             },
-            "license": "BSD",
+            "license": "BSD-3-Clause",
             "description": "URDF parser",
             "version": "1.0.0"
         },
@@ -125,7 +125,7 @@
                     "commitHash": "c1424ee4e1c1ed8129d9147ccc920ab92dd9ef86"
                 }
             },
-            "license": "ZLib",
+            "license": "Zlib",
             "description": "TinyXML2 is a simple, small, efficient, C++ XML parser that can be easily integrated into other programs.",
             "version": "6.2.0"
         },
@@ -138,7 +138,7 @@
                     "version": "2.6.2"
                 }
             },
-            "license": "ZLib",
+            "license": "Zlib",
             "description": "TinyXML is a simple, small, C++ XML parser that can be easily integrated into other programs.",
             "version": "2.6.2"
         },
@@ -151,7 +151,7 @@
                     "commitHash": "5cb0b6b6a99eeeff5cd111dabd0093a29305a2f9"
                 }
             },
-            "license": "BSD",
+            "license": "BSD-3-Clause",
             "description": "Headers for URDF parsers",
             "version": "1.0.0"
         },
@@ -164,7 +164,7 @@
                     "commitHash": "dde02fceedfc1ba09d4d4f71a2b5dafcfcb85491"
                 }
             },
-            "license": "BSD",
+            "license": "BSD-3-Clause",
             "description": "Eigen is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.",
             "version": "3.3.4"
         },
@@ -177,7 +177,7 @@
                     "commitHash": "fb5e98a334d5538f4ffa70f5f51b8286531fe1ae"
                 }
             },
-            "license": "BSD",
+            "license": "BSD-2-Clause",
             "description": "Extremely Fast Compression algorithm",
             "version": "1.8.1"
         },
@@ -190,7 +190,7 @@
                     "commitHash": "49f6cb968ff63793f6671d9026fb2a7034dad79a"
                 }
             },
-            "license": "Apache License 2.0",
+            "license": "Apache-2.0",
             "description": "TLS/SSL and crypto library",
             "version": "1.1.1"
         },
@@ -203,7 +203,7 @@
                     "version": "2.22.1"
                 }
             },
-            "license": "LGPL",
+            "license": "LGPL-2.1",
             "description": "GTK+ is the primary library used to construct user interfaces in GNOME applications.",
             "version": "2.22.1"
         },
@@ -216,7 +216,7 @@
                     "commitHash": "2eca6c1813632fb779e07f1e1968afefa81e1dd0"
                 }
             },
-            "license": "Boost Software License",
+            "license": "BSL-1.0",
             "description": "The POCO C++ Libraries are powerful cross-platform C++ libraries for building network- and internet-based applications that run on desktop, server, mobile, IoT, and embedded systems.",
             "version": "1.8.1"
         },
@@ -229,7 +229,7 @@
                     "commitHash": "ec44c6c1675c25b9827aacd08c02433cccde7780"
                 }
             },
-            "license": "BSD 3-Clause",
+            "license": "BSD-3-Clause",
             "description": "Googletest - Google Testing and Mocking Framework",
             "version": "1.8.0"
         },
@@ -255,7 +255,7 @@
                     "version": "1.2.15"
                 }
             },
-            "license": "LGPL",
+            "license": "LGPL-2.1",
             "description": "Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D.",
             "version": "1.2.15"
         },
@@ -294,7 +294,7 @@
                     "version": "4.19.8"
                 }
             },
-            "license": "SIP License",
+            "license": "GPL-3.0",
             "description": "One of the features of Python that makes it so powerful is the ability to take existing libraries, written in C or C++, and make them available as Python extension modules.",
             "version": "4.19.8"
         },
@@ -307,7 +307,7 @@
                     "version": "5.10.1"
                 }
             },
-            "license": "GPLv3",
+            "license": "GPL-3.0",
             "description": "PyQt is a set of Python v2 and v3 bindings for The Qt Company's Qt application framework and runs on all platforms supported by Qt including Windows, OS X, Linux, iOS and Android.",
             "version": "5.10.1"
         },
@@ -316,11 +316,11 @@
                 "type": "git",
                 "git": {
                     "name": "pyside2",
-                    "repositoryUrl": "https://code.qt.io/cgit/pyside/pyside-setup.git",
+                    "repositoryUrl": "https://code.qt.io/pyside/pyside-setup.git",
                     "commitHash": "ff8b698d3547b39ba20c97a4c68881a4a789b211"
                 }
             },
-            "license": "LGPLv3",
+            "license": "LGPL-3.0",
             "description": "The Qt for Python project aims to provide a complete port of the PySide module to Qt 5.",
             "version": "5.9"
         },
@@ -333,7 +333,7 @@
                     "version": "2.41.0"
                 }
             },
-            "license": "Common Public License Version 1.0",
+            "license": "CPL-1.0",
             "description": "Graph Visualization",
             "version": "2.41.0"
         },
@@ -346,7 +346,7 @@
                     "commitHash": "06a49513138009d19a1f4e0ace67fbff13270c69"
                 }
             },
-            "license": "BSD",
+            "license": "BSD-2-Clause",
             "description": "Fast Library for Approximate Nearest Neighbors",
             "version": "1.9.1"
         },
@@ -359,7 +359,7 @@
                     "commitHash": "7ffd8b2ecfc2d93ae5e16028e7528e609266bfbf"
                 }
             },
-            "license": "BSD 3-Clause",
+            "license": "BSD-3-Clause",
             "description": "Reference implementation of the Theora video compression format.",
             "version": "1.1.1"
         },
@@ -372,7 +372,7 @@
                     "commitHash": "39732f5a7c8455ed51fd0f6278d8b25322a68dd9"
                 }
             },
-            "license": "BSD",
+            "license": "BSD-3-Clause",
             "description": "Point Cloud Library (PCL)",
             "version": "1.8.1"
         },
@@ -385,7 +385,7 @@
                     "commitHash": "6ffc48769ac60d53c4bd1913eac15117c9b1c9f7"
                 }
             },
-            "license": "BSD 3-clause",
+            "license": "BSD-3-clause",
             "description": "Open Source Computer Vision Library",
             "version": "3.4.1"
         },
@@ -398,7 +398,7 @@
                     "commitHash": "4380566a44b8d5e85ad511c9c17eb04197863ec5"
                 }
             },
-            "license": "BSD 3-clause",
+            "license": "BSD-3-clause",
             "description": "Reference implementation of the Ogg media container",
             "version": "1.3.3"
         },
@@ -411,7 +411,7 @@
                     "version": "5.10.1"
                 }
             },
-            "license": "LGPLv3",
+            "license": "LGPL-3.0",
             "description": "Qt",
             "version": "5.10.1"
         }
