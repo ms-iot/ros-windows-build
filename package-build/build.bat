@@ -7,6 +7,6 @@ echo set "PYTHONHOME=%PYTHON_LOCATION%" >> tools\setup.bat
 :: create Chocolatey packages.
 copy template.nuspec ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE%.nuspec
 md output
-choco pack --trace --out output ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE%.nuspec name=ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE% version=%Build_BuildNumber% build_tools=%BUILD_TOOL_PACKAGE% build_tools_version=%BUILD_TOOL_PACKAGE_VERISON%
+choco pack --trace --out output ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE%.nuspec name=ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE% version=%Build_BuildNumber% build_tools=%BUILD_TOOL_PACKAGE% build_tools_version=%BUILD_TOOL_PACKAGE_VERSION%
 md output-pre
-choco pack --trace --out output-pre ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE%.nuspec name=ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE% version=%Build_BuildNumber%-pre build_tools=%BUILD_TOOL_PACKAGE% build_tools_version=%BUILD_TOOL_PACKAGE_VERISON%
+choco pack --trace --out output-pre ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE%.nuspec name=ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE% version=%Build_BuildNumber%-pre build_tools=%BUILD_TOOL_PACKAGE% build_tools_version=%BUILD_TOOL_PACKAGE_VERSION%
