@@ -14,6 +14,7 @@ jobs:
     ROSWIN_METAPACKAGE: 'ALL'
     ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
     BUILD_TOOL_PACKAGE: 'ros-colcon-tools'
+    BUILD_TOOL_PACKAGE_VERSION: '0.0.1.1905240527'
     PYTHON_LOCATION: 'c:\opt\python37amd64'
   strategy:
     matrix:
