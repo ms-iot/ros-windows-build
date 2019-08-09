@@ -313,11 +313,11 @@
         },
         {
             "component": {
-                "type": "git",
-                "git": {
+                "type": "other",
+                "other": {
                     "name": "pyside2",
-                    "repositoryUrl": "https://code.qt.io/pyside/pyside-setup.git",
-                    "commitHash": "ff8b698d3547b39ba20c97a4c68881a4a789b211"
+                    "downloadUrl": "https://code.qt.io/pyside/pyside-setup.git",
+                    "version": "ff8b698d3547b39ba20c97a4c68881a4a789b211"
                 }
             },
             "license": "LGPL-3.0",
