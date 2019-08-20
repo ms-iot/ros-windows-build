@@ -14,26 +14,21 @@ jobs:
     ROSWIN_METAPACKAGE: 'ALL'
     ROSWIN_ADDITIONAL_PACKAGE: 'ros_rosdeps'
     ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
+    ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/crystal/x64'
     BUILD_TOOL_PACKAGE: 'ros-colcon-tools'
     BUILD_TOOL_PACKAGE_VERSION: '0.0.1.1905240527'
     PYTHON_LOCATION: 'c:\opt\python37amd64'
+    ROS_PYTHON_VERSION: '3'
+    ROS_DISTRO: 'crystal'
+    ROS_ETC_DIR: 'c:\opt\ros\crystal\x64\etc\ros'
   strategy:
     matrix:
       crystal-ros_core:
         ROSWIN_METAPACKAGE: 'ros_core'
-        ROS_DISTRO: 'crystal'
-        ROS_ETC_DIR: 'c:\opt\ros\crystal\x64\etc\ros'
-        ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/crystal/x64'
       crystal-ros_base:
         ROSWIN_METAPACKAGE: 'ros_base'
-        ROS_DISTRO: 'crystal'
-        ROS_ETC_DIR: 'c:\opt\ros\crystal\x64\etc\ros'
-        ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/crystal/x64'
       crystal-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
-        ROS_DISTRO: 'crystal'
-        ROS_ETC_DIR: 'c:\opt\ros\crystal\x64\etc\ros'
-        ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/crystal/x64'
   steps:
   # - template: ..\..\common\agent-clean.yml
   - template: ..\common\checkout.yml
