@@ -16,18 +16,18 @@ jobs:
     BUILD_TOOL_PACKAGE: 'ros-colcon-tools'
     BUILD_TOOL_PACKAGE_VERSION: '0.0.1.1905240527'
     PYTHON_LOCATION: 'c:\opt\python37amd64'
+    ROS_PYTHON_VERSION: '3'
+    ROS_DISTRO: 'melodic'
   strategy:
     matrix:
       melodic-ros_base:
         ROSWIN_METAPACKAGE: 'ros_core'
         ROSDISTRO_INDEX_URL: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/index.yaml'
-        ROS_DISTRO: 'melodic'
         ROS_ETC_DIR: 'c:\opt\ros\melodic\x64\etc\ros'
         ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/melodic/x64'
       melodic-desktop_full:
         ROSWIN_METAPACKAGE: 'desktop_full'
         ROSDISTRO_INDEX_URL: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/index.yaml'
-        ROS_DISTRO: 'melodic'
         ROS_ETC_DIR: 'c:\opt\ros\melodic\x64\etc\ros'
         ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/melodic/x64'
   steps:

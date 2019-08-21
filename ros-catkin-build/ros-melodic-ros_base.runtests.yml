@@ -15,6 +15,7 @@ jobs:
   pool:
     vmImage: 'windows-2019'
   variables:
+    ROS_PYTHON_VERSION: '2'
     ROS_DISTRO: 'melodic'
     ROS_ETC_DIR: 'c:\opt\ros\melodic\x64\etc\ros'
     ROSDISTRO_INDEX_URL: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/index.yaml'

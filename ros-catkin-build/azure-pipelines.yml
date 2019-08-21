@@ -47,6 +47,7 @@ jobs:
   pool:
     vmImage: 'windows-2019'
   variables:
+    ROS_PYTHON_VERSION: '2'
     ROS_DISTRO: 'melodic'
     ROS_SHARE_DIR: 'c:\opt\ros\melodic\x64\share'
     ROS_ETC_DIR: 'c:\opt\ros\melodic\x64\etc\ros'
