@@ -5,7 +5,7 @@ jobs:
   strategy:
     matrix:
       melodic-desktop_full:
-        repository: 'public/ros/melodic-desktop_full'
+        repository: 'public/robotics/ros/melodic-desktop_full'
         dockerfile: 'docker/melodic/windowsservercore/desktop-full/dockerfile'
         tags: 'latest-servercore-ltsc2019'
   timeoutInMinutes: 240
