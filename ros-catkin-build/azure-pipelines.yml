@@ -79,3 +79,17 @@ jobs:
     skipComponentGovernanceDetection: true
   steps:
   - template: ..\package-build\package-test.yml
+- job: SfxArchive
+  dependsOn: Build
+  strategy:
+    matrix:
+      melodic-desktop_full:
+        ROS_DISTRO: 'melodic'
+        ROSWIN_METAPACKAGE: 'desktop_full'
+  timeoutInMinutes: 300
+  pool:
+    vmImage: 'windows-2019'
+  variables:
+    skipComponentGovernanceDetection: true
+  steps:
+  - template: ..\sfx-installer\build.yml
