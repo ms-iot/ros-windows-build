@@ -1,0 +1,26 @@
+parameters:
+  ROS_DISTRO: $(ROS_DISTRO)
+  ROSWIN_METAPACKAGE: $(ROSWIN_METAPACKAGE)
+  ChocolateyInstall: c:\opt\chocolatey
+
+steps:
+- task: DownloadBuildArtifacts@0
+  inputs:
+    artifactName: 'package-build-drop-prerelease'
+- script: |
+    mkdir c:\opt\chocolatey
+    choco sources add -n=roswin-prerelease -s %System_ArtifactsDirectory% --priority 1
+    choco sources add -n=roswin -s https://roswin.azurewebsites.net/api/v2/ --priority 2
+  displayName: Configure Chocolatey sources
+- script: |
+    choco install ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE% -y --pre
+  displayName: Install Chocolatey packages
+- script: |
+    mkdir %Build_ArtifactStagingDirectory%\sfx
+    7z a -sfx7z.sfx %Build_ArtifactStagingDirectory%\sfx\ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE%.exe c:\opt\ -v512m
+  displayName: Create SFX installer
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: $(Build.ArtifactStagingDirectory)\sfx
+    artifactName: 'sfx-installer'
+  displayName: Publish SFX installer
