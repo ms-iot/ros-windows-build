@@ -1,0 +1,44 @@
+trigger: none
+pr: none
+
+variables:
+  ROSWIN_COLCON_BUILD_WORKING_DIRECTORY: $(Build.SourcesDirectory)\ros-colcon-build
+
+jobs:
+- job: Build
+  timeoutInMinutes: 300
+  pool:
+    vmImage: 'windows-2019'
+  variables:
+    ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows_py37/rosdep/sources.list.d/10-ms-iot.list'
+    ROSWIN_METAPACKAGE: 'ALL'
+    ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
+    ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/eloquent/x64'
+    ROSWIN_ADDITIONAL_PACKAGE: ''
+    ROS_PYTHON_VERSION: '3'
+    ROS_DISTRO: 'eloquent'
+    ROS_ETC_DIR: 'c:\opt\ros\eloquent\x64\etc\ros'
+    BUILD_TOOL_PACKAGE: 'ros-colcon-tools'
+    BUILD_TOOL_PACKAGE_VERSION: '0.0.1.1905240527'
+    PYTHON_LOCATION: 'c:\opt\python37amd64'
+  strategy:
+    matrix:
+      eloquent-ALL:
+        ROSWIN_PACKAGE_SKIP: 'gazebo_ros theora_image_transport cartographer ros_workspace depthimage_to_laserscan camera_info_manager teleop_twist_joy'
+  steps:
+  # - template: ..\common\agent-clean.yml
+  - template: ..\common\checkout.yml
+  - template: ..\common\build.yml
+  - template: ..\..\package-build\package-build.yml
+- job: TestInstall
+  dependsOn: Build
+  strategy:
+    matrix:
+      eloquent-ALL:
+        ROS_DISTRO: 'eloquent'
+        ROSWIN_METAPACKAGE: 'ALL'
+  timeoutInMinutes: 300
+  pool:
+    vmImage: 'windows-2019'
+  steps:
+  - template: ..\..\package-build\package-test.yml
