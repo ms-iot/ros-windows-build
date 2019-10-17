@@ -1,0 +1,43 @@
+trigger: none
+pr: none
+
+variables:
+  ROSWIN_COLCON_BUILD_WORKING_DIRECTORY: $(Build.SourcesDirectory)\ros-colcon-build
+
+jobs:
+- job: Build
+  timeoutInMinutes: 300
+  pool:
+    vmImage: 'windows-2019'
+  variables:
+    ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows_py37/rosdep/sources.list.d/10-ms-iot.list'
+    ROSWIN_METAPACKAGE: 'ALL'
+    ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
+    BUILD_TOOL_PACKAGE: 'ros-colcon-tools'
+    BUILD_TOOL_PACKAGE_VERSION: '0.0.1.1905240527'
+    PYTHON_LOCATION: 'c:\opt\python37amd64'
+    ROS_PYTHON_VERSION: '3'
+    ROS_DISTRO: 'noetic'
+    ROS_ETC_DIR: 'c:\opt\ros\noetic\x64\etc\ros'
+    ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/noetic/x64'
+  strategy:
+    matrix:
+      noetic-ALL:
+        ROSWIN_PACKAGE_SKIP: 'nodelet_topic_tools'
+  steps:
+  # - template: ..\..\common\agent-clean.yml
+  - template: ..\common\checkout.yml
+  - template: ..\common\build.yml
+  - template: ..\..\package-build\package-build.yml
+- job: TestInstall
+  dependsOn: Build
+  strategy:
+    matrix:
+      noetic-ALL:
+        ROS_DISTRO: 'noetic'
+        ROSWIN_METAPACKAGE: 'ALL'
+  timeoutInMinutes: 300
+  pool:
+    vmImage: 'windows-2019'
+  steps:
+  - template: ..\..\package-build\package-test.yml
