@@ -1,0 +1,172 @@
+- git:
+    local-name: actionlib
+    uri: https://github.com/ros/actionlib.git
+    version: noetic-devel
+- git:
+    local-name: angles
+    uri: https://github.com/ros/angles.git
+    version: master
+- git:
+    local-name: bond_core
+    uri: https://github.com/ros/bond_core.git
+    version: kinetic-devel
+- git:
+    local-name: catkin
+    uri: https://github.com/ros/catkin.git
+    version: kinetic-devel
+- git:
+    local-name: class_loader
+    uri: https://github.com/ros/class_loader.git
+    version: melodic-devel
+- git:
+    local-name: cmake_modules
+    uri: https://github.com/ros/cmake_modules.git
+    version: 0.4-devel
+- git:
+    local-name: common_msgs
+    uri: https://github.com/ros/common_msgs.git
+    version: jade-devel
+- git:
+    local-name: dynamic_reconfigure
+    uri: https://github.com/ros/dynamic_reconfigure.git
+    version: noetic-devel
+- git:
+    local-name: eigen_stl_containers
+    uri: https://github.com/ros/eigen_stl_containers.git
+    version: master
+- git:
+    local-name: filters
+    uri: https://github.com/ros/filters.git
+    version: lunar-devel
+- git:
+    local-name: gencpp
+    uri: https://github.com/ros/gencpp.git
+    version: kinetic-devel
+- git:
+    local-name: geneus
+    uri: https://github.com/jsk-ros-pkg/geneus.git
+    version: master
+- git:
+    local-name: genlisp
+    uri: https://github.com/ros/genlisp.git
+    version: groovy-devel
+- git:
+    local-name: genmsg
+    uri: https://github.com/ros/genmsg.git
+    version: kinetic-devel
+- git:
+    local-name: gennodejs
+    uri: https://github.com/RethinkRobotics-opensource/gennodejs.git
+    version: kinetic-devel
+- git:
+    local-name: genpy
+    uri: https://github.com/ros/genpy.git
+    version: kinetic-devel
+- git:
+    local-name: gl_dependency
+    uri: https://github.com/ros-visualization/gl_dependency.git
+    version: kinetic-devel
+- git:
+    local-name: kdl_parser
+    uri: https://github.com/ros/kdl_parser.git
+    version: melodic-devel
+- git:
+    local-name: message_generation
+    uri: https://github.com/ros/message_generation.git
+    version: kinetic-devel
+- git:
+    local-name: message_runtime
+    uri: https://github.com/ros/message_runtime.git
+    version: kinetic-devel
+- git:
+    local-name: nodelet_core
+    uri: https://github.com/ros/nodelet_core.git
+    version: noetic-devel
+- git:
+    local-name: orocos_kinematics_dynamics
+    uri: https://github.com/tfoote/orocos_kinematics_dynamics.git
+    version: python3_support
+- git:
+    local-name: pluginlib
+    uri: https://github.com/ros/pluginlib.git
+    version: melodic-devel
+- git:
+    local-name: python_qt_binding
+    uri: https://github.com/ros-visualization/python_qt_binding.git
+    version: kinetic-devel
+- git:
+    local-name: qt_gui_core
+    uri: https://github.com/ms-iot/qt_gui_core/
+    version: windows_fix
+- git:
+    local-name: qwt_dependency
+    uri: https://github.com/ros-visualization/qwt_dependency.git
+    version: kinetic-devel
+- git:
+    local-name: random_numbers
+    uri: https://github.com/ros-planning/random_numbers.git
+    version: master
+- git:
+    local-name: resource_retriever
+    uri: https://github.com/ros/resource_retriever.git
+    version: kinetic-devel
+- git:
+    local-name: ros
+    uri: https://github.com/ros/ros.git
+    version: kinetic-devel
+- git:
+    local-name: ros_comm
+    uri: https://github.com/ros/ros_comm.git
+    version: melodic-devel
+- git:
+    local-name: ros_comm_msgs
+    uri: https://github.com/ros/ros_comm_msgs.git
+    version: kinetic-devel
+- git:
+    local-name: ros_environment
+    uri: https://github.com/ros/ros_environment.git
+    version: melodic
+- git:
+    local-name: rosbag_migration_rule
+    uri: https://github.com/ros/rosbag_migration_rule.git
+    version: master
+- git:
+    local-name: rosconsole
+    uri: https://github.com/ros/rosconsole.git
+    version: melodic-devel
+- git:
+    local-name: rosconsole_bridge
+    uri: https://github.com/ros/rosconsole_bridge.git
+    version: kinetic-devel
+- git:
+    local-name: roscpp_core
+    uri: https://github.com/ros/roscpp_core.git
+    version: kinetic-devel
+- git:
+    local-name: roslisp
+    uri: https://github.com/ros/roslisp.git
+    version: master
+- git:
+    local-name: rospack
+    uri: https://github.com/seanyen/rospack.git
+    version: melodic-devel_patch
+- git:
+    local-name: rqt
+    uri: https://github.com/ros-visualization/rqt.git
+    version: kinetic-devel
+- git:
+    local-name: std_msgs
+    uri: https://github.com/ros/std_msgs.git
+    version: kinetic-devel
+- git:
+    local-name: urdf
+    uri: https://github.com/ros/urdf.git
+    version: melodic-devel
+- git:
+    local-name: urdfdom_py
+    uri: https://github.com/ros/urdf_parser_py.git
+    version: melodic-devel
+- git:
+    local-name: webkit_dependency
+    uri: https://github.com/ros-visualization/webkit_dependency.git
+    version: kinetic-devel
