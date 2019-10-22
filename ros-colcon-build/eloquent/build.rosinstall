@@ -1,14 +1,6 @@
 - git:
-    local-name: pluginlib
-    uri: https://github.com/ms-iot/pluginlib.git
-    version: ros2_patch
-- git:
     local-name: vision_opencv
     uri: https://github.com/ms-iot/vision_opencv.git
-    version: ros2_patch
-- git:
-    local-name: image_common
-    uri: https://github.com/ms-iot/image_common.git
     version: ros2_patch
 - git:
     local-name: rviz
