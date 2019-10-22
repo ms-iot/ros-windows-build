@@ -1,8 +1,4 @@
 - git:
-    local-name: vision_opencv
-    uri: https://github.com/ms-iot/vision_opencv.git
-    version: ros2_patch
-- git:
     local-name: rviz
     uri: https://github.com/ms-iot/rviz.git
     version: ros2_patch
