@@ -10,7 +10,3 @@
     local-name: urdf
     uri: https://github.com/ms-iot/urdf.git
     version: init_windows
-- git:
-    local-name: qt_gui_core
-    uri: https://github.com/ms-iot/qt_gui_core/
-    version: windows_fix

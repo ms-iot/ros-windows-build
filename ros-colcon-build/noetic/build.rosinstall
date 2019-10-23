@@ -96,8 +96,8 @@
     version: kinetic-devel
 - git:
     local-name: qt_gui_core
-    uri: https://github.com/ms-iot/qt_gui_core/
-    version: windows_fix
+    uri: https://github.com/ros-visualization/qt_gui_core.git
+    version: kinetic-devel
 - git:
     local-name: qwt_dependency
     uri: https://github.com/ros-visualization/qwt_dependency.git
