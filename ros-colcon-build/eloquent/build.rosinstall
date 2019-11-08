@@ -1,4 +1,0 @@
-- git:
-    local-name: rviz
-    uri: https://github.com/ms-iot/rviz.git
-    version: ros2_patch
