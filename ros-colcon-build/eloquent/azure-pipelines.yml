@@ -23,8 +23,14 @@ jobs:
     PYTHON_LOCATION: 'c:\opt\python37amd64'
   strategy:
     matrix:
-      eloquent-ALL:
-        ROSWIN_PACKAGE_SKIP: 'gazebo_ros theora_image_transport cartographer ros_workspace camera_info_manager teleop_twist_joy ecl_type_traits'
+      eloquent-ros_core:
+        ROSWIN_METAPACKAGE: 'ros_core'
+      eloquent-ros_base:
+        ROSWIN_METAPACKAGE: 'ros_base'
+      eloquent-desktop:
+        ROSWIN_METAPACKAGE: 'desktop'
+      # eloquent-ALL:
+      #   ROSWIN_PACKAGE_SKIP: 'gazebo_ros theora_image_transport cartographer ros_workspace camera_info_manager teleop_twist_joy ecl_type_traits'
   steps:
   # - template: ..\common\agent-clean.yml
   - template: ..\common\checkout.yml
@@ -34,9 +40,9 @@ jobs:
   dependsOn: Build
   strategy:
     matrix:
-      eloquent-ALL:
+      eloquent-ros_core:
         ROS_DISTRO: 'eloquent'
-        ROSWIN_METAPACKAGE: 'ALL'
+        ROSWIN_METAPACKAGE: 'ros_core'
   timeoutInMinutes: 300
   pool:
     vmImage: 'windows-2019'
