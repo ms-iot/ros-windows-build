@@ -10,3 +10,7 @@
     local-name: msft_ros_pkgs
     uri: https://github.com/ms-iot/msft_ros_pkgs
     version: master
+- git:
+    local-name: eigenpy
+    uri: https://github.com/stack-of-tasks/eigenpy.git
+    version: v1.6.6
