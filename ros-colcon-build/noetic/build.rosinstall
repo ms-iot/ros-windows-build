@@ -148,8 +148,8 @@
     version: master
 - git:
     local-name: rospack
-    uri: https://github.com/seanyen/rospack.git
-    version: melodic-devel_patch
+    uri: https://github.com/ros/rospack
+    version: melodic-devel
 - git:
     local-name: rqt
     uri: https://github.com/ros-visualization/rqt.git
