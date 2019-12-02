@@ -32,10 +32,10 @@ jobs:
         ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
       melodic-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
-        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu image_transport_plugins'
+        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu image_transport_plugins imu_tools'
       melodic-desktop_full:
         ROSWIN_METAPACKAGE: 'desktop_full'
-        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu ros_controllers'
+        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu ros_controllers imu_tools'
         skipComponentGovernanceDetection: false
       melodic-moveit:
         ROSWIN_METAPACKAGE: 'moveit'
