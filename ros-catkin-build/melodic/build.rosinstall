@@ -16,5 +16,5 @@
     version: v1.6.6
 - git:
     local-name: imu_tools
-    uri: https://github.com/ms-iot/imu_tools
-    version: init_windows
+    uri: https://github.com/ccny-ros-pkg/imu_tools
+    version: melodic
