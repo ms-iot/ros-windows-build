@@ -14,3 +14,7 @@
     local-name: eigenpy
     uri: https://github.com/stack-of-tasks/eigenpy.git
     version: v1.6.6
+- git:
+    local-name: imu_tools
+    uri: https://github.com/ccny-ros-pkg/imu_tools
+    version: melodic
