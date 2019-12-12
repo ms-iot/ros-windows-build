@@ -2,3 +2,7 @@
     local-name: geometry2
     uri: https://github.com/ms-iot/geometry2.git
     version: init_windows_msbuild_fix
+- git:
+    local-name: ros_control
+    uri: https://github.com/ros-controls/ros_control.git
+    version: db8488110ee4dad908f855c0d61998e96f4447e7
