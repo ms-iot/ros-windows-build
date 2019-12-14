@@ -5,4 +5,4 @@
 - git:
     local-name: ros_control
     uri: https://github.com/ros-controls/ros_control.git
-    version: db8488110ee4dad908f855c0d61998e96f4447e7
+    version: 4179515f2b5dc6b27d36c8788aa7a94813ebbd4a
