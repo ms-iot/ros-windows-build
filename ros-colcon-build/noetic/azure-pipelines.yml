@@ -25,7 +25,7 @@ jobs:
       noetic-ALL:
         ROSWIN_PACKAGE_SKIP: 'nodelet_topic_tools'
   steps:
-  # - template: ..\..\common\agent-clean.yml
+  - template: ..\..\common\agent-clean.yml
   - template: ..\common\checkout.yml
   - template: ..\common\build.yml
   - template: ..\..\package-build\package-build.yml
