@@ -32,7 +32,7 @@ jobs:
       # eloquent-ALL:
       #   ROSWIN_PACKAGE_SKIP: 'gazebo_ros theora_image_transport cartographer ros_workspace camera_info_manager teleop_twist_joy ecl_type_traits'
   steps:
-  # - template: ..\common\agent-clean.yml
+  - template: ..\..\common\agent-clean.yml
   - template: ..\common\checkout.yml
   - template: ..\common\build.yml
   - template: ..\..\package-build\package-build.yml
