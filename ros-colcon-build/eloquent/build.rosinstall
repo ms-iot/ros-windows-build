@@ -1,0 +1,4 @@
+- git:
+    local-name: fastrtps
+    uri: https://github.com/eProsima/Fast-RTPS.git
+    version: 141b778c66c4f1f7aeb5c55551c173e3237beae9
