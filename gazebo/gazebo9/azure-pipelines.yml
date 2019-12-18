@@ -1,0 +1,68 @@
+variables:
+  GAZEBO_BUILD_WORKING_DIRECTORY: $(Build.SourcesDirectory)\gazebo\gazebo9
+  GAZEBO_INSTALL_PREFIX: 'c:\opt\rosdeps\x64'
+  GAZEBO_CMAKE_BUILD_TYPE: 'RelWithDebInfo'
+  GAZEBO_CMAKE_PDB_OUTPUT_DIRECTORY: '$(Build.ArtifactStagingDirectory)\symbols'
+
+trigger:
+- master
+
+jobs:
+- job: Build
+  timeoutInMinutes: 240
+  pool:
+    vmImage: 'windows-2019'
+  steps:
+  - script: |
+      choco sources add -n=roswin -s https://roswin.azurewebsites.net/api/v2/ --priority 1
+      choco upgrade hg 7zip
+      choco upgrade pkg-config boost freeimage protobuf qt5-sdk dlfcn-win32 libcurl ogre zeromq cppzmq tbb qwt
+    displayName: Install system dependencies
+  - script: |
+      set "PATH=C:\Program Files\Mercurial;%PATH%"
+      hg clone https://bitbucket.org/ignitionrobotics/ign-cmake -r ign-cmake0
+      hg clone https://bitbucket.org/ignitionrobotics/ign-math -r ign-math4
+      hg clone https://bitbucket.org/ignitionrobotics/ign-msgs -r ign-msgs1
+      hg clone https://bitbucket.org/ignitionrobotics/ign-tools -r ign-tools0
+      hg clone https://bitbucket.org/ignitionrobotics/ign-transport -r ign-transport4
+      hg clone https://bitbucket.org/osrf/sdformat -r sdformat6_6.1.0_windows
+      hg clone https://bitbucket.org/osrf/gazebo -r gazebo9
+    displayName: Get sources
+    workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
+  - script: |
+      call "build.bat" ign-cmake "-DBUILD_TESTING:BOOL=False -DCMAKE_VERBOSE_MAKEFILE=ON"
+    displayName: ign-cmake
+    workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
+  - script: |
+      call "build.bat" ign-math "-DBUILD_TESTING:BOOL=False -DCMAKE_VERBOSE_MAKEFILE=ON"
+    displayName: ign-math
+    workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
+  - script: |
+      call "build.bat" ign-tools "-DBUILD_TESTING:BOOL=False -DCMAKE_VERBOSE_MAKEFILE=ON"
+    displayName: ign-tools
+    workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
+  - script: |
+      set PATH=C:\opt\rosdeps\x64\tools\protobuf;%PATH%
+      call "build.bat" ign-msgs "-DBUILD_TESTING:BOOL=False -DCMAKE_VERBOSE_MAKEFILE=ON"
+    displayName: ign-msgs
+    workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
+  - script: |
+      call "build.bat" ign-transport "-DBUILD_TESTING:BOOL=False -DCMAKE_VERBOSE_MAKEFILE=ON"
+    displayName: ign-transport
+    workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
+  - script: |
+      call "build.bat" sdformat "-DBUILD_TESTING:BOOL=False -DCMAKE_VERBOSE_MAKEFILE=ON"
+    displayName: sdformat
+    workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
+  - script: |
+      set PATH=C:\opt\rosdeps\x64\tools\protobuf;%PATH%
+      call "build.bat" gazebo "--debug-output -DCMAKE_VERBOSE_MAKEFILE=ON"
+    displayName: gazebo
+    workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
+  - script: |
+      powershell.exe -noexit -file "copy_binaries.ps1"
+    displayName: Copy binaries
+    workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
+  - task: PublishBuildArtifacts@1
+    inputs:
+      artifactName: 'opt'
