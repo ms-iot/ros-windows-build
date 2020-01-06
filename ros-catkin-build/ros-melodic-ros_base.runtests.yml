@@ -1,4 +1,5 @@
 trigger: none
+pr: none
 
 variables:
   ROSWIN_CATKIN_BUILD_WORKING_DIRECTORY: $(Build.SourcesDirectory)\ros-catkin-build

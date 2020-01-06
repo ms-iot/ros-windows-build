@@ -1,5 +1,6 @@
 # maintenance pipeline to delete non-tagged images from a container registry
 trigger: none
+pr: none
 
 jobs:
 - job: GarbageCollection
