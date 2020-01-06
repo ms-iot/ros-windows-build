@@ -1,11 +1,11 @@
+trigger: none
+pr: none
+
 variables:
   GAZEBO_BUILD_WORKING_DIRECTORY: $(Build.SourcesDirectory)\gazebo\gazebo9
   GAZEBO_INSTALL_PREFIX: 'c:\opt\rosdeps\x64'
   GAZEBO_CMAKE_BUILD_TYPE: 'RelWithDebInfo'
   GAZEBO_CMAKE_PDB_OUTPUT_DIRECTORY: '$(Build.ArtifactStagingDirectory)\symbols'
-
-trigger:
-- master
 
 jobs:
 - job: Build
