@@ -22,5 +22,6 @@ jobs:
     ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/rosdep/sources.list.d/10-ms-iot.list'
     ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
   steps:
+  - template: ..\common\agent-clean.yml
   - template: common\checkout.yml
   - template: common\runtests.yml
