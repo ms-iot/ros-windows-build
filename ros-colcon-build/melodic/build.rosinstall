@@ -6,3 +6,7 @@
     local-name: ros_control
     uri: https://github.com/ros-controls/ros_control.git
     version: 4179515f2b5dc6b27d36c8788aa7a94813ebbd4a
+- git:
+    local-name: gazebo_ros_pkgs
+    uri: https://github.com/ms-iot/gazebo_ros_pkgs.git
+    version: melodic-devel_patch
