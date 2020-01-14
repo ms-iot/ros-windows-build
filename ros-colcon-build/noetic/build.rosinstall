@@ -72,20 +72,20 @@
     version: kinetic-devel
 - git:
     local-name: geometry
-    uri: https://github.com/ros/geometry.git
-    version: melodic-devel
+    uri: https://github.com/ms-iot/geometry.git
+    version: init_windows
 - git:
     local-name: geometry2
-    uri: https://github.com/ros/geometry2.git
-    version: melodic-devel
+    uri: https://github.com/ms-iot/geometry2.git
+    version: init_windows
 - git:
     local-name: gl_dependency
     uri: https://github.com/ros-visualization/gl_dependency.git
     version: kinetic-devel
 - git:
     local-name: image_common
-    uri: https://github.com/ros-perception/image_common.git
-    version: hydro-devel
+    uri: https://github.com/ms-iot/image_common.git
+    version: init_windows
 - git:
     local-name: joint_state_publisher
     uri: https://github.com/ros/joint_state_publisher.git
@@ -124,8 +124,8 @@
     version: indigo-devel
 - git:
     local-name: pluginlib
-    uri: https://github.com/ros/pluginlib.git
-    version: melodic-devel
+    uri: https://github.com/ms-iot/pluginlib.git
+    version: init_windows
 - git:
     local-name: python_qt_binding
     uri: https://github.com/ros-visualization/python_qt_binding.git
