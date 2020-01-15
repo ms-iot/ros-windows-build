@@ -27,6 +27,10 @@
     uri: https://github.com/ros/common_msgs.git
     version: jade-devel
 - git:
+    local-name: control_msgs
+    uri: https://github.com/ros-controls/control_msgs.git
+    version: kinetic-devel
+- git:
     local-name: dynamic_reconfigure
     uri: https://github.com/ros/dynamic_reconfigure.git
     version: noetic-devel
@@ -38,6 +42,10 @@
     local-name: filters
     uri: https://github.com/ros/filters.git
     version: lunar-devel
+- git:
+    local-name: four_wheel_steering_msgs
+    uri: https://github.com/ros-drivers/four_wheel_steering_msgs.git
+    version: master
 - git:
     local-name: gencpp
     uri: https://github.com/ros/gencpp.git
@@ -63,13 +71,33 @@
     uri: https://github.com/ros/genpy.git
     version: kinetic-devel
 - git:
+    local-name: geometry
+    uri: https://github.com/ms-iot/geometry.git
+    version: init_windows
+- git:
+    local-name: geometry2
+    uri: https://github.com/ms-iot/geometry2.git
+    version: init_windows
+- git:
     local-name: gl_dependency
     uri: https://github.com/ros-visualization/gl_dependency.git
+    version: kinetic-devel
+- git:
+    local-name: image_common
+    uri: https://github.com/ms-iot/image_common.git
+    version: init_windows
+- git:
+    local-name: joint_state_publisher
+    uri: https://github.com/ros/joint_state_publisher.git
     version: kinetic-devel
 - git:
     local-name: kdl_parser
     uri: https://github.com/ros/kdl_parser.git
     version: melodic-devel
+- git:
+    local-name: laser_geometry
+    uri: https://github.com/ros-perception/laser_geometry.git
+    version: indigo-devel
 - git:
     local-name: message_generation
     uri: https://github.com/ros/message_generation.git
@@ -79,17 +107,25 @@
     uri: https://github.com/ros/message_runtime.git
     version: kinetic-devel
 - git:
+    local-name: navigation_msgs
+    uri: https://github.com/ros-planning/navigation_msgs.git
+    version: ros1
+- git:
     local-name: nodelet_core
     uri: https://github.com/ros/nodelet_core.git
     version: noetic-devel
 - git:
     local-name: orocos_kinematics_dynamics
-    uri: https://github.com/tfoote/orocos_kinematics_dynamics.git
-    version: python3_support
+    uri: https://github.com/orocos/orocos_kinematics_dynamics.git
+    version: master
+- git:
+    local-name: pcl_msgs
+    uri: https://github.com/ros-perception/pcl_msgs.git
+    version: indigo-devel
 - git:
     local-name: pluginlib
-    uri: https://github.com/ros/pluginlib.git
-    version: melodic-devel
+    uri: https://github.com/ms-iot/pluginlib.git
+    version: init_windows
 - git:
     local-name: python_qt_binding
     uri: https://github.com/ros-visualization/python_qt_binding.git
@@ -107,9 +143,17 @@
     uri: https://github.com/ros-planning/random_numbers.git
     version: master
 - git:
+    local-name: realtime_tools
+    uri: https://github.com/ros-controls/realtime_tools.git
+    version: melodic-devel
+- git:
     local-name: resource_retriever
     uri: https://github.com/ros/resource_retriever.git
     version: kinetic-devel
+- git:
+    local-name: robot_state_publisher
+    uri: https://github.com/ros/robot_state_publisher.git
+    version: noetic-devel
 - git:
     local-name: ros
     uri: https://github.com/ros/ros.git
@@ -125,7 +169,11 @@
 - git:
     local-name: ros_environment
     uri: https://github.com/ros/ros_environment.git
-    version: melodic
+    version: noetic
+- git:
+    local-name: ros_tutorials
+    uri: https://github.com/ms-iot/ros_tutorials.git
+    version: init_windows
 - git:
     local-name: rosbag_migration_rule
     uri: https://github.com/ros/rosbag_migration_rule.git
@@ -143,17 +191,77 @@
     uri: https://github.com/ros/roscpp_core.git
     version: kinetic-devel
 - git:
+    local-name: roslint
+    uri: https://github.com/ros/roslint.git
+    version: master
+- git:
     local-name: roslisp
     uri: https://github.com/ros/roslisp.git
     version: master
 - git:
     local-name: rospack
-    uri: https://github.com/ros/rospack
+    uri: https://github.com/ros/rospack.git
     version: melodic-devel
 - git:
     local-name: rqt
     uri: https://github.com/ros-visualization/rqt.git
     version: kinetic-devel
+- git:
+    local-name: rqt_bag
+    uri: https://github.com/ros-visualization/rqt_bag.git
+    version: master
+- git:
+    local-name: rqt_console
+    uri: https://github.com/ros-visualization/rqt_console.git
+    version: master
+- git:
+    local-name: rqt_dep
+    uri: https://github.com/ros-visualization/rqt_dep.git
+    version: master
+- git:
+    local-name: rqt_graph
+    uri: https://github.com/ros-visualization/rqt_graph.git
+    version: master
+- git:
+    local-name: rqt_logger_level
+    uri: https://github.com/ros-visualization/rqt_logger_level.git
+    version: master
+- git:
+    local-name: rqt_msg
+    uri: https://github.com/ros-visualization/rqt_msg.git
+    version: master
+- git:
+    local-name: rqt_plot
+    uri: https://github.com/ros-visualization/rqt_plot.git
+    version: master
+- git:
+    local-name: rqt_pose_view
+    uri: https://github.com/ros-visualization/rqt_pose_view.git
+    version: master
+- git:
+    local-name: rqt_publisher
+    uri: https://github.com/ros-visualization/rqt_publisher.git
+    version: master
+- git:
+    local-name: rqt_robot_steering
+    uri: https://github.com/ros-visualization/rqt_robot_steering.git
+    version: master
+- git:
+    local-name: rqt_service_caller
+    uri: https://github.com/ros-visualization/rqt_service_caller.git
+    version: master
+- git:
+    local-name: rqt_srv
+    uri: https://github.com/ros-visualization/rqt_srv.git
+    version: master
+- git:
+    local-name: rqt_topic
+    uri: https://github.com/ros-visualization/rqt_topic.git
+    version: master
+- git:
+    local-name: rqt_web
+    uri: https://github.com/ros-visualization/rqt_web.git
+    version: master
 - git:
     local-name: std_msgs
     uri: https://github.com/ros/std_msgs.git
@@ -163,6 +271,10 @@
     uri: https://github.com/ros/urdf.git
     version: melodic-devel
 - git:
+    local-name: urdf_geometry_parser
+    uri: https://github.com/ros-controls/urdf_geometry_parser.git
+    version: kinetic-devel
+- git:
     local-name: urdfdom_py
     uri: https://github.com/ros/urdf_parser_py.git
     version: melodic-devel
@@ -170,3 +282,7 @@
     local-name: webkit_dependency
     uri: https://github.com/ros-visualization/webkit_dependency.git
     version: kinetic-devel
+- git:
+    local-name: xacro
+    uri: https://github.com/ros/xacro.git
+    version: noetic-devel
