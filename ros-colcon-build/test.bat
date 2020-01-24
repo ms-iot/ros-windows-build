@@ -13,11 +13,6 @@ set "ROSWIN_COLCON_PACKAGE_SKIP=--packages-skip %ROSWIN_PACKAGE_SKIP%"
 if "%ROSWIN_PACKAGE_SKIP%"=="" (
     set ROSWIN_COLCON_PACKAGE_SKIP=
 )
-:: workaround has_target assert failure in colcon-cmake
-set ROSWIN_COLCON_CMAKE_TARGET=
-if "%ROS_DISTRO%"=="melodic" (
-    set "ROSWIN_COLCON_CMAKE_TARGET=--cmake-target install"
-)
 colcon --log-level info test ^
        %ROSWIN_COLCON_PACKAGE_UP_TO% ^
        %ROSWIN_COLCON_PACKAGE_SKIP_BY_DEP% ^
