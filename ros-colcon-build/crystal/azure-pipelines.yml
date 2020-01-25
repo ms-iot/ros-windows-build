@@ -34,6 +34,7 @@ jobs:
   - template: ..\common\checkout.yml
   - template: ..\common\build.yml
   - template: ..\..\package-build\package-build.yml
+  - template: ..\common\runtests.yml
 - job: TestInstall
   dependsOn: Build
   strategy:
