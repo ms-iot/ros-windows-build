@@ -26,3 +26,7 @@
     local-name: gazebo_ros_pkgs
     uri: https://github.com/ms-iot/gazebo_ros_pkgs.git
     version: melodic-devel_patch
+- git:
+    local-name: ros_comm
+    uri: https://github.com/ms-iot/ros_comm.git
+    version: xmlrpc_slow_patch
