@@ -10,7 +10,7 @@ steps:
     call "setup.bat"
     md c:\catkin_ws\src
     pushd c:\catkin_ws
-    rosinstall_generator %ROSWIN_METAPACKAGE% %ROSWIN_ADDITIONAL_PACKAGE% --rosdistro %ROS_DISTRO% --deps --upstream-development > build.rosinstall
+    rosinstall_generator %ROSWIN_METAPACKAGE% %ROSWIN_ADDITIONAL_PACKAGE% --rosdistro %ROS_DISTRO% --deps --upstream-development %ROSWIN_ARGS_ROSINSTALL_GEN% > build.rosinstall
     type build.rosinstall
     wstool init src
     wstool merge -r -y -t src build.rosinstall

@@ -18,29 +18,30 @@ jobs:
         ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
       melodic-robot:
         ROSWIN_METAPACKAGE: 'robot'
-        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs navigation'
+        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
       melodic-perception:
         ROSWIN_METAPACKAGE: 'perception'
-        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs diagnostic_updater'
+        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
       melodic-navigation:
         ROSWIN_METAPACKAGE: 'navigation'
-        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs diagnostic_updater'
+        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
       melodic-viz:
         ROSWIN_METAPACKAGE: 'viz'
-        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs roslint'
+        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
       melodic-simulators:
         ROSWIN_METAPACKAGE: 'simulators'
         ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
       melodic-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
-        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu image_transport_plugins imu_tools'
+        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
       melodic-desktop_full:
         ROSWIN_METAPACKAGE: 'desktop_full'
-        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu ros_controllers imu_tools'
+        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
         skipComponentGovernanceDetection: false
       melodic-moveit:
         ROSWIN_METAPACKAGE: 'moveit'
-        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs moveit_resources moveit_visual_tools perception desktop ros_control industrial_core descartes'
+        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs moveit_resources moveit_tutorials moveit_visual_tools pcl_ros'
+        ROSWIN_ARGS_ROSINSTALL_GEN: '--exclude octomap'
       melodic-cartographer_ros:
         ROSWIN_METAPACKAGE: 'cartographer_ros'
         ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs cartographer_rviz'
@@ -52,9 +53,9 @@ jobs:
     ROS_DISTRO: 'melodic'
     ROS_SHARE_DIR: 'c:\opt\ros\melodic\x64\share'
     ROS_ETC_DIR: 'c:\opt\ros\melodic\x64\etc\ros'
-    ROSDISTRO_INDEX_URL: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/index.yaml'
     ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/rosdep/sources.list.d/10-ms-iot.list'
     ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
+    ROSWIN_PACKAGE_SKIP: 'stage stage_ros'
     BUILD_TOOL_PACKAGE: 'ros-catkin-tools'
     BUILD_TOOL_PACKAGE_VERSION: '0.0.1.1903221831'
     PYTHON_LOCATION: 'c:\opt\python27amd64'

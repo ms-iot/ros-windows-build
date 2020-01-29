@@ -1,4 +1,9 @@
 @echo off
+set "ROSWIN_CATKIN_PACKAGE_SKIP=--ignore-pkg %ROSWIN_PACKAGE_SKIP%"
+if "%ROSWIN_PACKAGE_SKIP%"=="" (
+    set ROSWIN_CATKIN_PACKAGE_SKIP=
+)
+
 set BUILD_MERGED_ROS_PACKAGES=%ROSWIN_METAPACKAGE% %ROSWIN_ADDITIONAL_PACKAGE%
 pushd c:\catkin_ws
 copy src\catkin\bin\catkin_make_isolated src\catkin\bin\catkin_make_isolated.py
@@ -7,6 +12,7 @@ python src\catkin\bin\catkin_make_isolated.py ^
     --use-nmake ^
     --install ^
     --only-pkg-with-deps %BUILD_MERGED_ROS_PACKAGES% ^
+    %ROSWIN_CATKIN_PACKAGE_SKIP% ^
     -DCMAKE_BUILD_TYPE=RelWithDebInfo ^
     -DCMAKE_PREFIX_PATH="%ROSWIN_CMAKE_PREFIX_PATH%" ^
     -DCMAKE_VERBOSE_MAKEFILE=ON ^

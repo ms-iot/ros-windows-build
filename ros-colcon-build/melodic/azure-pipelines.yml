@@ -22,12 +22,10 @@ jobs:
     matrix:
       melodic-ros_base:
         ROSWIN_METAPACKAGE: 'ros_core'
-        ROSDISTRO_INDEX_URL: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/index.yaml'
         ROS_ETC_DIR: 'c:\opt\ros\melodic\x64\etc\ros'
         ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/melodic/x64'
       melodic-desktop_full:
         ROSWIN_METAPACKAGE: 'desktop_full'
-        ROSDISTRO_INDEX_URL: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/index.yaml'
         ROS_ETC_DIR: 'c:\opt\ros\melodic\x64\etc\ros'
         ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/melodic/x64'
   steps:
