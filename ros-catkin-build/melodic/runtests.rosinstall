@@ -1,8 +1,4 @@
 - git:
-    local-name: filters
-    uri: https://github.com/ms-iot/filters.git
-    version: init_windows
-- git:
     local-name: diagnostics
     uri: https://github.com/ms-iot/diagnostics.git
     version: init_windows
