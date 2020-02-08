@@ -76,8 +76,8 @@
     version: init_windows
 - git:
     local-name: geometry2
-    uri: https://github.com/ms-iot/geometry2.git
-    version: init_windows
+    uri: https://github.com/ros/geometry2.git
+    version: melodic-devel
 - git:
     local-name: gl_dependency
     uri: https://github.com/ros-visualization/gl_dependency.git
