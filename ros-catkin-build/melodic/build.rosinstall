@@ -26,3 +26,7 @@
     local-name: gazebo_ros_pkgs
     uri: https://github.com/ms-iot/gazebo_ros_pkgs.git
     version: melodic-devel_patch
+- git:
+    local-name: geometry2
+    uri: https://github.com/ms-iot/geometry2.git
+    version: init_windows
