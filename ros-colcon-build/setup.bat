@@ -11,3 +11,6 @@ set PYTHONPATH=
 set Boost_ROOT=
 set BOOST_ROOT_1_69_0=
 set BOOST_ROOT_1_72_0=
+
+:: echo all environment variables
+set
