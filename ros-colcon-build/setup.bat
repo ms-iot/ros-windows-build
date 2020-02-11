@@ -6,3 +6,4 @@ set PATH=C:\opt\python37amd64\Scripts;%PATH%
 set PATH=C:\opt\python37amd64;%PATH%
 set "PATH=C:\Program Files\Cppcheck;%PATH%"
 set PYTHONPATH=
+set Boost_ROOT=
