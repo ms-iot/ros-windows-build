@@ -30,3 +30,7 @@
     local-name: geometry2
     uri: https://github.com/ms-iot/geometry2.git
     version: init_windows
+- git:
+    local-name: gencpp
+    uri: https://github.com/ms-iot/gencpp.git
+    version: windows
