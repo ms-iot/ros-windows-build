@@ -1,8 +1,0 @@
-- git:
-    local-name: diagnostics
-    uri: https://github.com/ms-iot/diagnostics.git
-    version: init_windows
-- git:
-    local-name: urdf
-    uri: https://github.com/ms-iot/urdf.git
-    version: init_windows
