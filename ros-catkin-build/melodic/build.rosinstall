@@ -79,6 +79,10 @@
     local-name: urdf
     uri: https://github.com/ms-iot/urdf.git
     version: init_windows
+- git:
+    local-name: soem
+    uri: https://github.com/ms-iot/soem.git
+    version: init_windows
 
 # override to workaround build issues
 - git:
