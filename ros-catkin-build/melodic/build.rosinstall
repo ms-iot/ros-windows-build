@@ -95,3 +95,11 @@
     local-name: moveit_tutorials
     uri: https://github.com/ros-planning/moveit_tutorials.git
     version: melodic-devel
+- git:
+    local-name: cartographer_ros
+    uri: https://github.com/googlecartographer/cartographer_ros.git
+    version: master
+- git:
+    local-name: cartographer
+    uri: https://github.com/googlecartographer/cartographer.git
+    version: master
