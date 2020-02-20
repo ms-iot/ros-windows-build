@@ -76,10 +76,6 @@
     uri: https://github.com/ms-iot/diagnostics.git
     version: init_windows
 - git:
-    local-name: urdf
-    uri: https://github.com/ms-iot/urdf.git
-    version: init_windows
-- git:
     local-name: soem
     uri: https://github.com/ms-iot/soem.git
     version: init_windows
@@ -103,7 +99,6 @@
     local-name: cartographer_ros
     uri: https://github.com/googlecartographer/cartographer_ros.git
     version: master
-
 - git:
     local-name: cartographer
     uri: https://github.com/googlecartographer/cartographer.git
