@@ -48,8 +48,8 @@
     version: master
 - git:
     local-name: gencpp
-    uri: https://github.com/ros/gencpp.git
-    version: kinetic-devel
+    uri: https://github.com/ms-iot/gencpp.git
+    version: windows
 - git:
     local-name: geneus
     uri: https://github.com/jsk-ros-pkg/geneus.git
