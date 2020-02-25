@@ -1,9 +1,5 @@
 # override by ms-iot
 - git:
-    local-name: gencpp
-    uri: https://github.com/ms-iot/gencpp.git
-    version: windows
-- git:
     local-name: abseil-cpp
     uri: https://github.com/ms-iot/abseil-cpp.git
     version: init_windows
@@ -35,10 +31,6 @@
     local-name: moveit
     uri: https://github.com/ms-iot/moveit.git
     version: windows_fix_melodic
-- git:
-    local-name: navigation
-    uri: https://github.com/ms-iot/navigation.git
-    version: init_windows
 - git:
     local-name: pluginlib
     uri: https://github.com/ms-iot/pluginlib.git
