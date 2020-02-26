@@ -36,10 +36,6 @@
     uri: https://github.com/ms-iot/pluginlib.git
     version: init_windows
 - git:
-    local-name: ros_tutorials
-    uri: https://github.com/ms-iot/ros_tutorials.git
-    version: init_windows
-- git:
     local-name: rosserial
     uri: https://github.com/ms-iot/rosserial.git
     version: init_windows
