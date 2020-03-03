@@ -36,10 +36,6 @@
     uri: https://github.com/ms-iot/pluginlib.git
     version: init_windows
 - git:
-    local-name: rosserial
-    uri: https://github.com/ms-iot/rosserial.git
-    version: init_windows
-- git:
     local-name: vision_opencv
     uri: https://github.com/ms-iot/vision_opencv.git
     version: init_windows
