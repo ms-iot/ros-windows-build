@@ -62,5 +62,5 @@ jobs:
   variables:
     skipComponentGovernanceDetection: true
   steps:
-  - template: ..\common\agent-clean.yml
-  - template: ..\sfx-installer\build.yml
+  - template: ..\..\common\agent-clean.yml
+  - template: ..\..\sfx-installer\build.yml
