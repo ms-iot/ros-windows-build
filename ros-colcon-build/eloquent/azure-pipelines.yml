@@ -53,7 +53,7 @@ jobs:
   dependsOn: Build
   strategy:
     matrix:
-      melodic-desktop_full:
+      eloquent-desktop:
         ROS_DISTRO: 'eloquent'
         ROSWIN_METAPACKAGE: 'desktop'
   timeoutInMinutes: 300
