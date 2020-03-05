@@ -49,3 +49,18 @@ jobs:
     vmImage: 'windows-2019'
   steps:
   - template: ..\..\package-build\package-test.yml
+- job: SfxArchive
+  dependsOn: Build
+  strategy:
+    matrix:
+      eloquent-desktop:
+        ROS_DISTRO: 'eloquent'
+        ROSWIN_METAPACKAGE: 'desktop'
+  timeoutInMinutes: 300
+  pool:
+    vmImage: 'windows-2019'
+  variables:
+    skipComponentGovernanceDetection: true
+  steps:
+  - template: ..\..\common\agent-clean.yml
+  - template: ..\..\sfx-installer\build.yml
