@@ -39,9 +39,9 @@ jobs:
   dependsOn: Build
   strategy:
     matrix:
-      crystal-ros_core:
+      crystal-desktop:
         ROS_DISTRO: 'crystal'
-        ROSWIN_METAPACKAGE: 'ros_core'
+        ROSWIN_METAPACKAGE: 'desktop'
   timeoutInMinutes: 300
   pool:
     vmImage: 'windows-2019'
