@@ -61,7 +61,7 @@ jobs:
     PYTHON_LOCATION: 'c:\opt\python27amd64'
     skipComponentGovernanceDetection: true
   steps:
-  - template: ..\common\agent-clean.yml
+  # - template: ..\common\agent-clean.yml
   - template: common\checkout.yml
   - template: common\build.yml
   - template: common\symbols.yml
