@@ -10,7 +10,7 @@ jobs:
   pool:
     vmImage: 'vs2017-win2016'
   variables:
-    ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows_py37/rosdep/sources.list.d/10-ms-iot.list'
+    ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/rosdep/sources.list.d/10-ms-iot.list'
     ROSWIN_METAPACKAGE: 'ALL'
     ROSWIN_ADDITIONAL_PACKAGE: 'ros_rosdeps'
     ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
@@ -39,9 +39,9 @@ jobs:
   dependsOn: Build
   strategy:
     matrix:
-      crystal-ros_core:
+      crystal-desktop:
         ROS_DISTRO: 'crystal'
-        ROSWIN_METAPACKAGE: 'ros_core'
+        ROSWIN_METAPACKAGE: 'desktop'
   timeoutInMinutes: 300
   pool:
     vmImage: 'windows-2019'

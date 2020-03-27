@@ -71,9 +71,9 @@ jobs:
   dependsOn: Build
   strategy:
     matrix:
-      melodic-ros_core:
+      melodic-desktop_full:
         ROS_DISTRO: 'melodic'
-        ROSWIN_METAPACKAGE: 'ros_core'
+        ROSWIN_METAPACKAGE: 'desktop_full'
   timeoutInMinutes: 300
   pool:
     vmImage: 'windows-2019'

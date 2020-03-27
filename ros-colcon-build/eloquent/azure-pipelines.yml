@@ -10,7 +10,7 @@ jobs:
   pool:
     vmImage: 'windows-2019'
   variables:
-    ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows_py37/rosdep/sources.list.d/10-ms-iot.list'
+    ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/rosdep/sources.list.d/10-ms-iot.list'
     ROSWIN_METAPACKAGE: 'ALL'
     ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
     ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/eloquent/x64'
@@ -29,8 +29,6 @@ jobs:
         ROSWIN_METAPACKAGE: 'ros_base'
       eloquent-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
-      # eloquent-ALL:
-      #   ROSWIN_PACKAGE_SKIP: 'gazebo_ros theora_image_transport cartographer ros_workspace camera_info_manager teleop_twist_joy ecl_type_traits'
   steps:
   - template: ..\..\common\agent-clean.yml
   - template: ..\common\checkout.yml

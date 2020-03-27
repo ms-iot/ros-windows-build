@@ -10,7 +10,7 @@ jobs:
   pool:
     vmImage: 'windows-2019'
   variables:
-    ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows_py37/rosdep/sources.list.d/10-ms-iot.list'
+    ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/rosdep/sources.list.d/10-ms-iot.list'
     ROSWIN_METAPACKAGE: 'ALL'
     ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
     ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/dashing/x64'
@@ -29,8 +29,6 @@ jobs:
         ROSWIN_METAPACKAGE: 'ros_base'
       dashing-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
-      # dashing-ALL:
-      #   ROSWIN_PACKAGE_SKIP: 'apriltag behaviortree_cpp_v3 cartographer gazebo_ros ros_workspace'
   steps:
   - template: ..\..\common\agent-clean.yml
   - template: ..\common\checkout.yml
@@ -41,9 +39,9 @@ jobs:
   dependsOn: Build
   strategy:
     matrix:
-      dashing-ros_core:
+      dashing-desktop:
         ROS_DISTRO: 'dashing'
-        ROSWIN_METAPACKAGE: 'ros_core'
+        ROSWIN_METAPACKAGE: 'desktop'
   timeoutInMinutes: 300
   pool:
     vmImage: 'windows-2019'
