@@ -16,35 +16,35 @@ jobs:
       melodic-ros_base:
         ROSWIN_METAPACKAGE: 'ros_base'
         ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
-      melodic-robot:
-        ROSWIN_METAPACKAGE: 'robot'
-        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
-      melodic-perception:
-        ROSWIN_METAPACKAGE: 'perception'
-        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
-      melodic-navigation:
-        ROSWIN_METAPACKAGE: 'navigation'
-        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
-      melodic-viz:
-        ROSWIN_METAPACKAGE: 'viz'
-        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
-      melodic-simulators:
-        ROSWIN_METAPACKAGE: 'simulators'
-        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
-      melodic-desktop:
-        ROSWIN_METAPACKAGE: 'desktop'
-        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu image_transport_plugins imu_tools'
-      melodic-desktop_full:
-        ROSWIN_METAPACKAGE: 'desktop_full'
-        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu ros_controllers imu_tools'
-        skipComponentGovernanceDetection: false
-      melodic-moveit:
-        ROSWIN_METAPACKAGE: 'moveit'
-        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs moveit_resources moveit_tutorials moveit_visual_tools pcl_ros'
-        ROSWIN_ARGS_ROSINSTALL_GEN: '--exclude octomap'
-      melodic-cartographer_ros:
-        ROSWIN_METAPACKAGE: 'cartographer_ros'
-        ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs cartographer_rviz'
+      # melodic-robot:
+      #   ROSWIN_METAPACKAGE: 'robot'
+      #   ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
+      # melodic-perception:
+      #   ROSWIN_METAPACKAGE: 'perception'
+      #   ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
+      # melodic-navigation:
+      #   ROSWIN_METAPACKAGE: 'navigation'
+      #   ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
+      # melodic-viz:
+      #   ROSWIN_METAPACKAGE: 'viz'
+      #   ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
+      # melodic-simulators:
+      #   ROSWIN_METAPACKAGE: 'simulators'
+      #   ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs'
+      # melodic-desktop:
+      #   ROSWIN_METAPACKAGE: 'desktop'
+      #   ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu image_transport_plugins imu_tools'
+      # melodic-desktop_full:
+      #   ROSWIN_METAPACKAGE: 'desktop_full'
+      #   ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs rosserial joystick_drivers teleop_twist_joy navigation soem robotiq_2f_gripper_action_server robotiq_modbus_rtu ros_controllers imu_tools'
+      #   skipComponentGovernanceDetection: false
+      # melodic-moveit:
+      #   ROSWIN_METAPACKAGE: 'moveit'
+      #   ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs moveit_resources moveit_tutorials moveit_visual_tools pcl_ros'
+      #   ROSWIN_ARGS_ROSINSTALL_GEN: '--exclude octomap'
+      # melodic-cartographer_ros:
+      #   ROSWIN_METAPACKAGE: 'cartographer_ros'
+      #   ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs cartographer_rviz'
   timeoutInMinutes: 300
   pool:
     vmImage: 'windows-2019'
