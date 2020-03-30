@@ -17,7 +17,7 @@ Get-ChocolateyUnzip @packageArgs
 Write-Host 'running rosdep...'
 $ErrorActionPreference = 'SilentlyContinue';
 $rosdepInstall = Join-Path $toolsDir 'rosdepInstall.bat'
-$p = Start-Process -FilePath "$env:comspec" -Wait -NoNewWindow -ArgumentList "/c", $rosdepInstall
+$p = Start-Process -PassThru -FilePath "$env:comspec" -Wait -NoNewWindow -ArgumentList "/c", $rosdepInstall
 If($p.Exitcode -ne 0)
 {
   Throw "rosdepInstall.bat failed."
