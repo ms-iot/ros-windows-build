@@ -20,10 +20,6 @@
     uri: https://github.com/ms-iot/industrial_core.git
     version: init_windows
 - git:
-    local-name: interactive_markers
-    uri: https://github.com/ms-iot/interactive_markers.git
-    version: init_windows
-- git:
     local-name: joystick_drivers
     uri: https://github.com/ms-iot/joystick_drivers.git
     version: init_windows
