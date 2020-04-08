@@ -18,6 +18,7 @@ jobs:
     BUILD_TOOL_PACKAGE: 'ros-colcon-tools'
     BUILD_TOOL_PACKAGE_VERSION: '0.0.1.1905240527'
     PYTHON_LOCATION: 'c:\opt\python37amd64'
+    VCPKG_ROOT: 'c:\opt\vcpkg'
     ROS_PYTHON_VERSION: '3'
     ROS_DISTRO: 'crystal'
     ROS_ETC_DIR: 'c:\opt\ros\crystal\x64\etc\ros'

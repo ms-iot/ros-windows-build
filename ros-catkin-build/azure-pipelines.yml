@@ -59,6 +59,7 @@ jobs:
     BUILD_TOOL_PACKAGE: 'ros-catkin-tools'
     BUILD_TOOL_PACKAGE_VERSION: '0.0.1.1903221831'
     PYTHON_LOCATION: 'c:\opt\python27amd64'
+    VCPKG_ROOT: 'c:\opt\vcpkg'
     skipComponentGovernanceDetection: true
   steps:
   - template: ..\common\agent-clean.yml
