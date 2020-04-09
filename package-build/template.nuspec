@@ -10,6 +10,7 @@
     <description>$name$</description>
     <dependencies>
       <dependency id="$build_tools$" version="$build_tools_version$" />
+      <dependency id="ros-vcpkg" version="2018.11.23.1906112226" />
     </dependencies>
   </metadata>
   <files>
