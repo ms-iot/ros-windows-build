@@ -7,6 +7,9 @@ steps:
   inputs:
     artifactName: 'package-build-drop-prerelease'
 - script: |
+    rd /s /q %VCPKG_INSTALLATION_ROOT%
+  displayName: Remove extra tools from the environment
+- script: |
     choco sources add -n=roswin-prerelease -s %System_ArtifactsDirectory% --priority 1
     choco sources add -n=roswin -s https://roswin.azurewebsites.net/api/v2/ --priority 2
   displayName: Configure Chocolatey sources

@@ -26,8 +26,13 @@ if not defined ROS_PYTHON_VERSION (
     exit 1
 )
 
+if not defined VCPKG_ROOT (
+    echo VCPKG_ROOT should be defined. 1>&2
+    exit 1
+)
+
 :: use Python from ROS installation
-set PATH=%PYTHONHOME%;%PYTHONHOME%\Scripts;%PATH%
+set PATH=%PYTHONHOME%;%PYTHONHOME%\Scripts;%VCPKG_ROOT%;%PATH%
 set PYTHONPATH=
 
 :: install ROS system dependencies
