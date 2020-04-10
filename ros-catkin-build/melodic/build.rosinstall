@@ -1,7 +1,11 @@
-# override by ms-iot
+# override by ms-iot (ROS 1 essential)
 - git:
-    local-name: abseil-cpp
-    uri: https://github.com/ms-iot/abseil-cpp.git
+    local-name: diagnostics
+    uri: https://github.com/ms-iot/diagnostics.git
+    version: init_windows
+- git:
+    local-name: pluginlib
+    uri: https://github.com/ms-iot/pluginlib.git
     version: init_windows
 - git:
     local-name: geometry
@@ -16,6 +20,16 @@
     uri: https://github.com/ms-iot/image_common.git
     version: init_windows
 - git:
+    local-name: gazebo_ros_pkgs
+    uri: https://github.com/ms-iot/gazebo_ros_pkgs.git
+    version: melodic-devel_patch
+
+# override by ms-iot (community packages)
+- git:
+    local-name: abseil-cpp
+    uri: https://github.com/ms-iot/abseil-cpp.git
+    version: init_windows
+- git:
     local-name: industrial_core
     uri: https://github.com/ms-iot/industrial_core.git
     version: init_windows
@@ -28,10 +42,6 @@
     uri: https://github.com/ms-iot/moveit.git
     version: windows_fix_melodic
 - git:
-    local-name: pluginlib
-    uri: https://github.com/ms-iot/pluginlib.git
-    version: init_windows
-- git:
     local-name: robotiq
     uri: https://github.com/ms-iot/robotiq
     version: init_windows
@@ -40,21 +50,15 @@
     uri: https://github.com/ms-iot/descartes
     version: init_windows
 - git:
-    local-name: msft_ros_pkgs
-    uri: https://github.com/ms-iot/msft_ros_pkgs
-    version: master
-- git:
-    local-name: gazebo_ros_pkgs
-    uri: https://github.com/ms-iot/gazebo_ros_pkgs.git
-    version: melodic-devel_patch
-- git:
-    local-name: diagnostics
-    uri: https://github.com/ms-iot/diagnostics.git
-    version: init_windows
-- git:
     local-name: soem
     uri: https://github.com/ms-iot/soem.git
     version: init_windows
+
+# override by ms-iot (Windows Installation)
+- git:
+    local-name: msft_ros_pkgs
+    uri: https://github.com/ms-iot/msft_ros_pkgs
+    version: master
 
 # override to workaround build issues
 - git:
