@@ -11,6 +11,8 @@
     <dependencies>
       <dependency id="$build_tools$" version="$build_tools_version$" />
       <dependency id="ros-vcpkg" version="2018.11.23.1906112226" />
+      <dependency id="vcredist2010" version="10.0.40219.2" />
+      <dependency id="vcredist140" version="14.25.28508.3" />
     </dependencies>
   </metadata>
   <files>
