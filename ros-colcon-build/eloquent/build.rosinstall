@@ -3,3 +3,7 @@
     local-name: fastrtps
     uri: https://github.com/eProsima/Fast-RTPS.git
     version: 1.9.x
+- git:
+    local-name: geometry2
+    uri: https://github.com/ms-iot/geometry2-1.git
+    version: eloquent-windows
