@@ -10,10 +10,8 @@ steps:
     rd /s /q %VCPKG_INSTALLATION_ROOT%
   displayName: Remove extra tools from the environment
 - script: |
-    choco source disable -n=chocolatey
     choco sources add -n=roswin-prerelease -s %System_ArtifactsDirectory% --priority 1
     choco sources add -n=roswin -s https://roswin.azurewebsites.net/api/v2/ --priority 2
-    choco sources add -n=default -s https://chocolatey.org/api/v2/ --priority 3
   displayName: Configure Chocolatey sources
 - script: |
     choco install ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE% -y
