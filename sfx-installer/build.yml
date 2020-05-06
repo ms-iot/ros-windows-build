@@ -13,6 +13,9 @@ steps:
     choco sources add -n=roswin -s https://roswin.azurewebsites.net/api/v2/ --priority 2
   displayName: Configure Chocolatey sources
 - script: |
+    choco install libjpeg-turbo --version 1.5.3.1809242322
+  displayName: Preinstall libjpeg-turbo
+- script: |
     choco install ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE% -y --pre
   displayName: Install Chocolatey packages
 - script: |
