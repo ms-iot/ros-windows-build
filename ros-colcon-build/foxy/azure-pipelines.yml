@@ -25,7 +25,7 @@ jobs:
   strategy:
     matrix:
       foxy-ALL:
-        ROSWIN_PACKAGE_SKIP: 'ros_workspace librealsense2'
+        ROSWIN_PACKAGE_SKIP: 'rttest tlsf tlsf_cpp pendulum_control ros_workspace librealsense2'
   steps:
   - template: ..\..\common\agent-clean.yml
   - template: ..\common\checkout.yml

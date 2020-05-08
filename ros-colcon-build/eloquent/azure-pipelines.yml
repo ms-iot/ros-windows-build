@@ -15,6 +15,7 @@ jobs:
     ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
     ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/eloquent/x64'
     ROSWIN_ADDITIONAL_PACKAGE: ''
+    ROSWIN_PACKAGE_SKIP: 'rttest tlsf tlsf_cpp pendulum_control'
     ROS_PYTHON_VERSION: '3'
     ROS_DISTRO: 'eloquent'
     ROS_ETC_DIR: 'c:\opt\ros\eloquent\x64\etc\ros'
