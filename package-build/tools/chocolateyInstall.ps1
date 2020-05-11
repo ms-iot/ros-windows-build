@@ -18,6 +18,10 @@ $migrationArray = @(
   "rqt_reconfigure-0.5.1-py2.7.egg-info"
 )
 
+$vcpkgInstall = Join-Path $toolsDir 'vcpkgInstall.ps1'
+Invoke-Expression "$vcpkgInstall"
+
+Write-Host 'running migration...'
 # As part of a noetic migration, these have been changed to directories. 
 # During unpacking, chocolatey will see this as an error.
 
