@@ -4,10 +4,12 @@
     uri: https://github.com/eProsima/Fast-RTPS.git
     version: v1.8.0
 - git:
-    local-name: ros_rosdeps
-    uri: https://github.com/seanyen/ros_rosdeps.git
-    version: master
-- git:
     local-name: rviz
     uri: https://github.com/ms-iot/rviz.git
     version: dashing_patch
+
+# override by ms-iot (Windows Installation)
+- git:
+    local-name: msft_ros_pkgs
+    uri: https://github.com/ms-iot/msft_ros_pkgs
+    version: master
