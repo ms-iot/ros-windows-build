@@ -10,11 +10,13 @@ New-Item -ItemType Directory -Path $RootDir -Force | Out-Null
 Write-Host 'Deploying vcpkg...'
 if (-Not (Test-Path -Path "$InstallDir\vcpkg.exe" -PathType Leaf)) {
   if (-Not (Test-Path -Path $InstallDir -PathType Container)) {
-    git clone --depth=1 $Uri $InstallDir -q -b $VcpkgVersion
+    git clone --depth=1 $Uri $InstallDir -q -b $VcpkgVersion 2>&1 | Out-null
     Invoke-Expression "$InstallDir\bootstrap-vcpkg.bat"
   } else {
     throw "remove $InstallDir and reinstall again."
   }
+} else {
+  Write-Host 'Vcpkg.exe is found. Skip deploying vcpkg...'
 }
 
 Write-Host 'Validating vcpkg...'
