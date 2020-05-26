@@ -3,3 +3,7 @@
     local-name: ros_comm
     uri: https://github.com/ms-iot/ros_comm.git
     version: windows/noetic-devel
+- git:
+    local-name: geometry
+    uri: https://github.com/ms-iot/geometry.git
+    version: windows/noetic-devel
