@@ -1,1 +1,5 @@
 # override by ms-iot
+- git:
+    local-name: ros_comm
+    uri: https://github.com/ms-iot/ros_comm.git
+    version: windows/noetic-devel
