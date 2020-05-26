@@ -13,6 +13,7 @@ jobs:
     ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/rosdep/sources.list.d/10-ms-iot.list'
     ROSWIN_METAPACKAGE: 'ALL'
     ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
+    ROSWIN_PACKAGE_SKIP: 'stage stage_ros'
     BUILD_TOOL_PACKAGE: 'ros-colcon-tools'
     BUILD_TOOL_PACKAGE_VERSION: '0.0.1.1905240527'
     PYTHON_LOCATION: 'c:\opt\python37amd64'
@@ -23,8 +24,8 @@ jobs:
     ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/noetic/x64'
   strategy:
     matrix:
-      noetic-ros_tutorials:
-        ROSWIN_METAPACKAGE: 'ros_tutorials'
+      noetic-desktop_full:
+        ROSWIN_METAPACKAGE: 'desktop_full'
   steps:
   - template: ..\..\common\agent-clean.yml
   - template: ..\common\checkout.yml
@@ -34,9 +35,9 @@ jobs:
   dependsOn: Build
   strategy:
     matrix:
-      noetic-ALL:
+      noetic-desktop_full:
         ROS_DISTRO: 'noetic'
-        ROSWIN_METAPACKAGE: 'ros_tutorials'
+        ROSWIN_METAPACKAGE: 'desktop_full'
   timeoutInMinutes: 300
   pool:
     vmImage: 'windows-2019'
