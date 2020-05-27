@@ -1,1 +1,13 @@
 # override by ms-iot
+- git:
+    local-name: ros_comm
+    uri: https://github.com/ms-iot/ros_comm.git
+    version: windows/noetic-devel
+- git:
+    local-name: geometry
+    uri: https://github.com/ms-iot/geometry.git
+    version: windows/noetic-devel
+- git:
+    local-name: vision_opencv
+    uri: https://github.com/ms-iot/vision_opencv.git
+    version: windows/noetic
