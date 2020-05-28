@@ -11,3 +11,13 @@
     local-name: vision_opencv
     uri: https://github.com/ms-iot/vision_opencv.git
     version: windows/noetic
+- git:
+    local-name: rviz
+    uri: https://github.com/ms-iot/rviz.git
+    version: windows/noetic-devel
+
+# override by ms-iot (Windows Installation)
+- git:
+    local-name: msft_ros_pkgs
+    uri: https://github.com/ms-iot/msft_ros_pkgs
+    version: master
