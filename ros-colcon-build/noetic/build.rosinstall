@@ -11,6 +11,14 @@
     local-name: rviz
     uri: https://github.com/ms-iot/rviz.git
     version: windows/noetic-devel
+- git:
+    local-name: image_pipeline
+    uri: https://github.com/ms-iot/image_pipeline.git
+    version: windows/noetic
+- git:
+    local-name: gazebo_ros_pkgs
+    uri: https://github.com/ms-iot/gazebo_ros_pkgs.git
+    version: windows/noetic-devel
 
 # override by ms-iot (Windows Installation)
 - git:
