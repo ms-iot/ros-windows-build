@@ -23,10 +23,6 @@
     local-name: gazebo_ros_pkgs
     uri: https://github.com/ms-iot/gazebo_ros_pkgs.git
     version: melodic-devel_patch
-- git:
-    local-name: roscpp_core
-    uri: https://github.com/ms-iot/roscpp_core.git
-    version: windows/melodic-devel
 
 # override by ms-iot (community packages)
 - git:
