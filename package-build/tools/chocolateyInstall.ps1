@@ -15,7 +15,9 @@ $migrationArray = @(
   "rqt_moveit-0.5.7-py2.7.egg-info",
   "rqt_robot_monitor-0.5.9-py2.7.egg-info",
   "rqt_rviz-0.6.0-py2.7.egg-info",
-  "rqt_reconfigure-0.5.1-py2.7.egg-info"
+  "rqt_reconfigure-0.5.1-py2.7.egg-info",
+  "sensor_msgs-1.12.7-py2.7.egg-info",
+  "gennodejs-2.0.1-py2.7.egg-info"
 )
 
 $vcpkgInstall = Join-Path $toolsDir 'vcpkgInstall.ps1'
