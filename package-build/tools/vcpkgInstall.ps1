@@ -13,7 +13,11 @@ try {
     if (-Not (Test-Path -Path $InstallDir -PathType Container)) {
       $Env:GIT_REDIRECT_STDERR="2>&1"
       git clone --depth=1 $Uri $InstallDir -q -b $VcpkgVersion | Out-null
-      Invoke-Expression "$InstallDir\bootstrap-vcpkg.bat"
+      # Chocolatey bloats %PATH% by 3x.
+      # It increases the odd running over the environment value size limit.
+      # So we skip the bootstrap-vcpkg.bat and invoke the powershell one to
+      # avoid that.
+      Invoke-Expression "$InstallDir\scripts\bootstrap.ps1"
     } else {
       throw "Found incomplete Vcpkg installation. Remove $InstallDir and reinstall again."
     }
