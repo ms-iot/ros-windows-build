@@ -6,6 +6,9 @@ echo set "PYTHONHOME=%PYTHON_LOCATION%" >> tools\setup.bat
 echo set "ROS_PYTHON_VERSION=%ROS_PYTHON_VERSION%" >> tools\setup.bat
 echo set "VCPKG_ROOT=%VCPKG_ROOT%" >> tools\setup.bat
 
+:: disable USER_SITE to avoid packages conflicts
+echo set "PYTHONNOUSERSITE=1" >> tools\setup.bat
+
 :: create Chocolatey packages.
 copy template.nuspec ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE%.nuspec
 md output
