@@ -64,7 +64,7 @@
 - git:
     local-name: rviz
     uri: https://github.com/ros-visualization/rviz.git
-    version: 1.13.11
+    version: windows/1.13.12
 - git:
     local-name: eigenpy
     uri: https://github.com/stack-of-tasks/eigenpy.git
@@ -81,9 +81,9 @@
     version: melodic-devel
 - git:
     local-name: cartographer_ros
-    uri: https://github.com/googlecartographer/cartographer_ros.git
+    uri: https://github.com/cartographer-project/cartographer_ros.git
     version: master
 - git:
     local-name: cartographer
-    uri: https://github.com/googlecartographer/cartographer.git
-    version: master
+    uri: https://github.com/ms-iot/cartographer.git
+    version: windows/master
