@@ -63,7 +63,7 @@
 # override to workaround build issues
 - git:
     local-name: rviz
-    uri: https://github.com/ros-visualization/rviz.git
+    uri: https://github.com/ms-iot/rviz.git
     version: windows/1.13.12
 - git:
     local-name: eigenpy
