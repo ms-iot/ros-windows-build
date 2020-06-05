@@ -6,6 +6,9 @@ steps:
     choco upgrade -y ros-catkin-tools
     choco upgrade -y ros-vcpkg
   displayName: Install catkin tools
+- powershell: |
+    .\package-build\tools\vcpkgInstall.ps1
+  displayName: Install Vcpkg tools
 - script: |
     call "setup.bat"
     md c:\catkin_ws\src

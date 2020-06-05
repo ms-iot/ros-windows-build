@@ -1,6 +1,6 @@
 @echo off
 set PYTHONHOME=C:\opt\python27amd64\
-set PATH=C:\opt\python27amd64\;C:\opt\python27amd64\Scripts;%PATH%
+set PATH=C:\opt\python27amd64\;C:\opt\python27amd64\Scripts;%VCPKG_ROOT%;%PATH%
 set PYTHONPATH=
 
 :: unset Boost override
