@@ -22,7 +22,7 @@ try
     if (-Not (Test-Path -Path $InstallDir -PathType Container))
     {
       $Env:GIT_REDIRECT_STDERR="2>&1"
-      git clone --depth=1 $Uri $InstallDir -q -b $VcpkgVersion | Out-Null
+      git clone $Uri $InstallDir -q -b $VcpkgVersion | Out-Null
       & "$InstallDir\bootstrap-vcpkg.bat"
     }
     else
@@ -46,6 +46,7 @@ try
 
     Write-Host 'Pulling vcpkg ...'
     $Env:GIT_REDIRECT_STDERR="2>&1"
+    & git "--git-dir=$InstallDir\.git" "--work-tree=$InstallDir" fetch
     & git "--git-dir=$InstallDir\.git" "--work-tree=$InstallDir" checkout $VcpkgVersion
 
     Write-Host 'Bootstraping vcpkg ...'
