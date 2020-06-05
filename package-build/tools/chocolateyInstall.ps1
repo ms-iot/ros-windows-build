@@ -20,6 +20,9 @@ $migrationArray = @(
   "gennodejs-2.0.1-py2.7.egg-info"
 )
 
+$checkEnvironment = Join-Path $toolsDir 'checkEnvironment.ps1'
+Invoke-Expression "$checkEnvironment"
+
 $vcpkgInstall = Join-Path $toolsDir 'vcpkgInstall.ps1'
 Invoke-Expression "$vcpkgInstall"
 
