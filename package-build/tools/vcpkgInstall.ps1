@@ -45,6 +45,7 @@ try
     }
 
     Write-Host 'Pulling vcpkg ...'
+    $Env:GIT_REDIRECT_STDERR="2>&1"
     & git "--git-dir=$InstallDir\.git" "--work-tree=$InstallDir" checkout $VcpkgVersion
 
     Write-Host 'Bootstraping vcpkg ...'

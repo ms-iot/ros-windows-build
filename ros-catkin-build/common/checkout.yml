@@ -4,7 +4,6 @@ steps:
   displayName: Configure Chocolatey sources
 - script: |
     choco upgrade -y ros-catkin-tools
-    choco upgrade -y ros-vcpkg
   displayName: Install catkin tools
 - powershell: |
     .\package-build\tools\vcpkgInstall.ps1
