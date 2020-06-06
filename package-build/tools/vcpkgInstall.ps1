@@ -12,7 +12,7 @@ try
   # shadow the Vcpkg environment variables which could break the deployment.
   if (Test-Path env:VCPKG_ROOT)
   {
-    Write-Warning "%VCPKG_ROOT% is defined. Removing from current session."
+    Write-Host "%VCPKG_ROOT% is detected."
     Remove-Item env:VCPKG_ROOT
   }
 
@@ -39,8 +39,8 @@ try
     if (-not ([string]::IsNullOrEmpty($gitStatus)))
     {
       Write-Warning $gitStatus
-      Write-Warning "Uncommitted changes are found."
-      Write-Warning "Revert or commit the changes and retry again."
+      Write-Warning "Vcpkg cannot be upgraded because there are changes in the repository."
+      Write-Warning "Please commit them or revert them, then restart the ROS installation."
       throw "Uncommitted changes are found."
     }
 

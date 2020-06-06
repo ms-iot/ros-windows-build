@@ -7,16 +7,19 @@ Write-Host 'Checking environment...'
 $PathLen = $Env:PATH.Length
 $MaxPathLen = 8191
 if ($PathLen -gt $MaxPathLen) {
-    Write-Warning "The length of %PATH% is over $MaxPathLen."
-    Write-Warning "Reduce the %PATH% length and retry again."
-    throw "The length of %PATH% is too long."
+    Write-Warning "Windows has a path length limitation."
+    Write-Warning "Your system path is quite long, which prevents ROS from installing or starting correctly."
+    Write-Warning "Please reduce the size of your system path though the Windows System Advanced Control panel."
+    throw "The length of %PATH% is over $MaxPathLen."
 }
 
 # Check git existence
 $gitInstalled = Get-Command -ErrorAction SilentlyContinue git
 if (-not $gitInstalled) {
-    Write-Warning "Git is required to proceed."
-    Write-Warning "Make sure Git is installed and retry again."
+    Write-Warning "To install ROS on this system, Git source control command line interface is required."
+    Write-Warning "At the moment, it is not detected."
+    Write-Warning "This is either because it hasn't been installed in a previous step, or this environment has not been updated to find it."
+    Write-Warning "Please reinstall using 'choco install git -y' or if you have done that, restart this command window."
     throw "Git is not found."
 }
 
