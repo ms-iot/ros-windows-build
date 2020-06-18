@@ -1,8 +1,12 @@
 # override by ms-iot
 - git:
     local-name: tinyxml2_vendor
-    uri: https://github.com/seanyen/tinyxml2_vendor.git
-    version: seanyen/foxy
+    uri: https://github.com/ms-iot/tinyxml2_vendor.git
+    version: windows/foxy
+- git:
+    local-name: rviz
+    uri: https://github.com/ms-iot/rviz.git
+    version: windows/foxy
 
 # override by ms-iot (Windows Installation)
 - git:
