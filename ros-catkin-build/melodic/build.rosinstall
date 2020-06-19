@@ -2,7 +2,7 @@
 - git:
     local-name: cmake_modules
     uri: https://github.com/ms-iot/cmake_modules.git
-    version: windows//0.4-devel
+    version: windows/0.4-devel
 - git:
     local-name: diagnostics
     uri: https://github.com/ms-iot/diagnostics.git
