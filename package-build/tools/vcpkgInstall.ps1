@@ -3,7 +3,7 @@ $ErrorActionPreference = 'Stop';
 $Uri = 'https://github.com/Microsoft/vcpkg.git'
 $RootDir = 'C:\opt'
 $InstallDir = "$RootDir\vcpkg"
-$VcpkgVersion = "2020.04"
+$VcpkgVersion = "2020.06"
 
 try
 {
