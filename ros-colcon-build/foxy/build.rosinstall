@@ -1,3 +1,17 @@
+# override by ms-iot
+- git:
+    local-name: tinyxml2_vendor
+    uri: https://github.com/ms-iot/tinyxml2_vendor.git
+    version: windows/foxy
+- git:
+    local-name: rviz
+    uri: https://github.com/ms-iot/rviz.git
+    version: windows/foxy
+- git:
+    local-name: pcl_msgs
+    uri: https://github.com/ros-perception/pcl_msgs.git
+    version: ros2
+
 # override by ms-iot (Windows Installation)
 - git:
     local-name: msft_ros_pkgs

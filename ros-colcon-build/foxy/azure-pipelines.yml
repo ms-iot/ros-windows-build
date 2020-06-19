@@ -15,6 +15,7 @@ jobs:
     ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
     ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/foxy/x64'
     ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros2_env'
+    ROSWIN_PACKAGE_SKIP: 'rttest tlsf tlsf_cpp pendulum_control'
     ROS_PYTHON_VERSION: '3'
     ROS_DISTRO: 'foxy'
     ROS_ETC_DIR: 'c:\opt\ros\foxy\x64\etc\ros'
@@ -24,8 +25,8 @@ jobs:
     VCPKG_ROOT: 'c:\opt\vcpkg'
   strategy:
     matrix:
-      foxy-ALL:
-        ROSWIN_PACKAGE_SKIP: 'rttest tlsf tlsf_cpp pendulum_control ros_workspace librealsense2'
+      foxy-desktop:
+        ROSWIN_METAPACKAGE: 'desktop'
   steps:
   - template: ..\..\common\agent-clean.yml
   - template: ..\common\checkout.yml
@@ -36,9 +37,9 @@ jobs:
   dependsOn: Build
   strategy:
     matrix:
-      foxy-ALL:
+      foxy-desktop:
         ROS_DISTRO: 'foxy'
-        ROSWIN_METAPACKAGE: 'ALL'
+        ROSWIN_METAPACKAGE: 'desktop'
   timeoutInMinutes: 300
   pool:
     vmImage: 'windows-2019'
