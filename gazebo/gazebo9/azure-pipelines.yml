@@ -15,53 +15,58 @@ jobs:
   steps:
   - script: |
       choco sources add -n=roswin -s https://roswin.azurewebsites.net/api/v2/ --priority 1
-      choco upgrade hg 7zip
+      choco upgrade 7zip
       choco upgrade pkg-config boost freeimage protobuf qt5-sdk dlfcn-win32 libcurl ogre zeromq cppzmq tbb qwt
     displayName: Install system dependencies
   - script: |
-      set "PATH=C:\Program Files\Mercurial;%PATH%"
-      hg clone https://bitbucket.org/ignitionrobotics/ign-cmake -r ign-cmake0
-      hg clone https://bitbucket.org/ignitionrobotics/ign-math -r ign-math4
-      hg clone https://bitbucket.org/ignitionrobotics/ign-msgs -r ign-msgs1
-      hg clone https://bitbucket.org/ignitionrobotics/ign-tools -r ign-tools0
-      hg clone https://bitbucket.org/ignitionrobotics/ign-transport -r ign-transport4
-      hg clone https://bitbucket.org/osrf/sdformat -r sdformat6_6.1.0_windows
-      hg clone https://bitbucket.org/osrf/gazebo -r gazebo9
+      git clone https://github.com/ignitionrobotics/ign-cmake -b ign-cmake0
+      git clone https://github.com/ignitionrobotics/ign-math -b ign-math4
+      git clone https://github.com/ignitionrobotics/ign-msgs -b ign-msgs1
+      git clone https://github.com/ignitionrobotics/ign-tools -b ign-tools0
+      git clone https://github.com/ignitionrobotics/ign-transport -b ign-transport4
+      git clone https://github.com/osrf/sdformat -b sdf6
+      git clone https://github.com/ms-iot/gazebo -b windows/gazebo9_9.13.1
     displayName: Get sources
     workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
   - script: |
-      call "build.bat" ign-cmake "-DBUILD_TESTING:BOOL=False -DCMAKE_VERBOSE_MAKEFILE=ON"
+      call "build.bat" ign-cmake
     displayName: ign-cmake
     workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
   - script: |
-      call "build.bat" ign-math "-DBUILD_TESTING:BOOL=False -DCMAKE_VERBOSE_MAKEFILE=ON"
+      call "build.bat" ign-math
     displayName: ign-math
     workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
   - script: |
-      call "build.bat" ign-tools "-DBUILD_TESTING:BOOL=False -DCMAKE_VERBOSE_MAKEFILE=ON"
+      call "build.bat" ign-tools
     displayName: ign-tools
     workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
   - script: |
-      set PATH=C:\opt\rosdeps\x64\tools\protobuf;%PATH%
-      call "build.bat" ign-msgs "-DBUILD_TESTING:BOOL=False -DCMAKE_VERBOSE_MAKEFILE=ON"
+      call "build.bat" ign-msgs
     displayName: ign-msgs
     workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
   - script: |
-      call "build.bat" ign-transport "-DBUILD_TESTING:BOOL=False -DCMAKE_VERBOSE_MAKEFILE=ON"
+      call "build.bat" ign-transport
     displayName: ign-transport
     workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
   - script: |
-      call "build.bat" sdformat "-DBUILD_TESTING:BOOL=False -DCMAKE_VERBOSE_MAKEFILE=ON"
+      call "build.bat" sdformat
     displayName: sdformat
     workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
   - script: |
-      set PATH=C:\opt\rosdeps\x64\tools\protobuf;%PATH%
-      call "build.bat" gazebo "--debug-output -DCMAKE_VERBOSE_MAKEFILE=ON"
+      call "build.bat" gazebo
     displayName: gazebo
     workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
   - script: |
       powershell.exe -noexit -file "copy_binaries.ps1"
     displayName: Copy binaries
+    workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
+  - script: |
+      mkdir %Build_ArtifactStagingDirectory%\output
+      mkdir %Build_ArtifactStagingDirectory%\output-pre
+      pushd spec
+      choco pack --trace --out %Build_ArtifactStagingDirectory%\output gazebo9.nuspec version=9.13.1
+      choco pack --trace --out %Build_ArtifactStagingDirectory%\output-pre gazebo9.nuspec version=9.13.1-pre
+    displayName: Packaging
     workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
   - task: PublishBuildArtifacts@1
     inputs:
