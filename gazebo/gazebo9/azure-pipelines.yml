@@ -19,7 +19,7 @@ jobs:
       choco upgrade pkg-config boost freeimage protobuf qt5-sdk dlfcn-win32 libcurl ogre zeromq cppzmq tbb qwt
     displayName: Install system dependencies
   - script: |
-      git clone https://github.com/ignitionrobotics/ign-cmake -b ign-cmake0
+      git clone https://github.com/ms-iot/ign-cmake -b windows/ign-cmake0
       git clone https://github.com/ignitionrobotics/ign-math -b ign-math4
       git clone https://github.com/ignitionrobotics/ign-msgs -b ign-msgs1
       git clone https://github.com/ignitionrobotics/ign-tools -b ign-tools0
