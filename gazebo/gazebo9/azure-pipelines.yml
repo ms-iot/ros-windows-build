@@ -65,8 +65,8 @@ jobs:
       mkdir %Build_ArtifactStagingDirectory%\output
       mkdir %Build_ArtifactStagingDirectory%\output-pre
       pushd spec
-      choco pack --trace --out %Build_ArtifactStagingDirectory%\output gazebo9.nuspec version=9.13.1
-      choco pack --trace --out %Build_ArtifactStagingDirectory%\output-pre gazebo9.nuspec version=9.13.1-pre
+      choco pack --trace --out %Build_ArtifactStagingDirectory%\output gazebo9.nuspec version=9.13.1.1
+      choco pack --trace --out %Build_ArtifactStagingDirectory%\output-pre gazebo9.nuspec version=9.13.1.1-pre
     displayName: Packaging
     workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
   - task: PublishBuildArtifacts@1
