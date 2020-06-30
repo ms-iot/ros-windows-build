@@ -57,6 +57,7 @@ jobs:
     displayName: gazebo
     workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
   - script: |
+      del /f %GAZEBO_INSTALL_PREFIX%\include\sdformat-6.2\tinyxml.h
       powershell.exe -noexit -file "copy_binaries.ps1"
     displayName: Copy binaries
     workingDirectory: $(GAZEBO_BUILD_WORKING_DIRECTORY)
