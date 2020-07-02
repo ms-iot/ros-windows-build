@@ -16,6 +16,7 @@ python src\catkin\bin\catkin_make_isolated.py ^
     -DCMAKE_BUILD_TYPE=RelWithDebInfo ^
     -DCMAKE_PREFIX_PATH="%ROSWIN_CMAKE_PREFIX_PATH%" ^
     -DCMAKE_VERBOSE_MAKEFILE=ON ^
+    -DCMAKE_PROGRAM_PATH="%ROSWIN_CMAKE_PROGRAM_PATH%" ^
     -DPYTHON_VERSION=2.7 ^
     -DPYTHON_EXECUTABLE=C:\opt\python27amd64\python.exe ^
     -DPYTHON_LIBRARIES=C:\opt\python27amd64\Libs ^
