@@ -5,6 +5,7 @@ variables:
   ROSWIN_CATKIN_BUILD_WORKING_DIRECTORY: $(Build.SourcesDirectory)\ros-catkin-build
   ROSWIN_ADDITIONAL_ROSINSTALL: build.rosinstall
   ROSWIN_CMAKE_PREFIX_PATH: 'C:/opt/ros/melodic/x64;C:/opt/rosdeps/x64;C:/vcpkg/installed/x64-windows'
+  ROSWIN_CMAKE_PROGRAM_PATH: 'C:\opt\rosdeps\x64\tools\protobuf'
 
 jobs:
 - job: Build

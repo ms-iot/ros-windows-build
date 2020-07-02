@@ -15,6 +15,8 @@ jobs:
     ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
     ROSWIN_PACKAGE_SKIP: 'stage stage_ros'
     ROSWIN_ADDITIONAL_PACKAGE: 'msft_colcon_env'
+    ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/noetic/x64'
+    ROSWIN_CMAKE_PROGRAM_PATH: 'C:\opt\rosdeps\x64\tools\protobuf'
     BUILD_TOOL_PACKAGE: 'ros-colcon-tools'
     BUILD_TOOL_PACKAGE_VERSION: '0.0.1.1905240527'
     PYTHON_LOCATION: 'c:\opt\python37amd64'
@@ -22,7 +24,6 @@ jobs:
     ROS_PYTHON_VERSION: '3'
     ROS_DISTRO: 'noetic'
     ROS_ETC_DIR: 'c:\opt\ros\noetic\x64\etc\ros'
-    ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/noetic/x64'
   strategy:
     matrix:
       noetic-desktop_full:

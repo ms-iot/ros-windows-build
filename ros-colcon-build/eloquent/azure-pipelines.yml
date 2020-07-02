@@ -14,6 +14,7 @@ jobs:
     ROSWIN_METAPACKAGE: 'ALL'
     ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
     ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/eloquent/x64'
+    ROSWIN_CMAKE_PROGRAM_PATH: 'C:\opt\rosdeps\x64\tools\protobuf'
     ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros2_env'
     ROSWIN_PACKAGE_SKIP: 'rttest tlsf tlsf_cpp pendulum_control'
     ROS_PYTHON_VERSION: '3'

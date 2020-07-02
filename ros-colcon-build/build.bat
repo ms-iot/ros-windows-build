@@ -34,6 +34,7 @@ colcon --log-level info build ^
        --cmake-args ^
         -DCMAKE_BUILD_TYPE=Release ^
         -DCMAKE_VERBOSE_MAKEFILE=ON ^
+        -DCMAKE_PROGRAM_PATH="%ROSWIN_CMAKE_PROGRAM_PATH%" ^
         -DPYTHON_VERSION=3.7 ^
         -DPYTHON_EXECUTABLE=C:\opt\python37amd64\python.exe ^
         -DPYTHON_LIBRARIES=C:\opt\python37amd64\Libs
