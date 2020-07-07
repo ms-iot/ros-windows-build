@@ -77,6 +77,10 @@
     local-name: ros_control
     uri: https://github.com/ros-controls/ros_control.git
     version: 4179515f2b5dc6b27d36c8788aa7a94813ebbd4a
+- git:
+    local-name: cartographer_ros
+    uri: https://github.com/cartographer-project/cartographer_ros.git
+    version: bdf8f5921e8e570419c86f56bc8e8a76c764b5e3
 
 # additional packages not yet managed in rosdistro
 - git:
