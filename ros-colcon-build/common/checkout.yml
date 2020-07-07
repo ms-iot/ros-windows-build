@@ -1,6 +1,6 @@
 steps:
 - script: |
-    choco sources add -n=roswin -s https://roswin.azurewebsites.net/api/v2/ --priority 1
+    choco sources add -n=roswin -s https://aka.ms/ros/feed --priority 1
   workingDirectory: $(ROSWIN_COLCON_BUILD_WORKING_DIRECTORY)
   displayName: 'Configure Chocolatey sources'
 - script: |
