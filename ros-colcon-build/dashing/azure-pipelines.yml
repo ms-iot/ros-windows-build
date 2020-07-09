@@ -33,7 +33,7 @@ jobs:
       dashing-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
   steps:
-  - template: ..\..\common\agent-clean.yml
+  - template: ..\..\common\agent-prep.yml
   - template: ..\common\checkout.yml
   - template: ..\common\build.yml
   - template: ..\..\package-build\package-build.yml
