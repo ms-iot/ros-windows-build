@@ -46,7 +46,7 @@ jobs:
       melodic-cartographer_ros:
         ROSWIN_METAPACKAGE: 'cartographer_ros'
         ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros_pkgs cartographer_rviz'
-  timeoutInMinutes: 300
+  timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'
   variables:
@@ -76,7 +76,7 @@ jobs:
       melodic-desktop_full:
         ROS_DISTRO: 'melodic'
         ROSWIN_METAPACKAGE: 'desktop_full'
-  timeoutInMinutes: 300
+  timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'
   variables:
@@ -90,7 +90,7 @@ jobs:
       melodic-desktop_full:
         ROS_DISTRO: 'melodic'
         ROSWIN_METAPACKAGE: 'desktop_full'
-  timeoutInMinutes: 300
+  timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'
   variables:
@@ -104,7 +104,7 @@ jobs:
       melodic-desktop_full:
         ROS_DISTRO: 'melodic'
         ROSWIN_METAPACKAGE: 'desktop_full'
-  timeoutInMinutes: 300
+  timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'
   variables:

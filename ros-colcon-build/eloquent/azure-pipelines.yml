@@ -6,7 +6,7 @@ variables:
 
 jobs:
 - job: Build
-  timeoutInMinutes: 300
+  timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'
   variables:
@@ -45,7 +45,7 @@ jobs:
       eloquent-ros_core:
         ROS_DISTRO: 'eloquent'
         ROSWIN_METAPACKAGE: 'ros_core'
-  timeoutInMinutes: 300
+  timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'
   steps:
@@ -57,7 +57,7 @@ jobs:
       eloquent-desktop:
         ROS_DISTRO: 'eloquent'
         ROSWIN_METAPACKAGE: 'desktop'
-  timeoutInMinutes: 300
+  timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'
   variables:

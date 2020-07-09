@@ -12,7 +12,7 @@ jobs:
     matrix:
       melodic-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
-  timeoutInMinutes: 300
+  timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'
   variables:
