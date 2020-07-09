@@ -6,7 +6,7 @@ variables:
 
 jobs:
 - job: Build
-  timeoutInMinutes: 300
+  timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'
   variables:
@@ -40,7 +40,7 @@ jobs:
       noetic-desktop_full:
         ROS_DISTRO: 'noetic'
         ROSWIN_METAPACKAGE: 'desktop_full'
-  timeoutInMinutes: 300
+  timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'
   steps:

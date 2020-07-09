@@ -9,7 +9,7 @@ jobs:
         repository: 'public/robotics-ros/melodic-desktop_full'
         dockerfile: 'docker/melodic/windowsservercore/desktop-full/dockerfile'
         tags: 'latest-servercore-ltsc2019'
-  timeoutInMinutes: 240
+  timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'
   steps:

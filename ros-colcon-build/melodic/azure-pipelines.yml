@@ -6,7 +6,7 @@ variables:
 
 jobs:
 - job: Build
-  timeoutInMinutes: 300
+  timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'
   variables:
@@ -41,7 +41,7 @@ jobs:
       melodic-ros_core:
         ROS_DISTRO: 'melodic'
         ROSWIN_METAPACKAGE: 'ros_core'
-  timeoutInMinutes: 300
+  timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'
   steps:

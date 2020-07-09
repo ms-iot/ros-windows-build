@@ -9,7 +9,7 @@ variables:
 
 jobs:
 - job: Build
-  timeoutInMinutes: 240
+  timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'
   steps:

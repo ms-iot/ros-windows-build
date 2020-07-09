@@ -4,7 +4,7 @@ pr: none
 
 jobs:
 - job: GarbageCollection
-  timeoutInMinutes: 240
+  timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'
   steps:
