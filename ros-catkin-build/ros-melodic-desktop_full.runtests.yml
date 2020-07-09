@@ -23,6 +23,6 @@ jobs:
     ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
     ROSWIN_PACKAGE_SKIP: 'stage stage_ros'
   steps:
-  - template: ..\common\agent-clean.yml
+  - template: ..\common\agent-prep.yml
   - template: common\checkout.yml
   - template: common\runtests.yml

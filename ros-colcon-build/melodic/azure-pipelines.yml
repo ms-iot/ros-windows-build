@@ -30,7 +30,7 @@ jobs:
         ROS_ETC_DIR: 'c:\opt\ros\melodic\x64\etc\ros'
         ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/melodic/x64'
   steps:
-  - template: ..\..\common\agent-clean.yml
+  - template: ..\..\common\agent-prep.yml
   - template: ..\common\checkout.yml
   - template: ..\common\build.yml
   - template: ..\..\package-build\package-build.yml

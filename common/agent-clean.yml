@@ -1,6 +1,0 @@
-steps:
-- script: |
-    call "common\docker-clean.bat"
-    call "common\remove-unused-toolchains.bat"
-    wmic logicaldisk get size,freespace,caption
-  displayName: 'Reclaim disk space'

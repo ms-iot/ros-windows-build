@@ -13,7 +13,7 @@ jobs:
   pool:
     vmImage: 'windows-2019'
   steps:
-  - template: ..\common\agent-clean.yml
+  - template: ..\common\agent-prep.yml
   - script: |
       rmdir /q /s "C:\Program Files (x86)\Microsoft Visual Studio"
   - script: |

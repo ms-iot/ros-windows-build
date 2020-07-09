@@ -33,7 +33,7 @@ jobs:
       eloquent-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
   steps:
-  - template: ..\..\common\agent-clean.yml
+  - template: ..\..\common\agent-prep.yml
   - template: ..\common\checkout.yml
   - template: ..\common\build.yml
   - template: ..\..\package-build\package-build.yml
@@ -63,5 +63,5 @@ jobs:
   variables:
     skipComponentGovernanceDetection: true
   steps:
-  - template: ..\..\common\agent-clean.yml
+  - template: ..\..\common\agent-prep.yml
   - template: ..\..\sfx-installer\build.yml
