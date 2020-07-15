@@ -1,6 +1,6 @@
 steps:
 - powershell: |
-    choco sources add -n=roswin -s https://aka.ms/ros/feed --priority 1
+    choco sources add -n=roswin -s https://aka.ms/ros/public --priority 1
   displayName: Configure Chocolatey sources
 - script: |
     choco upgrade -y ros-catkin-tools

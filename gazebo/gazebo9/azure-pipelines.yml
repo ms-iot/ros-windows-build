@@ -14,7 +14,7 @@ jobs:
     vmImage: 'windows-2019'
   steps:
   - script: |
-      choco sources add -n=roswin -s https://aka.ms/ros/feed --priority 1
+      choco sources add -n=roswin -s https://aka.ms/ros/public --priority 1
       choco upgrade 7zip
       choco upgrade pkg-config boost freeimage protobuf qt5-sdk dlfcn-win32 libcurl ogre zeromq cppzmq tbb qwt
     displayName: Install system dependencies
