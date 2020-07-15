@@ -10,7 +10,7 @@ steps:
 - script: |
     mkdir c:\opt\chocolatey
     choco sources add -n=roswin-prerelease -s %System_ArtifactsDirectory% --priority 1
-    choco sources add -n=roswin -s https://aka.ms/ros/feed --priority 2
+    choco sources add -n=roswin -s https://aka.ms/ros/public --priority 2
   displayName: Configure Chocolatey sources
 - script: |
     choco install libjpeg-turbo --version 1.5.3.1809242322
