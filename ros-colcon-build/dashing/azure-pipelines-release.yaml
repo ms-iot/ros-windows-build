@@ -1,0 +1,50 @@
+trigger: none
+pr: none
+
+name: 20200722.0.0
+variables:
+  ROSWIN_COLCON_BUILD_WORKING_DIRECTORY: $(Build.SourcesDirectory)\ros-colcon-build
+
+jobs:
+- job: Build
+  timeoutInMinutes: 360
+  pool:
+    vmImage: 'windows-2019'
+  variables:
+    ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/rosdep/sources.list.d/10-ms-iot.list'
+    ROSWIN_METAPACKAGE: 'ALL'
+    ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
+    ROSWIN_CMAKE_INSTALL_PREFIX: 'c:/opt/ros/dashing/x64'
+    ROSWIN_CMAKE_PROGRAM_PATH: 'C:\opt\rosdeps\x64\tools\protobuf'
+    ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros2_env'
+    ROSWIN_PACKAGE_SKIP: 'rttest tlsf tlsf_cpp pendulum_control'
+    ROSWIN_RELEASE_REPO: 'https://raw.githubusercontent.com/ros2/ros2/release-dashing-20200722/ros2.repos'
+    ROS_PYTHON_VERSION: '3'
+    ROS_DISTRO: 'dashing'
+    ROS_ETC_DIR: 'c:\opt\ros\dashing\x64\etc\ros'
+    BUILD_TOOL_PACKAGE: 'ros-colcon-tools'
+    BUILD_TOOL_PACKAGE_VERSION: '0.0.1.1905240527'
+    PYTHON_LOCATION: 'c:\opt\python37amd64'
+    VCPKG_ROOT: 'c:\opt\vcpkg'
+  strategy:
+    matrix:
+      dashing-desktop:
+        ROSWIN_METAPACKAGE: 'desktop'
+  steps:
+  - template: ..\..\common\agent-prep.yml
+  - template: ..\common\checkout.yml
+  - template: ..\common\build.yml
+  - template: ..\..\package-build\package-build.yml
+  - template: ..\common\runtests.yml
+- job: TestInstall
+  dependsOn: Build
+  strategy:
+    matrix:
+      dashing-desktop:
+        ROS_DISTRO: 'dashing'
+        ROSWIN_METAPACKAGE: 'desktop'
+  timeoutInMinutes: 360
+  pool:
+    vmImage: 'windows-2019'
+  steps:
+  - template: ..\..\package-build\package-test.yml
