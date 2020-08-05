@@ -26,10 +26,6 @@ jobs:
     VCPKG_ROOT: 'c:\opt\vcpkg'
   strategy:
     matrix:
-      eloquent-ros_core:
-        ROSWIN_METAPACKAGE: 'ros_core'
-      eloquent-ros_base:
-        ROSWIN_METAPACKAGE: 'ros_base'
       eloquent-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
   steps:
@@ -42,9 +38,9 @@ jobs:
   dependsOn: Build
   strategy:
     matrix:
-      eloquent-ros_core:
+      eloquent-desktop:
         ROS_DISTRO: 'eloquent'
-        ROSWIN_METAPACKAGE: 'ros_core'
+        ROSWIN_METAPACKAGE: 'desktop'
   timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'
