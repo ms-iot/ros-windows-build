@@ -31,7 +31,7 @@ jobs:
         ROSWIN_METAPACKAGE: 'desktop'
       dashing-rel:
         ROSWIN_RELEASE_REPO: 'https://raw.githubusercontent.com/ros2/ros2/release-dashing-20200722/ros2.repos'
-        ROSWIN_BUILDNUMBER: '20200722.0.$(Date:yyyyMMdd)'
+        ROSWIN_BUILDNUMBER: '20200722.0.'$(Date:yyyyMMdd)
         ROSWIN_METAPACKAGE: 'ALL'
         ROSWIN_PACKAGE_SKIP: 'rttest tlsf tlsf_cpp pendulum_control msft_colcon_env msft_ros_env msft_ros_pkgs msft_ros_vcpkg'
   steps:
