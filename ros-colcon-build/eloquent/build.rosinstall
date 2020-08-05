@@ -2,7 +2,11 @@
 - git:
     local-name: fastrtps
     uri: https://github.com/eProsima/Fast-DDS.git
-    version: ros2-eloquent
+    version: v1.9.4
+- git:
+    local-name: foonathan_memory_vendor
+    uri: https://github.com/eProsima/foonathan_memory_vendor.git
+    version: v1.0.0
 
 # override by ms-iot (Windows Installation)
 - git:
