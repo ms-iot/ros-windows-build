@@ -29,7 +29,7 @@ jobs:
   strategy:
     matrix:
       dashing-desktop:
-        ROSWIN_METAPACKAGE: 'desktop'
+        ROSWIN_METAPACKAGE: 'ALL'
   steps:
   # - template: ..\..\common\agent-prep.yml
   - template: ..\common\checkout.yml
