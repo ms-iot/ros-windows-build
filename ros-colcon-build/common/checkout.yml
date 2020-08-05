@@ -26,7 +26,7 @@ steps:
     pushd c:\colcon_ws
     curl %ROSWIN_RELEASE_REPO% -o ros2.repos
     vcs import src < ros2.repos
-    vcs import src < %ROSWIN_COLCON_BUILD_WORKING_DIRECTORY%\%ROS_DISTRO%\build.rosinstall
+    vcs import src < %ROSWIN_COLCON_BUILD_WORKING_DIRECTORY%\%ROS_DISTRO%\rel.rosinstall
   workingDirectory: $(ROSWIN_COLCON_BUILD_WORKING_DIRECTORY)
   displayName: 'Checkout ROS source tree'
   continueOnError: 'true'
