@@ -24,10 +24,15 @@ jobs:
     BUILD_TOOL_PACKAGE_VERSION: '0.0.1.1905240527'
     PYTHON_LOCATION: 'c:\opt\python37amd64'
     VCPKG_ROOT: 'c:\opt\vcpkg'
+    ROSWIN_BUILDNUMBER: $(Build.BuildNumber)
   strategy:
     matrix:
       dashing-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
+      dashing-rel:
+        ROSWIN_RELEASE_REPO: 'https://raw.githubusercontent.com/ros2/ros2/release-dashing-20200722/ros2.repos'
+        ROSWIN_BUILDNUMBER: '20200722.0.0'
+        ROSWIN_METAPACKAGE: 'ALL'
   steps:
   # - template: ..\..\common\agent-prep.yml
   - template: ..\common\checkout.yml
@@ -41,6 +46,9 @@ jobs:
       dashing-desktop:
         ROS_DISTRO: 'dashing'
         ROSWIN_METAPACKAGE: 'desktop'
+      dashing-rel:
+        ROS_DISTRO: 'dashing'
+        ROSWIN_METAPACKAGE: 'rel'
   timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'
