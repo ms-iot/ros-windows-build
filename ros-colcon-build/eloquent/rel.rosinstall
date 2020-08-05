@@ -1,4 +1,12 @@
 # override by ms-iot
+- git:
+    local-name: eProsima/Fast-RTPS
+    uri: https://github.com/eProsima/Fast-DDS.git
+    version: v1.9.4
+- git:
+    local-name: eProsima/foonathan_memory_vendor
+    uri: https://github.com/eProsima/foonathan_memory_vendor.git
+    version: v1.0.0
 
 # override by ms-iot (Windows Installation)
 - git:
