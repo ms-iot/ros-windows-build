@@ -2,7 +2,7 @@
 - git:
     local-name: fastrtps
     uri: https://github.com/eProsima/Fast-DDS.git
-    version: v1.9.4
+    version: ros2-eloquent
 
 # override by ms-iot (Windows Installation)
 - git:
