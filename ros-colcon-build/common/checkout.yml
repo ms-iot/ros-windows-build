@@ -19,6 +19,7 @@ steps:
   workingDirectory: $(ROSWIN_COLCON_BUILD_WORKING_DIRECTORY)
   displayName: 'Checkout ROS source tree'
   continueOnError: 'true'
+  condition: and(succeeded(), eq(variables.ROSWIN_NOT_EXIST, ''))
 - powershell: |
     Invoke-WebRequest -Uri "$env:ROSWIN_ROSDEP_LIST_URI" -OutFile "10-ms-iot.list"
   workingDirectory: $(ROSWIN_COLCON_BUILD_WORKING_DIRECTORY)
