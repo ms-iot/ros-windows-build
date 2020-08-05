@@ -26,10 +26,6 @@ jobs:
     VCPKG_ROOT: 'c:\opt\vcpkg'
   strategy:
     matrix:
-      dashing-ros_core:
-        ROSWIN_METAPACKAGE: 'ros_core'
-      dashing-ros_base:
-        ROSWIN_METAPACKAGE: 'ros_base'
       dashing-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
   steps:

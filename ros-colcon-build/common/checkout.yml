@@ -10,13 +10,12 @@ steps:
 - script: |
     call "setup.bat"
     md c:\colcon_ws\src
-    rosinstall_generator %ROSWIN_METAPACKAGE% --rosdistro %ROS_DISTRO% --deps --upstream-development > build.rosinstall
+    rosinstall_generator %ROSWIN_METAPACKAGE% --rosdistro %ROS_DISTRO% --deps > build.rosinstall
     pushd c:\colcon_ws
     wstool init src
     wstool merge -r -y -t src %ROSWIN_COLCON_BUILD_WORKING_DIRECTORY%\build.rosinstall
     wstool merge -r -y -t src %ROSWIN_COLCON_BUILD_WORKING_DIRECTORY%\%ROS_DISTRO%\build.rosinstall
     wstool update -t src
-    :: vcs import c:\colcon_ws\src < merged.rosinstall
   workingDirectory: $(ROSWIN_COLCON_BUILD_WORKING_DIRECTORY)
   displayName: 'Checkout ROS source tree'
   continueOnError: 'true'
