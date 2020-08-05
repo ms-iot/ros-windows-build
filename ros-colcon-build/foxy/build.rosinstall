@@ -3,10 +3,6 @@
     local-name: tinyxml2_vendor
     uri: https://github.com/ms-iot/tinyxml2_vendor.git
     version: windows/foxy
-- git:
-    local-name: rviz/rviz2
-    uri: https://github.com/ms-iot/rviz.git
-    version: windows/foxy
 
 # override by ms-iot (Windows Installation)
 - git:
