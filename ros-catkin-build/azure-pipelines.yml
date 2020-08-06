@@ -57,6 +57,7 @@ jobs:
     ROSWIN_ROSDEP_LIST_URI: 'https://raw.githubusercontent.com/ms-iot/rosdistro-db/init_windows/rosdep/sources.list.d/10-ms-iot.list'
     ROSWIN_VSTOOL: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
     ROSWIN_PACKAGE_SKIP: 'stage stage_ros'
+    ROSWIN_BUILDNUMBER: $(Build.BuildNumber)
     BUILD_TOOL_PACKAGE: 'ros-catkin-tools'
     BUILD_TOOL_PACKAGE_VERSION: '0.0.1.1903221831'
     PYTHON_LOCATION: 'c:\opt\python27amd64'

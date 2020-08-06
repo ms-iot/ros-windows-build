@@ -17,6 +17,7 @@ jobs:
     ROSWIN_CMAKE_PROGRAM_PATH: 'C:\opt\rosdeps\x64\tools\protobuf'
     ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros2_env'
     ROSWIN_PACKAGE_SKIP: 'rttest tlsf tlsf_cpp pendulum_control'
+    ROSWIN_BUILDNUMBER: $(Build.BuildNumber)
     ROS_PYTHON_VERSION: '3'
     ROS_DISTRO: 'dashing'
     ROS_ETC_DIR: 'c:\opt\ros\dashing\x64\etc\ros'
@@ -28,6 +29,11 @@ jobs:
     matrix:
       dashing-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
+      dashing-rel:
+        ROSWIN_RELEASE_REPO: 'https://raw.githubusercontent.com/ros2/ros2/release-dashing-20200722/ros2.repos'
+        ROSWIN_BUILDNUMBER: '20200722.0.0'
+        ROSWIN_METAPACKAGE: 'ALL'
+        ROSWIN_PACKAGE_SKIP: 'rttest tlsf tlsf_cpp pendulum_control msft_colcon_env msft_ros_env msft_ros_pkgs msft_ros_vcpkg'
   steps:
   - template: ..\..\common\agent-prep.yml
   - template: ..\common\checkout.yml
@@ -41,6 +47,9 @@ jobs:
       dashing-desktop:
         ROS_DISTRO: 'dashing'
         ROSWIN_METAPACKAGE: 'desktop'
+      dashing-rel:
+        ROS_DISTRO: 'dashing'
+        ROSWIN_METAPACKAGE: 'rel'
   timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'
