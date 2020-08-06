@@ -35,8 +35,6 @@ jobs:
         ROSWIN_METAPACKAGE: 'ALL'
         ROSWIN_PACKAGE_SKIP: 'rttest tlsf tlsf_cpp pendulum_control msft_colcon_env msft_ros_env msft_ros_pkgs msft_ros_vcpkg'
   steps:
-  - script:
-      echo %ROSWIN_BUILDNUMBER%
   - template: ..\..\common\agent-prep.yml
   - template: ..\common\checkout.yml
   - template: ..\common\build.yml
