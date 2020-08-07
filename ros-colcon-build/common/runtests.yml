@@ -5,9 +5,11 @@ steps:
     call "test.bat"
   workingDirectory: $(ROSWIN_COLCON_BUILD_WORKING_DIRECTORY)
   displayName: 'Run tests for ROS workspace'
+  condition: and(succeeded(), eq(variables.ROSWIN_ENABLE_TESTING, true))
 - task: PublishTestResults@2
   displayName: Publish test results
   inputs:
     testRunner: 'jUnit'
     testResultsFiles: '**\*.xml'
     searchFolder: 'c:\colcon_ws\build'
+  condition: and(succeeded(), eq(variables.ROSWIN_ENABLE_TESTING, true))

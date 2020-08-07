@@ -29,7 +29,7 @@ jobs:
     matrix:
       foxy-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
-      foxy-rel:
+      foxy-ALL:
         ROSWIN_RELEASE_REPO: 'https://raw.githubusercontent.com/ros2/ros2/release-foxy-20200710/ros2.repos'
         ROSWIN_BUILDNUMBER: '20200710.0.0'
         ROSWIN_METAPACKAGE: 'ALL'
@@ -47,9 +47,9 @@ jobs:
       foxy-desktop:
         ROS_DISTRO: 'foxy'
         ROSWIN_METAPACKAGE: 'desktop'
-      foxy-rel:
+      foxy-ALL:
         ROS_DISTRO: 'foxy'
-        ROSWIN_METAPACKAGE: 'rel'
+        ROSWIN_METAPACKAGE: 'ALL'
   timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'

@@ -10,7 +10,7 @@ steps:
 - script: |
     call "setup.bat"
     md c:\colcon_ws\src
-    rosinstall_generator %ROSWIN_METAPACKAGE% --rosdistro %ROS_DISTRO% --deps > build.rosinstall
+    rosinstall_generator %ROSWIN_METAPACKAGE% --rosdistro %ROS_DISTRO% --deps %ROSINSTALL_GENERATOR_EXTRA_ARGS% > build.rosinstall
     pushd c:\colcon_ws
     wstool init src
     wstool merge -r -y -t src %ROSWIN_COLCON_BUILD_WORKING_DIRECTORY%\build.rosinstall
