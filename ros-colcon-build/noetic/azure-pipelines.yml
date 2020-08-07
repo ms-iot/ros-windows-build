@@ -25,6 +25,7 @@ jobs:
     ROS_PYTHON_VERSION: '3'
     ROS_DISTRO: 'noetic'
     ROS_ETC_DIR: 'c:\opt\ros\noetic\x64\etc\ros'
+    ROSINSTALL_GENERATOR_EXTRA_ARGS: '--upstream-development'
   strategy:
     matrix:
       noetic-desktop_full:

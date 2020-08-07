@@ -29,7 +29,7 @@ jobs:
     matrix:
       dashing-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
-      dashing-rel:
+      dashing-ALL:
         ROSWIN_RELEASE_REPO: 'https://raw.githubusercontent.com/ros2/ros2/release-dashing-20200722/ros2.repos'
         ROSWIN_BUILDNUMBER: '20200722.0.0'
         ROSWIN_METAPACKAGE: 'ALL'
@@ -47,9 +47,9 @@ jobs:
       dashing-desktop:
         ROS_DISTRO: 'dashing'
         ROSWIN_METAPACKAGE: 'desktop'
-      dashing-rel:
+      dashing-ALL:
         ROS_DISTRO: 'dashing'
-        ROSWIN_METAPACKAGE: 'rel'
+        ROSWIN_METAPACKAGE: 'ALL'
   timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'

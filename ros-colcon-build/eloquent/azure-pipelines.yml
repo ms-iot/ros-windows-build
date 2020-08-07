@@ -29,7 +29,7 @@ jobs:
     matrix:
       eloquent-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
-      eloquent-rel:
+      eloquent-ALL:
         ROSWIN_RELEASE_REPO: 'https://raw.githubusercontent.com/ros2/ros2/release-eloquent-20201024-1/ros2.repos'
         ROSWIN_BUILDNUMBER: '20201024.1.0'
         ROSWIN_METAPACKAGE: 'ALL'
@@ -47,9 +47,9 @@ jobs:
       eloquent-desktop:
         ROS_DISTRO: 'eloquent'
         ROSWIN_METAPACKAGE: 'desktop'
-      eloquent-rel:
+      eloquent-ALL:
         ROS_DISTRO: 'eloquent'
-        ROSWIN_METAPACKAGE: 'rel'
+        ROSWIN_METAPACKAGE: 'ALL'
   timeoutInMinutes: 360
   pool:
     vmImage: 'windows-2019'
