@@ -1,0 +1,16 @@
+trigger: none
+pr: none
+
+jobs:
+- job: Build
+  pool:
+    vmImage: 'windows-2019'
+  timeoutInMinutes: 360
+  steps:
+  - task: DownloadPipelineArtifact@2
+    inputs:
+      source: 'specific' # Options: current, specific
+      project: 'ros-win' # Required when source == Specific
+      pipeline: 91 # Required when source == Specific
+      runVersion: 'latest' # Required when source == Specific# Options: latest, latestFromBranch, specific
+      artifact: 'foxy-drop'
