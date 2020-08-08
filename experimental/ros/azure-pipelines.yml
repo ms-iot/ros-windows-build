@@ -14,3 +14,10 @@ jobs:
       pipeline: 91 # Required when source == Specific
       buildVersionToDownload: 'latest' # Required when source == Specific# Options: latest, latestFromBranch, specific
       artifactName: 'foxy-drop'
+  - task: ExtractFiles@1
+    inputs:
+      archiveFilePatterns: '$(System.ArtifactsDirectory)\foxy-drop\*.zip' 
+      destinationFolder: 'c:\opt\ros\foxy\x64'
+      cleanDestinationFolder: true
+  - script: |
+      dir c:\opt\ros\foxy\x64
