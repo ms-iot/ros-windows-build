@@ -1,0 +1,27 @@
+trigger: none
+pr: none
+
+jobs:
+- job: Build
+  pool: Edge-Robotics-VS2019
+  timeoutInMinutes: 360
+  strategy:
+    matrix:
+      noetic:
+        INSTALL_DIR: 'c:\opt\ros\noetic\x64'
+        DISTRO_NAME: 'noetic'
+      foxy:
+        INSTALL_DIR: 'c:\opt\ros\foxy\x64'
+        DISTRO_NAME: 'foxy'
+  steps:
+  - script: |
+      rd /s /q d:\bld
+      mkdir d:\bld
+    displayName: 'create buildtrees'
+  - powershell: |
+      & .\experimental\bootstrap.ps1 -InstallDir $Env:INSTALL_DIR
+    continueOnError: true
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: .\experimental\drop.zip
+      artifactName: $(DISTRO_NAME)-drop
