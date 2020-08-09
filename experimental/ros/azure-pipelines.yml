@@ -27,4 +27,4 @@ jobs:
       cd catkin_ws
       vcs import src < ..\experimental\ros\ros2.rosinstall
       dir src
-      colcon build --cmake-args -DBUILD_TESTING:BOOL=False
+      colcon build --cmake-args -DBUILD_TESTING:BOOL=False -DCMAKE_PROGRAM_PATH=c:\opt\ros\foxy\x64\tools\protobuf;c:\opt\ros\foxy\x64\tools\qt5\bin
