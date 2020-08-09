@@ -29,3 +29,5 @@ pydocstyle
 pyqt5
 pyqt-builder
 defusedxml
+rospkg
+rosinstall-generator
