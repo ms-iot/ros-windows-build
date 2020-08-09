@@ -21,8 +21,10 @@ jobs:
       cleanDestinationFolder: true
   - script: |
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+      dir c:\opt\ros\foxy\x64
       set PATH=c:\opt\ros\foxy\x64\Scripts;c:\opt\ros\foxy\x64;%PATH%
       mkdir catkin_ws\src
       cd catkin_ws
       vcs import src < experimental\ros\ros2.rosinstall
+      dir src
       colcon build --cmake-args -DBUILD_TESTING:BOOL=False
