@@ -3,8 +3,8 @@ pr: none
 
 jobs:
 - job: Build
-  pool:
-    vmImage: 'Edge-Robotics-VS2019'
+  pool: 'Edge-Robotics-VS2019'
+  #  vmImage: 'windows-2019'
   timeoutInMinutes: 360
   steps:
   - task: DownloadBuildArtifacts@0
