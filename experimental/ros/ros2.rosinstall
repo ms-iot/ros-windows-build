@@ -1,0 +1,4 @@
+- git:
+    local-name: gazebo/gazebo9
+    uri: https://github.com/ms-iot/gazebo.git
+    version: windows/gazebo9_9.13.1
