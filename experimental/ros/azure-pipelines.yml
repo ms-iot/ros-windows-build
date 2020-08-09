@@ -25,6 +25,6 @@ jobs:
       set PATH=c:\opt\ros\foxy\x64\Scripts;c:\opt\ros\foxy\x64;%PATH%
       mkdir catkin_ws\src
       cd catkin_ws
-      vcs import src < experimental\ros\ros2.rosinstall
+      vcs import src < ..\experimental\ros\ros2.rosinstall
       dir src
       colcon build --cmake-args -DBUILD_TESTING:BOOL=False
