@@ -329,8 +329,8 @@ repositories:
     version: 0.1.0
   ros2/rviz:
     type: git
-    url: https://github.com/ros2/rviz.git
-    version: 8.2.0
+    url: https://github.com/seanyen/rviz.git
+    version: seanyen/8.2.0
   ros2/spdlog_vendor:
     type: git
     url: https://github.com/ros2/spdlog_vendor.git
