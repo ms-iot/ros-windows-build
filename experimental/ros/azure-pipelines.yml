@@ -27,6 +27,7 @@ jobs:
       DEL /F /Q C:\opt\ros\foxy\x64\share\tinyxml\tinyxmlTargets-release.cmake
       DEL /F /Q C:\opt\ros\foxy\x64\share\tinyxml\tinyxmlTargets.cmake
       copy /Y experimental\ros\assimpTargets-release.cmake C:\opt\ros\foxy\x64\share\assimp\assimpTargets-release.cmake
+      copy /Y experimental\ros\orocos_kdl-config.cmake C:\opt\ros\foxy\x64\share\orocos_kdl\orocos_kdl-config.cmake
       copy /Y experimental\ros\python38._pth c:\opt\ros\foxy\x64\python38._pth
       copy /Y experimental\ros\extra.pth c:\opt\ros\foxy\x64\Lib\site-packages
       set PATH=c:\opt\ros\foxy\x64\Scripts;c:\opt\ros\foxy\x64;c:\opt\ros\foxy\x64\bin;%PATH%
