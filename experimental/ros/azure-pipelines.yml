@@ -21,12 +21,15 @@ jobs:
       cleanDestinationFolder: true
   - script: |
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+      echo import site >> c:\opt\ros\foxy\x64\python38._pth
       copy /Y experimental\ros\extra.pth c:\opt\ros\foxy\x64\Lib\site-packages
       dir c:\opt\ros\foxy\x64
       set PATH=c:\opt\ros\foxy\x64\Scripts;c:\opt\ros\foxy\x64;c:\opt\ros\foxy\x64\bin;%PATH%
       mkdir catkin_ws\src
       cd catkin_ws
       :: vcs import src < ..\experimental\ros\gazebo.rosinstall
+      python -m site
+      type c:\opt\ros\foxy\x64\Lib\site-packages\extra.pth
       vcs import src < ..\experimental\ros\ros2.repos
       dir src
       colcon build --cmake-args -DBUILD_TESTING:BOOL=False -DCMAKE_PROGRAM_PATH=c:\opt\ros\foxy\x64\tools\protobuf;c:\opt\ros\foxy\x64\tools\qt5\bin
