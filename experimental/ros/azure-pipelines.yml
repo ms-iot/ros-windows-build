@@ -21,6 +21,7 @@ jobs:
       cleanDestinationFolder: true
   - script: |
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+      copy /Y experimental\ros\extra.pth c:\opt\ros\noetic\x64\Lib\site-packages
       dir c:\opt\ros\foxy\x64
       set PATH=c:\opt\ros\foxy\x64\Scripts;c:\opt\ros\foxy\x64;c:\opt\ros\foxy\x64\bin;%PATH%
       mkdir catkin_ws\src

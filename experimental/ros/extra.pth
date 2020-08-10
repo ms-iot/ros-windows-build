@@ -1,0 +1,1 @@
+import sys, os; pythonpath = os.environ['PYTHONPATH'] if 'PYTHONPATH' in os.environ else ""; [sys.path.append(p) for p in pythonpath.split(';')];
