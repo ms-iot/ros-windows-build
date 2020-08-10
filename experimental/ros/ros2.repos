@@ -373,5 +373,5 @@ repositories:
     version: 2.3.2
   ros2/yaml_cpp_vendor:
     type: git
-    url: https://github.com/ros2/yaml_cpp_vendor.git
-    version: 7.0.2
+    url: https://github.com/seanyen/yaml_cpp_vendor.git
+    version: seanyen/portable
