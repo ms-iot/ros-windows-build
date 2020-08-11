@@ -39,6 +39,7 @@ jobs:
       set PATH=c:\opt\ros\foxy\x64\Scripts;c:\opt\ros\foxy\x64;c:\opt\ros\foxy\x64\bin;%PATH%
       mkdir catkin_ws\src
       cd catkin_ws
+      python -m pip install rospkg
       ::vcs import src < ..\experimental\ros\gazebo.rosinstall
       ::vcs import src < ..\experimental\ros\ros2.repos
       vcs import --force src < ..\experimental\ros\noetic.rosinstall
