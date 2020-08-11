@@ -30,12 +30,12 @@ jobs:
       copy /Y experimental\ros\orocos_kdl-config.cmake C:\opt\ros\foxy\x64\share\orocos_kdl\orocos_kdl-config.cmake
       copy /Y experimental\ros\python38._pth c:\opt\ros\foxy\x64\python38._pth
       copy /Y experimental\ros\extra.pth c:\opt\ros\foxy\x64\Lib\site-packages
-      rd /s /q c:\opt\ros\foxy\x64\include\kdl
-      rd /s /q c:\opt\ros\foxy\x64\share\orocos_kdl
-      rd /s /q c:\opt\ros\foxy\x64\share\orocos-kdl
-      DEL /F /Q c:\opt\ros\foxy\x64\lib\orocos-kdl.lib
-      DEL /F /Q c:\opt\ros\foxy\x64\lib\pkgconfig\orocos-kdl.pc
-      DEL /F /Q c:\opt\ros\foxy\x64\lib\pkgconfig\orocos_kdl.pc
+      ::rd /s /q c:\opt\ros\foxy\x64\include\kdl
+      ::rd /s /q c:\opt\ros\foxy\x64\share\orocos_kdl
+      ::rd /s /q c:\opt\ros\foxy\x64\share\orocos-kdl
+      ::DEL /F /Q c:\opt\ros\foxy\x64\lib\orocos-kdl.lib
+      ::DEL /F /Q c:\opt\ros\foxy\x64\lib\pkgconfig\orocos-kdl.pc
+      ::DEL /F /Q c:\opt\ros\foxy\x64\lib\pkgconfig\orocos_kdl.pc
       set PATH=c:\opt\ros\foxy\x64\Scripts;c:\opt\ros\foxy\x64;c:\opt\ros\foxy\x64\bin;%PATH%
       mkdir catkin_ws\src
       cd catkin_ws
