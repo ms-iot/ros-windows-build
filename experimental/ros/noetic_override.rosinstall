@@ -14,3 +14,11 @@
     local-name: ros_comm
     uri: https://github.com/seanyen/ros_comm.git
     version: seanyen/1.15.8
+- git:
+    local-name: image_common
+    uri: https://github.com/seanyen/image_common.git
+    version: seanyen/1.12.0
+- git:
+    local-name: vision_opencv
+    uri: https://github.com/seanyen/vision_opencv.git
+    version: seanyen/1.15.0
