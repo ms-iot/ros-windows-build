@@ -10,3 +10,7 @@
     local-name: qt_gui_core
     uri: https://github.com/seanyen/qt_gui_core.git
     version: seanyen/0.4.2
+- git:
+    local-name: ros_comm
+    uri: https://github.com/seanyen/ros_comm.git
+    version: seanyen/1.15.8
