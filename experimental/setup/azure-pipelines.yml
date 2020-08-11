@@ -23,5 +23,9 @@ jobs:
       destinationFolder: 'c:\opt\ros\foxy\x64'
       cleanDestinationFolder: true
   - script: |
-      dir c:\opt\ros\foxy\x64
-      iscc /?
+      pushd experimental\setup
+      iscc setup.iss
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: 'experimental\setup\Output'
+      artifactName: setup
