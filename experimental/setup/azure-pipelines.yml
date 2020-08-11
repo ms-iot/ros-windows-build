@@ -1,0 +1,27 @@
+trigger: none
+pr: none
+
+jobs:
+- job: Build
+  pool:
+    vmImage: 'windows-2019'
+  timeoutInMinutes: 360
+  workspace:
+    clean: all
+  steps:
+  - task: DownloadBuildArtifacts@0
+    inputs:
+      buildType: 'specific' # Options: current, specific
+      project: 'ros-win' # Required when source == Specific
+      pipeline: 92 # Required when source == Specific
+      buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
+      buildId: 7878
+      artifactName: 'drop'
+  - task: ExtractFiles@1
+    inputs:
+      archiveFilePatterns: '$(System.ArtifactsDirectory)\drop\drop.zip' 
+      destinationFolder: 'c:\opt\ros\foxy\x64'
+      cleanDestinationFolder: true
+  - script: |
+      dir c:\opt\ros\foxy\x64
+      iscc /?
