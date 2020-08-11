@@ -383,14 +383,6 @@
     uri: https://github.com/ros-visualization/rviz.git
     version: 1.14.1
 - git:
-    local-name: stage
-    uri: https://github.com/ros-gbp/stage-release.git
-    version: 4.3.0
-- git:
-    local-name: stage_ros
-    uri: https://github.com/ros-simulation/stage_ros.git
-    version: 1.8.0
-- git:
     local-name: std_msgs
     uri: https://github.com/ros/std_msgs.git
     version: 0.5.13
