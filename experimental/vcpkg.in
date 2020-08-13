@@ -36,3 +36,4 @@ gtest
 orocos-kdl
 yaml-cpp
 gtk
+cartographer
