@@ -18,7 +18,7 @@ jobs:
     ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros2_env'
     ROSWIN_PACKAGE_SKIP: 'rttest tlsf tlsf_cpp pendulum_control'
     ROSWIN_BUILDNUMBER: $(Build.BuildNumber)
-    ROSWIN_DATE: $[format('{0:yyyyMMdd}', pipeline.startTime)]
+    ROSWIN_DATE: $[format('{0:yyyyMMddHHmm}', pipeline.startTime)]
     ROS_PYTHON_VERSION: '3'
     ROS_DISTRO: 'eloquent'
     ROS_ETC_DIR: 'c:\opt\ros\eloquent\x64\etc\ros'
