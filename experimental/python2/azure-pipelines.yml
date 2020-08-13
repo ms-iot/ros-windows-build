@@ -1,0 +1,30 @@
+trigger: none
+pr: none
+
+jobs:
+- job: Build
+  pool:
+    vmImage: 'windows-2019'
+  timeoutInMinutes: 360
+  strategy:
+    matrix:
+      melodic:
+        INSTALL_DIR: 'c:\opt\ros\melodic\x64'
+        DISTRO_NAME: 'melodic'
+  steps:
+  - script: |
+      choco sources add -n=roswin -s https://aka.ms/ros/public --priority 1
+      choco install -y python2 --params '"/InstallDir:C:\opt\ros\melodic\x64"'
+      dir %INSTALL_DIR%
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: $(INSTALL_DIR)
+      includeRootFolder: false
+      archiveType: 'zip' # Options: zip, 7z, tar, wim
+      tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
+      archiveFile: '$(Build.ArtifactStagingDirectory)/drop.zip'
+      replaceExistingArchive: true
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: .\experimental\drop.zip
+      artifactName: $(DISTRO_NAME)-drop
