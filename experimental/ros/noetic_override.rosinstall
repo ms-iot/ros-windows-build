@@ -22,3 +22,7 @@
     local-name: vision_opencv
     uri: https://github.com/seanyen/vision_opencv.git
     version: seanyen/1.15.0
+- git:
+    local-name: geometry
+    uri: https://github.com/ms-iot/geometry.git
+    version: windows/noetic-devel
