@@ -61,7 +61,9 @@ jobs:
       tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
       archiveFile: '$(Build.ArtifactStagingDirectory)/drop.zip'
       replaceExistingArchive: true
+    condition: always()
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: '$(Build.ArtifactStagingDirectory)/drop.zip'
       artifactName: drop
+    condition: always()
