@@ -36,6 +36,8 @@ jobs:
       ::DEL /F /Q c:\opt\ros\foxy\x64\lib\orocos-kdl.lib
       ::DEL /F /Q c:\opt\ros\foxy\x64\lib\pkgconfig\orocos-kdl.pc
       ::DEL /F /Q c:\opt\ros\foxy\x64\lib\pkgconfig\orocos_kdl.pc
+      copy /Y experimental\ros\pkg-config.exe c:\opt\ros\foxy\x64\bin
+      copy /Y experimental\ros\glib-2.0.dll c:\opt\ros\foxy\x64\bin
       set PATH=c:\opt\ros\foxy\x64\Scripts;c:\opt\ros\foxy\x64;c:\opt\ros\foxy\x64\bin;%PATH%
       mkdir catkin_ws\src
       cd catkin_ws
