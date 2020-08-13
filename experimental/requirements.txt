@@ -31,3 +31,6 @@ pyqt-builder
 defusedxml
 rospkg
 rosinstall-generator
+netifaces
+opencv-python
+nose

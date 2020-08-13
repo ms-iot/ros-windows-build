@@ -35,3 +35,4 @@ sdformat6
 gtest
 orocos-kdl
 yaml-cpp
+gtk
