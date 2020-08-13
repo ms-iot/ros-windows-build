@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+  <name>libgazebo9-dev</name>
+  <version>10.2.0</version>
+  <description>Gazebo</description>
+  <maintainer email="jrivero@osrfoundation.org">Jose Luis Rivero</maintainer>
+
+  <license>Apache 2.0</license>
+  <url>http://gazebosim.org/</url>
+  <author>Jose Luis Rivero</author>
+
+  <buildtool_depend>cmake</buildtool_depend>
+
+  <export>
+    <build_type>cmake</build_type>
+  </export>
+</package>
