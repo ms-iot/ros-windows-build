@@ -18,7 +18,7 @@ jobs:
     ROSWIN_ADDITIONAL_PACKAGE: 'msft_ros2_env'
     ROSWIN_PACKAGE_SKIP: 'rttest tlsf tlsf_cpp pendulum_control'
     ROSWIN_BUILDNUMBER: $(Build.BuildNumber)
-    ROSWIN_DATE: $[format('{0:yyyyMMddHHmm}', pipeline.startTime)]
+    ROSWIN_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
     ROS_PYTHON_VERSION: '3'
     ROS_DISTRO: 'dashing'
     ROS_ETC_DIR: 'c:\opt\ros\dashing\x64\etc\ros'
@@ -32,7 +32,7 @@ jobs:
         ROSWIN_METAPACKAGE: 'desktop'
       dashing-ALL:
         ROSWIN_RELEASE_REPO: 'https://raw.githubusercontent.com/ros2/ros2/release-dashing-20200722/ros2.repos'
-        ROSWIN_BUILDNUMBER: '20200722.0.$(ROSWIN_DATE)'
+        ROSWIN_BUILDNUMBER: '20200722.0.0.$(ROSWIN_DATE)'
         ROSWIN_METAPACKAGE: 'ALL'
         ROSWIN_PACKAGE_SKIP: 'rttest tlsf tlsf_cpp pendulum_control msft_colcon_env msft_ros_env msft_ros_pkgs msft_ros_vcpkg'
   steps:
