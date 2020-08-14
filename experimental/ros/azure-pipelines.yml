@@ -56,7 +56,7 @@ jobs:
       DEL /F /Q c:\opt\ros\foxy\x64\include\sdformat-6.2\tinyxml.h
       copy /Y ..\experimental\ros\pkg-config.exe c:\opt\ros\foxy\x64\bin
       copy /Y ..\experimental\ros\glib-2.0.dll c:\opt\ros\foxy\x64\bin
-      python src\catkin\bin\catkin_make_isolated --only-pkg-with-deps desktop_full --ignore-pkg stage stage_ros image_view --use-ninja --install-space "c:\opt\ros\foxy\x64" --install -DCURL_NO_CURL_CMAKE=ON -DCATKIN_SKIP_TESTING=ON -DCMAKE_PROGRAM_PATH=c:\opt\ros\foxy\x64\tools\protobuf;c:\opt\ros\foxy\x64\tools\qt5\bin
+      python src\catkin\bin\catkin_make_isolated --only-pkg-with-deps desktop_full --ignore-pkg stage stage_ros image_view theora_image_transport --use-ninja --install-space "c:\opt\ros\foxy\x64" --install -DCURL_NO_CURL_CMAKE=ON -DCATKIN_SKIP_TESTING=ON -DCMAKE_PROGRAM_PATH=c:\opt\ros\foxy\x64\tools\protobuf;c:\opt\ros\foxy\x64\tools\qt5\bin
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: .\catkin_ws\log
