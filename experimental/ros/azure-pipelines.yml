@@ -53,6 +53,7 @@ jobs:
       cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=C:\opt\ros\foxy\x64 -DCMAKE_INSTALL_PREFIX=C:\opt\ros\foxy\x64 -DCURL_NO_CURL_CMAKE=ON -DBUILD_TESTING:BOOL=False -DCMAKE_PROGRAM_PATH=c:\opt\ros\foxy\x64\tools\protobuf;c:\opt\ros\foxy\x64\tools\qt5\bin ..\src\gazebo\gazebo10
       cmake --build . --config Release --target install
       popd
+      DEL /F /Q c:\opt\ros\foxy\x64\include\sdformat-6.2\tinyxml.h
       copy /Y ..\experimental\ros\pkg-config.exe c:\opt\ros\foxy\x64\bin
       copy /Y ..\experimental\ros\glib-2.0.dll c:\opt\ros\foxy\x64\bin
       python src\catkin\bin\catkin_make_isolated --only-pkg-with-deps desktop_full --ignore-pkg stage stage_ros image_view --use-ninja --install-space "c:\opt\ros\foxy\x64" --install -DCURL_NO_CURL_CMAKE=ON -DCATKIN_SKIP_TESTING=ON -DCMAKE_PROGRAM_PATH=c:\opt\ros\foxy\x64\tools\protobuf;c:\opt\ros\foxy\x64\tools\qt5\bin
