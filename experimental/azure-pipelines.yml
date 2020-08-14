@@ -10,6 +10,12 @@ jobs:
       noetic:
         INSTALL_DIR: 'c:\opt\ros\noetic\x64'
         DISTRO_NAME: 'noetic'
+      dashing:
+        INSTALL_DIR: 'c:\opt\ros\dashing\x64'
+        DISTRO_NAME: 'dashing'
+      eloquent:
+        INSTALL_DIR: 'c:\opt\ros\eloquent\x64'
+        DISTRO_NAME: 'eloquent'
       foxy:
         INSTALL_DIR: 'c:\opt\ros\foxy\x64'
         DISTRO_NAME: 'foxy'
