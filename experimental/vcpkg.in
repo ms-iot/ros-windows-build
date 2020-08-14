@@ -37,3 +37,5 @@ orocos-kdl
 yaml-cpp
 gtk
 cartographer
+libusb-win32
+grpc
