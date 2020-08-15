@@ -30,3 +30,7 @@
     local-name: rviz
     uri: https://github.com/seanyen/rviz.git
     version: seanyen/1.14.1
+- git:
+    local-name: gazebo_ros_pkgs
+    uri: https://github.com/seanyen/gazebo_ros_pkgs.git
+    version: seanyen/2.9.1
