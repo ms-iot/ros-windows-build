@@ -8,6 +8,7 @@ colcon build ^
     --packages-skip stage stage_ros image_view theora_image_transport ^
     --install-base C:\opt\ros\foxy\x64 ^
     --cmake-args ^
+        -G Ninja ^
         -DCURL_NO_CURL_CMAKE=ON ^
         -DCATKIN_SKIP_TESTING=ON ^
         -DBUILD_TESTING:BOOL=False ^
