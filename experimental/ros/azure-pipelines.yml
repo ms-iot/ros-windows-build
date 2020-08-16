@@ -50,7 +50,7 @@ jobs:
       copy /Y ..\experimental\ros\pkg-config.exe c:\opt\ros\foxy\x64\bin
       copy /Y ..\experimental\ros\glib-2.0.dll c:\opt\ros\foxy\x64\bin
       copy /Y ..\experimental\ros\gazebo\colcon.pkg src\gazebo\gazebo10
-      copy /Y ..\experimental\ros\gazebo\colcon.pkg src\gazebo_ros_pkgs\gazebo_dev
+      copy /Y ..\experimental\ros\gazebo_dev\colcon.pkg src\gazebo_ros_pkgs\gazebo_dev
       call ..\experimental\ros\build_noetic.bat
   - task: PublishBuildArtifacts@1
     inputs:

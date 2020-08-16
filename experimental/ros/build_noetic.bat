@@ -4,8 +4,8 @@ colcon build ^
     --continue-on-error ^
     --merge-install ^
     --packages-up-to desktop_full ^
-    --packages-skip-by-dep stage stage_ros image_view theora_image_transport  ^
-    --packages-skip stage stage_ros image_view theora_image_transport ^
+    --packages-skip-by-dep stage stage_ros image_view theora_image_transport rviz_plugin_tutorials ^
+    --packages-skip stage stage_ros image_view theora_image_transport rviz_plugin_tutorials ^
     --install-base C:\opt\ros\foxy\x64 ^
     --cmake-args ^
         -G Ninja ^
