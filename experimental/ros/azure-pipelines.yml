@@ -72,7 +72,7 @@ jobs:
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: .\catkin_ws\log
-      artifactName: log
+      artifactName: '$(DISTRO_NAME)-log'
     condition: always()
   - task: ArchiveFiles@2
     inputs:
@@ -86,5 +86,5 @@ jobs:
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: '$(Build.ArtifactStagingDirectory)/drop.zip'
-      artifactName: drop
+      artifactName: '$(DISTRO_NAME)-drop'
     condition: always()
