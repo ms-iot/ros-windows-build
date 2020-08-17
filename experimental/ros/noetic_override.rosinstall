@@ -12,8 +12,8 @@
     version: seanyen/0.4.2
 - git:
     local-name: ros_comm
-    uri: https://github.com/seanyen/ros_comm.git
-    version: seanyen/1.15.8
+    uri: https://github.com/ros/ros_comm.git
+    version: noetic-devel
 - git:
     local-name: image_common
     uri: https://github.com/seanyen/image_common.git
