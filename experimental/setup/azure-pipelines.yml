@@ -5,6 +5,14 @@ jobs:
 - job: Build
   pool:
     vmImage: 'windows-2019'
+  strategy:
+    matrix:
+      noetic:
+        INSTALL_DIR: 'c:\opt\ros\noetic\x64'
+        DISTRO_NAME: 'noetic'
+      foxy:
+        INSTALL_DIR: 'c:\opt\ros\foxy\x64'
+        DISTRO_NAME: 'foxy'
   timeoutInMinutes: 360
   workspace:
     clean: all
@@ -15,16 +23,16 @@ jobs:
       project: 'ros-win' # Required when source == Specific
       pipeline: 92 # Required when source == Specific
       buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
-      buildId: 7878
+      buildId: 7963
       artifactName: 'drop'
   - task: ExtractFiles@1
     inputs:
       archiveFilePatterns: '$(System.ArtifactsDirectory)\drop\drop.zip' 
-      destinationFolder: 'c:\opt\ros\foxy\x64'
+      destinationFolder: '$(INSTALL_DIR)'
       cleanDestinationFolder: true
   - script: |
       pushd experimental\setup
-      iscc setup.iss
+      iscc setup_%DISTRO_NAME%.iss
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: 'experimental\setup\Output'
