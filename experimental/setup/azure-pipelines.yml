@@ -24,10 +24,10 @@ jobs:
       pipeline: 92 # Required when source == Specific
       buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
       buildId: 7963
-      artifactName: 'drop'
+      artifactName: '$(DISTRO_NAME)-drop'
   - task: ExtractFiles@1
     inputs:
-      archiveFilePatterns: '$(System.ArtifactsDirectory)\drop\drop.zip' 
+      archiveFilePatterns: '$(System.ArtifactsDirectory)\$(DISTRO_NAME)-drop\drop.zip'
       destinationFolder: '$(INSTALL_DIR)'
       cleanDestinationFolder: true
   - script: |
