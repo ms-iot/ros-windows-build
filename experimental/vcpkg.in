@@ -36,6 +36,8 @@ gtest
 orocos-kdl
 yaml-cpp
 gtk
+lua[*]
+flann
 cartographer
 libusb-win32
 grpc
