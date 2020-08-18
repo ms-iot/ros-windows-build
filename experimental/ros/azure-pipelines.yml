@@ -34,12 +34,8 @@ jobs:
       DEL /F /Q %INSTALL_DIR%\share\tinyxml\tinyxmlTargets-release.cmake
       DEL /F /Q %INSTALL_DIR%\share\tinyxml\tinyxmlTargets.cmake
       DEL /F /Q %INSTALL_DIR%\include\sdformat-6.2\tinyxml.h
-      copy /Y experimental\ros\assimpTargets-release.cmake %INSTALL_DIR%\share\assimp\assimpTargets-release.cmake
-      copy /Y experimental\ros\orocos_kdl-config.cmake %INSTALL_DIR%\share\orocos_kdl\orocos_kdl-config.cmake
-      copy /Y experimental\ros\python38._pth %INSTALL_DIR%\python38._pth
-      copy /Y experimental\ros\extra.pth %INSTALL_DIR%\Lib\site-packages
-      copy /Y experimental\ros\pkg-config.exe %INSTALL_DIR%\bin
-      copy /Y experimental\ros\glib-2.0.dll %INSTALL_DIR%\bin
+      xcopy /Y /S /I experimental\ros\installed_patch %INSTALL_DIR%
+    displayName: 'patch installed directory'
   - script: |
       rd /s /q %INSTALL_DIR%\include\kdl
       rd /s /q %INSTALL_DIR%\share\orocos_kdl
@@ -48,15 +44,17 @@ jobs:
       DEL /F /Q %INSTALL_DIR%\lib\pkgconfig\orocos-kdl.pc
       DEL /F /Q %INSTALL_DIR%\lib\pkgconfig\orocos_kdl.pc
     condition: and(succeeded(), eq(variables.DISTRO_NAME, 'foxy'))
+    displayName: 'remove orocos-kdl'
   - script: |
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
       set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
       mkdir catkin_ws\src
       cd catkin_ws
       vcs import --force src < ..\experimental\ros\gazebo.rosinstall
-      vcs import src < ..\experimental\ros\ros2.repos
+      vcs import --force src < ..\experimental\ros\ros2.repos
       call ..\experimental\ros\build_foxy.bat
     condition: and(succeeded(), eq(variables.DISTRO_NAME, 'foxy'))
+    displayName: 'build foxy'
   - script: |
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
       set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
@@ -65,10 +63,10 @@ jobs:
       vcs import --force src < ..\experimental\ros\gazebo.rosinstall
       vcs import --force src < ..\experimental\ros\noetic.rosinstall
       vcs import --force src < ..\experimental\ros\noetic_override.rosinstall
-      copy /Y ..\experimental\ros\gazebo\colcon.pkg src\gazebo\gazebo10
-      copy /Y ..\experimental\ros\gazebo_dev\colcon.pkg src\gazebo_ros_pkgs\gazebo_dev
+      xcopy /Y /S /I ..\experimental\ros\noetic_patch src
       call ..\experimental\ros\build_noetic.bat
     condition: and(succeeded(), eq(variables.DISTRO_NAME, 'noetic'))
+    displayName: 'build noetic'
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: .\catkin_ws\log
