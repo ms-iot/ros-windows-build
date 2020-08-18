@@ -51,7 +51,8 @@ jobs:
       mkdir catkin_ws\src
       cd catkin_ws
       vcs import --force src < ..\experimental\ros\gazebo.rosinstall
-      vcs import --force src < ..\experimental\ros\ros2.repos
+      vcs import --force src < ..\experimental\ros\foxy.repos
+      vcs import --force src < ..\experimental\ros\foxy_override.repos
       call ..\experimental\ros\build_foxy.bat
     condition: and(succeeded(), eq(variables.DISTRO_NAME, 'foxy'))
     displayName: 'build foxy'

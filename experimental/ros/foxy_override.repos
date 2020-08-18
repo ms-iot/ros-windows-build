@@ -1,0 +1,9 @@
+repositories:
+  ros2/rviz:
+    type: git
+    url: https://github.com/seanyen/rviz.git
+    version: seanyen/8.2.0
+  ros2/yaml_cpp_vendor:
+    type: git
+    url: https://github.com/seanyen/yaml_cpp_vendor.git
+    version: seanyen/portable
