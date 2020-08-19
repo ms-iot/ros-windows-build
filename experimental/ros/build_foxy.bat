@@ -4,6 +4,7 @@ colcon build ^
     --continue-on-error ^
     --merge-install ^
     --install-base %INSTALL_DIR% ^
+    --cmake-target install ^
     --cmake-args ^
         -DCURL_NO_CURL_CMAKE=ON ^
         -DBUILD_TESTING:BOOL=False ^
