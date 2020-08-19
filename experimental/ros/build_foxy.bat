@@ -1,5 +1,7 @@
 @echo OFF
 
+set ROS_VERSION=2
+
 colcon build ^
     --continue-on-error ^
     --merge-install ^
