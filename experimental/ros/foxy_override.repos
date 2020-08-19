@@ -1,4 +1,8 @@
 repositories:
+  ros2/geometry2:
+    type: git
+    url: https://github.com/ms-iot/geometry2.git
+    version: windows/0.13.5
   ros2/rviz:
     type: git
     url: https://github.com/seanyen/rviz.git
