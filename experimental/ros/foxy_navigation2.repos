@@ -2,7 +2,7 @@ repositories:
   behaviortree_cpp:
     type: git
     url: https://github.com/ms-iot/BehaviorTree.CPP.git
-    version: windows/3.5.0
+    version: windows/3.5.1
   cartographer_ros:
     type: git
     url: https://github.com/ms-iot/cartographer_ros.git
