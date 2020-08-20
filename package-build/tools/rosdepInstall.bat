@@ -35,6 +35,12 @@ if not defined VCPKG_ROOT (
 set PATH=%PYTHONHOME%;%PYTHONHOME%\Scripts;%VCPKG_ROOT%;%PATH%
 set PYTHONPATH=
 
+:: workaround opencv-python complication
+:: https://github.com/skvark/opencv-python/issues/369
+if "%ROS_DISTRO%"=="melodic" (
+    python -m pip install opencv-python==4.2.0.32
+)
+
 :: install ROS system dependencies
 rosdep init
 rosdep update
