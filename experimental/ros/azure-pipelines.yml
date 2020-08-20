@@ -10,11 +10,11 @@ jobs:
       noetic:
         INSTALL_DIR: 'c:\opt\ros\noetic\x64'
         DISTRO_NAME: 'noetic'
-        PDB_OUTPUT_DIRECTORY: '$(Build.ArtifactStagingDirectory)\symbols'
+        PDB_OUTPUT_DIRECTORY: 'd:\symbols'
       foxy:
         INSTALL_DIR: 'c:\opt\ros\foxy\x64'
         DISTRO_NAME: 'foxy'
-        PDB_OUTPUT_DIRECTORY: '$(Build.ArtifactStagingDirectory)\symbols'
+        PDB_OUTPUT_DIRECTORY: 'd:\symbols'
   timeoutInMinutes: 360
   workspace:
     clean: all
@@ -31,6 +31,9 @@ jobs:
       archiveFilePatterns: '$(System.ArtifactsDirectory)\$(DISTRO_NAME)-drop\*.zip' 
       destinationFolder: '$(INSTALL_DIR)'
       cleanDestinationFolder: true
+  - script: |
+      rd /s /q %PDB_OUTPUT_DIRECTORY%
+    displayName: 'clean symbols folder'
   - script: |
       DEL /F /Q %INSTALL_DIR%\share\tinyxml\tinyxml-config.cmake
       DEL /F /Q %INSTALL_DIR%\share\tinyxml\tinyxmlTargets-release.cmake
