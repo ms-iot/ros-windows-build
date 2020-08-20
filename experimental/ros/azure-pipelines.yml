@@ -10,9 +10,11 @@ jobs:
       noetic:
         INSTALL_DIR: 'c:\opt\ros\noetic\x64'
         DISTRO_NAME: 'noetic'
+        PDB_OUTPUT_DIRECTORY: '$(Build.ArtifactStagingDirectory)\symbols'
       foxy:
         INSTALL_DIR: 'c:\opt\ros\foxy\x64'
         DISTRO_NAME: 'foxy'
+        PDB_OUTPUT_DIRECTORY: '$(Build.ArtifactStagingDirectory)\symbols'
   timeoutInMinutes: 360
   workspace:
     clean: all
@@ -77,6 +79,15 @@ jobs:
     condition: always()
   - task: ArchiveFiles@2
     inputs:
+      rootFolderOrFile: '$(PDB_OUTPUT_DIRECTORY)'
+      includeRootFolder: false
+      archiveType: 'zip' # Options: zip, 7z, tar, wim
+      tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
+      archiveFile: '$(Build.ArtifactStagingDirectory)/symbol.zip'
+      replaceExistingArchive: true
+    condition: always()
+  - task: ArchiveFiles@2
+    inputs:
       rootFolderOrFile: '$(INSTALL_DIR)'
       includeRootFolder: false
       archiveType: 'zip' # Options: zip, 7z, tar, wim
@@ -88,4 +99,9 @@ jobs:
     inputs:
       pathtoPublish: '$(Build.ArtifactStagingDirectory)/drop.zip'
       artifactName: '$(DISTRO_NAME)-drop'
+    condition: always()
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '$(Build.ArtifactStagingDirectory)/symbol.zip'
+      artifactName: '$(DISTRO_NAME)-symbol'
     condition: always()
