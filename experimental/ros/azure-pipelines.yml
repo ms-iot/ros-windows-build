@@ -34,6 +34,7 @@ jobs:
   - script: |
       rd /s /q %PDB_OUTPUT_DIRECTORY%
     displayName: 'clean symbols folder'
+    continueOnError: true
   - script: |
       DEL /F /Q %INSTALL_DIR%\share\tinyxml\tinyxml-config.cmake
       DEL /F /Q %INSTALL_DIR%\share\tinyxml\tinyxmlTargets-release.cmake
