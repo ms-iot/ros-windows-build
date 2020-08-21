@@ -9,9 +9,7 @@ colcon build ^
     --install-base %INSTALL_DIR% ^
     --cmake-args ^
         -G Ninja ^
-        -DCMAKE_BUILD_TYPE=RelWithDebInfo ^
         -DCURL_NO_CURL_CMAKE=ON ^
         -DCATKIN_SKIP_TESTING=ON ^
         -DBUILD_TESTING:BOOL=False ^
-        -DCMAKE_PROGRAM_PATH=%INSTALL_DIR%\tools\protobuf;%INSTALL_DIR%\tools\qt5\bin ^
-        -DCMAKE_PDB_OUTPUT_DIRECTORY=%PDB_OUTPUT_DIRECTORY%
+        -DCMAKE_PROGRAM_PATH=%INSTALL_DIR%\tools\protobuf;%INSTALL_DIR%\tools\qt5\bin
