@@ -16,6 +16,7 @@ steps:
 - script: |
     choco install ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE% -y
   displayName: Install Latest Released Chocolatey packages
+  continueOnError: 'true'
 - script: |
     choco upgrade ros-%ROS_DISTRO%-%ROSWIN_METAPACKAGE% -y --pre
   displayName: Upgrade to Pre-released Chocolatey packages
