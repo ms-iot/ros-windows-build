@@ -16,7 +16,7 @@ $Uri = 'https://github.com/seanyen/vcpkg.git'
 try
 {
     $Env:GIT_REDIRECT_STDERR="2>&1"
-    git clone $Uri $InstallDir -q -b "seanyen/2020.08.21" | Out-Null
+    git clone $Uri $InstallDir -q -b "seanyen/739209b51aaa125a41919f23206c110e79023ce8" | Out-Null
     & "$InstallDir\bootstrap-vcpkg.bat"
 
     Write-Host 'Validating vcpkg...'
