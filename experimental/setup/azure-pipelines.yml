@@ -22,8 +22,7 @@ jobs:
       buildType: 'specific' # Options: current, specific
       project: 'ros-win' # Required when source == Specific
       pipeline: 92 # Required when source == Specific
-      buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
-      buildId: 8004
+      buildVersionToDownload: 'latest' # Required when source == Specific# Options: latest, latestFromBranch, specific
       artifactName: '$(DISTRO_NAME)-drop'
   - task: ExtractFiles@1
     inputs:
