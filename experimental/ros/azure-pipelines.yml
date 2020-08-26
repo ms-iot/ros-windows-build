@@ -62,6 +62,7 @@ jobs:
       vcs import --force src < ..\experimental\ros\foxy.repos
       vcs import --force src < ..\experimental\ros\foxy_override.repos
       vcs import --force src < ..\experimental\ros\foxy_navigation2.repos
+      vcs import --force src < ..\experimental\ros\foxy_moveit2.repos
       xcopy /Y /S /I ..\experimental\ros\noetic_patch src
       call ..\experimental\ros\build_foxy.bat
     condition: and(succeeded(), eq(variables.DISTRO_NAME, 'foxy'))

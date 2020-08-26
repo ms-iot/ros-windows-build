@@ -16,6 +16,7 @@ try
     $scriptsDir = split-path -parent $script:MyInvocation.MyCommand.Definition
     $workingDir = (Join-Path $scriptsDir "working")
     $vcpkgDir = (Join-Path $scriptsDir "vcpkg")
+    $wheelsDir = (Join-Path $scriptsDir "wheels")
 
     Set-Alias python (Join-Path $installDir "python.exe") -Scope Script
     Set-Alias vcpkg (Join-Path $vcpkgDir "vcpkg.exe") -Scope Script
@@ -53,7 +54,7 @@ try
     Add-Content -Path (Join-Path $installDir "python38._pth") -Value "Lib\site-packages"
     $Env:PATH = "$installDir\Scripts;$Env:PATH"
     python $getpip
-    python -m pip install -v -r $requirements
+    python -m pip install -v -r $requirements --find-links $wheelsDir
 
     # bootstrap Vcpkg ports
     $Env:VCPKG_DEFAULT_TRIPLET = $vcpkgTriplet
