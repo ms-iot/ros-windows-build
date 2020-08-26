@@ -27,6 +27,7 @@ jobs:
       cd catkin_ws
       vcs import --force src < ..\experimental\test\test.repos
       colcon build --packages-select nav2_system_tests
+      colcon test --packages-select nav2_system_tests
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: .\catkin_ws\log
