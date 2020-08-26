@@ -1,0 +1,19 @@
+trigger: none
+pr: none
+
+jobs:
+- job: Build
+  pool: 'Edge-Robotics-VS2019-GPU'
+  timeoutInMinutes: 360
+  workspace:
+    clean: all
+  steps:
+  - task: DownloadBuildArtifacts@0
+    inputs:
+      buildType: 'specific' # Options: current, specific
+      project: 'ros-win' # Required when source == Specific
+      pipeline: 93 # Required when source == Specific
+      buildVersionToDownload: 'latest' # Required when source == Specific# Options: latest, latestFromBranch, specific
+      artifactName: 'setup'
+  - script: |
+      dir /s /b %System_ArtifactsDirectory%\setup
