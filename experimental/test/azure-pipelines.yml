@@ -31,6 +31,10 @@ jobs:
       colcon test --packages-select nav2_system_tests --event-handlers console_direct+
       colcon test-result
     displayName: 'Build and run tests'
+    timeoutInMinutes: 30
+  - script: |
+      cd catkin_ws
+      dir /s /b build
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: .\catkin_ws\log
