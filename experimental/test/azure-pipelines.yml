@@ -19,6 +19,7 @@ jobs:
       %System_ArtifactsDirectory%\setup\ros-foxy-setup.exe /VERYSILENT
     displayName: 'Install ROS 2 Foxy'
   - script: |
+      mkdir C:\Users\AzDevOps\.gazebo\models
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
       call "c:\opt\ros\foxy\x64\setup.bat"
       call "c:\opt\ros\foxy\x64\share\gazebo\setup.bat"
