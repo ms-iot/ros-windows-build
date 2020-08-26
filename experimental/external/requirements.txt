@@ -33,4 +33,3 @@ rospkg
 rosinstall-generator
 opencv-python
 nose
-netifaces
