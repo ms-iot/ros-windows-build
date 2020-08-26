@@ -24,7 +24,7 @@ flake8-docstrings
 flake8-import-order
 flake8-quotes
 mypy
-pep8 
+pep8
 pydocstyle
 pyqt5
 pyqt-builder
@@ -33,3 +33,4 @@ rospkg
 rosinstall-generator
 opencv-python
 nose
+netifaces
