@@ -36,6 +36,12 @@ jobs:
   - script: |
       cd catkin_ws
       dir /s /b build
+  - task: PublishTestResults@2
+    inputs:
+      testRunner: 'jUnit'
+      testResultsFiles: '**\*.xml'
+      searchFolder: $(System.DefaultWorkingDirectory)/build/nav2_system_tests/test_results
+    condition: always()
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: .\catkin_ws\log
