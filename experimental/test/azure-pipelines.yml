@@ -16,4 +16,19 @@ jobs:
       buildVersionToDownload: 'latest' # Required when source == Specific# Options: latest, latestFromBranch, specific
       artifactName: 'setup'
   - script: |
-      dir /s /b %System_ArtifactsDirectory%\setup
+      %System_ArtifactsDirectory%\setup\ros-foxy-setup.exe /VERYSILENT
+    displayName: 'Install ROS 2 Foxy'
+  - script: |
+      call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+      call "c:\opt\ros\foxy\x64\setup.bat"
+      call "c:\opt\ros\foxy\x64\share\gazebo\setup.bat"
+      set "SDF_PATH=c:\opt\ros\foxy\x64\share\sdformat\1.6"
+      mkdir catkin_ws\src
+      cd catkin_ws
+      vcs import --force src < ..\experimental\test\test.repos
+      colcon build --packages-select nav2_system_tests
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: .\catkin_ws\log
+      artifactName: 'logs'
+    condition: always()
