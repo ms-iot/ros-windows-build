@@ -53,7 +53,7 @@ try
     Add-Content -Path (Join-Path $installDir "python38._pth") -Value "Lib\site-packages"
     $Env:PATH = "$installDir\Scripts;$Env:PATH"
     python $getpip
-    python -m pip install -r $requirements
+    python -m pip install -v -r $requirements
 
     # bootstrap Vcpkg ports
     $Env:VCPKG_DEFAULT_TRIPLET = $vcpkgTriplet
