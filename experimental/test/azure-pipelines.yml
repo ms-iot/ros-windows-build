@@ -31,6 +31,7 @@ jobs:
       colcon test --packages-select nav2_system_tests --event-handlers console_direct+
       colcon test-result
     displayName: 'Build and run tests'
+    continueOnError: true
     timeoutInMinutes: 30
   - script: |
       cd catkin_ws
