@@ -28,6 +28,8 @@ Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
 CloseApplications=force
+RestartApplications=no
+ArchitecturesAllowed=x64
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
