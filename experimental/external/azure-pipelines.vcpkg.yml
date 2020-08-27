@@ -23,7 +23,7 @@ jobs:
       call ".\vcpkg\bootstrap-vcpkg.bat"
       cd vcpkg
       vcpkg version
-      vcpkg install @experiment\external\vcpkg.in --x-buildtrees-root=d:\bld --x-install-root=d:\output
+      vcpkg install @..\experiment\external\vcpkg.in --x-buildtrees-root=d:\bld --x-install-root=d:\output
   - task: ArchiveFiles@2
     inputs:
       rootFolderOrFile: 'd:\output'
