@@ -11,10 +11,22 @@ jobs:
         INSTALL_DIR: 'c:\opt\ros\noetic\x64'
         DISTRO_NAME: 'noetic'
         PDB_OUTPUT_DIRECTORY: 'd:\symbols'
+        ROS_VERSION: '1'
+      dashing:
+        INSTALL_DIR: 'c:\opt\ros\dashing\x64'
+        DISTRO_NAME: 'dashing'
+        PDB_OUTPUT_DIRECTORY: 'd:\symbols'
+        ROS_VERSION: '2'
+      eloquent:
+        INSTALL_DIR: 'c:\opt\ros\eloquent\x64'
+        DISTRO_NAME: 'eloquent'
+        PDB_OUTPUT_DIRECTORY: 'd:\symbols'
+        ROS_VERSION: '2'
       foxy:
         INSTALL_DIR: 'c:\opt\ros\foxy\x64'
         DISTRO_NAME: 'foxy'
         PDB_OUTPUT_DIRECTORY: 'd:\symbols'
+        ROS_VERSION: '2'
   timeoutInMinutes: 360
   workspace:
     clean: all
@@ -51,20 +63,38 @@ jobs:
       DEL /F /Q %INSTALL_DIR%\lib\orocos-kdl.lib
       DEL /F /Q %INSTALL_DIR%\lib\pkgconfig\orocos-kdl.pc
       DEL /F /Q %INSTALL_DIR%\lib\pkgconfig\orocos_kdl.pc
-    condition: and(succeeded(), eq(variables.DISTRO_NAME, 'foxy'))
+    condition: and(succeeded(), eq(variables.ROS_VERSION, '2'))
     displayName: 'remove orocos-kdl'
   - script: |
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
       set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
       mkdir catkin_ws\src
       cd catkin_ws
+      vcs import --force src < ..\experimental\ros\dashing\release-dashing-20200722.repos
+      call ..\experimental\ros\build_ros2.bat
+    condition: and(succeeded(), eq(variables.DISTRO_NAME, 'dashing'))
+    displayName: 'build foxy'
+  - script: |
+      call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+      set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
+      mkdir catkin_ws\src
+      cd catkin_ws
+      vcs import --force src < ..\experimental\ros\eloquent\release-eloquent-20200124-1.repos
+      call ..\experimental\ros\build_ros2.bat
+    condition: and(succeeded(), eq(variables.DISTRO_NAME, 'eloquent'))
+    displayName: 'build foxy'
+  - script: |
+      call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+      set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
+      mkdir catkin_ws\src
+      cd catkin_ws
       vcs import --force src < ..\experimental\ros\gazebo.rosinstall
-      vcs import --force src < ..\experimental\ros\foxy.repos
-      vcs import --force src < ..\experimental\ros\foxy_override.repos
-      vcs import --force src < ..\experimental\ros\foxy_navigation2.repos
-      vcs import --force src < ..\experimental\ros\foxy_moveit2.repos
-      xcopy /Y /S /I ..\experimental\ros\noetic_patch src
-      call ..\experimental\ros\build_foxy.bat
+      vcs import --force src < ..\experimental\ros\foxy\release-foxy-20200807.repos
+      vcs import --force src < ..\experimental\ros\foxy\foxy_override.repos
+      vcs import --force src < ..\experimental\ros\foxy\foxy_navigation2.repos
+      vcs import --force src < ..\experimental\ros\foxy\foxy_moveit2.repos
+      xcopy /Y /S /I ..\experimental\ros\src_patch src
+      call ..\experimental\ros\build_ros2.bat
     condition: and(succeeded(), eq(variables.DISTRO_NAME, 'foxy'))
     displayName: 'build foxy'
   - script: |
@@ -73,10 +103,10 @@ jobs:
       mkdir catkin_ws\src
       cd catkin_ws
       vcs import --force src < ..\experimental\ros\gazebo.rosinstall
-      vcs import --force src < ..\experimental\ros\noetic.rosinstall
-      vcs import --force src < ..\experimental\ros\noetic_override.rosinstall
-      xcopy /Y /S /I ..\experimental\ros\noetic_patch src
-      call ..\experimental\ros\build_noetic.bat
+      vcs import --force src < ..\experimental\ros\noetic\noetic.rosinstall
+      vcs import --force src < ..\experimental\ros\noetic\noetic_override.rosinstall
+      xcopy /Y /S /I ..\experimental\ros\src_patch src
+      call ..\experimental\ros\build_ros1.bat
     condition: and(succeeded(), eq(variables.DISTRO_NAME, 'noetic'))
     displayName: 'build noetic'
   - task: PublishBuildArtifacts@1
