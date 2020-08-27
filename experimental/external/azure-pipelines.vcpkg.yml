@@ -21,6 +21,8 @@ jobs:
   - script: |
       git clone https://github.com/seanyen/vcpkg.git -b seanyen/739209b51aaa125a41919f23206c110e79023ce8
       call ".\vcpkg\bootstrap-vcpkg.bat"
+      cd vcpkg
+      vcpkg version
       vcpkg install @experiment\external\vcpkg.in --x-buildtrees-root=d:\bld --x-install-root=d:\output
   - task: ArchiveFiles@2
     inputs:
