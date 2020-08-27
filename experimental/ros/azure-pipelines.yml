@@ -13,13 +13,13 @@ jobs:
         PDB_OUTPUT_DIRECTORY: 'd:\symbols'
         ROS_VERSION: '1'
       dashing:
-        INSTALL_DIR: 'c:\opt\ros\dashing\x64'
+        INSTALL_DIR: 'c:\opt\ros\foxy\x64'
         DISTRO_NAME: 'dashing'
         PDB_OUTPUT_DIRECTORY: 'd:\symbols'
         ROS_VERSION: '2'
       eloquent:
-        INSTALL_DIR: 'c:\opt\ros\eloquent\x64'
-        DISTRO_NAME: 'eloquent'
+        INSTALL_DIR: 'c:\opt\ros\foxy\x64'
+        DISTRO_NAME: 'foxy'
         PDB_OUTPUT_DIRECTORY: 'd:\symbols'
         ROS_VERSION: '2'
       foxy:
