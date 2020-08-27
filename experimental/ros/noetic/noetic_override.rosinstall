@@ -1,7 +1,11 @@
 - git:
+    local-name: pluginlib
+    uri: https://github.com/ms-iot/pluginlib.git
+    version: windows/1.13.0
+- git:
     local-name: catkin
-    uri: https://github.com/seanyen/catkin.git
-    version: seanyen/0.8.8
+    uri: https://github.com/ros/catkin.git
+    version: noetic-devel
 - git:
     local-name: python_qt_binding
     uri: https://github.com/seanyen/python_qt_binding.git
