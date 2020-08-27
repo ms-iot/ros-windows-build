@@ -31,8 +31,8 @@ jobs:
       eloquent-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
       eloquent-ALL:
-        ROSWIN_RELEASE_REPO: 'https://raw.githubusercontent.com/ros2/ros2/release-eloquent-20201024-1/ros2.repos'
-        ROSWIN_BUILDNUMBER: '20201024.1.0.${ROSWIN_DATE}'
+        ROSWIN_RELEASE_REPO: 'https://raw.githubusercontent.com/ros2/ros2/release-eloquent-20200124-1/ros2.repos'
+        ROSWIN_BUILDNUMBER: '20200124.1.0.${ROSWIN_DATE}'
         ROSWIN_METAPACKAGE: 'ALL'
         ROSWIN_PACKAGE_SKIP: 'rttest tlsf tlsf_cpp pendulum_control msft_colcon_env msft_ros_env msft_ros_pkgs msft_ros_vcpkg'
   steps:

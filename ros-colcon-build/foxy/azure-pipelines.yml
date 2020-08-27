@@ -31,13 +31,11 @@ jobs:
       foxy-desktop:
         ROSWIN_METAPACKAGE: 'desktop'
       foxy-ALL:
-        ROSWIN_RELEASE_REPO: 'https://raw.githubusercontent.com/ros2/ros2/release-foxy-20200710/ros2.repos'
-        ROSWIN_BUILDNUMBER: '20200710.0.0.$(ROSWIN_DATE)'
+        ROSWIN_RELEASE_REPO: 'https://raw.githubusercontent.com/ros2/ros2/release-foxy-20200807/ros2.repos'
+        ROSWIN_BUILDNUMBER: '20200807.0.0.$(ROSWIN_DATE)'
         ROSWIN_METAPACKAGE: 'ALL'
         ROSWIN_PACKAGE_SKIP: 'rttest tlsf tlsf_cpp pendulum_control msft_colcon_env msft_ros_env msft_ros_pkgs msft_ros_vcpkg'
   steps:
-  - script: |
-      echo %ROSWIN_BUILDNUMBER%
   - template: ..\..\common\agent-prep.yml
   - template: ..\common\checkout.yml
   - template: ..\common\build.yml
