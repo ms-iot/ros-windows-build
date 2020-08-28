@@ -55,7 +55,7 @@ jobs:
       destinationFolder: '$(INSTALL_DIR)'
       cleanDestinationFolder: true
   - powershell: |
-      & .\experimental\external\copyVcpkgInstalled.ps1 -InstallDir $Env:INSTALL_DIR -VcpkgInstalled "d:\installed\%VCPKG_DEFAULT_TRIPLET%"
+      & .\experimental\external\copyVcpkgInstalled.ps1 -InstallDir $Env:INSTALL_DIR -VcpkgInstalled "d:\installed\$Env:VCPKG_DEFAULT_TRIPLET"
   - script: |
       DEL /F /Q %INSTALL_DIR%\share\tinyxml\tinyxml-config.cmake
       DEL /F /Q %INSTALL_DIR%\share\tinyxml\tinyxmlTargets-release.cmake
