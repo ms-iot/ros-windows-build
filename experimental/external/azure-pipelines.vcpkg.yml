@@ -32,7 +32,7 @@ jobs:
     continueOnError: true
   - task: ExtractFiles@1
     inputs:
-      archiveFilePatterns: '$(System.ArtifactsDirectory)\$(VCPKG_DEFAULT_TRIPLET)\binarycaching.zip'
+      archiveFilePatterns: '$(System.ArtifactsDirectory)\$(VCPKG_DEFAULT_TRIPLET)-binarycaching\binarycaching.zip'
       destinationFolder: 'd:\binarycaching'
       cleanDestinationFolder: true
     continueOnError: true
