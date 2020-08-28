@@ -33,8 +33,10 @@ jobs:
       project: 'ros-win' # Required when source == Specific
       pipeline: 97 # Required when source == Specific
       buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
-      artifactName: '$(VCPKG_DEFAULT_TRIPLET)-installed'
-      buildId: 8118
+      #artifactName: '$(VCPKG_DEFAULT_TRIPLET)-installed'
+      #buildId: 8118
+      artifactName: 'vcpkg-drop'
+      buildId: 8107
   - task: DownloadBuildArtifacts@0
     inputs:
       buildType: 'specific' # Options: current, specific
@@ -44,7 +46,8 @@ jobs:
       artifactName: '$(DISTRO_NAME)-python'
   - task: ExtractFiles@1
     inputs:
-      archiveFilePatterns: '$(System.ArtifactsDirectory)\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
+      #archiveFilePatterns: '$(System.ArtifactsDirectory)\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
+      archiveFilePatterns: '$(System.ArtifactsDirectory)\vcpkg-drop\$(VCPKG_DEFAULT_TRIPLET).zip'
       destinationFolder: 'd:\installed'
       cleanDestinationFolder: true
   - task: ExtractFiles@1
@@ -53,7 +56,14 @@ jobs:
       destinationFolder: '$(INSTALL_DIR)'
       cleanDestinationFolder: true
   - powershell: |
-      & .\experimental\external\copyVcpkgInstalled.ps1 -InstallDir $Env:INSTALL_DIR -VcpkgInstalled "d:\installed"
+      & .\experimental\external\copyVcpkgInstalled.ps1 -InstallDir $Env:INSTALL_DIR -VcpkgInstalled "d:\installed\%VCPKG_DEFAULT_TRIPLET%"
+  - script: |
+      DEL /F /Q %INSTALL_DIR%\share\tinyxml\tinyxml-config.cmake
+      DEL /F /Q %INSTALL_DIR%\share\tinyxml\tinyxmlTargets-release.cmake
+      DEL /F /Q %INSTALL_DIR%\share\tinyxml\tinyxmlTargets.cmake
+      DEL /F /Q %INSTALL_DIR%\include\sdformat-6.2\tinyxml.h
+      xcopy /Y /S /I experimental\external\post-patch %INSTALL_DIR%
+    displayName: 'Post-patch the external dependencies'
   - task: ArchiveFiles@2
     inputs:
       rootFolderOrFile: '$(INSTALL_DIR)'
