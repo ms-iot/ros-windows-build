@@ -19,7 +19,7 @@ try
 
     Set-Alias python (Join-Path $installDir "python.exe") -Scope Script
 
-    $workingDir, $installDir, $vcpkgDir | ForEach-Object {
+    $workingDir, $installDir | ForEach-Object {
         Remove-Item $_ -Force -Recurse -ErrorAction SilentlyContinue
         if (Test-Path $_ -PathType Container) {
             throw "cannot remove $_"
