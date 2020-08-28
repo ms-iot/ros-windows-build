@@ -28,6 +28,7 @@ jobs:
       pipeline: 97 # Required when source == Specific
       buildVersionToDownload: 'latest' # Required when source == Specific# Options: latest, latestFromBranch, specific
       artifactName: '$(VCPKG_DEFAULT_TRIPLET)-binarycaching'
+      allowPartiallySucceededBuilds: true
     continueOnError: true
   - task: ExtractFiles@1
     inputs:
@@ -40,7 +41,7 @@ jobs:
       call ".\vcpkg\bootstrap-vcpkg.bat"
       cd vcpkg
       vcpkg version
-      vcpkg install @..\experimental\external\vcpkg.test.in --x-buildtrees-root=d:\bld --binarysource=d:\binarycaching --x-install-root=d:\installed
+      vcpkg install @..\experimental\external\vcpkg.test.in --x-buildtrees-root=d:\bld --binarysource=clear --binarysource=file,d:\binarycaching,readwrite --x-install-root=d:\installed
     continueOnError: true
   - task: ArchiveFiles@2
     inputs:
