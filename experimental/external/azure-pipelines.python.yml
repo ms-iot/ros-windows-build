@@ -3,7 +3,8 @@ pr: none
 
 jobs:
 - job: Build
-  pool: Edge-Robotics-VS2019
+  pool:
+    vmImage: 'windows-2019'
   timeoutInMinutes: 360
   strategy:
     matrix:
