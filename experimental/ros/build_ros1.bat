@@ -9,7 +9,7 @@ colcon build ^
     --install-base %INSTALL_DIR% ^
     --cmake-args ^
         -G Ninja ^
-        -DCMAKE_BUILD_TYPE=Release ^
+        -DCMAKE_BUILD_TYPE=RelWithDebInfo ^
         -DCURL_NO_CURL_CMAKE=ON ^
         -DCATKIN_SKIP_TESTING=ON ^
         -DBUILD_TESTING:BOOL=False ^
