@@ -41,6 +41,9 @@ jobs:
       DEL /F /Q %INSTALL_DIR%\lib\pkgconfig\orocos_kdl.pc
     displayName: 'Remove orocos-kdl'
   - script: |
+      xcopy /Y /S /I .\experimental\ros\%ROS_DISTRO%\pre-patch %INSTALL_DIR%
+    displayName: 'Pre-patch the install directory'
+  - script: |
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
       set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
       mkdir ws\src
