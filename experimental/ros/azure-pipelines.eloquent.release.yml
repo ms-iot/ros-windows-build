@@ -47,6 +47,7 @@ jobs:
       cd ws
       vcs import --force src < ..\experimental\ros\gazebo.rosinstall
       vcs import --force src < ..\experimental\ros\eloquent\release-eloquent-20200124-1.repos
+      vcs import --force src < ..\experimental\ros\eloquent\eloquent_override.repos
       call ..\experimental\ros\build_ros2.bat
     displayName: 'Build eloquent'
   - task: PublishBuildArtifacts@1
