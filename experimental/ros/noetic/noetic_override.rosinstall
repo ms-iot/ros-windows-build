@@ -8,33 +8,33 @@
     version: windows/noetic-devel
 - git:
     local-name: python_qt_binding
-    uri: https://github.com/seanyen/python_qt_binding.git
-    version: seanyen/sip5
+    uri: https://github.com/ms-iot/python_qt_binding.git
+    version: windows/sip5
 - git:
     local-name: qt_gui_core
-    uri: https://github.com/seanyen/qt_gui_core.git
-    version: seanyen/0.4.2
+    uri: https://github.com/ms-iot/qt_gui_core.git
+    version: windows/0.4.2
 - git:
     local-name: ros_comm
     uri: https://github.com/ros/ros_comm.git
     version: noetic-devel
 - git:
     local-name: image_common
-    uri: https://github.com/seanyen/image_common.git
-    version: seanyen/1.12.0
+    uri: https://github.com/ms-iot/image_common.git
+    version: windows/1.12.0
 - git:
     local-name: vision_opencv
-    uri: https://github.com/seanyen/vision_opencv.git
-    version: seanyen/1.15.0
+    uri: https://github.com/ms-iot/vision_opencv.git
+    version: windows/1.15.0
 - git:
     local-name: geometry
     uri: https://github.com/ms-iot/geometry.git
     version: windows/noetic-devel
 - git:
     local-name: rviz
-    uri: https://github.com/seanyen/rviz.git
-    version: seanyen/1.14.1
+    uri: https://github.com/ms-iot/rviz.git
+    version: windows/1.14.1
 - git:
     local-name: gazebo_ros_pkgs
-    uri: https://github.com/seanyen/gazebo_ros_pkgs.git
-    version: seanyen/2.9.1
+    uri: https://github.com/ms-iot/gazebo_ros_pkgs.git
+    version: windows/2.9.1
