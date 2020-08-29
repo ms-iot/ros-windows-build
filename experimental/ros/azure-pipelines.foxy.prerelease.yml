@@ -47,7 +47,7 @@ jobs:
       cd ws
       rosinstall_generator desktop --rosdistro foxy --deps --upstream --format repos > prerelease-foxy.repos
       vcs import --force src < prerelease-foxy.repos
-      vcs import --force src < ..\experimental\ros\foxy\foxy_override.repos
+      vcs import --force src < ..\experimental\ros\foxy\foxy_override_prerelease.repos
       call ..\experimental\ros\build_ros2.bat
     displayName: 'build foxy'
   - task: PublishBuildArtifacts@1
