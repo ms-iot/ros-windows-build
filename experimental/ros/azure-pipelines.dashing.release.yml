@@ -103,6 +103,7 @@ jobs:
       destinationFolder: '$(INSTALL_DIR)'
       cleanDestinationFolder: true
   - script: |
+      echo #define MyAppVersion "20200722.0.0.0" > .\experimental\ros\%ROS_DISTRO%\version.inc
       iscc .\experimental\ros\%ROS_DISTRO%\setup.iss
   - task: PublishBuildArtifacts@1
     inputs:

@@ -5,9 +5,9 @@ jobs:
 - job: Build
   pool: 'Edge-Robotics-VS2019'
   variables:
-    INSTALL_DIR: 'c:\opt\ros\eloquent\x64'
+    INSTALL_DIR: 'c:\opt\ros\foxy\x64'
     PDB_OUTPUT_DIRECTORY: 'd:\symbols'
-    ROS_DISTRO: 'eloquent'
+    ROS_DISTRO: 'foxy'
     ROS_VERSION: '1'
   timeoutInMinutes: 360
   workspace:
@@ -45,10 +45,15 @@ jobs:
       set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
       mkdir ws\src
       cd ws
+      rosinstall_generator desktop --rosdistro foxy --upstream --format repos > prerelease-foxy.repos
+      vcs import --force src < prerelease-foxy.repos
       vcs import --force src < ..\experimental\ros\gazebo.rosinstall
-      vcs import --force src < ..\experimental\ros\eloquent\release-eloquent-20200124-1.repos
+      vcs import --force src < ..\experimental\ros\foxy\foxy_override.repos
+      vcs import --force src < ..\experimental\ros\foxy\foxy_navigation2.repos
+      vcs import --force src < ..\experimental\ros\foxy\foxy_moveit2.repos
+      xcopy /Y /S /I ..\experimental\ros\src_patch src
       call ..\experimental\ros\build_ros2.bat
-    displayName: 'Build eloquent'
+    displayName: 'build foxy'
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: .\ws\log
@@ -87,8 +92,8 @@ jobs:
   pool:
     vmImage: 'windows-2019'
   variables:
-    INSTALL_DIR: 'c:\opt\ros\eloquent\x64'
-    ROS_DISTRO: 'eloquent'
+    INSTALL_DIR: 'c:\opt\ros\foxy\x64'
+    ROS_DISTRO: 'foxy'
   timeoutInMinutes: 360
   workspace:
     clean: all
@@ -103,7 +108,7 @@ jobs:
       destinationFolder: '$(INSTALL_DIR)'
       cleanDestinationFolder: true
   - script: |
-      echo #define MyAppVersion "20200124.1.0.0" > .\experimental\ros\%ROS_DISTRO%\version.inc
+      echo #define MyAppVersion "%BUILD_BUILDNUMBER%" > .\experimental\ros\%ROS_DISTRO%\version.inc
       iscc .\experimental\ros\%ROS_DISTRO%\setup.iss
   - task: PublishBuildArtifacts@1
     inputs:
