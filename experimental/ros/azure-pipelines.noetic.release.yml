@@ -107,5 +107,5 @@ jobs:
       iscc .\experimental\ros\%ROS_DISTRO%\setup.iss
   - task: PublishBuildArtifacts@1
     inputs:
-      pathtoPublish: '.\Output'
+      pathtoPublish: '.\experimental\ros\$(ROS_DISTRO)\Output'
       artifactName: '$(ROS_DISTRO)-setup'
