@@ -1,0 +1,5 @@
+repositories:
+  ros2/rviz:
+    type: git
+    url: https://github.com/ms-iot/rviz.git
+    version: windows/6.1.6
