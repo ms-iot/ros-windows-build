@@ -41,7 +41,7 @@ jobs:
       call ".\vcpkg\bootstrap-vcpkg.bat"
       cd vcpkg
       vcpkg version
-      vcpkg install @..\experimental\external\vcpkg.test.in --x-buildtrees-root=d:\bld --binarysource=clear --binarysource=files,d:\binarycaching,readwrite --x-install-root=d:\installed
+      vcpkg install @..\experimental\external\vcpkg.test.in --x-buildtrees-root=d:\bld --binarysource=clear --binarysource=files,d:\binarycaching,readwrite
     continueOnError: true
   - task: ArchiveFiles@2
     inputs:
@@ -54,7 +54,7 @@ jobs:
     continueOnError: true
   - task: ArchiveFiles@2
     inputs:
-      rootFolderOrFile: 'd:\installed'
+      rootFolderOrFile: '.\vcpkg\installed'
       includeRootFolder: false
       archiveType: 'zip' # Options: zip, 7z, tar, wim
       tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
