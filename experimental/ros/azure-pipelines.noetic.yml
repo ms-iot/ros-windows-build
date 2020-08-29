@@ -25,7 +25,7 @@ jobs:
       buildId: 8130
   - task: ExtractFiles@1
     inputs:
-      archiveFilePatterns: '$(System.ArtifactsDirectory)\$(ROS_DISTRO)-drop\external.zip'
+      archiveFilePatterns: '$(System.ArtifactsDirectory)\$(ROS_DISTRO)-external\external.zip'
       destinationFolder: '$(INSTALL_DIR)'
       cleanDestinationFolder: true
   - script: |
