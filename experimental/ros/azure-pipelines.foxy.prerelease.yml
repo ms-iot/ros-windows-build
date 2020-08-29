@@ -45,13 +45,8 @@ jobs:
       set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
       mkdir ws\src
       cd ws
-      rosinstall_generator desktop --rosdistro foxy --upstream --format repos > prerelease-foxy.repos
+      rosinstall_generator desktop --rosdistro foxy --deps --upstream --format repos > prerelease-foxy.repos
       vcs import --force src < prerelease-foxy.repos
-      vcs import --force src < ..\experimental\ros\gazebo.rosinstall
-      vcs import --force src < ..\experimental\ros\foxy\foxy_override.repos
-      vcs import --force src < ..\experimental\ros\foxy\foxy_navigation2.repos
-      vcs import --force src < ..\experimental\ros\foxy\foxy_moveit2.repos
-      xcopy /Y /S /I ..\experimental\ros\src_patch src
       call ..\experimental\ros\build_ros2.bat
     displayName: 'build foxy'
   - task: PublishBuildArtifacts@1
