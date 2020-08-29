@@ -19,11 +19,6 @@ jobs:
       pipeline: 103 # Required when source == Specific
       buildVersionToDownload: 'latest' # Required when source == Specific# Options: latest, latestFromBranch, specific
       artifactName: '$(ROS_DISTRO)-setup'
-  - task: ExtractFiles@1
-    inputs:
-      archiveFilePatterns: '$(System.ArtifactsDirectory)\$(ROS_DISTRO)-install\install.zip'
-      destinationFolder: '$(INSTALL_DIR)'
-      cleanDestinationFolder: true
   - powershell: |
       .\experimental\ros\chocolatey\buildChocolatey.ps1 -PackageName "ros-foxy-desktop" -PackageVersion "20200807.0.0.0" -SetupProgram "$Env:System_ArtifactsDirectory\foxy-setup\ros-foxy-setup.exe"
   - task: PublishBuildArtifacts@1
