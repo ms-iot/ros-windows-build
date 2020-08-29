@@ -42,7 +42,6 @@ jobs:
       vcs import --force src < ..\experimental\ros\noetic\noetic_override.rosinstall
       xcopy /Y /S /I ..\experimental\ros\src_patch src
       call ..\experimental\ros\build_ros1.bat
-    condition: and(succeeded(), eq(variables.ROS_DISTRO, 'noetic'))
     displayName: 'build noetic'
   - task: PublishBuildArtifacts@1
     inputs:

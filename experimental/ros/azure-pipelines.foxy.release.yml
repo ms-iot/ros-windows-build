@@ -52,7 +52,6 @@ jobs:
       vcs import --force src < ..\experimental\ros\foxy\foxy_moveit2.repos
       xcopy /Y /S /I ..\experimental\ros\src_patch src
       call ..\experimental\ros\build_ros2.bat
-    condition: and(succeeded(), eq(variables.ROS_DISTRO, 'foxy'))
     displayName: 'build foxy'
   - task: PublishBuildArtifacts@1
     inputs:
