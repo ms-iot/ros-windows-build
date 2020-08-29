@@ -54,12 +54,6 @@ jobs:
       pathtoPublish: .\ws\log
       artifactName: '$(ROS_DISTRO)-log'
     condition: always()
-  - task: CopyFiles@2
-    inputs:
-      sourceFolder: .\ws\build
-      contents: '**\*.pdb'
-      targetFolder: '$(PDB_OUTPUT_DIRECTORY)'
-      cleanTargetFolder: true
   - task: ArchiveFiles@2
     inputs:
       rootFolderOrFile: '$(PDB_OUTPUT_DIRECTORY)'
