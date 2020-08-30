@@ -22,7 +22,7 @@ jobs:
       pipeline: 100 # Required when source == Specific
       buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
       artifactName: '$(ROS_DISTRO)-external'
-      buildId: 8130
+      buildId: 8175
   - task: ExtractFiles@1
     inputs:
       archiveFilePatterns: '$(System.ArtifactsDirectory)\$(ROS_DISTRO)-external\external.zip'
