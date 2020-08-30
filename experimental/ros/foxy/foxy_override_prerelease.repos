@@ -11,3 +11,7 @@ repositories:
     type: git
     url: https://github.com/ros2/yaml_cpp_vendor.git
     version: b11d00fbbe2cd8c8888f8c11ff172e84fdea9adc
+  vision_opencv:
+    type: git
+    url: https://github.com/ms-iot/vision_opencv.git
+    version: windows/2.2.1
