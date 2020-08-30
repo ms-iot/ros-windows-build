@@ -1,0 +1,41 @@
+trigger: none
+pr: none
+
+jobs:
+- job: Install
+  pool:
+    vmImage: 'windows-2019'
+  timeoutInMinutes: 360
+  workspace:
+    clean: all
+  steps:
+  - task: DownloadBuildArtifacts@0
+    inputs:
+      buildType: 'specific' # Options: current, specific
+      project: 'ros-win' # Required when source == Specific
+      pipeline: 103 # Required when source == Specific
+      buildVersionToDownload: 'latest' # Required when source == Specific# Options: latest, latestFromBranch, specific
+      artifactName: '$(ROS_DISTRO)-chocolatey'
+  - script: |
+      choco sources add -n=roswin-prerelease -s %System_ArtifactsDirectory%\foxy-chocolatey --priority 1
+      choco install ros-foxy-desktop -y
+- job: Upgrade
+  pool:
+    vmImage: 'windows-2019'
+  timeoutInMinutes: 360
+  workspace:
+    clean: all
+  steps:
+  - task: DownloadBuildArtifacts@0
+    inputs:
+      buildType: 'specific' # Options: current, specific
+      project: 'ros-win' # Required when source == Specific
+      pipeline: 103 # Required when source == Specific
+      buildVersionToDownload: 'latest' # Required when source == Specific# Options: latest, latestFromBranch, specific
+      artifactName: '$(ROS_DISTRO)-chocolatey'
+  - script: |
+      choco sources add -n=roswin -s https://aka.ms/ros/public --priority 2
+      choco install ros-foxy-desktop -y
+  - script: |
+      choco sources add -n=roswin-prerelease -s %System_ArtifactsDirectory%\foxy-chocolatey --priority 1
+      choco upgrade ros-foxy-desktop -y
