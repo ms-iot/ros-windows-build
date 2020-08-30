@@ -46,7 +46,7 @@ jobs:
       mkdir ws\src
       cd ws
       vcs import --force src < ..\experimental\ros\gazebo.rosinstall
-      vcs import --force src < ..\experimental\ros\foxy\release-foxy-20200807.repos
+      vcs import --force src < ..\experimental\ros\foxy\foxy.repos
       vcs import --force src < ..\experimental\ros\foxy\foxy_override.repos
       vcs import --force src < ..\experimental\ros\foxy\foxy_navigation2.repos
       vcs import --force src < ..\experimental\ros\foxy\foxy_moveit2.repos
@@ -93,7 +93,7 @@ jobs:
   variables:
     INSTALL_DIR: 'c:\opt\ros\foxy\x64'
     ROS_DISTRO: 'foxy'
-    RELEASE_VERSION: '20200807.0.0.0'
+    RELEASE_VERSION: '20200827.0.0.0'
   timeoutInMinutes: 360
   workspace:
     clean: all
