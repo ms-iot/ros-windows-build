@@ -11,3 +11,7 @@ repositories:
     type: git
     url: https://github.com/ms-iot/rviz.git
     version: windows/7.0.4
+  osrf/osrf_testing_tools_cpp:
+    type: git
+    url: https://github.com/osrf/osrf_testing_tools_cpp.git
+    version: 1.2.2
