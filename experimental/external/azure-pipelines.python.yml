@@ -8,6 +8,9 @@ jobs:
   timeoutInMinutes: 360
   strategy:
     matrix:
+      melodic:
+        INSTALL_DIR: 'c:\opt\ros\melodic\x64'
+        DISTRO_NAME: 'melodic'
       noetic:
         INSTALL_DIR: 'c:\opt\ros\noetic\x64'
         DISTRO_NAME: 'noetic'
