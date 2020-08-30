@@ -35,7 +35,7 @@ jobs:
       artifactName: 'foxy-chocolatey'
   - script: |
       choco sources add -n=roswin -s https://aka.ms/ros/public --priority 2
-      choco install ros-foxy-desktop -y
+      choco install ros-foxy-desktop -y --pre
   - script: |
       choco sources add -n=roswin-prerelease -s %System_ArtifactsDirectory%\foxy-chocolatey --priority 1
       choco upgrade ros-foxy-desktop -y
