@@ -37,7 +37,7 @@ jobs:
       cleanDestinationFolder: true
     continueOnError: true
   - script: |
-      git clone https://github.com/seanyen/vcpkg.git -b seanyen/739209b51aaa125a41919f23206c110e79023ce8
+      git clone https://github.com/ms-iot/vcpkg.git -b windows/739209b51aaa125a41919f23206c110e79023ce8
       call ".\vcpkg\bootstrap-vcpkg.bat"
       cd vcpkg
       vcpkg version
