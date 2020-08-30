@@ -9,6 +9,7 @@ jobs:
     PDB_OUTPUT_DIRECTORY: 'd:\symbols'
     ROS_DISTRO: 'melodic'
     ROS_VERSION: '1'
+    ROS_PYTHON_VERSION: '3'
   timeoutInMinutes: 360
   workspace:
     clean: all
