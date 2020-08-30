@@ -1,7 +1,7 @@
 - git:
     local-name: actionlib
     uri: https://github.com/ros/actionlib.git
-    version: 1.13.1
+    version: 1.13.2
 - git:
     local-name: angles
     uri: https://github.com/ros/angles.git
@@ -41,7 +41,7 @@
 - git:
     local-name: diagnostics
     uri: https://github.com/ros/diagnostics.git
-    version: 1.9.4
+    version: 1.10.0
 - git:
     local-name: dynamic_reconfigure
     uri: https://github.com/ros/dynamic_reconfigure.git
@@ -81,7 +81,7 @@
 - git:
     local-name: genpy
     uri: https://github.com/ros/genpy.git
-    version: 0.6.13
+    version: 0.6.14
 - git:
     local-name: geometry
     uri: https://github.com/ros/geometry.git
@@ -89,7 +89,7 @@
 - git:
     local-name: geometry2
     uri: https://github.com/ros/geometry2.git
-    version: 0.7.2
+    version: 0.7.3
 - git:
     local-name: geometry_tutorials
     uri: https://github.com/ros/geometry_tutorials.git
@@ -121,7 +121,7 @@
 - git:
     local-name: kdl_parser
     uri: https://github.com/ros/kdl_parser.git
-    version: 1.14.0
+    version: 1.14.1
 - git:
     local-name: laser_assembler
     uri: https://github.com/ros-perception/laser_assembler.git
@@ -213,7 +213,7 @@
 - git:
     local-name: ros_control
     uri: https://github.com/ros-controls/ros_control.git
-    version: 0.19.1
+    version: 0.19.2
 - git:
     local-name: ros_controllers
     uri: https://github.com/ros-controls/ros_controllers.git
@@ -265,7 +265,7 @@
 - git:
     local-name: rqt_bag
     uri: https://github.com/ros-visualization/rqt_bag.git
-    version: 0.4.13
+    version: 0.4.15
 - git:
     local-name: rqt_common_plugins
     uri: https://github.com/ros-visualization/rqt_common_plugins.git
@@ -285,7 +285,7 @@
 - git:
     local-name: rqt_image_view
     uri: https://github.com/ros-visualization/rqt_image_view.git
-    version: 0.4.15
+    version: 0.4.16
 - git:
     local-name: rqt_launch
     uri: https://github.com/ros-visualization/rqt_launch.git
@@ -383,6 +383,14 @@
     uri: https://github.com/ros-visualization/rviz.git
     version: 1.14.1
 - git:
+    local-name: stage
+    uri: https://github.com/ros-gbp/stage-release.git
+    version: 4.3.0
+- git:
+    local-name: stage_ros
+    uri: https://github.com/ros-simulation/stage_ros.git
+    version: 1.8.0
+- git:
     local-name: std_msgs
     uri: https://github.com/ros/std_msgs.git
     version: 0.5.13
@@ -413,4 +421,5 @@
 - git:
     local-name: xacro
     uri: https://github.com/ros/xacro.git
-    version: 1.14.3
+    version: 1.14.4
+

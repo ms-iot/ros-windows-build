@@ -89,6 +89,7 @@ jobs:
   variables:
     INSTALL_DIR: 'c:\opt\ros\noetic\x64'
     ROS_DISTRO: 'noetic'
+    RELEASE_VERSION: '20200829.0.0.0'
   timeoutInMinutes: 360
   workspace:
     clean: all
@@ -103,9 +104,15 @@ jobs:
       destinationFolder: '$(INSTALL_DIR)'
       cleanDestinationFolder: true
   - script: |
-      echo #define MyAppVersion "20200810.0.0.0" > .\experimental\ros\%ROS_DISTRO%\version.inc
+      echo #define MyAppVersion "%RELEASE_VERSION%" > .\experimental\ros\%ROS_DISTRO%\version.inc
       iscc .\experimental\ros\%ROS_DISTRO%\setup.iss
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: '.\experimental\ros\$(ROS_DISTRO)\Output'
       artifactName: '$(ROS_DISTRO)-setup'
+  - powershell: |
+      .\experimental\ros\chocolatey\buildChocolatey.ps1 -PackageName "ros-$Env:ROS_DISTRO-desktop" -PackageVersion "$Env:RELEASE_VERSION" -SetupProgram ".\experimental\ros\$Env:ROS_DISTRO\Output\ros-$Env:ROS_DISTRO-setup.exe"
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '.\experimental\ros\chocolatey\output'
+      artifactName: '$(ROS_DISTRO)-chocolatey'
