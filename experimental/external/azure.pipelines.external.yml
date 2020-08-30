@@ -36,17 +36,16 @@ jobs:
       project: 'ros-win' # Required when source == Specific
       pipeline: 97 # Required when source == Specific
       buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
-      #artifactName: '$(VCPKG_DEFAULT_TRIPLET)-installed'
-      #buildId: 8118
-      artifactName: 'vcpkg-drop'
-      buildId: 8107
+      artifactName: '$(VCPKG_DEFAULT_TRIPLET)-installed'
+      buildId: 8135
   - task: DownloadBuildArtifacts@0
     inputs:
       buildType: 'specific' # Options: current, specific
       project: 'ros-win' # Required when source == Specific
       pipeline: 99 # Required when source == Specific
-      buildVersionToDownload: 'latest' # Required when source == Specific# Options: latest, latestFromBranch, specific
+      buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
       artifactName: '$(DISTRO_NAME)-python'
+      buildId: 8173
   - task: ExtractFiles@1
     inputs:
       #archiveFilePatterns: '$(System.ArtifactsDirectory)\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
