@@ -48,8 +48,7 @@ jobs:
       buildId: 8173
   - task: ExtractFiles@1
     inputs:
-      #archiveFilePatterns: '$(System.ArtifactsDirectory)\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
-      archiveFilePatterns: '$(System.ArtifactsDirectory)\vcpkg-drop\$(VCPKG_DEFAULT_TRIPLET).zip'
+      archiveFilePatterns: '$(System.ArtifactsDirectory)\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
       destinationFolder: 'd:\installed'
       cleanDestinationFolder: true
   - task: ExtractFiles@1
