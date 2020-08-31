@@ -19,6 +19,10 @@
     uri: https://github.com/ms-iot/qt_gui_core.git
     version: windows/0.4.2
 - git:
+    local-name: ros_comm
+    uri: https://github.com/ms-iot/ros_comm.git
+    version: windows/1.14.9
+- git:
     local-name: image_common
     uri: https://github.com/ms-iot/image_common.git
     version: windows/1.12.0
