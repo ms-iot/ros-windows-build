@@ -23,6 +23,10 @@
     uri: https://github.com/ms-iot/ros_comm.git
     version: windows/1.14.9
 - git:
+    local-name: nodelet_core
+    uri: https://github.com/ros/nodelet_core.git
+    version: c833c6e64f7f228de2c2bd56a7c60d279b6910f4
+- git:
     local-name: image_common
     uri: https://github.com/ms-iot/image_common.git
     version: windows/1.12.0
