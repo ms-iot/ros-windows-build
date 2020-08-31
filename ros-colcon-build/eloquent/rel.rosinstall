@@ -7,6 +7,10 @@
     local-name: eProsima/foonathan_memory_vendor
     uri: https://github.com/eProsima/foonathan_memory_vendor.git
     version: v1.0.0
+- git:
+    local-name: osrf/osrf_testing_tools_cpp
+    uri: https://github.com/osrf/osrf_testing_tools_cpp.git
+    version: 1.2.2
 
 # override by ms-iot (Windows Installation)
 - git:
