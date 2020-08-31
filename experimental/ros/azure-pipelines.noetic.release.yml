@@ -114,7 +114,7 @@ jobs:
       pathtoPublish: '.\experimental\ros\$(ROS_DISTRO)\Output'
       artifactName: '$(ROS_DISTRO)-setup'
   - powershell: |
-      .\experimental\ros\chocolatey\buildChocolatey.ps1 -PackageName "ros-$Env:ROS_DISTRO-desktop" -PackageVersion "$Env:RELEASE_VERSION" -SetupProgram ".\experimental\ros\$Env:ROS_DISTRO\Output\ros-$Env:ROS_DISTRO-setup.exe"
+      .\experimental\ros\chocolatey\buildChocolatey.ps1 -PackageName "ros-$Env:ROS_DISTRO-desktop" -PackageVersion "$Env:RELEASE_VERSION" -SetupProgram ".\experimental\ros\$Env:ROS_DISTRO\Output\ros-$Env:ROS_DISTRO-setup-x64-$Env:RELEASE_VERSION.exe"
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: '.\experimental\ros\chocolatey\output'
