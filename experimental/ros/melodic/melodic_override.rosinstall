@@ -1,23 +1,23 @@
 - git:
+    local-name: class_loader
+    uri: https://github.com/ros/class_loader.git
+    version: 0.5.0
+- git:
     local-name: pluginlib
     uri: https://github.com/ms-iot/pluginlib.git
     version: windows/1.13.0
 - git:
     local-name: catkin
     uri: https://github.com/ms-iot/catkin.git
-    version: windows/noetic-devel
+    version: windows/0.7.28
 - git:
     local-name: python_qt_binding
     uri: https://github.com/ms-iot/python_qt_binding.git
-    version: windows/sip5
+    version: windows/0.4.3
 - git:
     local-name: qt_gui_core
     uri: https://github.com/ms-iot/qt_gui_core.git
     version: windows/0.4.2
-- git:
-    local-name: ros_comm
-    uri: https://github.com/ros/ros_comm.git
-    version: noetic-devel
 - git:
     local-name: image_common
     uri: https://github.com/ms-iot/image_common.git
@@ -37,4 +37,4 @@
 - git:
     local-name: gazebo_ros_pkgs
     uri: https://github.com/ms-iot/gazebo_ros_pkgs.git
-    version: windows/2.9.1
+    version: windows/2.8.7

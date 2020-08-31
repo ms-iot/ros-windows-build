@@ -9,7 +9,7 @@
 - git:
     local-name: python_qt_binding
     uri: https://github.com/ms-iot/python_qt_binding.git
-    version: windows/sip5
+    version: windows/0.4.3
 - git:
     local-name: qt_gui_core
     uri: https://github.com/ms-iot/qt_gui_core.git
