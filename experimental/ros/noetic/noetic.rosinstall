@@ -111,6 +111,10 @@
     uri: https://github.com/ros-perception/image_transport_plugins.git
     version: 1.14.0
 - git:
+    local-name: imu_tools
+    uri: https://github.com/ccny-ros-pkg/imu_tools.git
+    version: 1.2.2
+- git:
     local-name: interactive_markers
     uri: https://github.com/ros-visualization/interactive_markers.git
     version: 1.12.0
@@ -118,6 +122,10 @@
     local-name: joint_state_publisher
     uri: https://github.com/ros/joint_state_publisher.git
     version: 1.15.0
+- git:
+    local-name: joystick_drivers
+    uri: https://github.com/ros-drivers/joystick_drivers.git
+    version: 1.14.0
 - git:
     local-name: kdl_parser
     uri: https://github.com/ros/kdl_parser.git
@@ -155,6 +163,10 @@
     uri: https://github.com/ros/metapackages.git
     version: 1.5.0
 - git:
+    local-name: navigation
+    uri: https://github.com/ros-planning/navigation.git
+    version: 1.17.0
+- git:
     local-name: navigation_msgs
     uri: https://github.com/ros-planning/navigation_msgs.git
     version: 1.14.0
@@ -162,6 +174,10 @@
     local-name: nodelet_core
     uri: https://github.com/ros/nodelet_core.git
     version: 1.10.0
+- git:
+    local-name: open_karto
+    uri: https://github.com/ros-perception/open_karto.git
+    version: 1.2.2
 - git:
     local-name: pcl_msgs
     uri: https://github.com/ros-perception/pcl_msgs.git
@@ -254,6 +270,10 @@
     local-name: rospack
     uri: https://github.com/ros/rospack.git
     version: 2.6.2
+- git:
+    local-name: rosserial
+    uri: https://github.com/ros-drivers/rosserial.git
+    version: 0.9.0
 - git:
     local-name: rqt
     uri: https://github.com/ros-visualization/rqt.git
@@ -383,6 +403,14 @@
     uri: https://github.com/ros-visualization/rviz.git
     version: 1.14.1
 - git:
+    local-name: slam_karto
+    uri: https://github.com/ros-perception/slam_karto.git
+    version: 0.8.1
+- git:
+    local-name: sparse_bundle_adjustment
+    uri: https://github.com/ros-perception/sparse_bundle_adjustment.git
+    version: 0.4.4
+- git:
     local-name: stage
     uri: https://github.com/ros-gbp/stage-release.git
     version: 4.3.0
@@ -394,6 +422,10 @@
     local-name: std_msgs
     uri: https://github.com/ros/std_msgs.git
     version: 0.5.13
+- git:
+    local-name: turtlebot3_msgs
+    uri: https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+    version: 1.0.1
 - git:
     local-name: urdf
     uri: https://github.com/ros/urdf.git
@@ -422,4 +454,3 @@
     local-name: xacro
     uri: https://github.com/ros/xacro.git
     version: 1.14.4
-

@@ -17,7 +17,7 @@
 - git:
     local-name: ros_comm
     uri: https://github.com/ros/ros_comm.git
-    version: noetic-devel
+    version: 3d137ca91109a9f229d0701e618758ef7f817218
 - git:
     local-name: image_common
     uri: https://github.com/ms-iot/image_common.git
@@ -29,7 +29,7 @@
 - git:
     local-name: geometry
     uri: https://github.com/ms-iot/geometry.git
-    version: windows/noetic-devel
+    version: windows/1.13.2
 - git:
     local-name: rviz
     uri: https://github.com/ms-iot/rviz.git

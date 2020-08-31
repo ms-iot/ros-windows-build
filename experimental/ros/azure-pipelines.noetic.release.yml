@@ -1,6 +1,10 @@
 trigger: none
 pr: none
 
+variables:
+  RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
+  RELEASE_VERSION: '20200829.0.0.$(RELEASE_DATE)'
+
 jobs:
 - job: Build
   pool: 'Edge-Robotics-VS2019'
@@ -89,7 +93,6 @@ jobs:
   variables:
     INSTALL_DIR: 'c:\opt\ros\noetic\x64'
     ROS_DISTRO: 'noetic'
-    RELEASE_VERSION: '20200829.0.0.0'
   timeoutInMinutes: 360
   workspace:
     clean: all

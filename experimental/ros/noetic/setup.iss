@@ -3,7 +3,7 @@
 
 #include "version.inc"
 
-#define MyAppName "Robot Operating System Noetic Ninjemys"
+#define MyAppName "Robot Operating System (ROS) Noetic Ninjemys"
 #define MyAppPublisher "https://aka.ms/ros"
 #define MyAppURL "https://aka.ms/ros"
 
