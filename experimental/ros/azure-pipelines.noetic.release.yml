@@ -9,6 +9,7 @@ jobs:
 - job: Build
   pool: 'Edge-Robotics-VS2019'
   variables:
+    BUILD_DIR: 'd:\bld'
     INSTALL_DIR: 'c:\opt\ros\noetic\x64'
     PDB_OUTPUT_DIRECTORY: 'd:\symbols'
     ROS_DISTRO: 'noetic'
@@ -33,6 +34,8 @@ jobs:
       destinationFolder: '$(INSTALL_DIR)'
       cleanDestinationFolder: true
   - script: |
+      rd /s /q %BUILD_DIR%
+      mkdir %BUILD_DIR%
       rd /s /q %PDB_OUTPUT_DIRECTORY%
       mkdir %PDB_OUTPUT_DIRECTORY%
     displayName: 'Clean symbols folder'
@@ -74,7 +77,7 @@ jobs:
     condition: always()
   - task: CopyFiles@2
     inputs:
-      sourceFolder: .\ws\build
+      sourceFolder: $(BUILD_DIR)
       contents: '**\*.pdb'
       targetFolder: '$(PDB_OUTPUT_DIRECTORY)'
       cleanTargetFolder: true
