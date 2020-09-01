@@ -53,7 +53,20 @@ jobs:
       vcs import --force --recursive src < ..\experimental\ros\noetic\noetic_override.rosinstall
       xcopy /Y /S /I ..\experimental\ros\src_patch src
       call ..\experimental\ros\build_ros1.bat
-    displayName: 'build noetic'
+    displayName: 'Build noetic'
+  - script: |
+      move /Y %INSTALL_DIR%\lib\*.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\gazebo_plugins\gazebo_ros_wheel_slip.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\laser_filters\laser_scan_filters.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\laser_filters\pointcloud_filters.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\nodelet_tutorial_math\nodelet_math.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\pluginlib_tutorials\pluginlib_tutorials.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\filters\increment.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\filters\mean.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\filters\median.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\filters\params.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\filters\transfer_function.dll %INSTALL_DIR%\bin
+    displayName: 'Post-patch the install directory'
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: .\ws\log
