@@ -44,8 +44,8 @@
     version: windows/1.1.0-alpha
 - git:
     local-name: cartographer
-    uri: https://github.com/cartographer-project/cartographer.git
-    version: 2137b8477e2e42a1615ca34d7e4a7af69feb65fe
+    uri: https://github.com/ms-iot/cartographer.git
+    version: windows/2137b8477e2e42a1615ca34d7e4a7af69feb65fe
 - git:
     local-name: cartographer_ros
     uri: https://github.com/cartographer-project/cartographer_ros.git
