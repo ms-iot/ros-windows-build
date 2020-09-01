@@ -9,7 +9,7 @@ jobs:
 - job: Build
   pool: 'Edge-Robotics-VS2019'
   variables:
-    BUILD_DIR: 'd:\bld'
+    WORKSPACE_DIR: 'd:\ws'
     INSTALL_DIR: 'c:\opt\ros\noetic\x64'
     PDB_OUTPUT_DIRECTORY: 'd:\symbols'
     ROS_DISTRO: 'noetic'
@@ -34,8 +34,8 @@ jobs:
       destinationFolder: '$(INSTALL_DIR)'
       cleanDestinationFolder: true
   - script: |
-      rd /s /q %BUILD_DIR%
-      mkdir %BUILD_DIR%
+      rd /s /q %WORKSPACE_DIR%
+      mkdir %WORKSPACE_DIR%
       rd /s /q %PDB_OUTPUT_DIRECTORY%
       mkdir %PDB_OUTPUT_DIRECTORY%
     displayName: 'Clean symbols folder'
@@ -48,14 +48,14 @@ jobs:
   - script: |
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
       set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
-      mkdir ws\src
-      cd ws
-      vcs import --force --recursive src < ..\experimental\ros\gazebo.rosinstall
-      vcs import --force --recursive src < ..\experimental\ros\noetic\noetic.rosinstall
-      vcs import --force --recursive src < ..\experimental\ros\noetic\noetic_moveit.rosinstall
-      vcs import --force --recursive src < ..\experimental\ros\noetic\noetic_override.rosinstall
-      xcopy /Y /S /I ..\experimental\ros\src_patch src
-      call ..\experimental\ros\build_ros1.bat
+      mkdir %WORKSPACE_DIR%\src
+      pushd %WORKSPACE_DIR%
+      vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\gazebo.rosinstall
+      vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\noetic\noetic.rosinstall
+      vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\noetic\noetic_moveit.rosinstall
+      vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\noetic\noetic_override.rosinstall
+      xcopy /Y /S /I %Build_SourcesDirectory%\experimental\ros\src_patch src
+      call %Build_SourcesDirectory%\experimental\ros\build_ros1.bat
     displayName: 'Build noetic'
   - script: |
       move /Y %INSTALL_DIR%\lib\*.dll %INSTALL_DIR%\bin
@@ -72,12 +72,12 @@ jobs:
     displayName: 'Post-patch the install directory'
   - task: PublishBuildArtifacts@1
     inputs:
-      pathtoPublish: .\ws\log
+      pathtoPublish: '$(WORKSPACE_DIR)\log'
       artifactName: '$(ROS_DISTRO)-log'
     condition: always()
   - task: CopyFiles@2
     inputs:
-      sourceFolder: $(BUILD_DIR)
+      sourceFolder: '$(WORKSPACE_DIR)\build'
       contents: '**\*.pdb'
       targetFolder: '$(PDB_OUTPUT_DIRECTORY)'
       cleanTargetFolder: true
