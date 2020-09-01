@@ -1,0 +1,7 @@
+{
+  "dependencies": [
+      "chomp_motion_planner",
+      "moveit_planners_chomp",
+      "moveit_planners_ompl"
+  ],
+}
