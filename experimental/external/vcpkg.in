@@ -43,3 +43,5 @@ libusb-win32
 grpc
 libogg
 libtheora
+sdl1
+sdl1-image
