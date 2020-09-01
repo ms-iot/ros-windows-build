@@ -38,6 +38,9 @@ jobs:
     displayName: 'Clean symbols folder'
   - script: |
       xcopy /Y /S /I .\experimental\ros\%ROS_DISTRO%\pre-patch %INSTALL_DIR%
+      copy /Y %INSTALL_DIR%\lib\manual-link\gtest_main.lib %INSTALL_DIR%\lib
+      copy /Y %INSTALL_DIR%\lib\manual-link\gmock_main.lib %INSTALL_DIR%\lib
+      copy /Y %INSTALL_DIR%\tools\protobuf\protoc.exe %INSTALL_DIR%\bin
     displayName: 'Pre-patch the install directory'
   - script: |
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"

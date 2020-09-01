@@ -42,3 +42,11 @@
     local-name: moveit
     uri: https://github.com/ms-iot/moveit.git
     version: windows/1.1.0-alpha
+- git:
+    local-name: cartographer
+    uri: https://github.com/cartographer-project/cartographer.git
+    version: 2137b8477e2e42a1615ca34d7e4a7af69feb65fe
+- git:
+    local-name: cartographer_ros
+    uri: https://github.com/cartographer-project/cartographer_ros.git
+    version: 9cde1b4f5c3c4683df67c86868b11a8e4d31f1e4
