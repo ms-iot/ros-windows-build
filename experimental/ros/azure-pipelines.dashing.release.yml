@@ -1,6 +1,10 @@
 trigger: none
 pr: none
 
+variables:
+  RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
+  RELEASE_VERSION: '20200722.0.0.$(RELEASE_DATE)'
+
 jobs:
 - job: Build
   pool: 'Edge-Robotics-VS2019'
@@ -8,7 +12,7 @@ jobs:
     INSTALL_DIR: 'c:\opt\ros\dashing\x64'
     PDB_OUTPUT_DIRECTORY: 'd:\symbols'
     ROS_DISTRO: 'dashing'
-    ROS_VERSION: '1'
+    ROS_VERSION: '2'
   timeoutInMinutes: 360
   workspace:
     clean: all
@@ -106,9 +110,21 @@ jobs:
       destinationFolder: '$(INSTALL_DIR)'
       cleanDestinationFolder: true
   - script: |
-      echo #define MyAppVersion "20200722.0.0.0" > .\experimental\ros\%ROS_DISTRO%\version.inc
+      echo #define MyAppVersion "%RELEASE_VERSION%" > .\experimental\ros\%ROS_DISTRO%\version.inc
       iscc .\experimental\ros\%ROS_DISTRO%\setup.iss
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: '.\experimental\ros\$(ROS_DISTRO)\Output'
       artifactName: '$(ROS_DISTRO)-setup'
+  - powershell: |
+      .\experimental\ros\chocolatey\buildChocolatey.ps1 -PackageName "ros-$Env:ROS_DISTRO-desktop" -PackageVersion "$Env:RELEASE_VERSION" -SetupProgram ".\experimental\ros\$Env:ROS_DISTRO\Output\ros-$Env:ROS_DISTRO-setup-x64-$Env:RELEASE_VERSION.exe"
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '.\experimental\ros\chocolatey\output'
+      artifactName: '$(ROS_DISTRO)-chocolatey'
+  - powershell: |
+      .\experimental\ros\chocolatey\buildChocolatey.ps1 -PackageName "ros-$Env:ROS_DISTRO-desktop" -PackageVersion "$Env:RELEASE_VERSION-pre" -SetupProgram ".\experimental\ros\$Env:ROS_DISTRO\Output\ros-$Env:ROS_DISTRO-setup-x64-$Env:RELEASE_VERSION.exe"
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '.\experimental\ros\chocolatey\output'
+      artifactName: '$(ROS_DISTRO)-chocolatey-prerelease'

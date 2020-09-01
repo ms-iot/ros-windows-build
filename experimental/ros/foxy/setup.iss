@@ -3,7 +3,7 @@
 
 #include "version.inc"
 
-#define MyAppName "Robot Operating System 2 Foxy Fitzroy"
+#define MyAppName "Robot Operating System 2 (ROS 2) Foxy Fitzroy"
 #define MyAppPublisher "https://aka.ms/ros"
 #define MyAppURL "https://aka.ms/ros"
 
@@ -24,7 +24,7 @@ DefaultGroupName={#MyAppName}
 DisableProgramGroupPage=yes
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
-OutputBaseFilename=ros-foxy-setup
+OutputBaseFilename=ros-foxy-setup-x64-{#MyAppVersion}
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
