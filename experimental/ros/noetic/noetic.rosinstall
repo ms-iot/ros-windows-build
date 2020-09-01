@@ -399,10 +399,6 @@
     uri: https://github.com/ros-visualization/rviz.git
     version: 1.14.1
 - git:
-    local-name: slam_karto
-    uri: https://github.com/ros-perception/slam_karto.git
-    version: 0.8.1
-- git:
     local-name: sparse_bundle_adjustment
     uri: https://github.com/ros-perception/sparse_bundle_adjustment.git
     version: 0.4.4
