@@ -38,3 +38,7 @@
     local-name: gazebo_ros_pkgs
     uri: https://github.com/ms-iot/gazebo_ros_pkgs.git
     version: windows/2.9.1
+- git:
+    local-name: moveit
+    uri: https://github.com/ms-iot/moveit.git
+    version: windows/1.1.0-alpha

@@ -37,12 +37,13 @@ try
 `$packageName= '$PackageName'
 `$toolsDir   = "`$(Split-Path -Parent `$MyInvocation.MyCommand.Definition)"
 `$fileLocation = Join-Path `$toolsDir 'setup.exe'
+`$logLocation = Join-Path `$toolsDir 'setup.log'
 
 `$packageArgs = @{
   packageName   = `$packageName
   fileType      = 'exe'
   file          = `$fileLocation
-  silentArgs    = "/VERYSILENT"
+  silentArgs    = "/SILENT /NOCANCEL /LOG=`$logLocation"
   validExitCodes= @(0, 3010, 1641)
 }
 

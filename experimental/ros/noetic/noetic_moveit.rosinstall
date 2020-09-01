@@ -1,0 +1,32 @@
+- git:
+    local-name: eigenpy
+    uri: https://github.com/stack-of-tasks/eigenpy.git
+    version: v2.5.0
+- git:
+    local-name: eigen_stl_containers
+    uri: https://github.com/ros/eigen_stl_containers.git
+    version: 0.1.8
+- git:
+    local-name: geometric_shapes
+    uri: https://github.com/ros-planning/geometric_shapes.git
+    version: 0.7.1
+- git:
+    local-name: moveit_msgs
+    uri: https://github.com/ros-planning/moveit_msgs.git
+    version: 0.11.0
+- git:
+    local-name: object_recognition_msgs
+    uri: https://github.com/wg-perception/object_recognition_msgs.git
+    version: 0.4.2
+- git:
+    local-name: octomap_msgs
+    uri: https://github.com/OctoMap/octomap_msgs.git
+    version: 0.3.5
+- git:
+    local-name: random_numbers
+    uri: https://github.com/ros-planning/random_numbers.git
+    version: 0.3.2
+- git:
+    local-name: srdfdom
+    uri: https://github.com/ros-planning/srdfdom.git
+    version: 0.6.0
