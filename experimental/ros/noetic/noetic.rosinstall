@@ -123,10 +123,6 @@
     uri: https://github.com/ros/joint_state_publisher.git
     version: 1.15.0
 - git:
-    local-name: joystick_drivers
-    uri: https://github.com/ros-drivers/joystick_drivers.git
-    version: 1.14.0
-- git:
     local-name: kdl_parser
     uri: https://github.com/ros/kdl_parser.git
     version: 1.14.1
