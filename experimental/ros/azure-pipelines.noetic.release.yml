@@ -41,10 +41,10 @@ jobs:
       set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
       mkdir ws\src
       cd ws
-      vcs import --force src < ..\experimental\ros\gazebo.rosinstall
-      vcs import --force src < ..\experimental\ros\noetic\noetic.rosinstall
-      vcs import --force src < ..\experimental\ros\noetic\noetic_moveit.rosinstall
-      vcs import --force src < ..\experimental\ros\noetic\noetic_override.rosinstall
+      vcs import --force --recursive src < ..\experimental\ros\gazebo.rosinstall
+      vcs import --force --recursive src < ..\experimental\ros\noetic\noetic.rosinstall
+      vcs import --force --recursive src < ..\experimental\ros\noetic\noetic_moveit.rosinstall
+      vcs import --force --recursive src < ..\experimental\ros\noetic\noetic_override.rosinstall
       xcopy /Y /S /I ..\experimental\ros\src_patch src
       call ..\experimental\ros\build_ros1.bat
     displayName: 'build noetic'
