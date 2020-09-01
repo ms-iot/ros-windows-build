@@ -76,8 +76,8 @@
     version: 0.5.16
 - git:
     local-name: gennodejs
-    uri: https://github.com/RethinkRobotics-opensource/gennodejs.git
-    version: 2.0.2
+    uri: https://github.com/sloretz/gennodejs-release.git
+    version: upstream/2.0.2
 - git:
     local-name: genpy
     uri: https://github.com/ros/genpy.git
