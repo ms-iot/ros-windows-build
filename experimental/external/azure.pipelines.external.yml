@@ -37,7 +37,7 @@ jobs:
       pipeline: 97 # Required when source == Specific
       buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
       artifactName: '$(VCPKG_DEFAULT_TRIPLET)-installed'
-      buildId: 8135
+      buildId: 8242
   - task: DownloadBuildArtifacts@0
     inputs:
       buildType: 'specific' # Options: current, specific
@@ -64,6 +64,9 @@ jobs:
       DEL /F /Q %INSTALL_DIR%\share\tinyxml\tinyxmlTargets.cmake
       DEL /F /Q %INSTALL_DIR%\include\sdformat-6.2\tinyxml.h
       xcopy /Y /S /I experimental\external\post-patch %INSTALL_DIR%
+      copy /Y %INSTALL_DIR%\lib\manual-link\gtest_main.lib %INSTALL_DIR%\lib
+      copy /Y %INSTALL_DIR%\lib\manual-link\gmock_main.lib %INSTALL_DIR%\lib
+      copy /Y %INSTALL_DIR%\tools\protobuf\protoc.exe %INSTALL_DIR%\bin
     displayName: 'Post-patch the external dependencies'
   - task: ArchiveFiles@2
     inputs:
