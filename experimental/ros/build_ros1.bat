@@ -2,6 +2,7 @@
 
 colcon build ^
     --merge-install ^
+    --parallel-workers 1 ^
     --packages-skip-by-dep stage stage_ros image_view theora_image_transport rviz_plugin_tutorials four_wheel_steering_controller ^
     --packages-skip stage stage_ros image_view theora_image_transport rviz_plugin_tutorials four_wheel_steering_controller ^
     --install-base %INSTALL_DIR% ^
