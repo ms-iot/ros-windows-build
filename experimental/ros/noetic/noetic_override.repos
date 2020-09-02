@@ -8,7 +8,7 @@ repositories:
     url: https://github.com/sloretz/gennodejs-release.git
     version: upstream/2.0.2
   ros_comm:
-    local-name: ros_comm
+    type: git
     url: https://github.com/ros/ros_comm.git
     version: 3d137ca91109a9f229d0701e618758ef7f817218
   cartographer_ros:
