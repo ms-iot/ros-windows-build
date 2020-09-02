@@ -23,6 +23,10 @@ repositories:
     type: git
     url: https://github.com/ros/angles.git
     version: 1.12.3
+  behaviortree_cpp:
+    type: git
+    url: https://github.com/BehaviorTree/BehaviorTree.CPP.git
+    version: 3.5.0
   class_loader:
     type: git
     url: https://github.com/ros/class_loader.git
@@ -71,6 +75,10 @@ repositories:
     type: git
     url: https://github.com/eProsima/foonathan_memory_vendor.git
     version: 1.0.0
+  gazebo_ros_pkgs:
+    type: git
+    url: https://github.com/ros-simulation/gazebo_ros_pkgs.git
+    version: 3.5.0
   geometry2:
     type: git
     url: https://github.com/ros2/geometry2.git
@@ -87,6 +95,10 @@ repositories:
     type: git
     url: https://github.com/ros-visualization/interactive_markers.git
     version: 2.1.2
+  joint_state_publisher:
+    type: git
+    url: https://github.com/ros/joint_state_publisher.git
+    version: 2.2.0
   joystick_drivers:
     type: git
     url: https://github.com/ros-drivers/joystick_drivers.git
@@ -119,10 +131,22 @@ repositories:
     type: git
     url: https://github.com/ros2/message_filters.git
     version: 3.2.4
+  navigation2:
+    type: git
+    url: https://github.com/ros-planning/navigation2.git
+    version: 0.4.3
   navigation_msgs:
     type: git
     url: https://github.com/ros-planning/navigation_msgs.git
     version: 2.0.2
+  object_recognition_msgs:
+    type: git
+    url: https://github.com/wg-perception/object_recognition_msgs.git
+    version: 2.0.0
+  octomap_msgs:
+    type: git
+    url: https://github.com/octomap/octomap_msgs.git
+    version: 2.0.0
   orocos_kinematics_dynamics:
     type: git
     url: https://github.com/ros2/orocos_kinematics_dynamics.git
@@ -159,6 +183,10 @@ repositories:
     type: git
     url: https://github.com/ros-visualization/qt_gui_core.git
     version: 1.1.1
+  random_numbers:
+    type: git
+    url: https://github.com/ros-planning/random_numbers.git
+    version: 1.0.0
   rcl:
     type: git
     url: https://github.com/ros2/rcl.git
@@ -383,6 +411,10 @@ repositories:
     type: git
     url: https://github.com/ros2/tlsf.git
     version: 0.5.0
+  turtlebot3_msgs:
+    type: git
+    url: https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+    version: 2.2.1
   turtlesim:
     type: git
     url: https://github.com/ros/ros_tutorials.git
@@ -419,3 +451,5 @@ repositories:
     type: git
     url: https://github.com/ros2/yaml_cpp_vendor.git
     version: 7.0.2
+
+
