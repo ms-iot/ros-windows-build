@@ -1,0 +1,56 @@
+- git:
+    local-name: pluginlib
+    uri: https://github.com/ms-iot/pluginlib.git
+    version: windows/1.13.0
+- git:
+    local-name: catkin
+    uri: https://github.com/ms-iot/catkin.git
+    version: windows/noetic-devel
+- git:
+    local-name: python_qt_binding
+    uri: https://github.com/ms-iot/python_qt_binding.git
+    version: windows/0.4.3
+- git:
+    local-name: qt_gui_core
+    uri: https://github.com/ms-iot/qt_gui_core.git
+    version: windows/0.4.2
+- git:
+    local-name: ros_comm
+    uri: https://github.com/ros/ros_comm.git
+    version: 3d137ca91109a9f229d0701e618758ef7f817218
+- git:
+    local-name: image_common
+    uri: https://github.com/ms-iot/image_common.git
+    version: windows/1.12.0
+- git:
+    local-name: vision_opencv
+    uri: https://github.com/ms-iot/vision_opencv.git
+    version: windows/1.15.0
+- git:
+    local-name: geometry
+    uri: https://github.com/ms-iot/geometry.git
+    version: windows/1.13.2
+- git:
+    local-name: rviz
+    uri: https://github.com/ms-iot/rviz.git
+    version: windows/1.14.1
+- git:
+    local-name: gazebo_ros_pkgs
+    uri: https://github.com/ms-iot/gazebo_ros_pkgs.git
+    version: windows/2.9.1
+- git:
+    local-name: moveit
+    uri: https://github.com/ms-iot/moveit.git
+    version: windows/1.1.0-alpha
+- git:
+    local-name: cartographer
+    uri: https://github.com/ms-iot/cartographer.git
+    version: windows/2137b8477e2e42a1615ca34d7e4a7af69feb65fe
+- git:
+    local-name: cartographer_ros
+    uri: https://github.com/cartographer-project/cartographer_ros.git
+    version: 9cde1b4f5c3c4683df67c86868b11a8e4d31f1e4
+- git:
+    local-name: moveit_visual_tools
+    uri: https://github.com/ros-planning/moveit_visual_tools.git
+    version: ca12717b52f451c2394b29f25ec29ac0bc5d303a

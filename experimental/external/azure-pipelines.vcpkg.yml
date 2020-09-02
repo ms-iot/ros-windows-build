@@ -1,0 +1,73 @@
+trigger: none
+pr: none
+
+jobs:
+- job: Vcpkg
+  pool: Edge-Robotics-VS2019
+  timeoutInMinutes: 360
+  strategy:
+    matrix:
+      x64-windows:
+        VCPKG_DEFAULT_TRIPLET: 'x64-windows'
+  workspace:
+    clean: all
+  steps:
+  - script: |
+      rd /s /q d:\bld
+      mkdir d:\bld
+      rd /s /q d:\binarycaching
+      mkdir d:\binarycaching
+      rd /s /q d:\installed
+      mkdir d:\installed
+    displayName: 'Create buildtrees'
+    continueOnError: true
+  - task: DownloadBuildArtifacts@0
+    inputs:
+      buildType: 'specific' # Options: current, specific
+      project: 'ros-win' # Required when source == Specific
+      pipeline: 97 # Required when source == Specific
+      buildVersionToDownload: 'latest' # Required when source == Specific# Options: latest, latestFromBranch, specific
+      artifactName: '$(VCPKG_DEFAULT_TRIPLET)-binarycaching'
+      allowPartiallySucceededBuilds: true
+    continueOnError: true
+  - task: ExtractFiles@1
+    inputs:
+      archiveFilePatterns: '$(System.ArtifactsDirectory)\$(VCPKG_DEFAULT_TRIPLET)-binarycaching\binarycaching.zip'
+      destinationFolder: 'd:\binarycaching'
+      cleanDestinationFolder: true
+    continueOnError: true
+  - script: |
+      git clone https://github.com/ms-iot/vcpkg.git -b windows/739209b51aaa125a41919f23206c110e79023ce8
+      call ".\vcpkg\bootstrap-vcpkg.bat"
+      cd vcpkg
+      vcpkg version
+      vcpkg install @..\experimental\external\vcpkg.in --x-buildtrees-root=d:\bld --binarysource=clear --binarysource=files,d:\binarycaching,readwrite
+    continueOnError: true
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: 'd:\binarycaching'
+      includeRootFolder: false
+      archiveType: 'zip' # Options: zip, 7z, tar, wim
+      tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
+      archiveFile: '$(Build.ArtifactStagingDirectory)/binarycaching.zip'
+      replaceExistingArchive: true
+    continueOnError: true
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: '.\vcpkg\installed'
+      includeRootFolder: false
+      archiveType: 'zip' # Options: zip, 7z, tar, wim
+      tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
+      archiveFile: '$(Build.ArtifactStagingDirectory)/installed.zip'
+      replaceExistingArchive: true
+    continueOnError: true
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '$(Build.ArtifactStagingDirectory)/installed.zip'
+      artifactName: '$(VCPKG_DEFAULT_TRIPLET)-installed'
+    continueOnError: true
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '$(Build.ArtifactStagingDirectory)/binarycaching.zip'
+      artifactName: '$(VCPKG_DEFAULT_TRIPLET)-binarycaching'
+    continueOnError: true

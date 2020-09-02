@@ -1,0 +1,146 @@
+trigger: none
+pr: none
+
+variables:
+  RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
+  RELEASE_VERSION: '20200831.0.0.$(RELEASE_DATE)'
+
+jobs:
+- job: Build
+  pool: 'Edge-Robotics-VS2019'
+  variables:
+    WORKSPACE_DIR: 'd:\ws'
+    INSTALL_DIR: 'c:\opt\ros\noetic\x64'
+    PDB_OUTPUT_DIRECTORY: 'd:\symbols'
+    ROS_DISTRO: 'noetic'
+    ROS_VERSION: '1'
+  timeoutInMinutes: 360
+  workspace:
+    clean: all
+  steps:
+  - script: 'reg add HKLM\SYSTEM\CurrentControlSet\Control\FileSystem /v LongPathsEnabled /t REG_DWORD /d 1 /f'
+    displayName: 'Enable long paths on Windows'
+  - task: DownloadBuildArtifacts@0
+    inputs:
+      buildType: 'specific' # Options: current, specific
+      project: 'ros-win' # Required when source == Specific
+      pipeline: 100 # Required when source == Specific
+      buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
+      artifactName: '$(ROS_DISTRO)-external'
+      buildId: 8243
+  - task: ExtractFiles@1
+    inputs:
+      archiveFilePatterns: '$(System.ArtifactsDirectory)\$(ROS_DISTRO)-external\external.zip'
+      destinationFolder: '$(INSTALL_DIR)'
+      cleanDestinationFolder: true
+  - script: |
+      rd /s /q %WORKSPACE_DIR%
+      mkdir %WORKSPACE_DIR%
+      rd /s /q %PDB_OUTPUT_DIRECTORY%
+      mkdir %PDB_OUTPUT_DIRECTORY%
+    displayName: 'Clean symbols folder'
+  - script: |
+      xcopy /Y /S /I .\experimental\ros\%ROS_DISTRO%\pre-patch %INSTALL_DIR%
+    displayName: 'Pre-patch the install directory'
+  - script: |
+      call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+      set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
+      mkdir %WORKSPACE_DIR%\src
+      pushd %WORKSPACE_DIR%
+      vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\gazebo.rosinstall
+      vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\noetic\noetic.rosinstall
+      vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\noetic\noetic_moveit.rosinstall
+      vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\noetic\noetic_override.rosinstall
+      xcopy /Y /S /I %Build_SourcesDirectory%\experimental\ros\src_patch src
+      call %Build_SourcesDirectory%\experimental\ros\build_ros1.bat
+    displayName: 'Build noetic'
+  - script: |
+      move /Y %INSTALL_DIR%\lib\*.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\gazebo_plugins\gazebo_ros_wheel_slip.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\laser_filters\laser_scan_filters.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\laser_filters\pointcloud_filters.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\nodelet_tutorial_math\nodelet_math.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\pluginlib_tutorials\pluginlib_tutorials.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\filters\increment.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\filters\mean.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\filters\median.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\filters\params.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\filters\transfer_function.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\rviz_imu_plugin\rviz_imu_plugin.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\ackermann_steering_controller\ackermann_steering_controller.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\rosparam_shortcuts\rosparam_shortcuts.dll %INSTALL_DIR%\bin
+    displayName: 'Post-patch the install directory'
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '$(WORKSPACE_DIR)\log'
+      artifactName: '$(ROS_DISTRO)-log'
+    condition: always()
+  - task: CopyFiles@2
+    inputs:
+      sourceFolder: '$(WORKSPACE_DIR)\build'
+      contents: '**\*.pdb'
+      targetFolder: '$(PDB_OUTPUT_DIRECTORY)'
+      cleanTargetFolder: true
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: '$(PDB_OUTPUT_DIRECTORY)'
+      includeRootFolder: false
+      archiveType: 'zip' # Options: zip, 7z, tar, wim
+      tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
+      archiveFile: '$(Build.ArtifactStagingDirectory)/symbols.zip'
+      replaceExistingArchive: true
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: '$(INSTALL_DIR)'
+      includeRootFolder: false
+      archiveType: 'zip' # Options: zip, 7z, tar, wim
+      tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
+      archiveFile: '$(Build.ArtifactStagingDirectory)/install.zip'
+      replaceExistingArchive: true
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '$(Build.ArtifactStagingDirectory)/install.zip'
+      artifactName: '$(ROS_DISTRO)-install'
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '$(Build.ArtifactStagingDirectory)/symbols.zip'
+      artifactName: '$(ROS_DISTRO)-symbols'
+- job: Setup
+  dependsOn: Build
+  pool:
+    vmImage: 'windows-2019'
+  variables:
+    INSTALL_DIR: 'c:\opt\ros\noetic\x64'
+    ROS_DISTRO: 'noetic'
+  timeoutInMinutes: 360
+  workspace:
+    clean: all
+  steps:
+  - task: DownloadBuildArtifacts@0
+    inputs:
+      buildType: 'current' # Options: current, specific
+      artifactName: '$(ROS_DISTRO)-install'
+  - task: ExtractFiles@1
+    inputs:
+      archiveFilePatterns: '$(System.ArtifactsDirectory)\$(ROS_DISTRO)-install\install.zip'
+      destinationFolder: '$(INSTALL_DIR)'
+      cleanDestinationFolder: true
+  - script: |
+      echo #define MyAppVersion "%RELEASE_VERSION%" > .\experimental\ros\%ROS_DISTRO%\version.inc
+      iscc .\experimental\ros\%ROS_DISTRO%\setup.iss
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '.\experimental\ros\$(ROS_DISTRO)\Output'
+      artifactName: '$(ROS_DISTRO)-setup'
+  - powershell: |
+      .\experimental\ros\chocolatey\buildChocolatey.ps1 -PackageName "ros-$Env:ROS_DISTRO-desktop_full" -PackageVersion "$Env:RELEASE_VERSION" -SetupProgram ".\experimental\ros\$Env:ROS_DISTRO\Output\ros-$Env:ROS_DISTRO-setup-x64-$Env:RELEASE_VERSION.exe"
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '.\experimental\ros\chocolatey\output'
+      artifactName: '$(ROS_DISTRO)-chocolatey'
+  - powershell: |
+      .\experimental\ros\chocolatey\buildChocolatey.ps1 -PackageName "ros-$Env:ROS_DISTRO-desktop_full" -PackageVersion "$Env:RELEASE_VERSION-pre" -SetupProgram ".\experimental\ros\$Env:ROS_DISTRO\Output\ros-$Env:ROS_DISTRO-setup-x64-$Env:RELEASE_VERSION.exe"
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '.\experimental\ros\chocolatey\output'
+      artifactName: '$(ROS_DISTRO)-chocolatey-prerelease'

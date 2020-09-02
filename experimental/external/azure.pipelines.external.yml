@@ -1,0 +1,82 @@
+trigger: none
+pr: none
+
+jobs:
+- job: Build
+  pool: Edge-Robotics-VS2019
+  timeoutInMinutes: 360
+  strategy:
+    matrix:
+      melodic:
+        INSTALL_DIR: 'c:\opt\ros\melodic\x64'
+        DISTRO_NAME: 'melodic'
+        VCPKG_DEFAULT_TRIPLET: 'x64-windows'
+      noetic:
+        INSTALL_DIR: 'c:\opt\ros\noetic\x64'
+        DISTRO_NAME: 'noetic'
+        VCPKG_DEFAULT_TRIPLET: 'x64-windows'
+      dashing:
+        INSTALL_DIR: 'c:\opt\ros\dashing\x64'
+        DISTRO_NAME: 'dashing'
+        VCPKG_DEFAULT_TRIPLET: 'x64-windows'
+      eloquent:
+        INSTALL_DIR: 'c:\opt\ros\eloquent\x64'
+        DISTRO_NAME: 'eloquent'
+        VCPKG_DEFAULT_TRIPLET: 'x64-windows'
+      foxy:
+        INSTALL_DIR: 'c:\opt\ros\foxy\x64'
+        DISTRO_NAME: 'foxy'
+        VCPKG_DEFAULT_TRIPLET: 'x64-windows'
+  workspace:
+    clean: all
+  steps:
+  - task: DownloadBuildArtifacts@0
+    inputs:
+      buildType: 'specific' # Options: current, specific
+      project: 'ros-win' # Required when source == Specific
+      pipeline: 97 # Required when source == Specific
+      buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
+      artifactName: '$(VCPKG_DEFAULT_TRIPLET)-installed'
+      buildId: 8242
+  - task: DownloadBuildArtifacts@0
+    inputs:
+      buildType: 'specific' # Options: current, specific
+      project: 'ros-win' # Required when source == Specific
+      pipeline: 99 # Required when source == Specific
+      buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
+      artifactName: '$(DISTRO_NAME)-python'
+      buildId: 8173
+  - task: ExtractFiles@1
+    inputs:
+      archiveFilePatterns: '$(System.ArtifactsDirectory)\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
+      destinationFolder: 'd:\installed'
+      cleanDestinationFolder: true
+  - task: ExtractFiles@1
+    inputs:
+      archiveFilePatterns: '$(System.ArtifactsDirectory)\$(DISTRO_NAME)-python\python.zip'
+      destinationFolder: '$(INSTALL_DIR)'
+      cleanDestinationFolder: true
+  - powershell: |
+      & .\experimental\external\copyVcpkgInstalled.ps1 -InstallDir $Env:INSTALL_DIR -VcpkgInstalled "d:\installed\$Env:VCPKG_DEFAULT_TRIPLET"
+  - script: |
+      DEL /F /Q %INSTALL_DIR%\share\tinyxml\tinyxml-config.cmake
+      DEL /F /Q %INSTALL_DIR%\share\tinyxml\tinyxmlTargets-release.cmake
+      DEL /F /Q %INSTALL_DIR%\share\tinyxml\tinyxmlTargets.cmake
+      DEL /F /Q %INSTALL_DIR%\include\sdformat-6.2\tinyxml.h
+      xcopy /Y /S /I experimental\external\post-patch %INSTALL_DIR%
+      copy /Y %INSTALL_DIR%\lib\manual-link\gtest_main.lib %INSTALL_DIR%\lib
+      copy /Y %INSTALL_DIR%\lib\manual-link\gmock_main.lib %INSTALL_DIR%\lib
+      copy /Y %INSTALL_DIR%\tools\protobuf\protoc.exe %INSTALL_DIR%\bin
+    displayName: 'Post-patch the external dependencies'
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: '$(INSTALL_DIR)'
+      includeRootFolder: false
+      archiveType: 'zip' # Options: zip, 7z, tar, wim
+      tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
+      archiveFile: '$(Build.ArtifactStagingDirectory)/external.zip'
+      replaceExistingArchive: true
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '$(Build.ArtifactStagingDirectory)/external.zip'
+      artifactName: $(DISTRO_NAME)-external

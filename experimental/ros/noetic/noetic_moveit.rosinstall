@@ -1,0 +1,52 @@
+- git:
+    local-name: eigenpy
+    uri: https://github.com/stack-of-tasks/eigenpy.git
+    version: v2.5.0
+- git:
+    local-name: eigen_stl_containers
+    uri: https://github.com/ros/eigen_stl_containers.git
+    version: 0.1.8
+- git:
+    local-name: geometric_shapes
+    uri: https://github.com/ros-planning/geometric_shapes.git
+    version: 0.7.1
+- git:
+    local-name: moveit_msgs
+    uri: https://github.com/ros-planning/moveit_msgs.git
+    version: 0.11.0
+- git:
+    local-name: object_recognition_msgs
+    uri: https://github.com/wg-perception/object_recognition_msgs.git
+    version: 0.4.2
+- git:
+    local-name: octomap_msgs
+    uri: https://github.com/OctoMap/octomap_msgs.git
+    version: 0.3.5
+- git:
+    local-name: random_numbers
+    uri: https://github.com/ros-planning/random_numbers.git
+    version: 0.3.2
+- git:
+    local-name: srdfdom
+    uri: https://github.com/ros-planning/srdfdom.git
+    version: 0.6.0
+- git:
+    local-name: four_wheel_steering_msgs
+    uri: https://github.com/ros-drivers/four_wheel_steering_msgs.git
+    version: 1.1.1
+- git:
+    local-name: warehouse_ros
+    uri: https://github.com/ros-planning/warehouse_ros.git
+    version: 0.9.4
+- git:
+    local-name: rosparam_shortcuts
+    uri: https://github.com/PickNikRobotics/rosparam_shortcuts.git
+    version: 0.4.0
+- git:
+    local-name: rviz_visual_tools
+    uri: https://github.com/PickNikRobotics/rviz_visual_tools.git
+    version: 3.9.0
+- git:
+    local-name: graph_msgs
+    uri: https://github.com/PickNikRobotics/graph_msgs.git
+    version: 0.1.0
