@@ -1,4 +1,4 @@
-﻿repositories:
+repositories:
   actionlib:
     type: git
     url: https://github.com/ros/actionlib.git
