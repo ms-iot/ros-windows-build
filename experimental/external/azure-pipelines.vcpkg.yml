@@ -1,6 +1,9 @@
 trigger: none
 pr: none
 
+variables:
+  USE_PREVIOUS_CACHING: true
+
 jobs:
 - job: Vcpkg
   pool: Edge-Robotics-VS2019
@@ -30,12 +33,14 @@ jobs:
       artifactName: '$(VCPKG_DEFAULT_TRIPLET)-binarycaching'
       allowPartiallySucceededBuilds: true
     continueOnError: true
+    condition: and(succeeded(), eq(variables.USE_PREVIOUS_CACHING, true))
   - task: ExtractFiles@1
     inputs:
       archiveFilePatterns: '$(System.ArtifactsDirectory)\$(VCPKG_DEFAULT_TRIPLET)-binarycaching\binarycaching.zip'
       destinationFolder: 'd:\binarycaching'
       cleanDestinationFolder: true
     continueOnError: true
+    condition: and(succeeded(), eq(variables.USE_PREVIOUS_CACHING, true))
   - script: |
       git clone https://github.com/ms-iot/vcpkg.git -b windows/739209b51aaa125a41919f23206c110e79023ce8
       call ".\vcpkg\bootstrap-vcpkg.bat"
