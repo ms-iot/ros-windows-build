@@ -37,7 +37,7 @@ jobs:
       pipeline: 97 # Required when source == Specific
       buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
       artifactName: '$(VCPKG_DEFAULT_TRIPLET)-installed'
-      buildId: 8242
+      buildId: 8253
   - task: DownloadBuildArtifacts@0
     inputs:
       buildType: 'specific' # Options: current, specific
