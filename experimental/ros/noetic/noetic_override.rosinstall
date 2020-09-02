@@ -56,5 +56,5 @@
     version: 9cde1b4f5c3c4683df67c86868b11a8e4d31f1e4
 - git:
     local-name: moveit_visual_tools
-    uri: https://github.com/ros-planning/moveit_visual_tools.git
-    version: ca12717b52f451c2394b29f25ec29ac0bc5d303a
+    uri: https://github.com/ms-iot/moveit_visual_tools.git
+    version: windows/ca12717b52f451c2394b29f25ec29ac0bc5d303a

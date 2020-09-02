@@ -15,6 +15,13 @@ if ($badParam)
 
 try
 {
+    function Remove-BomFromFile($OldPath, $NewPath)
+    {
+        $Content = Get-Content $OldPath -Raw
+        $Utf8NoBomEncoding = New-Object System.Text.UTF8Encoding $False
+        [System.IO.File]::WriteAllLines($NewPath, $Content, $Utf8NoBomEncoding)
+    }
+
     # $scriptsDir = split-path -parent $script:MyInvocation.MyCommand.Definition
     $rosdistroDir = Join-Path $Env:Temp $(New-Guid)
 
@@ -63,6 +70,8 @@ version: 4
     if (Test-Path $rosdistroDir -PathType Container) {
         throw "cannot remove $rosdistroDir"
     }
+
+    Remove-BomFromFile -OldPath $generatedRepos -NewPath $generatedRepos
 }
 catch
 {
