@@ -53,7 +53,8 @@ jobs:
       mkdir ws\src
       cd ws
       vcs import --force src < ..\experimental\ros\gazebo.rosinstall
-      vcs import --force src < ..\experimental\ros\dashing\release-dashing-20200722.repos
+      vcs import --force src < ..\experimental\ros\dashing\dashing.repos
+      vcs import --force src < ..\experimental\ros\dashing\dashing_override.repos
       call ..\experimental\ros\build_ros2.bat
     displayName: 'Build dashing'
   - task: PublishBuildArtifacts@1
