@@ -1,4 +1,8 @@
 - git:
+    local-name: gennodejs
+    uri: https://github.com/sloretz/gennodejs-release.git
+    version: upstream/2.0.2
+- git:
     local-name: pluginlib
     uri: https://github.com/ms-iot/pluginlib.git
     version: windows/1.13.0

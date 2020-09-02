@@ -48,8 +48,7 @@ jobs:
       mkdir %WORKSPACE_DIR%\src
       pushd %WORKSPACE_DIR%
       vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\gazebo.rosinstall
-      vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\noetic\noetic.rosinstall
-      vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\noetic\noetic_moveit.rosinstall
+      vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\noetic\noetic.repos
       vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\noetic\noetic_override.rosinstall
       xcopy /Y /S /I %Build_SourcesDirectory%\experimental\ros\src_patch src
       call %Build_SourcesDirectory%\experimental\ros\build_ros1.bat
