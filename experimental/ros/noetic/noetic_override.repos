@@ -2,7 +2,7 @@ repositories:
   eigenpy:
     type: git
     url: https://github.com/stack-of-tasks/eigenpy.git
-    version: 2.5.0
+    version: v2.5.0
   gennodejs:
     type: git
     url: https://github.com/sloretz/gennodejs-release.git
