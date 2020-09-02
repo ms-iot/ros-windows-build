@@ -32,14 +32,18 @@ try
     # ensure the temp folder doesn't exist.
     Remove-Item $rosdistroDir -Force -Recurse -ErrorAction SilentlyContinue
     if (Test-Path $rosdistroDir -PathType Container) {
-        throw "cannot remove $rosdistroDir"
+        throw "Cannot remove $rosdistroDir"
     }
 
-    git clone --depth 1 https://github.com/ros/rosdistro -b "$Version" "$rosdistroDir"
+    git clone https://github.com/ros/rosdistro "$rosdistroDir"
+    git "--git-dir=${rosdistroDir}\.git" "--work-tree=${rosdistroDir}" checkout "$Version"
 
-    python (get-command 'rosdistro_build_cache').Path --ignore-local "file://localhost/$rosdistroDir\index-v4.yaml" "$Distro"
+    python (get-command 'rosdistro_build_cache').Path --ignore-local --debug "file://localhost/$rosdistroDir\index-v4.yaml" "$Distro"
 
     $cacheFilePath = (Join-Path (Get-Location).Path "$Distro-cache.yaml.gz")
+    if (-Not (Test-Path $cacheFilePath -PathType Leaf)) {
+        throw "Cannot find $cacheFilePath"
+    }
 
     $indexYaml = @"
 %YAML 1.1
@@ -68,7 +72,7 @@ version: 4
     # ensure the temp folder to be cleaned up.
     Remove-Item $rosdistroDir -Force -Recurse -ErrorAction SilentlyContinue
     if (Test-Path $rosdistroDir -PathType Container) {
-        throw "cannot remove $rosdistroDir"
+        throw "Cannot remove $rosdistroDir"
     }
 
     Remove-BomFromFile -OldPath $generatedRepos -NewPath $generatedRepos

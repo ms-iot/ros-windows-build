@@ -34,7 +34,8 @@ try
             'rviz_visual_tools',
             'graph_msgs',
             'imu_tools',
-            'rosserial'
+            'rosserial',
+            'rosparam_shortcuts'
         )
     }
 
