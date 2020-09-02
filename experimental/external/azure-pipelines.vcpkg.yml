@@ -2,7 +2,7 @@ trigger: none
 pr: none
 
 variables:
-  USE_PREVIOUS_CACHING: true
+  USE_PREVIOUS_CACHING: $(USE_PREVIOUS_CACHING)
 
 jobs:
 - job: Vcpkg
