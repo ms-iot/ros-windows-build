@@ -42,3 +42,11 @@
     local-name: rosparam_shortcuts
     uri: https://github.com/PickNikRobotics/rosparam_shortcuts.git
     version: 0.4.0
+- git:
+    local-name: rviz_visual_tools
+    uri: https://github.com/PickNikRobotics/rviz_visual_tools.git
+    version: 3.9.0
+- git:
+    local-name: graph_msgs
+    uri: https://github.com/PickNikRobotics/graph_msgs.git
+    version: 0.1.0

@@ -41,9 +41,6 @@ jobs:
     displayName: 'Clean symbols folder'
   - script: |
       xcopy /Y /S /I .\experimental\ros\%ROS_DISTRO%\pre-patch %INSTALL_DIR%
-      copy /Y %INSTALL_DIR%\lib\manual-link\gtest_main.lib %INSTALL_DIR%\lib
-      copy /Y %INSTALL_DIR%\lib\manual-link\gmock_main.lib %INSTALL_DIR%\lib
-      copy /Y %INSTALL_DIR%\tools\protobuf\protoc.exe %INSTALL_DIR%\bin
     displayName: 'Pre-patch the install directory'
   - script: |
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
@@ -69,6 +66,9 @@ jobs:
       move /Y %INSTALL_DIR%\Lib\filters\median.dll %INSTALL_DIR%\bin
       move /Y %INSTALL_DIR%\Lib\filters\params.dll %INSTALL_DIR%\bin
       move /Y %INSTALL_DIR%\Lib\filters\transfer_function.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\rviz_imu_plugin\rviz_imu_plugin.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\ackermann_steering_controller\ackermann_steering_controller.dll %INSTALL_DIR%\bin
+      move /Y %INSTALL_DIR%\Lib\rosparam_shortcuts\rosparam_shortcuts.dll %INSTALL_DIR%\bin
     displayName: 'Post-patch the install directory'
   - task: PublishBuildArtifacts@1
     inputs:
