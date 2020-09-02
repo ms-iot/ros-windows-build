@@ -32,7 +32,7 @@ repositories:
     url: https://github.com/ms-iot/qt_gui_core.git
     version: windows/0.4.2
   image_common:
-    local-name: image_common
+    type: git
     url: https://github.com/ms-iot/image_common.git
     version: windows/1.12.0
   vision_opencv:
