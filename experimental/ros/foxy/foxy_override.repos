@@ -1,4 +1,12 @@
 repositories:
+  fastcdr:
+    type: git
+    url: https://github.com/eProsima/Fast-CDR.git
+    version: v1.0.13
+  fastrtps:
+    type: git
+    url: https://github.com/eProsima/Fast-DDS.git
+    version: v2.0.1
   geometry2:
     type: git
     url: https://github.com/ms-iot/geometry2.git
