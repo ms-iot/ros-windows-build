@@ -4,6 +4,7 @@ pr: none
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
   RELEASE_VERSION: '20200827.0.0.$(RELEASE_DATE)'
+  IGNORED_PACKAGES: 'rttest test_osrf_testing_tools_cpp tlsf'
 
 jobs:
 - job: Build
@@ -26,7 +27,7 @@ jobs:
       pipeline: 100 # Required when source == Specific
       buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
       artifactName: '$(ROS_DISTRO)-external'
-      buildId: 8130
+      buildId: 8258
   - task: ExtractFiles@1
     inputs:
       archiveFilePatterns: '$(System.ArtifactsDirectory)\$(ROS_DISTRO)-external\external.zip'
@@ -49,11 +50,9 @@ jobs:
       set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
       mkdir ws\src
       cd ws
-      vcs import --force src < ..\experimental\ros\gazebo.rosinstall
-      vcs import --force src < ..\experimental\ros\foxy\foxy.repos
-      vcs import --force src < ..\experimental\ros\foxy\foxy_override.repos
-      vcs import --force src < ..\experimental\ros\foxy\foxy_navigation2.repos
-      vcs import --force src < ..\experimental\ros\foxy\foxy_moveit2.repos
+      vcs import --force --shallow --recursive src < ..\experimental\ros\gazebo.rosinstall
+      vcs import --force --shallow --recursive src < ..\experimental\ros\foxy\foxy.repos
+      vcs import --force --shallow --recursive src < ..\experimental\ros\foxy\foxy_override.repos
       xcopy /Y /S /I ..\experimental\ros\src_patch src
       call ..\experimental\ros\build_ros2.bat
     displayName: 'build foxy'
@@ -70,7 +69,6 @@ jobs:
       tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
       archiveFile: '$(Build.ArtifactStagingDirectory)/symbols.zip'
       replaceExistingArchive: true
-    condition: always()
   - task: ArchiveFiles@2
     inputs:
       rootFolderOrFile: '$(INSTALL_DIR)'
@@ -79,17 +77,14 @@ jobs:
       tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
       archiveFile: '$(Build.ArtifactStagingDirectory)/install.zip'
       replaceExistingArchive: true
-    condition: always()
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: '$(Build.ArtifactStagingDirectory)/install.zip'
       artifactName: '$(ROS_DISTRO)-install'
-    condition: always()
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: '$(Build.ArtifactStagingDirectory)/symbols.zip'
       artifactName: '$(ROS_DISTRO)-symbols'
-    condition: always()
 - job: Setup
   dependsOn: Build
   pool:

@@ -1,5 +1,13 @@
 repositories:
-  ros2/rviz:
+  fastcdr:
     type: git
-    url: https://github.com/ms-iot/rviz.git
-    version: windows/6.1.6
+    url: https://github.com/eProsima/Fast-CDR.git
+    version: v1.0.11
+  fastrtps:
+    type: git
+    url: https://github.com/eProsima/Fast-RTPS.git
+    version: v1.8.2
+  vision_opencv:
+    type: git
+    url: https://github.com/ms-iot/vision_opencv.git
+    version: windows/2.1.4

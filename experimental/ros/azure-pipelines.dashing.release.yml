@@ -4,6 +4,7 @@ pr: none
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
   RELEASE_VERSION: '20200722.0.0.$(RELEASE_DATE)'
+  IGNORED_PACKAGES: 'rttest test_osrf_testing_tools_cpp tlsf cv_bridge'
 
 jobs:
 - job: Build
@@ -26,7 +27,7 @@ jobs:
       pipeline: 100 # Required when source == Specific
       buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
       artifactName: '$(ROS_DISTRO)-external'
-      buildId: 8130
+      buildId: 8258
   - task: ExtractFiles@1
     inputs:
       archiveFilePatterns: '$(System.ArtifactsDirectory)\$(ROS_DISTRO)-external\external.zip'
@@ -53,7 +54,8 @@ jobs:
       mkdir ws\src
       cd ws
       vcs import --force src < ..\experimental\ros\gazebo.rosinstall
-      vcs import --force src < ..\experimental\ros\dashing\release-dashing-20200722.repos
+      vcs import --force src < ..\experimental\ros\dashing\dashing.repos
+      vcs import --force src < ..\experimental\ros\dashing\dashing_override.repos
       call ..\experimental\ros\build_ros2.bat
     displayName: 'Build dashing'
   - task: PublishBuildArtifacts@1
@@ -69,7 +71,6 @@ jobs:
       tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
       archiveFile: '$(Build.ArtifactStagingDirectory)/symbols.zip'
       replaceExistingArchive: true
-    condition: always()
   - task: ArchiveFiles@2
     inputs:
       rootFolderOrFile: '$(INSTALL_DIR)'
@@ -78,17 +79,14 @@ jobs:
       tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
       archiveFile: '$(Build.ArtifactStagingDirectory)/install.zip'
       replaceExistingArchive: true
-    condition: always()
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: '$(Build.ArtifactStagingDirectory)/install.zip'
       artifactName: '$(ROS_DISTRO)-install'
-    condition: always()
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: '$(Build.ArtifactStagingDirectory)/symbols.zip'
       artifactName: '$(ROS_DISTRO)-symbols'
-    condition: always()
 - job: Setup
   dependsOn: Build
   pool:

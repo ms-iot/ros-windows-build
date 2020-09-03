@@ -4,6 +4,7 @@ pr: none
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
   RELEASE_VERSION: '20200831.0.0.$(RELEASE_DATE)'
+  IGNORED_PACKAGES: 'stage stage_ros image_view theora_image_transport rviz_plugin_tutorials four_wheel_steering_controller moveit_setup_assistant'
 
 jobs:
 - job: Build
@@ -27,7 +28,7 @@ jobs:
       pipeline: 100 # Required when source == Specific
       buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
       artifactName: '$(ROS_DISTRO)-external'
-      buildId: 8243
+      buildId: 8258
   - task: ExtractFiles@1
     inputs:
       archiveFilePatterns: '$(System.ArtifactsDirectory)\$(ROS_DISTRO)-external\external.zip'
@@ -48,9 +49,8 @@ jobs:
       mkdir %WORKSPACE_DIR%\src
       pushd %WORKSPACE_DIR%
       vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\gazebo.rosinstall
-      vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\noetic\noetic.rosinstall
-      vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\noetic\noetic_moveit.rosinstall
-      vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\noetic\noetic_override.rosinstall
+      vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\noetic\noetic.repos
+      vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\noetic\noetic_override.repos
       xcopy /Y /S /I %Build_SourcesDirectory%\experimental\ros\src_patch src
       call %Build_SourcesDirectory%\experimental\ros\build_ros1.bat
     displayName: 'Build noetic'

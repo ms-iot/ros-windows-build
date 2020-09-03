@@ -1,4 +1,16 @@
 repositories:
+  fastcdr:
+    type: git
+    url: https://github.com/eProsima/Fast-CDR.git
+    version: v1.0.13
+  fastrtps:
+    type: git
+    url: https://github.com/eProsima/Fast-DDS.git
+    version: v2.0.1
+  foonathan_memory_vendor:
+    type: git
+    url: https://github.com/eProsima/foonathan_memory_vendor.git
+    version: v1.0.0
   geometry2:
     type: git
     url: https://github.com/ms-iot/geometry2.git
@@ -11,3 +23,27 @@ repositories:
     type: git
     url: https://github.com/ros2/yaml_cpp_vendor.git
     version: b11d00fbbe2cd8c8888f8c11ff172e84fdea9adc
+  urdf_parser_py:
+    type: git
+    url: https://github.com/ros/urdf_parser_py.git
+    version: 1.0.0
+  behaviortree_cpp:
+    type: git
+    url: https://github.com/ms-iot/BehaviorTree.CPP.git
+    version: windows/3.5.1
+  cartographer_ros:
+    type: git
+    url: https://github.com/ms-iot/cartographer_ros.git
+    version: 1.0.9001/windows
+  gazebo_ros_pkgs:
+    type: git
+    url: https://github.com/ms-iot/gazebo_ros_pkgs.git
+    version: windows/3.5.0
+  navigation2:
+    type: git
+    url: https://github.com/ms-iot/navigation2.git
+    version: windows/0.4.2
+  vision_opencv:
+    type: git
+    url: https://github.com/ms-iot/vision_opencv.git
+    version: windows/2.2.1
