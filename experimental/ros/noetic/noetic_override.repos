@@ -11,6 +11,11 @@ repositories:
     type: git
     url: https://github.com/ros/ros_comm.git
     version: 3d137ca91109a9f229d0701e618758ef7f817218
+  random_numbers:
+    type: git
+    url: https://github.com/ros-planning/random_numbers.git
+    # fix random_numbers.dll missing issue
+    version: 42a63e896f71f05d429b057b6e9a3d3d05fa409c
   cartographer_ros:
     type: git
     url: https://github.com/cartographer-project/cartographer_ros.git
