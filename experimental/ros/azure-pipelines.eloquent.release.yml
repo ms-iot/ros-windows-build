@@ -3,7 +3,7 @@ pr: none
 
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
-  RELEASE_VERSION: '20200124.1.0.$(RELEASE_DATE)'
+  RELEASE_VERSION: '20200813.0.0.$(RELEASE_DATE)'
 
 jobs:
 - job: Build
