@@ -1,17 +1,19 @@
 repositories:
-  fastcdr:
-    type: git
-    url: https://github.com/eProsima/Fast-CDR.git
-    version: v1.0.11
   fastrtps:
     type: git
     url: https://github.com/eProsima/Fast-DDS.git
     # v1.9.3 is not compatible with vs2019
+    # fastcdr requires an update from v1.0.11 to v1.0.12
+    # foonathan_memory_vendor requires an update from v0.3.0 to v0.5.0
     version: v1.9.4
+  fastcdr:
+    type: git
+    url: https://github.com/eProsima/Fast-CDR.git
+    version: v1.0.12
   foonathan_memory_vendor:
     type: git
     url: https://github.com/eProsima/foonathan_memory_vendor.git
-    version: v0.3.0
+    version: v0.5.0
   rviz:
     type: git
     url: https://github.com/ms-iot/rviz.git
