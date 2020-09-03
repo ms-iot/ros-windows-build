@@ -4,7 +4,7 @@ pr: none
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
   RELEASE_VERSION: '20200722.0.0.$(RELEASE_DATE)'
-  IGNORED_PACKAGES: 'rttest test_osrf_testing_tools_cpp tlsf cv_bridge'
+  IGNORED_PACKAGES: 'rttest test_osrf_testing_tools_cpp tlsf cv_bridge camera_calibration_parsers'
 
 jobs:
 - job: Build
