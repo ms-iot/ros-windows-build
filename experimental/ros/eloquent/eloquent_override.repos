@@ -13,7 +13,8 @@ repositories:
   foonathan_memory_vendor:
     type: git
     url: https://github.com/eProsima/foonathan_memory_vendor.git
-    version: v0.5.0
+    # v0.5.0 use the master branch of foonathan_memory to cause breaks.
+    version: v0.6.0
   rviz:
     type: git
     url: https://github.com/ms-iot/rviz.git
