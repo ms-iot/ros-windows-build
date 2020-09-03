@@ -4,8 +4,8 @@ set ROS_VERSION=2
 
 colcon build ^
     --merge-install ^
-    --packages-skip-by-dep rttest test_osrf_testing_tools_cpp tlsf ^
-    --packages-skip rttest test_osrf_testing_tools_cpp tlsf ^
+    --packages-skip-by-dep %IGNORED_PACKAGES% ^
+    --packages-skip %IGNORED_PACKAGES% ^
     --install-base %INSTALL_DIR% ^
     --cmake-target install ^
     --cmake-args ^

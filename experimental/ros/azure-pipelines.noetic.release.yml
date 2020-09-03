@@ -4,6 +4,7 @@ pr: none
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
   RELEASE_VERSION: '20200831.0.0.$(RELEASE_DATE)'
+  IGNORED_PACKAGES: 'stage stage_ros image_view theora_image_transport rviz_plugin_tutorials four_wheel_steering_controller moveit_setup_assistant'
 
 jobs:
 - job: Build

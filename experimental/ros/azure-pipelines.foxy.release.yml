@@ -4,6 +4,7 @@ pr: none
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
   RELEASE_VERSION: '20200827.0.0.$(RELEASE_DATE)'
+  IGNORED_PACKAGES: 'rttest test_osrf_testing_tools_cpp tlsf'
 
 jobs:
 - job: Build
