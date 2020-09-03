@@ -68,7 +68,6 @@ jobs:
       tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
       archiveFile: '$(Build.ArtifactStagingDirectory)/symbols.zip'
       replaceExistingArchive: true
-    condition: always()
   - task: ArchiveFiles@2
     inputs:
       rootFolderOrFile: '$(INSTALL_DIR)'
@@ -77,17 +76,14 @@ jobs:
       tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
       archiveFile: '$(Build.ArtifactStagingDirectory)/install.zip'
       replaceExistingArchive: true
-    condition: always()
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: '$(Build.ArtifactStagingDirectory)/install.zip'
       artifactName: '$(ROS_DISTRO)-install'
-    condition: always()
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: '$(Build.ArtifactStagingDirectory)/symbols.zip'
       artifactName: '$(ROS_DISTRO)-symbols'
-    condition: always()
 - job: Setup
   dependsOn: Build
   pool:
