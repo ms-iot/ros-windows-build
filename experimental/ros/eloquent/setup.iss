@@ -24,7 +24,7 @@ DefaultGroupName={#MyAppName}
 DisableProgramGroupPage=yes
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
-OutputBaseFilename=ros-eloquent-setup
+OutputBaseFilename=ros-eloquent-setup-x64-{#MyAppVersion}
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
