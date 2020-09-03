@@ -1,6 +1,11 @@
 trigger: none
 pr: none
 
+resources:
+  pipelines:
+  - pipeline: vNext-external # identifier for the resource (used in pipeline resource variables)
+    source: vNext/ms-iot.external # name of the pipeline that produces an artifact
+
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
   RELEASE_VERSION: '20200831.0.0.$(RELEASE_DATE)'
@@ -21,14 +26,9 @@ jobs:
   steps:
   - script: 'reg add HKLM\SYSTEM\CurrentControlSet\Control\FileSystem /v LongPathsEnabled /t REG_DWORD /d 1 /f'
     displayName: 'Enable long paths on Windows'
-  - task: DownloadBuildArtifacts@0
-    inputs:
-      buildType: 'specific' # Options: current, specific
-      project: 'ros-win' # Required when source == Specific
-      pipeline: 100 # Required when source == Specific
-      buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
-      artifactName: '$(ROS_DISTRO)-external'
-      buildId: 8258
+  - download: vNext-external   # pipeline resource identifier.
+    artifact: '$(ROS_DISTRO)-external'  # artifact to download, optional; defaults to all the artifacts from the resource.
+    patterns: '**/*.zip'  # mini match pattern to download specific files, optional; defaults to all files.
   - task: ExtractFiles@1
     inputs:
       archiveFilePatterns: '$(System.ArtifactsDirectory)\$(ROS_DISTRO)-external\external.zip'
