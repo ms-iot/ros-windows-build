@@ -1,4 +1,9 @@
 repositories:
+  dynamic_reconfigure:
+    type: git
+    url: https://github.com/ros/dynamic_reconfigure.git
+    # 1.7.0 has Python3 compatibility issues.
+    version: 1.7.1
   eigenpy:
     type: git
     url: https://github.com/stack-of-tasks/eigenpy.git
