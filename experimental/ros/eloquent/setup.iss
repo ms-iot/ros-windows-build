@@ -3,7 +3,7 @@
 
 #include "version.inc"
 
-#define MyAppName "Robot Operating System 2 Eloquent Elusor"
+#define MyAppName "Robot Operating System 2 (ROS 2) Eloquent Elusor"
 #define MyAppPublisher "https://aka.ms/ros"
 #define MyAppURL "https://aka.ms/ros"
 
