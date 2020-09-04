@@ -5,7 +5,7 @@ resources:
   pipelines:
   - pipeline: ms-iot.external # identifier for the resource (used in pipeline resource variables)
     source: vNext/ms-iot.external # name of the pipeline that produces an artifact
-    version: '#20200902.1'
+    version: '20200902.1'
 
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
