@@ -92,7 +92,7 @@ stages:
 
 - stage: packaging
   displayName: 'Packaging ${{ variables.ROS_DISTRO }}'
-  dependOn:
+  dependsOn:
   - build
   jobs:
   - template: azure-pipelines.packaging.yml
@@ -100,3 +100,12 @@ stages:
       INSTALL_DIR: ${{ variables.INSTALL_DIR }}
       ROS_DISTRO: ${{ variables.ROS_DISTRO }}
       RELEASE_VERSION: ${{ variables.RELEASE_VERSION }}
+
+- stage: publish_prerelease
+  displayName: 'Publishing Prerelease ${{ variables.ROS_DISTRO }}'
+  dependsOn:
+  - packaging
+  jobs:
+  - template: azure-pipelines.publish.yml
+    parameters:
+      ROS_DISTRO: ${{ variables.ROS_DISTRO }}

@@ -1,0 +1,20 @@
+jobs:
+- deployment:
+  pool:
+    vmImage: 'windows-2019'
+  environment: 'nuget-push'
+  variables:
+    ROS_DISTRO: '${{ parameters.ROS_DISTRO }}'
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+        - download: current
+          artifact: '$(ROS_DISTRO)-chocolatey-prerelease'
+        - task: NuGetCommand@2
+          displayName: 'NuGet push'
+          inputs:
+            command: push
+            packagesToPush: '$(Pipeline.Workspace)/$(ROS_DISTRO)-chocolatey-prerelease/*-pre.nupkg'
+            publishVstsFeed: 'ros-win/public'
+            allowPackageConflicts: true
