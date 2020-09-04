@@ -36,13 +36,17 @@ jobs:
         INSTALL_DIR: 'c:\opt\ros\foxy\x64'
         DISTRO_NAME: 'foxy'
         VCPKG_DEFAULT_TRIPLET: 'x64-windows'
+  variables:
+    VCPKG_DEFAULT_TRIPLET: $(VCPKG_DEFAULT_TRIPLET)
+    DISTRO_NAME: $(DISTRO_NAME)
+    INSTALL_DIR: $(INSTALL_DIR)
   workspace:
     clean: all
   steps:
   - download: ms-iot.vcpkg
-    artifact: '${{ parameters.VCPKG_DEFAULT_TRIPLET }}-installed'
+    artifact: '${{ variables.VCPKG_DEFAULT_TRIPLET }}-installed'
   - download: ms-iot.python
-    artifact: '${{ parameters.DISTRO_NAME }}-python'
+    artifact: '${{ variables.DISTRO_NAME }}-python'
   - task: ExtractFiles@1
     inputs:
       archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.vcpkg\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
