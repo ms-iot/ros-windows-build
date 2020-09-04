@@ -3,8 +3,8 @@ pr: none
 
 resources:
   pipelines:
-  - pipeline: ms-iot.external # identifier for the resource (used in pipeline resource variables)
-    source: vNext/ms-iot.external # name of the pipeline that produces an artifact
+  - pipeline: ms-iot.external
+    source: vNext/ms-iot.external
     version: '20200902.1'
 
 variables:
@@ -27,8 +27,8 @@ jobs:
   steps:
   - script: 'reg add HKLM\SYSTEM\CurrentControlSet\Control\FileSystem /v LongPathsEnabled /t REG_DWORD /d 1 /f'
     displayName: 'Enable long paths on Windows'
-  - download: ms-iot.external   # pipeline resource identifier.
-    artifact: '${{ variables.ROS_DISTRO }}-external'  # artifact to download, optional; defaults to all the artifacts from the resource.
+  - download: ms-iot.external
+    artifact: '${{ variables.ROS_DISTRO }}-external'
   - task: ExtractFiles@1
     inputs:
       archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.external\$(ROS_DISTRO)-external\external.zip'
