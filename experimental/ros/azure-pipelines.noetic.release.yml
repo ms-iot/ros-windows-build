@@ -1,6 +1,12 @@
 trigger: none
 pr: none
 
+resources:
+  pipelines:
+  - pipeline: ms-iot.external
+    source: vNext/ms-iot.external
+    version: '20200902.1'
+
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
   RELEASE_VERSION: '20200831.0.0.$(RELEASE_DATE)'
@@ -21,17 +27,11 @@ jobs:
   steps:
   - script: 'reg add HKLM\SYSTEM\CurrentControlSet\Control\FileSystem /v LongPathsEnabled /t REG_DWORD /d 1 /f'
     displayName: 'Enable long paths on Windows'
-  - task: DownloadBuildArtifacts@0
-    inputs:
-      buildType: 'specific' # Options: current, specific
-      project: 'ros-win' # Required when source == Specific
-      pipeline: 100 # Required when source == Specific
-      buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
-      artifactName: '$(ROS_DISTRO)-external'
-      buildId: 8258
+  - download: ms-iot.external
+    artifact: '${{ variables.ROS_DISTRO }}-external'
   - task: ExtractFiles@1
     inputs:
-      archiveFilePatterns: '$(System.ArtifactsDirectory)\$(ROS_DISTRO)-external\external.zip'
+      archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.external\$(ROS_DISTRO)-external\external.zip'
       destinationFolder: '$(INSTALL_DIR)'
       cleanDestinationFolder: true
   - script: |
