@@ -16,6 +16,7 @@ variables:
 
 stages:
 - stage: build
+  displayName: 'Build ${{ variables.ROS_DISTRO }}'
   jobs:
   - job: Build
     pool: 'Edge-Robotics-VS2019'
@@ -102,7 +103,7 @@ stages:
       RELEASE_VERSION: ${{ variables.RELEASE_VERSION }}
 
 - stage: publish
-  displayName: 'Publishing ${{ variables.ROS_DISTRO }}'
+  displayName: 'Publish ${{ variables.ROS_DISTRO }}'
   dependsOn:
   - packaging
   jobs:
