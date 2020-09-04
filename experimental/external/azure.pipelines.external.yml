@@ -36,10 +36,6 @@ jobs:
         INSTALL_DIR: 'c:\opt\ros\foxy\x64'
         DISTRO_NAME: 'foxy'
         VCPKG_DEFAULT_TRIPLET: 'x64-windows'
-  variables:
-    VCPKG_DEFAULT_TRIPLET: $(VCPKG_DEFAULT_TRIPLET)
-    DISTRO_NAME: $(DISTRO_NAME)
-    INSTALL_DIR: $(INSTALL_DIR)
   workspace:
     clean: all
   steps:
