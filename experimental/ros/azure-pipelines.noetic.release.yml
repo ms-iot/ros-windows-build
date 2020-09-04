@@ -3,7 +3,7 @@ pr: none
 
 resources:
   pipelines:
-  - pipeline: vNext-external # identifier for the resource (used in pipeline resource variables)
+  - pipeline: ms-iot.external # identifier for the resource (used in pipeline resource variables)
     source: vNext/ms-iot.external # name of the pipeline that produces an artifact
 
 variables:
@@ -26,9 +26,8 @@ jobs:
   steps:
   - script: 'reg add HKLM\SYSTEM\CurrentControlSet\Control\FileSystem /v LongPathsEnabled /t REG_DWORD /d 1 /f'
     displayName: 'Enable long paths on Windows'
-  - download: vNext-external   # pipeline resource identifier.
+  - download: ms-iot.external   # pipeline resource identifier.
     artifact: '$(ROS_DISTRO)-external'  # artifact to download, optional; defaults to all the artifacts from the resource.
-    patterns: '**/*.zip'  # mini match pattern to download specific files, optional; defaults to all files.
   - task: ExtractFiles@1
     inputs:
       archiveFilePatterns: '$(System.ArtifactsDirectory)\$(ROS_DISTRO)-external\external.zip'
