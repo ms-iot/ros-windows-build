@@ -40,9 +40,9 @@ jobs:
     clean: all
   steps:
   - download: ms-iot.vcpkg
-    artifact: '$(VCPKG_DEFAULT_TRIPLET)-installed'
+    artifact: '${{ parameters.VCPKG_DEFAULT_TRIPLET }}-installed'
   - download: ms-iot.python
-    artifact: '$(DISTRO_NAME)-python'
+    artifact: '${{ parameters.DISTRO_NAME }}-python'
   - task: ExtractFiles@1
     inputs:
       archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.vcpkg\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
