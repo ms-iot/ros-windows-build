@@ -1,0 +1,40 @@
+jobs:
+- job: Packaging
+  pool:
+    vmImage: 'windows-2019'
+  variables:
+    INSTALL_DIR: '${{ parameters.INSTALL_DIR }}'
+    ROS_DISTRO: '${{ parameters.ROS_DISTRO }}'
+    RELEASE_VERSION: '${{ parameters.RELEASE_VERSION }}'
+  timeoutInMinutes: 360
+  workspace:
+    clean: all
+  steps:
+  - task: DownloadBuildArtifacts@0
+    inputs:
+      buildType: 'current' # Options: current, specific
+      artifactName: '$(ROS_DISTRO)-install'
+  - task: ExtractFiles@1
+    inputs:
+      archiveFilePatterns: '$(System.ArtifactsDirectory)\$(ROS_DISTRO)-install\install.zip'
+      destinationFolder: '$(INSTALL_DIR)'
+      cleanDestinationFolder: true
+  - script: |
+      echo #define MyAppVersion "%RELEASE_VERSION%" > .\experimental\ros\%ROS_DISTRO%\version.inc
+      iscc .\experimental\ros\%ROS_DISTRO%\setup.iss
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '.\experimental\ros\$(ROS_DISTRO)\Output'
+      artifactName: '$(ROS_DISTRO)-setup'
+  - powershell: |
+      .\experimental\ros\chocolatey\buildChocolatey.ps1 -PackageName "ros-$Env:ROS_DISTRO-desktop_full" -PackageVersion "$Env:RELEASE_VERSION" -SetupProgram ".\experimental\ros\$Env:ROS_DISTRO\Output\ros-$Env:ROS_DISTRO-setup-x64-$Env:RELEASE_VERSION.exe"
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '.\experimental\ros\chocolatey\output'
+      artifactName: '$(ROS_DISTRO)-chocolatey'
+  - powershell: |
+      .\experimental\ros\chocolatey\buildChocolatey.ps1 -PackageName "ros-$Env:ROS_DISTRO-desktop_full" -PackageVersion "$Env:RELEASE_VERSION-pre" -SetupProgram ".\experimental\ros\$Env:ROS_DISTRO\Output\ros-$Env:ROS_DISTRO-setup-x64-$Env:RELEASE_VERSION.exe"
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '.\experimental\ros\chocolatey\output'
+      artifactName: '$(ROS_DISTRO)-chocolatey-prerelease'
