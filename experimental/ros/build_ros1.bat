@@ -11,4 +11,5 @@ colcon build ^
         -DCURL_NO_CURL_CMAKE=ON ^
         -DCATKIN_SKIP_TESTING=ON ^
         -DBUILD_TESTING:BOOL=False ^
-        -DCMAKE_PROGRAM_PATH=%INSTALL_DIR%\tools\protobuf;%INSTALL_DIR%\tools\qt5\bin
+        -DCMAKE_PROGRAM_PATH=%INSTALL_DIR%\tools\protobuf;%INSTALL_DIR%\tools\qt5\bin ^
+    2>&1
