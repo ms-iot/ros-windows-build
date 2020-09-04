@@ -1,6 +1,16 @@
 trigger: none
 pr: none
 
+resources:
+  pipelines:
+  - pipeline: ms-iot.python
+    source: vNext/ms-iot.python
+    version: '20200830.1'
+  pipelines:
+  - pipeline: ms-iot.vcpkg
+    source: vNext/ms-iot.vcpkg
+    version: '20200901.4'
+
 jobs:
 - job: Build
   pool: Edge-Robotics-VS2019
@@ -30,30 +40,18 @@ jobs:
   workspace:
     clean: all
   steps:
-  - task: DownloadBuildArtifacts@0
-    inputs:
-      buildType: 'specific' # Options: current, specific
-      project: 'ros-win' # Required when source == Specific
-      pipeline: 97 # Required when source == Specific
-      buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
-      artifactName: '$(VCPKG_DEFAULT_TRIPLET)-installed'
-      buildId: 8253
-  - task: DownloadBuildArtifacts@0
-    inputs:
-      buildType: 'specific' # Options: current, specific
-      project: 'ros-win' # Required when source == Specific
-      pipeline: 99 # Required when source == Specific
-      buildVersionToDownload: 'specific' # Required when source == Specific# Options: latest, latestFromBranch, specific
-      artifactName: '$(DISTRO_NAME)-python'
-      buildId: 8173
+  - download: ms-iot.vcpkg
+    artifact: '${{ variables.VCPKG_DEFAULT_TRIPLET }}-installed'
+  - download: ms-iot.python
+    artifact: '${{ variables.DISTRO_NAME }}-python'
   - task: ExtractFiles@1
     inputs:
-      archiveFilePatterns: '$(System.ArtifactsDirectory)\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
+      archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.vcpkg\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
       destinationFolder: 'd:\installed'
       cleanDestinationFolder: true
   - task: ExtractFiles@1
     inputs:
-      archiveFilePatterns: '$(System.ArtifactsDirectory)\$(DISTRO_NAME)-python\python.zip'
+      archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.python\$(DISTRO_NAME)-python\python.zip'
       destinationFolder: '$(INSTALL_DIR)'
       cleanDestinationFolder: true
   - powershell: |
