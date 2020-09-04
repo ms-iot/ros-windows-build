@@ -5,7 +5,7 @@ resources:
   pipelines:
   - pipeline: ms-iot.external # identifier for the resource (used in pipeline resource variables)
     source: vNext/ms-iot.external # name of the pipeline that produces an artifact
-    version: '#20200901.1'
+    version: '#20200902.1'
 
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
@@ -31,7 +31,7 @@ jobs:
     artifact: '${{ variables.ROS_DISTRO }}-external'  # artifact to download, optional; defaults to all the artifacts from the resource.
   - task: ExtractFiles@1
     inputs:
-      archiveFilePatterns: '$(System.ArtifactsDirectory)\$(ROS_DISTRO)-external\external.zip'
+      archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.external\$(ROS_DISTRO)-external\external.zip'
       destinationFolder: '$(INSTALL_DIR)'
       cleanDestinationFolder: true
   - script: |
