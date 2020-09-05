@@ -19,23 +19,3 @@ jobs:
             packagesToPush: '$(Pipeline.Workspace)/$(ROS_DISTRO)-chocolatey-prerelease/*-pre.nupkg'
             publishVstsFeed: 'ros-win/public'
             allowPackageConflicts: true
-- deployment: deploy_release
-  displayName: 'Deploy Release ${{ parameters.ROS_DISTRO }}'
-  pool:
-    vmImage: 'windows-2019'
-  environment: 'nuget-push-release'
-  variables:
-    ROS_DISTRO: '${{ parameters.ROS_DISTRO }}'
-  strategy:
-    runOnce:
-      deploy:
-        steps:
-        - download: current
-          artifact: '$(ROS_DISTRO)-chocolatey'
-        - task: NuGetCommand@2
-          displayName: 'NuGet push'
-          inputs:
-            command: push
-            packagesToPush: '$(Pipeline.Workspace)/$(ROS_DISTRO)-chocolatey/*.nupkg'
-            publishVstsFeed: 'ros-win/public'
-            allowPackageConflicts: true
