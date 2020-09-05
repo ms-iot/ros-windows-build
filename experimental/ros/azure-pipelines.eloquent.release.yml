@@ -103,7 +103,7 @@ stages:
       RELEASE_VERSION: ${{ variables.RELEASE_VERSION }}
 
 - stage: publish_prerelease
-  displayName: 'Publish ${{ variables.ROS_DISTRO }}'
+  displayName: 'Publish Prerelease ${{ variables.ROS_DISTRO }}'
   dependsOn:
   - packaging
   jobs:
@@ -112,7 +112,7 @@ stages:
       ROS_DISTRO: ${{ variables.ROS_DISTRO }}
 
 - stage: publish_release
-  displayName: 'Publish ${{ variables.ROS_DISTRO }}'
+  displayName: 'Publish Release ${{ variables.ROS_DISTRO }}'
   dependsOn:
   - packaging
   jobs:
