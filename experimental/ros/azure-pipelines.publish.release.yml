@@ -11,11 +11,11 @@ jobs:
       deploy:
         steps:
         - download: current
-          artifact: '$(ROS_DISTRO)-chocolatey'
+          artifact: '${{ variables.ROS_DISTRO }}-chocolatey'
         - task: NuGetCommand@2
           displayName: 'NuGet push'
           inputs:
             command: push
-            packagesToPush: '$(Pipeline.Workspace)/$(ROS_DISTRO)-chocolatey/*.nupkg'
+            packagesToPush: '$(Pipeline.Workspace)/${{ variables.ROS_DISTRO }}-chocolatey/*.nupkg'
             publishVstsFeed: 'ros-win/public'
             allowPackageConflicts: true
