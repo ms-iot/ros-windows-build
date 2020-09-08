@@ -13,8 +13,7 @@ jobs:
     clean: all
   steps:
   - script: |
-      rd /s /q c:\opt
-      dir /b c:\opt
+      rd /s /q c:\opt 2>&1
     displayName: 'Remove opt folder'
   - powershell: |
       $env:ChocolateyInstall="c:\opt\chocolatey"
