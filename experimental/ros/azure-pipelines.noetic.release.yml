@@ -131,6 +131,7 @@ stages:
       INSTALL_DIR: ${{ variables.INSTALL_DIR }}
       ROS_DISTRO: ${{ variables.ROS_DISTRO }}
       RELEASE_VERSION: ${{ variables.RELEASE_VERSION }}
+      PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-desktop_full'
 
 - stage: publish_prerelease
   displayName: 'Publish Prerelease ${{ variables.ROS_DISTRO }}'
