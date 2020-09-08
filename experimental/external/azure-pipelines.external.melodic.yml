@@ -1,0 +1,82 @@
+trigger: none
+pr: none
+
+jobs:
+- job: Build
+  pool:
+    vmImage: 'windows-2019'
+  timeoutInMinutes: 360
+  variables:
+    INSTALL_DIR: 'c:\opt'
+  workspace:
+    clean: all
+  steps:
+  - powershell: |
+      choco sources add -n=roswin -s https://aka.ms/ros/public --priority 1
+      choco upgrade -y ros-python2
+      choco upgrade -y sip
+      choco upgrade -y eigen
+      choco upgrade -y tinyxml2
+      choco upgrade -y freeglut
+      choco upgrade -y qt5-sdk
+      choco upgrade -y lz4
+      choco upgrade -y libgraphviz
+      choco upgrade -y libompl
+      choco upgrade -y cppunit
+      choco upgrade -y libccd
+      choco upgrade -y libfcl
+      choco upgrade -y log4cxx
+      choco upgrade -y openssl
+      choco upgrade -y boost
+      choco upgrade -y gtk2
+      choco upgrade -y libopencv
+      choco upgrade -y lua
+      choco upgrade -y google-mock
+      choco upgrade -y libjpeg-turbo
+      choco upgrade -y poco
+      choco upgrade -y pkg-config
+      choco upgrade -y gflags
+      choco upgrade -y gazebo9
+      choco upgrade -y assimp
+      choco upgrade -y sbcl
+      choco upgrade -y protobuf
+      choco upgrade -y google-test
+      choco upgrade -y yaml-cpp
+      choco upgrade -y libqglviewer
+      choco upgrade -y sdl_image
+      choco upgrade -y libflann
+      choco upgrade -y urdfdom
+      choco upgrade -y pyqt5
+      choco upgrade -y pyside2
+      choco upgrade -y tinyxml
+      choco upgrade -y sdl
+      choco upgrade -y console_bridge
+      choco upgrade -y libtheora
+      choco upgrade -y glog
+      choco upgrade -y ceres
+      choco upgrade -y suitesparse
+      choco upgrade -y clapack
+      choco upgrade -y openblas
+      choco upgrade -y metis
+      choco upgrade -y libpcl
+      choco upgrade -y octomap
+      choco upgrade -y bzip2
+      choco upgrade -y urdfdom_headers
+      choco upgrade -y cairo
+      choco upgrade -y libogg
+      choco upgrade -y libglew
+      choco upgrade -y bullet3
+    continueOnError: true
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: '$(INSTALL_DIR)'
+      includeRootFolder: false
+      archiveType: 'zip' # Options: zip, 7z, tar, wim
+      tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
+      archiveFile: '$(Build.ArtifactStagingDirectory)/melodic.zip'
+      replaceExistingArchive: true
+    continueOnError: true
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '$(Build.ArtifactStagingDirectory)/melodic.zip'
+      artifactName: melodic-external
