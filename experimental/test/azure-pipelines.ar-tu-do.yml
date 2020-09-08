@@ -1,6 +1,13 @@
 trigger: none
 pr: none
 
+resources:
+  repositories:
+  - repository: common
+    type: github
+    name: Contoso/CommonTools
+    endpoint: MyContosoServiceConnection
+
 variables:
   ROS_DISTRO: 'noetic'
   INSTALL_DIR: 'c:\opt\ros\noetic\x64'
@@ -20,5 +27,13 @@ jobs:
       $env:ChocolateyInstall="c:\opt\chocolatey"
       Set-ExecutionPolicy Bypass -Scope Process -Force;
       iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-      choco --version
-    displayName: 'Install Chocolatey for non-Admin'
+      choco sources add -n=roswin -s https://aka.ms/ros/public --priority 1
+      choco install ros-noetic-desktop_full -y --pre
+    displayName: 'Install Noetic'
+  - scripts: |
+      git clone https://github.com/ms-iot/ros_simulation_lab --recursive
+      cd ros_simulation_lab
+      call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+      call "c:\opt\ros\noetic\x64\setup.bat"
+      catkin_make --use-ninja
+    displayName: 'Build'
