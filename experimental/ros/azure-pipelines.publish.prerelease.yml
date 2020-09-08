@@ -17,5 +17,5 @@ jobs:
           inputs:
             command: push
             packagesToPush: '$(Pipeline.Workspace)/${{ variables.ROS_DISTRO }}-chocolatey-prerelease/*-pre.nupkg'
-            publishVstsFeed: 'ros-win/internal'
+            publishVstsFeed: 'ros-win/public'
             allowPackageConflicts: true
