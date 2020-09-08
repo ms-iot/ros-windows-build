@@ -30,7 +30,7 @@ jobs:
       choco sources add -n=roswin -s https://aka.ms/ros/public --priority 1
       choco install ros-noetic-desktop_full -y --pre
     displayName: 'Install Noetic'
-  - scripts: |
+  - script: |
       git clone https://github.com/ms-iot/ros_simulation_lab --recursive
       cd ros_simulation_lab
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
