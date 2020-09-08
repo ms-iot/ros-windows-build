@@ -14,6 +14,7 @@ jobs:
   steps:
   - script:
       rd /s /q c:\opt
+      dir /b c:\opt
     displayName: 'Remove opt folder'
   - powershell:
       $env:ChocolateyInstall="c:\opt\chocolatey"
