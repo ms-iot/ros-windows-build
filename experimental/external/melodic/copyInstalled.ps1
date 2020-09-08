@@ -51,10 +51,10 @@ try
         Copy-Item @arguments
     }
 
-    ruplacer "C:/opt/rosdeps" "C:/opt/ros/melodic" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "..\log\ruplacer1.log")
-    ruplacer "c:\opt\rosdeps" "c:\opt\ros\melodic" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "..\log\ruplacer2.log")
-    ruplacer "C:\opt" "C:\opt\ros\melodic" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "..\log\ruplacer3.log")
-    ruplacer "C:\\opt" "C:\\opt\ros\melodic" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "..\log\ruplacer4.log")
+    ruplacer "C:/opt/rosdeps" "C:/opt/ros/melodic" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "ruplacer1.log")
+    ruplacer "c:\opt\rosdeps" "c:\opt\ros\melodic" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "ruplacer2.log")
+    ruplacer "C:\opt" "C:\opt\ros\melodic" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "ruplacer3.log")
+    ruplacer "C:\\opt" "C:\\opt\ros\melodic" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "ruplacer4.log")
 }
 catch
 {
