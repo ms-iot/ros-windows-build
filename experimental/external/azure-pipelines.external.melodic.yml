@@ -7,7 +7,7 @@ jobs:
     vmImage: 'windows-2019'
   timeoutInMinutes: 360
   variables:
-    INSTALL_DIR: 'c:\opt'
+    INSTALL_DIR: 'c:\opt\ros\melodic\x64'
   workspace:
     clean: all
   steps:
@@ -66,6 +66,7 @@ jobs:
       choco upgrade -y libogg
       choco upgrade -y libglew
       choco upgrade -y bullet3
+      & .\experimental\external\melodic\copyInstalled.ps1 -InstallDir $Env:INSTALL_DIR
     continueOnError: true
   - task: ArchiveFiles@2
     inputs:
