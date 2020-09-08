@@ -70,7 +70,8 @@ try
         'cairo',
         'libogg',
         'libglew',
-        'bullet3'
+        'bullet3',
+        'vcpython27'
     )
 
     $chocoPackages | ForEach-Object {
