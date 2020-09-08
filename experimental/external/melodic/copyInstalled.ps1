@@ -13,6 +13,8 @@ if ($badParam)
 
 try
 {
+    New-Item -Path $InstallDir -ItemType directory -Force | Out-Null
+
     $LegacyRosdep = "C:\opt\rosdeps\x64"
     # Copy Rosdep installed
     $developmentFiles = @(
