@@ -118,8 +118,8 @@ try
     Set-Alias python (Join-Path "C:\opt\ros\melodic\x64" "python.exe") -Scope Script
     $requirements = (Join-Path $scriptsDir "requirements.txt")
 
-    python -m pip install -q --upgrade pip setuptools --disable-pip-version-check --no-cache-dir
-    python -m pip install -q -U -r $requirements --disable-pip-version-check --no-cache-dir
+    python -m pip install --upgrade pip setuptools --disable-pip-version-check --no-cache-dir
+    python -m pip install -U -r $requirements --disable-pip-version-check --no-cache-dir 2>&1
 
     # Fix-up all hard-coded paths.
     ruplacer "c:/opt/rosdeps" "c:/opt/ros/melodic" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "ruplacer0.log")
