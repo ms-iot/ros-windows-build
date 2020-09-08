@@ -15,7 +15,7 @@ jobs:
   - script:
       rd /s /q c:\opt
     displayName: 'Remove opt folder'
-  - powerscript:
+  - powershell:
       $env:ChocolateyInstall="c:\opt\chocolatey"
       Set-ExecutionPolicy Bypass -Scope Process -Force;
       iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
