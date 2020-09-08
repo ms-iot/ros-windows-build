@@ -13,8 +13,7 @@ jobs:
   steps:
   - powershell: |
       choco sources add -n=roswin -s https://aka.ms/ros/public --priority 1
-      & .\experimental\external\melodic\bootstrapLegacyRosdeps.ps1
-      & .\experimental\external\melodic\copyInstalled.ps1 -InstallDir $Env:INSTALL_DIR
+      & .\experimental\external\melodic\bootstrap.ps1 -InstallDir $Env:INSTALL_DIR
     continueOnError: true
   - task: ArchiveFiles@2
     inputs:
