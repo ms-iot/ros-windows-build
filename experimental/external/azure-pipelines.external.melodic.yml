@@ -13,10 +13,7 @@ jobs:
   steps:
   - powershell: |
       choco sources add -n=roswin -s https://aka.ms/ros/public --priority 1
-      choco upgrade -y --no-progress ros-python2
-      choco upgrade -y --no-progress sip
-      choco upgrade -y --no-progress eigen
-      choco upgrade -y --no-progress tinyxml2
+      & .\experimental\external\melodic\bootstrapLegacyRosdeps.ps1
       & .\experimental\external\melodic\copyInstalled.ps1 -InstallDir $Env:INSTALL_DIR
     continueOnError: true
   - task: ArchiveFiles@2
@@ -32,7 +29,3 @@ jobs:
     inputs:
       pathtoPublish: '$(Build.ArtifactStagingDirectory)/melodic.zip'
       artifactName: melodic-external
-  - task: PublishBuildArtifacts@1
-    inputs:
-      pathtoPublish: '$(INSTALL_DIR)/log'
-      artifactName: melodic-log
