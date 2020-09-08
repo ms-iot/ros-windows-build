@@ -16,7 +16,7 @@ cairocffi
 cmake
 defusedxml
 netifaces
-opencv-python
+opencv-python==4.2.0.32
 psutil
 gnupg
 argparse
