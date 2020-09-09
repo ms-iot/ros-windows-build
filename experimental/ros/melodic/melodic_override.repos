@@ -10,7 +10,7 @@ repositories:
   class_loader:
     type: git
     url: https://github.com/ros/class_loader.git
-    version: 0.4.2
+    version: 8864be372a83921f15906ae80752be9d6a300b81
   diagnostics:
     type: git
     url: https://github.com/ros/diagnostics.git
