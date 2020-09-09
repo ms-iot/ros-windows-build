@@ -39,7 +39,7 @@ jobs:
       call ".\devel\setup.bat"
       pip install circle-fit
       rosnode kill -a
-      rostest demo demo.test
+      rostest demo demo.test 2>&1
     displayName: Run ROS Tests
   - task: PublishPipelineArtifact@1
     inputs:
