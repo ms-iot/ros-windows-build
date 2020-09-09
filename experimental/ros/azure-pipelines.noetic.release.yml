@@ -46,6 +46,7 @@ stages:
     - script: |
         xcopy /Y /S /I .\experimental\ros\%ROS_DISTRO%\pre-patch %INSTALL_DIR%
         set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
+        python -m pip config set global.disable-pip-version-check True
         python -m pip install -U pycryptodomex==3.9.8
         python -m pip install -U gnupg==2.3.1
         python -m pip install -U pydot==1.4.1
