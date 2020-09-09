@@ -11,3 +11,7 @@ repositories:
     type: git
     url: https://github.com/ros/diagnostics.git
     version: 1.9.7
+  geometry:
+    type: git
+    url: https://github.com/ms-iot/geometry.git
+    version: windows/1.12.1
