@@ -125,16 +125,16 @@ try
     $global:lastexitcode = 0
 
     # Fix-up all hard-coded paths.
-    ruplacer "c:/opt/rosdeps" "c:/opt/ros/melodic" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "ruplacer0.log")
-    ruplacer "C:/opt/rosdeps" "C:/opt/ros/melodic" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "ruplacer1.log")
-    ruplacer "c:\opt\rosdeps" "c:\opt\ros\melodic" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "ruplacer2.log")
-    ruplacer "C:\opt\rosdeps" "C:\opt\ros\melodic" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "ruplacer3.log")
-    ruplacer "C:\\opt\\rosdeps" "C:\\opt\\ros\\melodic" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "ruplacer4.log")
-    ruplacer "c:/opt/python27amd64" "c:/opt/ros/melodic/x64" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "ruplacer5.log")
-    ruplacer "C:/opt/python27amd64" "C:/opt/ros/melodic/x64" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "ruplacer6.log")
-    ruplacer "c:\opt\python27amd64" "c:\opt\ros\melodic\x64" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "ruplacer7.log")
-    ruplacer "C:\opt\python27amd64" "C:\opt\ros\melodic\x64" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "ruplacer8.log")
-    ruplacer "C:\\opt\\python27amd64" "C:\\opt\\ros\\melodic\\x64" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "ruplacer9.log")
+    ruplacer "c:/opt/rosdeps" "c:/opt/ros/melodic" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer0.log")
+    ruplacer "C:/opt/rosdeps" "C:/opt/ros/melodic" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer1.log")
+    ruplacer "c:\opt\rosdeps" "c:\opt\ros\melodic" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer2.log")
+    ruplacer "C:\opt\rosdeps" "C:\opt\ros\melodic" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer3.log")
+    ruplacer "C:\\opt\\rosdeps" "C:\\opt\\ros\\melodic" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer4.log")
+    ruplacer "c:/opt/python27amd64" "c:/opt/ros/melodic/x64" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer5.log")
+    ruplacer "C:/opt/python27amd64" "C:/opt/ros/melodic/x64" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer6.log")
+    ruplacer "c:\opt\python27amd64" "c:\opt\ros\melodic\x64" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer7.log")
+    ruplacer "C:\opt\python27amd64" "C:\opt\ros\melodic\x64" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer8.log")
+    ruplacer "C:\\opt\\python27amd64" "C:\\opt\\ros\\melodic\\x64" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer9.log")
 }
 catch
 {
