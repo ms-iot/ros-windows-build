@@ -32,10 +32,12 @@ jobs:
     displayName: Build ROS Workspace
   - script: |
       mkdir ros_home
+      set MPLBACKEND=qt5agg
       set ROS_HOME=%CD%\ros_home
       pushd ros_simulation_lab\catkin_ws
       call "c:\opt\ros\noetic\x64\setup.bat"
       call ".\devel\setup.bat"
+      pip install circle-fit
       rosnode kill -a
       rostest demo demo.test
     displayName: Run ROS Tests
