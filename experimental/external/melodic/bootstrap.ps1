@@ -72,7 +72,6 @@ try
         'libglew',
         'bullet3',
         'libcurl',
-        'orocos_kdl',
         'vcpython27'
     )
 
