@@ -55,13 +55,8 @@ stages:
         pip install -U rosinstall
         vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\melodic\melodic.repos
         vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\melodic\melodic_override.repos
-        call %Build_SourcesDirectory%\experimental\ros\build_melodic.bat
+        call %Build_SourcesDirectory%\experimental\ros\melodic\build.bat
       displayName: 'Build melodic'
-    - task: PublishBuildArtifacts@1
-      inputs:
-        pathtoPublish: '$(WORKSPACE_DIR)\log'
-        artifactName: '$(ROS_DISTRO)-log'
-      condition: always()
     - task: CopyFiles@2
       inputs:
         sourceFolder: '$(WORKSPACE_DIR)\build_isolated'
