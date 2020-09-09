@@ -29,7 +29,7 @@ jobs:
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
       call "c:\opt\ros\noetic\x64\setup.bat"
       catkin_make --use-ninja 2>&1
-    displayName: Build ROS Workspace
+    displayName: 'Build ROS Workspace'
   - script: |
       mkdir ros_home
       set MPLBACKEND=qt5agg
@@ -38,17 +38,19 @@ jobs:
       call "c:\opt\ros\noetic\x64\setup.bat"
       call ".\devel\setup.bat"
       pip install circle-fit
-      rosnode kill -a
+      rosnode kill -a 2>&1
       rostest demo demo.test 2>&1
-    displayName: Run ROS Tests
+    displayName: 'Run ROS Tests'
   - task: PublishPipelineArtifact@1
     inputs:
       path: $(System.DefaultWorkingDirectory)/ros_home
       artifact: Logs
     condition: always()
+    displayName: 'Publish ROS Logs'
   - task: PublishTestResults@2
     inputs:
       testRunner: 'jUnit'
       testResultsFiles: '**\rostest-*.xml'
       searchFolder: $(System.DefaultWorkingDirectory)/ros_home
     condition: always()
+    displayName: 'Publish ROS Test Results'
