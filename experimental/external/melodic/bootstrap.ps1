@@ -21,7 +21,7 @@ try
         'ros-python2',
         # 'sip',
         # 'eigen',
-        # 'tinyxml2',
+        'tinyxml2',
         # 'freeglut',
         # 'qt5-sdk',
         # 'lz4',
