@@ -71,6 +71,7 @@ try
         'libogg',
         'libglew',
         'bullet3',
+        'libcurl',
         'vcpython27'
     )
 
