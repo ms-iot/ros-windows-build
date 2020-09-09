@@ -117,6 +117,7 @@ try
     $Env:PATH = "C:\opt\ros\melodic\x64\Scripts;C:\opt\ros\melodic\x64;$Env:PATH"
     Set-Alias python (Join-Path "C:\opt\ros\melodic\x64" "python.exe") -Scope Script
     $requirements = (Join-Path $scriptsDir "requirements.txt")
+    $Env:PYTHONWARNINGS="ignore:DEPRECATION"
 
     python -m pip install --upgrade pip setuptools --disable-pip-version-check --no-cache-dir 2>&1
     $global:lastexitcode = 0
