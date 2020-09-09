@@ -50,6 +50,9 @@ stages:
         mkdir %WORKSPACE_DIR%\src
         pushd %WORKSPACE_DIR%
         pip install -U vcstool
+        pip install -U catkin_pkg
+        pip install -U rosinstall_generator
+        pip install -U rosinstall
         vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\melodic\melodic.repos
         call %Build_SourcesDirectory%\experimental\ros\build_melodic.bat
       displayName: 'Build melodic'
