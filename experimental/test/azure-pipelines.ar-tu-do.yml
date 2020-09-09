@@ -25,7 +25,7 @@ jobs:
     displayName: 'Install Noetic'
   - script: |
       git clone https://github.com/ms-iot/ros_simulation_lab --recursive
-      cd ros_simulation_lab
+      cd ros_simulation_lab\catkin_ws
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
       call "c:\opt\ros\noetic\x64\setup.bat"
       catkin_make --use-ninja
