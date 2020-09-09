@@ -1,13 +1,6 @@
 trigger: none
 pr: none
 
-resources:
-  repositories:
-  - repository: common
-    type: github
-    name: Contoso/CommonTools
-    endpoint: MyContosoServiceConnection
-
 variables:
   ROS_DISTRO: 'noetic'
   INSTALL_DIR: 'c:\opt\ros\noetic\x64'
