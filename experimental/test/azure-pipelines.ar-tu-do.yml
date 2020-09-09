@@ -28,5 +28,25 @@ jobs:
       cd ros_simulation_lab\catkin_ws
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
       call "c:\opt\ros\noetic\x64\setup.bat"
-      catkin_make --use-ninja
-    displayName: 'Build'
+      catkin_make --use-ninja 2>&1
+    displayName: Build ROS Workspace
+  - script: |
+      mkdir ros_home
+      set ROS_HOME=%CD%\ros_home
+      pushd ros_simulation_lab\catkin_ws
+      call "c:\opt\ros\noetic\x64\setup.bat"
+      call ".\devel\setup.bat"
+      rosnode kill -a
+      rostest demo demo.test
+    displayName: Run ROS Tests
+  - task: PublishPipelineArtifact@1
+    inputs:
+      path: $(System.DefaultWorkingDirectory)/ros_home
+      artifact: Logs
+    condition: always()
+  - task: PublishTestResults@2
+    inputs:
+      testRunner: 'jUnit'
+      testResultsFiles: '**\rostest-*.xml'
+      searchFolder: $(System.DefaultWorkingDirectory)/ros_home
+    condition: always()
