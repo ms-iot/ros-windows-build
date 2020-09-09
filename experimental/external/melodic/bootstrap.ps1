@@ -123,7 +123,8 @@ try
     python -m pip install -U -r $requirements --disable-pip-version-check --no-cache-dir 2>&1
 
     # Fix-up all hard-coded paths.
-    $ErrorActionPreference = "Continue"
+    # Avoid STDERR to cause exception.
+    $ErrorActionPreference = "SilentlyContinue"
     ruplacer "c:/opt/rosdeps" "c:/opt/ros/melodic" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "ruplacer0.log")
     ruplacer "C:/opt/rosdeps" "C:/opt/ros/melodic" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "ruplacer1.log")
     ruplacer "c:\opt\rosdeps" "c:\opt\ros\melodic" "$InstallDir" --no-regex --color never --go | Out-File -FilePath (Join-Path $InstallDir "ruplacer2.log")
