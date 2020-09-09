@@ -51,7 +51,7 @@ stages:
         pushd %WORKSPACE_DIR%
         pip install -U vcstool
         vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\melodic\melodic.repos
-        call ..\experimental\ros\build_melodic.bat
+        call %Build_SourcesDirectory%\experimental\ros\build_melodic.bat
       displayName: 'Build melodic'
     - task: PublishBuildArtifacts@1
       inputs:
