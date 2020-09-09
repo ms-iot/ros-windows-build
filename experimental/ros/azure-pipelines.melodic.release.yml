@@ -54,6 +54,7 @@ stages:
         pip install -U rosinstall_generator
         pip install -U rosinstall
         vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\melodic\melodic.repos
+        vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\melodic\melodic_override.repos
         call %Build_SourcesDirectory%\experimental\ros\build_melodic.bat
       displayName: 'Build melodic'
     - task: PublishBuildArtifacts@1

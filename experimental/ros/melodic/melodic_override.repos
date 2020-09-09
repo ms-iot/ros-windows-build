@@ -1,0 +1,13 @@
+repositories:
+  catkin:
+    type: git
+    url: https://github.com/ros/catkin.git
+    version: cc395971e65658e7dd0d45b8f1e7f4eff706e016
+  pluginlib:
+    type: git
+    url: https://github.com/ms-iot/pluginlib.git
+    version: windows/1.13.0
+  diagnostics:
+    type: git
+    url: https://github.com/ros/diagnostics.git
+    version: 1.9.7
