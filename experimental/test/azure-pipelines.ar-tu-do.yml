@@ -1,0 +1,56 @@
+trigger: none
+pr: none
+
+variables:
+  ROS_DISTRO: 'noetic'
+  INSTALL_DIR: 'c:\opt\ros\noetic\x64'
+
+jobs:
+- job: Test
+  pool: 'Edge-Robotics-VS2019-GPU'
+  timeoutInMinutes: 360
+  workspace:
+    clean: all
+  steps:
+  - script: |
+      rd /s /q c:\opt 2>&1
+      exit 0
+    displayName: 'Remove opt folder'
+  - powershell: |
+      $env:ChocolateyInstall="c:\opt\chocolatey"
+      Set-ExecutionPolicy Bypass -Scope Process -Force;
+      iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+      choco sources add -n=roswin -s https://aka.ms/ros/public --priority 1
+      choco install ros-noetic-desktop_full -y --pre --no-progress -i
+    displayName: 'Install Noetic'
+  - script: |
+      git clone https://github.com/ms-iot/ros_simulation_lab --recursive 2>&1
+      cd ros_simulation_lab\catkin_ws
+      call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+      call "c:\opt\ros\noetic\x64\setup.bat"
+      catkin_make --use-ninja 2>&1
+    displayName: 'Build ROS Workspace'
+  - script: |
+      mkdir ros_home
+      set MPLBACKEND=qt5agg
+      set ROS_HOME=%CD%\ros_home
+      pushd ros_simulation_lab\catkin_ws
+      call "c:\opt\ros\noetic\x64\setup.bat"
+      call ".\devel\setup.bat"
+      pip install circle-fit
+      rosnode kill -a 2>&1
+      rostest demo demo.test 2>&1
+    displayName: 'Run ROS Tests'
+  - task: PublishPipelineArtifact@1
+    inputs:
+      path: $(System.DefaultWorkingDirectory)/ros_home
+      artifact: Logs
+    condition: always()
+    displayName: 'Publish ROS Logs'
+  - task: PublishTestResults@2
+    inputs:
+      testRunner: 'jUnit'
+      testResultsFiles: '**\rostest-*.xml'
+      searchFolder: $(System.DefaultWorkingDirectory)/ros_home
+    condition: always()
+    displayName: 'Publish ROS Test Results'
