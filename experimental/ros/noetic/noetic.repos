@@ -207,6 +207,10 @@ repositories:
     type: git
     url: https://github.com/OctoMap/octomap_msgs.git
     version: 0.3.5
+  open_karto:
+    type: git
+    url: https://github.com/ros-perception/open_karto.git
+    version: 1.2.2
   pcl_msgs:
     type: git
     url: https://github.com/ros-perception/pcl_msgs.git
@@ -443,6 +447,14 @@ repositories:
     type: git
     url: https://github.com/PickNikRobotics/rviz_visual_tools.git
     version: 3.9.0
+  slam_karto:
+    type: git
+    url: https://github.com/ros-perception/slam_karto.git
+    version: 0.8.1
+  sparse_bundle_adjustment:
+    type: git
+    url: https://github.com/ros-perception/sparse_bundle_adjustment.git
+    version: 0.4.4
   srdfdom:
     type: git
     url: https://github.com/ros-planning/srdfdom.git

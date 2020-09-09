@@ -35,7 +35,8 @@ try
             'graph_msgs',
             'imu_tools',
             'rosserial',
-            'rosparam_shortcuts'
+            'rosparam_shortcuts',
+            'slam_karto'
         )
     }
 

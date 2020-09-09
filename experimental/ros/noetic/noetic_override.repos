@@ -73,3 +73,7 @@ repositories:
     type: git
     url: https://github.com/ms-iot/moveit_visual_tools.git
     version: windows/ca12717b52f451c2394b29f25ec29ac0bc5d303a
+  slam_karto:
+    type: git
+    url: https://github.com/ros-perception/slam_karto.git
+    version: 7b5a348d1372818cbabceca78f32d49bf7454a40
