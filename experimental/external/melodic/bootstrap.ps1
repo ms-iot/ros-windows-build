@@ -117,8 +117,8 @@ try
     $Env:PATH = "C:\opt\ros\melodic\x64\Scripts;C:\opt\ros\melodic\x64;$Env:PATH"
     Set-Alias python (Join-Path "C:\opt\ros\melodic\x64" "python.exe") -Scope Script
     $requirements = (Join-Path $scriptsDir "requirements.txt")
-    $Env:PYTHONWARNINGS="ignore:DEPRECATION"
 
+    $Env:PYTHONWARNINGS="ignore:DEPRECATION"
     python -m pip install --upgrade pip setuptools --disable-pip-version-check --no-cache-dir 2>&1
     $global:lastexitcode = 0
     python -m pip install -U -r $requirements --disable-pip-version-check --no-cache-dir 2>&1
@@ -126,15 +126,25 @@ try
 
     # Fix-up all hard-coded paths.
     ruplacer "c:/opt/rosdeps" "c:/opt/ros/melodic" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer0.log")
+    $global:lastexitcode = 0
     ruplacer "C:/opt/rosdeps" "C:/opt/ros/melodic" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer1.log")
+    $global:lastexitcode = 0
     ruplacer "c:\opt\rosdeps" "c:\opt\ros\melodic" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer2.log")
+    $global:lastexitcode = 0
     ruplacer "C:\opt\rosdeps" "C:\opt\ros\melodic" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer3.log")
+    $global:lastexitcode = 0
     ruplacer "C:\\opt\\rosdeps" "C:\\opt\\ros\\melodic" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer4.log")
+    $global:lastexitcode = 0
     ruplacer "c:/opt/python27amd64" "c:/opt/ros/melodic/x64" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer5.log")
+    $global:lastexitcode = 0
     ruplacer "C:/opt/python27amd64" "C:/opt/ros/melodic/x64" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer6.log")
+    $global:lastexitcode = 0
     ruplacer "c:\opt\python27amd64" "c:\opt\ros\melodic\x64" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer7.log")
+    $global:lastexitcode = 0
     ruplacer "C:\opt\python27amd64" "C:\opt\ros\melodic\x64" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer8.log")
+    $global:lastexitcode = 0
     ruplacer "C:\\opt\\python27amd64" "C:\\opt\\ros\\melodic\\x64" "$InstallDir" --no-regex --color never --go 2>&1 | Out-File -FilePath (Join-Path $InstallDir "ruplacer9.log")
+    $global:lastexitcode = 0
 }
 catch
 {
