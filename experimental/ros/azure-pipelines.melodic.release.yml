@@ -1,0 +1,91 @@
+trigger: none
+pr: none
+
+resources:
+  pipelines:
+  - pipeline: ms-iot.external.melodic
+    source: vNext/ms-iot.external.melodic
+    version: '20200908.21'
+
+variables:
+  RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
+  RELEASE_VERSION: '20200831.0.0.$(RELEASE_DATE)'
+  IGNORED_PACKAGES: ''
+  ROS_DISTRO: 'melodic'
+  INSTALL_DIR: 'c:\opt\ros\melodic\x64'
+
+stages:
+- stage: build
+  displayName: 'Build ${{ variables.ROS_DISTRO }}'
+  jobs:
+  - job: Build
+    pool: 'Edge-Robotics-VS2019'
+    variables:
+      WORKSPACE_DIR: 'd:\ws'
+      PDB_OUTPUT_DIRECTORY: 'd:\symbols'
+      ROS_DISTRO: 'melodic'
+      ROS_VERSION: '1'
+    timeoutInMinutes: 360
+    workspace:
+      clean: all
+    steps:
+    - script: 'reg add HKLM\SYSTEM\CurrentControlSet\Control\FileSystem /v LongPathsEnabled /t REG_DWORD /d 1 /f'
+      displayName: 'Enable long paths on Windows'
+    - download: ms-iot.external.melodic
+      artifact: '${{ variables.ROS_DISTRO }}-external'
+    - task: ExtractFiles@1
+      inputs:
+        archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.external.melodic\$(ROS_DISTRO)-external\external.zip'
+        destinationFolder: '$(INSTALL_DIR)'
+        cleanDestinationFolder: true
+    - script: |
+        rd /s /q %WORKSPACE_DIR%
+        mkdir %WORKSPACE_DIR%
+        rd /s /q %PDB_OUTPUT_DIRECTORY%
+        mkdir %PDB_OUTPUT_DIRECTORY%
+      displayName: 'Clean symbols folder'
+    - script: |
+        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+        set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
+        mkdir %WORKSPACE_DIR%\src
+        pushd %WORKSPACE_DIR%
+        wstool init src
+        wstool merge -r -y -t src %Build_SourcesDirectory%\experimental\ros\melodic\melodic.rosinstall
+        wstool update -t src
+        call ..\experimental\ros\build_melodic.bat
+      displayName: 'Build melodic'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathtoPublish: '$(WORKSPACE_DIR)\log'
+        artifactName: '$(ROS_DISTRO)-log'
+      condition: always()
+    - task: CopyFiles@2
+      inputs:
+        sourceFolder: '$(WORKSPACE_DIR)\build_isolated'
+        contents: '**\*.pdb'
+        targetFolder: '$(PDB_OUTPUT_DIRECTORY)'
+        cleanTargetFolder: true
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: '$(PDB_OUTPUT_DIRECTORY)'
+        includeRootFolder: false
+        archiveType: 'zip' # Options: zip, 7z, tar, wim
+        tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
+        archiveFile: '$(Build.ArtifactStagingDirectory)/symbols.zip'
+        replaceExistingArchive: true
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: '$(INSTALL_DIR)'
+        includeRootFolder: false
+        archiveType: 'zip' # Options: zip, 7z, tar, wim
+        tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
+        archiveFile: '$(Build.ArtifactStagingDirectory)/install.zip'
+        replaceExistingArchive: true
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathtoPublish: '$(Build.ArtifactStagingDirectory)/install.zip'
+        artifactName: '$(ROS_DISTRO)-install'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathtoPublish: '$(Build.ArtifactStagingDirectory)/symbols.zip'
+        artifactName: '$(ROS_DISTRO)-symbols'
