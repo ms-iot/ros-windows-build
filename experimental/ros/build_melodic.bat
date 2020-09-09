@@ -1,5 +1,6 @@
 @echo OFF
 
+dir /b src\catkin\bin\
 copy src\catkin\bin\catkin_make_isolated src\catkin\bin\catkin_make_isolated.py
 python src\catkin\bin\catkin_make_isolated.py ^
     --install-space "%INSTALL_DIR%" ^
