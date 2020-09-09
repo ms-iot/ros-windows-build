@@ -24,7 +24,7 @@ jobs:
       choco install ros-noetic-desktop_full -y --pre --no-progress -i
     displayName: 'Install Noetic'
   - script: |
-      git clone https://github.com/ms-iot/ros_simulation_lab --recursive
+      git clone https://github.com/ms-iot/ros_simulation_lab --recursive 2>&1
       cd ros_simulation_lab\catkin_ws
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
       call "c:\opt\ros\noetic\x64\setup.bat"
