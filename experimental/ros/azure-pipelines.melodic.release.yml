@@ -49,9 +49,8 @@ stages:
         set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
         mkdir %WORKSPACE_DIR%\src
         pushd %WORKSPACE_DIR%
-        wstool init src
-        wstool merge -r -y -t src %Build_SourcesDirectory%\experimental\ros\melodic\melodic.rosinstall
-        wstool update -t src
+        pip install -U vcstool
+        vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\melodic\melodic.rosinstall
         call ..\experimental\ros\build_melodic.bat
       displayName: 'Build melodic'
     - task: PublishBuildArtifacts@1
