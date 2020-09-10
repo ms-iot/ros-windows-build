@@ -10,7 +10,6 @@ resources:
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
   RELEASE_VERSION: '20200831.0.0.$(RELEASE_DATE)'
-  IGNORED_PACKAGES: 'stage stage_ros image_view theora_image_transport rviz_plugin_tutorials four_wheel_steering_controller moveit_setup_assistant'
   ROS_DISTRO: 'noetic'
   INSTALL_DIR: 'c:\opt\ros\noetic\x64'
 
@@ -47,6 +46,7 @@ stages:
     - script: |
         xcopy /Y /S /I .\experimental\ros\%ROS_DISTRO%\pre-patch %INSTALL_DIR%
         set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
+        python -m pip config set global.disable-pip-version-check True
         python -m pip install -U pycryptodomex==3.9.8
         python -m pip install -U gnupg==2.3.1
         python -m pip install -U pydot==1.4.1
@@ -67,7 +67,7 @@ stages:
         vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\noetic\noetic.repos
         vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\noetic\noetic_override.repos
         xcopy /Y /S /I %Build_SourcesDirectory%\experimental\ros\src_patch src
-        call %Build_SourcesDirectory%\experimental\ros\build_ros1.bat
+        call %Build_SourcesDirectory%\experimental\ros\noetic\build.bat
       displayName: 'Build noetic'
     - script: |
         move /Y %INSTALL_DIR%\lib\*.dll %INSTALL_DIR%\bin
