@@ -1,6 +1,6 @@
 @echo OFF
 
-set "IGNORED_PACKAGES=stage stage_ros"
+set "IGNORED_PACKAGES=stage stage_ros image_view"
 
 copy src\catkin\bin\catkin_make_isolated src\catkin\bin\catkin_make_isolated.py
 python src\catkin\bin\catkin_make_isolated.py ^
