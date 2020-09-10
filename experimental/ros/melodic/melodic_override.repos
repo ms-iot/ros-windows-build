@@ -7,6 +7,10 @@ repositories:
     type: git
     url: https://github.com/ros/geometry2.git
     version: fe0457fe0d761a1dcc9182f9cc09912b3a4a8e2d
+  nodelet_core:
+    type: git
+    url: https://github.com/ros/nodelet_core.git
+    version: c833c6e64f7f228de2c2bd56a7c60d279b6910f4
   catkin:
     type: git
     url: https://github.com/ros/catkin.git
