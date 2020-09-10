@@ -5,7 +5,7 @@ resources:
   pipelines:
   - pipeline: ms-iot.external.melodic
     source: vNext/ms-iot.external.melodic
-    version: '20200908.21'
+    version: '20200909.1'
 
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
