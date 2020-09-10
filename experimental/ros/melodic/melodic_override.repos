@@ -19,6 +19,10 @@ repositories:
     type: git
     url: https://github.com/ros/catkin.git
     version: cc395971e65658e7dd0d45b8f1e7f4eff706e016
+  vision_opencv:
+    type: git
+    url: https://github.com/ros-perception/vision_opencv.git
+    version: 578af4d6c7846876b3fc64512b1cc92a54894483
   pluginlib:
     type: git
     url: https://github.com/ms-iot/pluginlib.git
