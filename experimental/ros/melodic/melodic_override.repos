@@ -3,6 +3,10 @@ repositories:
     type: git
     url: https://github.com/orocos/orocos_kinematics_dynamics.git
     version: v1.4.0
+  geometry2:
+    type: git
+    url: https://github.com/ros/geometry2.git
+    version: fe0457fe0d761a1dcc9182f9cc09912b3a4a8e2d
   catkin:
     type: git
     url: https://github.com/ros/catkin.git
