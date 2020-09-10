@@ -110,13 +110,25 @@ The Distro-specific override repos file serves the purpose to cherry-pick a newe
 
 ### Publish Pre-release Builds
 
-Once the release maintainer is comfortable with the quality of the build, a pre-release can be published for larger audiences for preview.
+Once the release maintainer is comfortable with the quality of a build, a pre-release can be published for larger audiences for preview.
 
 To publish a pre-release build, the build must be triggered from `master` branch.
 Therefore, the working branch is required to be reviewed and merged.
 
 Once the build is done, it waits for approvals.
-The release maintainer can approve the pre-release and later the build will be available on `https://aka.ms/ros/public`. 
+The release maintainer can approve the pre-release and later the build will be available on `https://aka.ms/ros/public`.
+
+### Publish Release Builds
+
+Once the release maintainer is comfortable with the quality of a build, a release can be published for the public use.
+
+The step to publish a release build is similar to the pre-release build.
+The release maintainer can approve the release gate and later the build will be available on `https://aka.ms/ros/public`.
+
+In additions, once a release is out, there are more activities are required:
+
+  * [x] Post a release anouncement on ROS discourse.
+  * [x] ...
 
 ### Available Test Automations
 
