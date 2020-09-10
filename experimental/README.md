@@ -141,3 +141,20 @@ In additions, once a release is out, there are more activities are required:
 ## Refreshing External Dependency
 
 <TBD>
+
+## Upstream Override Changes
+
+As more releases are exercised, it is common to see a number of cumulative patches in override repos file.
+One responsibility of the release maintainer is to keep the list as short as possible.
+Here we talk about the principles and guides for the release maintainers.
+
+Depending on the override types, there are different activities.
+
+  * **Cherry-picks for Upstream Commits:**
+    In such case, the repository is redirected to a commit which is not in a release tag yet.
+    Be polite and respectful to friendly remind the package maintainer and ask for a new release (of the ROS package) if possible.
+
+  * **Override by ms-iot forks:**
+    In such case, usually it means there are larger patches to ROS packages.
+    Be consistent to carve out time to prepare the pull requests to the upstream repositories.
+    And keep that your changes portable to other platforms and platform-specific delta down to the minimum.
