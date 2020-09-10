@@ -5,8 +5,8 @@ repositories:
     version: v1.4.0
   diagnostics:
     type: git
-    url: https://github.com/ros/diagnostics.git
-    version: 1.9.7
+    url: https://github.com/ms-iot/diagnostics.git
+    version: windows/1.9.7
   geometry2:
     type: git
     url: https://github.com/ros/geometry2.git
