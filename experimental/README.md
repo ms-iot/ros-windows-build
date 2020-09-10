@@ -127,7 +127,7 @@ The release maintainer can approve the release gate and later the build will be 
 
 In additions, once a release is out, there are more activities are required:
 
-  * [x] Post a release anouncement on ROS discourse.
+  * [x] Post a release [anouncement](https://discourse.ros.org/t/ros-on-windows-noetic-release-v20200831-0-0-2009101215/16352) on ROS discourse.
   * [x] ...
 
 ### Available Test Automations
