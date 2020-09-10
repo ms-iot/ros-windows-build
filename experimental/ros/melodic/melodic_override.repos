@@ -27,10 +27,6 @@ repositories:
     type: git
     url: https://github.com/ros/class_loader.git
     version: 8864be372a83921f15906ae80752be9d6a300b81
-  diagnostics:
-    type: git
-    url: https://github.com/ros/diagnostics.git
-    version: 1.9.7
   geometry:
     type: git
     url: https://github.com/ms-iot/geometry.git
