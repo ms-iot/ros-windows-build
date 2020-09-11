@@ -51,3 +51,8 @@ repositories:
     type: git
     url: https://github.com/ms-iot/rviz.git
     version: windows/1.13.13
+  rqt_rviz:
+    type: git
+    url: https://github.com/ros-visualization/rqt_rviz.git
+    # https://github.com/ros-visualization/rqt_rviz/commit/e94e17fe348fe884628cc4085aa8241cef4cc09d
+    version: 0.6.1
