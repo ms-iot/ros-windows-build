@@ -10,7 +10,6 @@ resources:
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
   RELEASE_VERSION: '20200826.0.0.$(RELEASE_DATE)'
-  IGNORED_PACKAGES: ''
   ROS_DISTRO: 'melodic'
   INSTALL_DIR: 'c:\opt\ros\melodic\x64'
 
