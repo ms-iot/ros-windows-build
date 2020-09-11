@@ -72,6 +72,7 @@ try
         'libglew',
         'bullet3',
         'libcurl',
+        'libqhull',
         'vcpython27'
     )
 
