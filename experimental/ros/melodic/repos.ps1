@@ -19,7 +19,13 @@ try
         Distro = "melodic"
         Version = "melodic/2020-08-26"
         Packages = @(
-            'desktop_full'
+            'desktop_full',
+            'navigation',
+            'moveit',
+            'moveit_visual_tools',
+            'cartographer_ros',
+            'rosserial',
+            'imu_tools'
         )
     }
 

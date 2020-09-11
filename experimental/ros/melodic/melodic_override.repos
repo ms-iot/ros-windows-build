@@ -56,3 +56,19 @@ repositories:
     url: https://github.com/ros-visualization/rqt_rviz.git
     # https://github.com/ros-visualization/rqt_rviz/commit/e94e17fe348fe884628cc4085aa8241cef4cc09d
     version: 0.6.1
+  moveit:
+    type: git
+    url: https://github.com/ms-iot/moveit.git
+    version: windows_fix_melodic
+  cartographer_ros:
+    type: git
+    url: https://github.com/cartographer-project/cartographer_ros.git
+    version: bdf8f5921e8e570419c86f56bc8e8a76c764b5e3
+  cartographer:
+    type: git
+    url: https://github.com/ms-iot/cartographer.git
+    version: windows/master
+  moveit_tutorials:
+    type: git
+    url: https://github.com/ros-planning/moveit_tutorials.git
+    version: melodic-devel

@@ -23,6 +23,10 @@ repositories:
     type: git
     url: https://github.com/ros/cmake_modules.git
     version: 0.4.2
+  code_coverage:
+    type: git
+    url: https://github.com/mikeferguson/code_coverage.git
+    version: 0.4.3
   common_msgs:
     type: git
     url: https://github.com/ros/common_msgs.git
@@ -43,6 +47,14 @@ repositories:
     type: git
     url: https://github.com/ros/dynamic_reconfigure.git
     version: 1.6.3
+  eigen_stl_containers:
+    type: git
+    url: https://github.com/ros/eigen_stl_containers.git
+    version: 0.1.8
+  eigenpy:
+    type: git
+    url: https://github.com/stack-of-tasks/eigenpy.git
+    version: 2.3.1
   executive_smach:
     type: git
     url: https://github.com/ros/executive_smach.git
@@ -79,6 +91,10 @@ repositories:
     type: git
     url: https://github.com/ros/genpy.git
     version: 0.6.14
+  geometric_shapes:
+    type: git
+    url: https://github.com/ros-planning/geometric_shapes.git
+    version: 0.6.3
   geometry:
     type: git
     url: https://github.com/ros/geometry.git
@@ -95,6 +111,10 @@ repositories:
     type: git
     url: https://github.com/ros-visualization/gl_dependency.git
     version: 1.1.0
+  graph_msgs:
+    type: git
+    url: https://github.com/PickNikRobotics/graph_msgs.git
+    version: 0.1.0
   image_common:
     type: git
     url: https://github.com/ros-perception/image_common.git
@@ -107,6 +127,10 @@ repositories:
     type: git
     url: https://github.com/ros-perception/image_transport_plugins.git
     version: 1.9.5
+  imu_tools:
+    type: git
+    url: https://github.com/ccny-ros-pkg/imu_tools.git
+    version: 1.2.2
   interactive_markers:
     type: git
     url: https://github.com/ros-visualization/interactive_markers.git
@@ -151,6 +175,26 @@ repositories:
     type: git
     url: https://github.com/ros/metapackages.git
     version: 1.4.1
+  moveit:
+    type: git
+    url: https://github.com/ros-planning/moveit.git
+    version: 1.0.6
+  moveit_msgs:
+    type: git
+    url: https://github.com/ros-planning/moveit_msgs.git
+    version: 0.10.1
+  moveit_resources:
+    type: git
+    url: https://github.com/ros-planning/moveit_resources.git
+    version: 0.7.0
+  moveit_visual_tools:
+    type: git
+    url: https://github.com/ros-planning/moveit_visual_tools.git
+    version: 3.5.2
+  navigation:
+    type: git
+    url: https://github.com/ros-planning/navigation.git
+    version: 1.16.6
   navigation_msgs:
     type: git
     url: https://github.com/ros-planning/navigation_msgs.git
@@ -159,6 +203,18 @@ repositories:
     type: git
     url: https://github.com/ros/nodelet_core.git
     version: 1.9.16
+  object_recognition_msgs:
+    type: git
+    url: https://github.com/wg-perception/object_recognition_msgs.git
+    version: 0.4.1
+  octomap:
+    type: git
+    url: https://github.com/OctoMap/octomap.git
+    version: 1.9.0
+  octomap_msgs:
+    type: git
+    url: https://github.com/OctoMap/octomap_msgs.git
+    version: 0.3.5
   orocos_kinematics_dynamics:
     type: git
     url: https://github.com/orocos/orocos_kinematics_dynamics.git
@@ -187,6 +243,10 @@ repositories:
     type: git
     url: https://github.com/ros-visualization/qwt_dependency.git
     version: 1.1.0
+  random_numbers:
+    type: git
+    url: https://github.com/ros-planning/random_numbers.git
+    version: 0.3.2
   realtime_tools:
     type: git
     url: https://github.com/ros-controls/realtime_tools.git
@@ -251,6 +311,10 @@ repositories:
     type: git
     url: https://github.com/ros/rospack.git
     version: 2.5.6
+  rosserial:
+    type: git
+    url: https://github.com/ros-drivers/rosserial.git
+    version: 0.8.0
   rqt:
     type: git
     url: https://github.com/ros-visualization/rqt.git
@@ -379,6 +443,14 @@ repositories:
     type: git
     url: https://github.com/ros-visualization/rviz.git
     version: 1.13.13
+  rviz_visual_tools:
+    type: git
+    url: https://github.com/PickNikRobotics/rviz_visual_tools.git
+    version: 3.8.0
+  srdfdom:
+    type: git
+    url: https://github.com/ros-planning/srdfdom.git
+    version: 0.5.2
   stage:
     type: git
     url: https://github.com/ros-gbp/stage-release.git
@@ -415,6 +487,10 @@ repositories:
     type: git
     url: https://github.com/ros-visualization/visualization_tutorials.git
     version: 0.10.5
+  warehouse_ros:
+    type: git
+    url: https://github.com/ros-planning/warehouse_ros.git
+    version: 0.9.4
   webkit_dependency:
     type: git
     url: https://github.com/ros-visualization/webkit_dependency.git
