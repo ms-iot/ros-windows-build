@@ -76,4 +76,4 @@ repositories:
     type: git
     url: https://github.com/ros-drivers/rosserial.git
     # https://github.com/ros-drivers/rosserial/commit/253ac3feed777d20bed721fdf32a5a32c67be7eb
-    version: 5ff397fc17b6935ccf90ed840bcb874bfd608fe9
+    version: melodic-devel
