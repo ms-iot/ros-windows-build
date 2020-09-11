@@ -47,3 +47,7 @@ repositories:
     type: git
     url: https://github.com/ros/kdl_parser.git
     version: 1.13.2
+  rviz:
+    type: git
+    url: https://github.com/ms-iot/rviz.git
+    version: windows/1.13.13
