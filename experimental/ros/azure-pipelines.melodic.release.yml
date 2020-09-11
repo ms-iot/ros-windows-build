@@ -45,6 +45,9 @@ stages:
         mkdir %PDB_OUTPUT_DIRECTORY%
       displayName: 'Clean symbols folder'
     - script: |
+        call %Build_SourcesDirectory%\experimental\ros\melodic\patch.bat
+      displayName: 'Pre-build patch the install directory'
+    - script: |
         call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
         set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
         mkdir %WORKSPACE_DIR%\src
