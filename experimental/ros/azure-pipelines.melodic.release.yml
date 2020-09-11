@@ -9,7 +9,7 @@ resources:
 
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
-  RELEASE_VERSION: '20200831.0.0.$(RELEASE_DATE)'
+  RELEASE_VERSION: '20200826.0.0.$(RELEASE_DATE)'
   IGNORED_PACKAGES: ''
   ROS_DISTRO: 'melodic'
   INSTALL_DIR: 'c:\opt\ros\melodic\x64'
@@ -39,9 +39,9 @@ stages:
         destinationFolder: '$(INSTALL_DIR)'
         cleanDestinationFolder: true
     - script: |
-        rd /s /q %WORKSPACE_DIR%
+        rd /s /q %WORKSPACE_DIR% 2>&1
         mkdir %WORKSPACE_DIR%
-        rd /s /q %PDB_OUTPUT_DIRECTORY%
+        rd /s /q %PDB_OUTPUT_DIRECTORY% 2>&1
         mkdir %PDB_OUTPUT_DIRECTORY%
       displayName: 'Clean symbols folder'
     - script: |
@@ -90,3 +90,15 @@ stages:
       inputs:
         pathtoPublish: '$(Build.ArtifactStagingDirectory)/symbols.zip'
         artifactName: '$(ROS_DISTRO)-symbols'
+
+- stage: packaging
+  displayName: 'Packaging ${{ variables.ROS_DISTRO }}'
+  dependsOn:
+  - build
+  jobs:
+  - template: azure-pipelines.packaging.yml
+    parameters:
+      INSTALL_DIR: ${{ variables.INSTALL_DIR }}
+      ROS_DISTRO: ${{ variables.ROS_DISTRO }}
+      RELEASE_VERSION: ${{ variables.RELEASE_VERSION }}
+      PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-desktop_full'
