@@ -24,10 +24,13 @@ try
             'random_numbers',
             'joint_state_publisher',
             'octomap_msgs',
-            'urdf_parser_py',
             'object_recognition_msgs',
             'turtlebot3_msgs',
-            'gazebo_ros_pkgs'
+            'gazebo_ros_pkgs',
+            'realtime_tools',
+            'xacro',
+            'eigen_stl_containers',
+            'control_msgs'
         )
     }
 
