@@ -1,6 +1,11 @@
 @echo OFF
 
-set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
-python -m pip config set global.disable-pip-version-check True
+set "PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%"
+set "PYTHONWARNINGS=ignore:DEPRECATION"
+python -m pip install -U numpy
+python -m pip install -U vcstool
+python -m pip install -U catkin_pkg
+python -m pip install -U rosinstall_generator
+python -m pip install -U rosinstall
 
 copy /Y %INSTALL_DIR%\tools\protobuf\protoc.exe %INSTALL_DIR%\bin

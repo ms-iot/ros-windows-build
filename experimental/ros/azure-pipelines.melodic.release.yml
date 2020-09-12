@@ -5,7 +5,7 @@ resources:
   pipelines:
   - pipeline: ms-iot.external.melodic
     source: vNext/ms-iot.external.melodic
-    version: '20200909.1'
+    version: '20200911.1'
 
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
@@ -51,10 +51,6 @@ stages:
         set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
         mkdir %WORKSPACE_DIR%\src
         pushd %WORKSPACE_DIR%
-        pip install -U vcstool
-        pip install -U catkin_pkg
-        pip install -U rosinstall_generator
-        pip install -U rosinstall
         vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\melodic\melodic.repos
         vcs import --force --shallow --recursive src < %Build_SourcesDirectory%\experimental\ros\melodic\melodic_override.repos
         call %Build_SourcesDirectory%\experimental\ros\melodic\build.bat
