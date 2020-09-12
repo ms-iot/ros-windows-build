@@ -73,9 +73,9 @@ repositories:
     version: foxy
   srdfdom:
     type: git
-    url: https://github.com/ms-iot/srdfdom
+    url: https://github.com/ms-iot/srdfdom.git
     version: ros2
   geometric_shapes:
     type: git
-    url: https://github.com/ms-iot/geometric_shapes
+    url: https://github.com/ms-iot/geometric_shapes.git
     version: dashing-devel
