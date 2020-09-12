@@ -82,3 +82,8 @@ repositories:
     url: https://github.com/ros-drivers/rosserial.git
     # https://github.com/ros-drivers/rosserial/commit/253ac3feed777d20bed721fdf32a5a32c67be7eb
     version: melodic-devel
+  moveit_visual_tools:
+    type: git
+    url: https://github.com/ros-planning/moveit_visual_tools.git
+    # https://github.com/ros-planning/moveit_visual_tools/commit/f6388bbf181ebe1d25a7f32d9d506e7a307d2bef
+    version: melodic-devel
