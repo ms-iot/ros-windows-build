@@ -79,3 +79,7 @@ repositories:
     type: git
     url: https://github.com/ms-iot/geometric_shapes.git
     version: dashing-devel
+  random_numbers:
+    type: git
+    url: https://github.com/ms-iot/random_numbers.git
+    version: windows/1.0.0
