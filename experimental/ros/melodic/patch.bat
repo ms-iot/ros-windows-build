@@ -9,3 +9,4 @@ python -m pip install -U rosinstall_generator
 python -m pip install -U rosinstall
 
 copy /Y %INSTALL_DIR%\tools\protobuf\protoc.exe %INSTALL_DIR%\bin
+xcopy /Y /S /I %~dp0experimental\ros\%ROS_DISTRO%\patch %INSTALL_DIR%
