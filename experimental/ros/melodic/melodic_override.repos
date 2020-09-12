@@ -87,3 +87,8 @@ repositories:
     url: https://github.com/ros-planning/moveit_visual_tools.git
     # https://github.com/ros-planning/moveit_visual_tools/commit/f6388bbf181ebe1d25a7f32d9d506e7a307d2bef
     version: melodic-devel
+  random_numbers:
+    type: git
+    url: https://github.com/ros-planning/random_numbers.git
+    # https://github.com/ros-planning/random_numbers/commit/42a63e896f71f05d429b057b6e9a3d3d05fa409c
+    version: master
