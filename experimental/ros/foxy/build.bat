@@ -1,7 +1,7 @@
 @echo OFF
 
 set ROS_VERSION=2
-set "IGNORED_PACKAGES=rttest test_osrf_testing_tools_cpp tlsf moveit_ros_benchmarks moveit_servo test_robot_hardware"
+set "IGNORED_PACKAGES=rttest test_osrf_testing_tools_cpp tlsf moveit_ros_benchmarks moveit_servo"
 
 colcon build ^
     --merge-install ^
