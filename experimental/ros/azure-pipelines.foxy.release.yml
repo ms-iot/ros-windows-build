@@ -36,7 +36,7 @@ stages:
         destinationFolder: '$(INSTALL_DIR)'
         cleanDestinationFolder: true
     - script: |
-        rd /s /q %PDB_OUTPUT_DIRECTORY%
+        rd /s /q %PDB_OUTPUT_DIRECTORY% 2>&1
         mkdir %PDB_OUTPUT_DIRECTORY%
       displayName: 'Clean symbols folder'
     - script: |
