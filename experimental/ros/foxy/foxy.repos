@@ -39,6 +39,10 @@ repositories:
     type: git
     url: https://github.com/ros2/console_bridge_vendor.git
     version: 1.2.2
+  control_msgs:
+    type: git
+    url: https://github.com/ros-controls/control_msgs.git
+    version: 2.4.1
   cyclonedds:
     type: git
     url: https://github.com/eclipse-cyclonedds/cyclonedds.git
@@ -55,6 +59,10 @@ repositories:
     type: git
     url: https://github.com/ros2/eigen3_cmake_module.git
     version: 0.1.1
+  eigen_stl_containers:
+    type: git
+    url: https://github.com/ros/eigen_stl_containers.git
+    version: 1.0.0
   example_interfaces:
     type: git
     url: https://github.com/ros2/example_interfaces.git
@@ -219,6 +227,10 @@ repositories:
     type: git
     url: https://github.com/ros2/realtime_support.git
     version: 0.9.0
+  realtime_tools:
+    type: git
+    url: https://github.com/ros-controls/realtime_tools.git
+    version: 2.1.0
   resource_retriever:
     type: git
     url: https://github.com/ros/resource_retriever.git
@@ -447,6 +459,10 @@ repositories:
     type: git
     url: https://github.com/ros-perception/vision_opencv.git
     version: 2.2.1
+  xacro:
+    type: git
+    url: https://github.com/ros/xacro.git
+    version: 2.0.3
   yaml_cpp_vendor:
     type: git
     url: https://github.com/ros2/yaml_cpp_vendor.git

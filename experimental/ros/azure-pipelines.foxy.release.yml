@@ -10,7 +10,6 @@ resources:
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
   RELEASE_VERSION: '20200827.0.0.$(RELEASE_DATE)'
-  IGNORED_PACKAGES: 'rttest test_osrf_testing_tools_cpp tlsf'
   ROS_DISTRO: 'foxy'
   INSTALL_DIR: 'c:\opt\ros\foxy\x64'
 
@@ -37,7 +36,7 @@ stages:
         destinationFolder: '$(INSTALL_DIR)'
         cleanDestinationFolder: true
     - script: |
-        rd /s /q %PDB_OUTPUT_DIRECTORY%
+        rd /s /q %PDB_OUTPUT_DIRECTORY% 2>&1
         mkdir %PDB_OUTPUT_DIRECTORY%
       displayName: 'Clean symbols folder'
     - script: |
@@ -57,7 +56,7 @@ stages:
         vcs import --force --shallow --recursive src < ..\experimental\ros\foxy\foxy.repos
         vcs import --force --shallow --recursive src < ..\experimental\ros\foxy\foxy_override.repos
         xcopy /Y /S /I ..\experimental\ros\src_patch src
-        call ..\experimental\ros\build_ros2.bat
+        call ..\experimental\ros\foxy\build.bat
       displayName: 'build foxy'
     - task: PublishBuildArtifacts@1
       inputs:

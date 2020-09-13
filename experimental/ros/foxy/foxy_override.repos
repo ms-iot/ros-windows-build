@@ -47,3 +47,39 @@ repositories:
     type: git
     url: https://github.com/ms-iot/vision_opencv.git
     version: windows/2.2.1
+  moveit2:
+    type: git
+    url: https://github.com/ms-iot/moveit2.git
+    version: windows/main/d95e4aecf4ac7a0f8b43fe91742b86251b8762ca
+  moveit_msgs:
+    type: git
+    url: https://github.com/ros-planning/moveit_msgs.git
+    version: ros2
+  moveit_resources:
+    type: git
+    url: https://github.com/ros-planning/moveit_resources.git
+    version: ros2
+  ros2_control:
+    type: git
+    url: https://github.com/ms-iot/ros2_control.git
+    version: windows/master
+  ros2_controllers:
+    type: git
+    url: https://github.com/ros-controls/ros2_controllers.git
+    version: master
+  fake_joint:
+    type: git
+    url: https://github.com/JafarAbdi/fake_joint.git
+    version: foxy
+  srdfdom:
+    type: git
+    url: https://github.com/ms-iot/srdfdom.git
+    version: ros2
+  geometric_shapes:
+    type: git
+    url: https://github.com/ms-iot/geometric_shapes.git
+    version: dashing-devel
+  random_numbers:
+    type: git
+    url: https://github.com/ms-iot/random_numbers.git
+    version: windows/1.0.0
