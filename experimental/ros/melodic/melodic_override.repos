@@ -1,0 +1,94 @@
+repositories:
+  eigenpy:
+    type: git
+    url: https://github.com/stack-of-tasks/eigenpy.git
+    # version: v2.3.1
+    version: v1.6.6
+  orocos_kinematics_dynamics:
+    type: git
+    url: https://github.com/orocos/orocos_kinematics_dynamics.git
+    version: v1.4.0
+  diagnostics:
+    type: git
+    url: https://github.com/ms-iot/diagnostics.git
+    version: windows/1.9.7
+  geometry2:
+    type: git
+    url: https://github.com/ros/geometry2.git
+    version: fe0457fe0d761a1dcc9182f9cc09912b3a4a8e2d
+  nodelet_core:
+    type: git
+    url: https://github.com/ros/nodelet_core.git
+    version: c833c6e64f7f228de2c2bd56a7c60d279b6910f4
+  catkin:
+    type: git
+    url: https://github.com/ros/catkin.git
+    version: cc395971e65658e7dd0d45b8f1e7f4eff706e016
+  vision_opencv:
+    type: git
+    url: https://github.com/ros-perception/vision_opencv.git
+    version: 578af4d6c7846876b3fc64512b1cc92a54894483
+  pluginlib:
+    type: git
+    url: https://github.com/ms-iot/pluginlib.git
+    version: windows/1.13.0
+  class_loader:
+    type: git
+    url: https://github.com/ros/class_loader.git
+    version: 8864be372a83921f15906ae80752be9d6a300b81
+  geometry:
+    type: git
+    url: https://github.com/ms-iot/geometry.git
+    version: windows/1.12.1
+  image_common:
+    type: git
+    url: https://github.com/ms-iot/image_common.git
+    version: windows/1.11.14
+  image_pipeline:
+    type: git
+    url: https://github.com/ros-perception/image_pipeline.git
+    version: 1.15.2
+  kdl_parser:
+    type: git
+    url: https://github.com/ros/kdl_parser.git
+    version: 1.13.2
+  rviz:
+    type: git
+    url: https://github.com/ms-iot/rviz.git
+    version: windows/1.13.13
+  rqt_rviz:
+    type: git
+    url: https://github.com/ros-visualization/rqt_rviz.git
+    # https://github.com/ros-visualization/rqt_rviz/commit/e94e17fe348fe884628cc4085aa8241cef4cc09d
+    version: 0.6.1
+  moveit:
+    type: git
+    url: https://github.com/ms-iot/moveit.git
+    version: windows_fix_melodic
+  cartographer_ros:
+    type: git
+    url: https://github.com/cartographer-project/cartographer_ros.git
+    version: bdf8f5921e8e570419c86f56bc8e8a76c764b5e3
+  cartographer:
+    type: git
+    url: https://github.com/ms-iot/cartographer.git
+    version: windows/master
+  moveit_tutorials:
+    type: git
+    url: https://github.com/ros-planning/moveit_tutorials.git
+    version: melodic-devel
+  rosserial:
+    type: git
+    url: https://github.com/ros-drivers/rosserial.git
+    # https://github.com/ros-drivers/rosserial/commit/253ac3feed777d20bed721fdf32a5a32c67be7eb
+    version: melodic-devel
+  moveit_visual_tools:
+    type: git
+    url: https://github.com/ros-planning/moveit_visual_tools.git
+    # https://github.com/ros-planning/moveit_visual_tools/commit/f6388bbf181ebe1d25a7f32d9d506e7a307d2bef
+    version: melodic-devel
+  random_numbers:
+    type: git
+    url: https://github.com/ros-planning/random_numbers.git
+    # https://github.com/ros-planning/random_numbers/commit/42a63e896f71f05d429b057b6e9a3d3d05fa409c
+    version: master
