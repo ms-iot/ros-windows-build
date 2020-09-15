@@ -1,5 +1,12 @@
 trigger: none
-pr: none
+pr:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - experimental/ros/melodic/*
+    - experimental/ros/azure-pipelines.melodic.release.yml
 
 resources:
   pipelines:
