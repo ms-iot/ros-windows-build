@@ -1,5 +1,12 @@
 trigger: none
-pr: none
+pr:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - experimental/ros/foxy/*
+    - experimental/ros/azure-pipelines.foxy.release.yml
 
 resources:
   pipelines:
