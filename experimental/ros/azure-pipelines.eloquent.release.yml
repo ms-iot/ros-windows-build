@@ -1,5 +1,12 @@
 trigger: none
-pr: none
+pr:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - experimental/ros/eloquent/*
+    - experimental/ros/azure-pipelines.eloquent.release.yml
 
 resources:
   pipelines:
