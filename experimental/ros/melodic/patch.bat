@@ -10,5 +10,3 @@ python -m pip install -U rosinstall
 
 copy /Y %INSTALL_DIR%\tools\protobuf\protoc.exe %INSTALL_DIR%\bin
 xcopy /Y /S /I %~dp0patch %INSTALL_DIR%
-
-echo "test 1"
