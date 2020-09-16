@@ -1,5 +1,12 @@
 trigger: none
-pr: none
+pr:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - experimental/ros/external/melodic/*
+    - experimental/ros/azure-pipelines.external.melodic.yml
 
 jobs:
 - job: Build
@@ -14,6 +21,7 @@ jobs:
   - powershell: |
       choco sources add -n=roswin -s https://aka.ms/ros/public --priority 1
       & .\experimental\external\melodic\bootstrap.ps1 -InstallDir $Env:INSTALL_DIR
+      & .\experimental\external\melodic\vcpkg.ps1 -InstallDir $Env:INSTALL_DIR
     continueOnError: true
   - task: ArchiveFiles@2
     inputs:
