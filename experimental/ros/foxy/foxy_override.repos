@@ -11,6 +11,11 @@ repositories:
     type: git
     url: https://github.com/eProsima/foonathan_memory_vendor.git
     version: v1.0.0
+  ament_cmake:
+    type: git
+    url: https://github.com/ms-iot/ament_cmake.git
+    # cherry-pick https://github.com/ament/ament_cmake/commit/79145a6c724d00ed41aff1140a34e9dcb973a7ef
+    version: windows/0.9.6
   geometry2:
     type: git
     url: https://github.com/ms-iot/geometry2.git
