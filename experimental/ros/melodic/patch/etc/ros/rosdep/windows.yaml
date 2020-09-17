@@ -1,0 +1,452 @@
+abseil:
+  windows: []
+apr:
+  windows: []
+assimp:
+  windows: []
+assimp-dev:
+  windows: []
+boost:
+  windows: []
+bullet:
+  windows: []
+bzip2:
+  windows: []
+cmake:
+  windows:
+    pip:
+      packages: [cmake]
+ceres-solver:
+  windows: []
+cppcheck:
+  windows: [cppcheck]
+cppunit:
+  windows: []
+curl:
+  windows: []
+dfu-util:
+  windows: [dfu-util]
+doxygen:
+  windows: [doxygen.portable]
+eigen:
+  windows: []
+ftdi-eeprom:
+  windows: []
+hddtemp:
+  windows: [] # we don't have this on Windows
+gazebo:
+  windows: []
+gazebo9:
+  windows: []
+gazebo11:
+  windows: []
+libgazebo11-dev:
+  windows: []
+geographiclib:
+  windows:
+    vcpkg:
+      packages: [geographiclib]
+geographiclib-tools:
+  windows:
+    vcpkg:
+      packages: [geographiclib]
+graphicsmagick:
+  windows:
+    vcpkg:
+      packages: [graphicsmagick]
+git:
+  windows: []
+glut:
+  windows: []
+google-mock:
+  windows: []
+graphviz:
+  windows: [graphviz]
+gtest:
+  windows: []
+gtk3:
+  windows: []
+hidapi:
+  windows:
+    vcpkg:
+      packages: [hidapi]
+lcov:
+  windows: []
+libazure-iot-sdk-c:
+  windows: [] #included
+libboost-dev:
+  windows: []
+libboost-chrono-dev:
+  windows: []
+libboost-date-time-dev:
+  windows: []
+libboost-filesystem-dev:
+  windows: []
+libboost-iostreams-dev:
+  windows: []
+libboost-program-options:
+  windows: []
+libboost-program-options-dev:
+  windows: []
+libboost-python:
+  windows: []
+libboost-random:
+  windows: []
+libboost-random-dev:
+  windows: []
+libboost-regex-dev:
+  windows: []
+libboost-system-dev:
+  windows: []
+libboost-thread-dev:
+  windows: []
+libcairo2-dev:
+  windows: []
+libccd-dev:
+  windows: []
+libceres-dev:
+  windows: []
+libconsole-bridge-dev:
+  windows: []
+libfcl-dev:
+  windows: []
+libflann:
+  windows: []
+libflann-dev:
+  windows: []
+libfltk-dev:
+  windows: []
+libgazebo9-dev:
+  windows: []
+libgflags-dev:
+  windows: []
+libglew-dev:
+  windows: []
+libgoogle-glog-dev:
+  windows: []
+libgpgme-dev:
+  windows: []
+libjpeg:
+  windows: []
+liblapack-dev:
+  windows: []
+libogg:
+  windows: []
+libogre:
+  windows: []
+libogre-dev:
+  windows: []
+libopencv-dev:
+  windows: []
+orocos_kdl:
+  windows: []
+liborocos-kdl-dev:
+  windows: []
+liborocos-kdl:
+  windows: []
+libpcl-all:
+  windows: []
+libpcl-all-dev:
+  windows: []
+libpng-dev:
+  windows: []
+libpoco-dev:
+  windows: []
+libqhull:
+  windows: []
+libqglviewer-qt4:
+  windows: []
+libqt4:
+  windows: []
+libqt4-dev:
+  windows: []
+libqt4-opengl:
+  windows: []
+libqt4-opengl-dev:
+  windows: []
+libqt4-sql-psql:
+  windows: []
+libqtgui4:
+  windows: []
+libqt5-concurrent:
+  windows: []
+libqt5-core:
+  windows: []
+libqt5-gui:
+  windows: []
+libqt5-network:
+  windows: []
+libqt5-opengl:
+  windows: []
+libqt5-opengl-dev:
+  windows: []
+libqt5-widgets:
+  windows: []
+libqt5x11extras5-dev:
+  windows: [] # we don't have this on Windows
+librealsense2:
+  windows:
+    vcpkg:
+      packages: [realsense2]
+libssl-dev:
+  windows: []
+libtheora:
+  windows: []
+liburdfdom-dev:
+  windows: []
+liburdfdom-headers-dev:
+  windows: []
+liburdfdom-tools:
+  windows: []
+libusb-dev:
+  windows: [] # included
+libzmq3-dev:
+  windows: []
+log4cxx:
+  windows: []
+lua5.2-dev:
+  windows: []
+lz4:
+  windows: []
+netpbm:
+  windows: [] # we don't have this on Windows
+octomap:
+  windows: []
+ompl:
+  windows: []
+opengl:
+  windows: []
+openssl:
+  windows: []
+pkg-config:
+  windows: []
+protobuf:
+  windows: []
+protobuf-dev:
+  windows: []
+pydocstyle:
+  windows:
+    pip:
+      packages: [pydocstyle]
+pyflakes3:
+  windows:
+    pip:
+      packages: [pyflakes]
+python-argparse:
+  windows:
+    pip:
+      packages: [argparse]
+python:
+  windows: []
+python-cairo:
+  windows:
+    pip:
+      packages: [cairocffi]
+python-catkin-pkg-modules:
+  windows:
+    pip:
+      packages: [catkin-pkg]
+python-catkin-pkg:
+  windows:
+    pip:
+      packages: [catkin-pkg]
+python-coverage:
+  windows:
+    pip:
+      packages: [coverage]
+python-cryptography:
+  windows:
+    pip:
+      packages: [cryptography]
+python-defusedxml:
+  windows:
+    pip:
+      packages: [defusedxml]
+python-empy:
+  windows:
+    pip:
+      packages: [empy]
+python-flake8:
+  windows:
+    pip:
+      packages: [flake8]
+python-gnupg:
+  windows:
+    pip:
+      packages: [gnupg]
+python-pygraphviz:
+  windows:
+    pip:
+      packages: [pygraphviz]
+python-ifcfg:
+  windows:
+    pip:
+      packages: [ifcfg]
+python-imaging:
+  windows: []
+python-matplotlib:
+  windows:
+    pip:
+      packages: [matplotlib]
+python-mypy:
+  windows:
+    pip:
+      packages: [mypy]
+python-pykdl:
+  windows: [] # it comes from https://github.com/orocos/orocos_kinematics_dynamics
+python-lark-parser:
+  windows:
+    pip:
+      packages: [lark-parser]
+python-lxml:
+  windows:
+    pip:
+      packages: [lxml]
+python-netifaces:
+  windows:
+    pip:
+      packages: [netifaces]
+python-nose:
+  windows:
+    pip:
+      packages: [nose]
+python-mock:
+  windows:
+    pip:
+      packages: [mock]
+python-numpy:
+  windows:
+    pip:
+      packages: [numpy]
+python-opencv:
+  windows:
+    pip:
+      packages: [opencv-python]
+python-opengl:
+  windows:
+    pip:
+      packages: [PyOpenGL]
+python-paramiko:
+  windows:
+    pip:
+      packages: [paramiko]
+python-pep8:
+  windows:
+    pip:
+      packages: [pep8]
+python-pil:
+  windows:
+    pip:
+      packages: [pillow]
+python-pkg-resources:
+  windows: []
+python-psutil:
+  windows:
+    pip:
+      packages: [psutil]
+python-pyassimp:
+  windows: []
+python-pycryptodome:
+  windows:
+    pip:
+      packages: [pycryptodomex]
+python-pydot:
+  windows:
+    pip:
+      packages: [pydot]
+python-pytest:
+  windows:
+    pip:
+      packages: [pytest]
+python-pytest-mock:
+  windows:
+    pip:
+      packages: [pytest-mock]
+python-qt5-bindings:
+  windows:
+    pip:
+      packages: []
+python-qt5-bindings-gl:
+  windows:
+    pip:
+      packages: []
+python-qt5-bindings-webkit:
+  windows:
+    pip:
+      packages: []
+python-rosdep:
+  windows:
+    pip:
+      packages: [rosdep]
+python-rosdep-modules:
+  windows:
+    pip:
+      packages: [rosdep]
+python-rosdistro-modules:
+  windows:
+    pip:
+      packages: [rosdistro]
+python-rospkg:
+  windows:
+    pip:
+      packages: [rospkg]
+python-rospkg-modules:
+  windows:
+    pip:
+      packages: [rospkg]
+python-serial:
+  windows:
+    pip:
+      packages: [pyserial]
+python-sip:
+  windows: []
+python-sphinx:
+  windows:
+    pip:
+      packages: [Sphinx]
+python-setuptools:
+  windows:
+    pip:
+      packages: [setuptools]
+python-wxgtk4.0:
+  windows:
+    pip:
+      packages: [wxPython]
+python-wxtools:
+  windows:
+    pip:
+      packages: [wxPython]
+python-yaml:
+  windows:
+    pip:
+      packages: [PyYAML]
+qt5-qmake:
+  windows: []
+qtbase5-dev:
+  windows: []
+sdl:
+  windows: []
+sdl-image:
+  windows: []
+sdl2:
+  windows: [] # included
+suitesparse:
+  windows: [] # included
+tango-icon-theme:
+  windows: [] # we don't have this on Windows
+sbcl:
+  windows: [] # we don't have this on Windows
+tinyxml:
+  windows: []
+tinyxml2:
+  windows: []
+uuid:
+  windows: []
+wxpython:
+  windows:
+    pip:
+      packages: [wxPython]
+yaml-cpp:
+  windows: []
+zlib:
+  windows: []
