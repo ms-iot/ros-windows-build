@@ -30,6 +30,8 @@ doxygen:
   windows: [doxygen.portable]
 eigen:
   windows: []
+ftdi-eeprom:
+  windows: []
 hddtemp:
   windows: [] # we don't have this on Windows
 gazebo:
@@ -40,6 +42,18 @@ gazebo11:
   windows: []
 libgazebo11-dev:
   windows: []
+geographiclib:
+  windows:
+    vcpkg:
+      packages: [geographiclib]
+geographiclib-tools:
+  windows:
+    vcpkg:
+      packages: [geographiclib]
+graphicsmagick:
+  windows:
+    vcpkg:
+      packages: [graphicsmagick]
 git:
   windows: []
 glut:
@@ -52,8 +66,14 @@ gtest:
   windows: []
 gtk3:
   windows: []
+hidapi:
+  windows:
+    vcpkg:
+      packages: [hidapi]
 lcov:
   windows: []
+libazure-iot-sdk-c:
+  windows: [] #included
 libboost-dev:
   windows: []
 libboost-chrono-dev:
@@ -164,6 +184,10 @@ libqt5-widgets:
   windows: []
 libqt5x11extras5-dev:
   windows: [] # we don't have this on Windows
+librealsense2:
+  windows:
+    vcpkg:
+      packages: [realsense2]
 libssl-dev:
   windows: []
 libtheora:
@@ -174,6 +198,8 @@ liburdfdom-headers-dev:
   windows: []
 liburdfdom-tools:
   windows: []
+libusb-dev:
+  windows: [] # included
 libzmq3-dev:
   windows: []
 log4cxx:
@@ -402,6 +428,10 @@ sdl:
   windows: []
 sdl-image:
   windows: []
+sdl2:
+  windows: [] # included
+suitesparse:
+  windows: [] # included
 tango-icon-theme:
   windows: [] # we don't have this on Windows
 sbcl:
