@@ -144,6 +144,7 @@ stages:
   displayName: 'Publish Prerelease ${{ variables.ROS_DISTRO }}'
   dependsOn:
   - packaging
+  condition: ne(variables['Build.Reason'], 'PullRequest')
   jobs:
   - template: azure-pipelines.publish.prerelease.yml
     parameters:
@@ -153,6 +154,7 @@ stages:
   displayName: 'Publish Release ${{ variables.ROS_DISTRO }}'
   dependsOn:
   - packaging
+  condition: ne(variables['Build.Reason'], 'PullRequest')
   jobs:
   - template: azure-pipelines.publish.release.yml
     parameters:

@@ -6,7 +6,6 @@ jobs:
   environment: 'nuget-push-prerelease'
   variables:
     ROS_DISTRO: '${{ parameters.ROS_DISTRO }}'
-  condition: ne(variables['Build.Reason'], 'PullRequest')
   strategy:
     runOnce:
       deploy:
