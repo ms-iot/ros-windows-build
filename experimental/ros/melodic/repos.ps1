@@ -27,7 +27,8 @@ try
             'rosserial',
             'teleop_twist_joy',
             'imu_tools',
-            'slam_karto'
+            'slam_karto',
+            'rosparam_shortcuts'
         )
     }
 

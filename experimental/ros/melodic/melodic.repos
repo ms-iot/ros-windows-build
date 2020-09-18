@@ -319,6 +319,10 @@ repositories:
     type: git
     url: https://github.com/ros/rospack.git
     version: 2.5.6
+  rosparam_shortcuts:
+    type: git
+    url: https://github.com/PickNikRobotics/rosparam_shortcuts.git
+    version: 0.3.3
   rosserial:
     type: git
     url: https://github.com/ros-drivers/rosserial.git
