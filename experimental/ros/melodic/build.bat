@@ -11,6 +11,7 @@ python src\catkin\bin\catkin_make_isolated.py ^
     -DCMAKE_BUILD_TYPE=RelWithDebInfo ^
     -DCATKIN_SKIP_TESTING=ON ^
     -DCURL_NO_CURL_CMAKE=ON
+if errorlevel 1 exit 1
 
 move /Y %INSTALL_DIR%\lib\*.dll %INSTALL_DIR%\bin
 move /Y %INSTALL_DIR%\lib\laser_filters\laser_scan_filters.dll %INSTALL_DIR%\bin
