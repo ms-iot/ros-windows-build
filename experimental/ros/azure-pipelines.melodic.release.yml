@@ -1,4 +1,11 @@
-trigger: none
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - experimental/ros/melodic/*
+    - experimental/ros/azure-pipelines.melodic.release.yml
 pr:
   branches:
     include:
@@ -12,7 +19,7 @@ resources:
   pipelines:
   - pipeline: ms-iot.external.melodic
     source: vNext/ms-iot.external.melodic
-    version: '20200911.1'
+    version: '20200915.2'
 
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
