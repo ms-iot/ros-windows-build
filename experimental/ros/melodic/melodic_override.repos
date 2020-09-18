@@ -64,7 +64,7 @@ repositories:
   moveit:
     type: git
     url: https://github.com/ms-iot/moveit.git
-    version: windows_fix_melodic
+    version: windows/1.0.6
   cartographer_ros:
     type: git
     url: https://github.com/cartographer-project/cartographer_ros.git
@@ -92,3 +92,7 @@ repositories:
     url: https://github.com/ros-planning/random_numbers.git
     # https://github.com/ros-planning/random_numbers/commit/42a63e896f71f05d429b057b6e9a3d3d05fa409c
     version: master
+  slam_karto:
+    type: git
+    url: https://github.com/ros-perception/slam_karto.git
+    version: 7b5a348d1372818cbabceca78f32d49bf7454a40

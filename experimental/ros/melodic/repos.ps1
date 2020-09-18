@@ -25,7 +25,9 @@ try
             'moveit_visual_tools',
             'cartographer_ros',
             'rosserial',
-            'imu_tools'
+            'teleop_twist_joy',
+            'imu_tools',
+            'slam_karto'
         )
     }
 

@@ -139,6 +139,10 @@ repositories:
     type: git
     url: https://github.com/ros/joint_state_publisher.git
     version: 1.12.15
+  joystick_drivers:
+    type: git
+    url: https://github.com/ros-drivers/joystick_drivers.git
+    version: 1.14.0
   kdl_parser:
     type: git
     url: https://github.com/ros/kdl_parser.git
@@ -215,6 +219,10 @@ repositories:
     type: git
     url: https://github.com/OctoMap/octomap_msgs.git
     version: 0.3.5
+  open_karto:
+    type: git
+    url: https://github.com/ros-perception/open_karto.git
+    version: 1.2.2
   orocos_kinematics_dynamics:
     type: git
     url: https://github.com/orocos/orocos_kinematics_dynamics.git
@@ -447,6 +455,14 @@ repositories:
     type: git
     url: https://github.com/PickNikRobotics/rviz_visual_tools.git
     version: 3.8.0
+  slam_karto:
+    type: git
+    url: https://github.com/ros-perception/slam_karto.git
+    version: 0.8.1
+  sparse_bundle_adjustment:
+    type: git
+    url: https://github.com/ros-perception/sparse_bundle_adjustment.git
+    version: 0.4.4
   srdfdom:
     type: git
     url: https://github.com/ros-planning/srdfdom.git
@@ -463,6 +479,10 @@ repositories:
     type: git
     url: https://github.com/ros/std_msgs.git
     version: 0.5.12
+  teleop_twist_joy:
+    type: git
+    url: https://github.com/ros-teleop/teleop_twist_joy.git
+    version: 0.1.3
   urdf:
     type: git
     url: https://github.com/ros/urdf.git
