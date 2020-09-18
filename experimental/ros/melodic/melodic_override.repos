@@ -96,3 +96,7 @@ repositories:
     type: git
     url: https://github.com/ros-perception/slam_karto.git
     version: 7b5a348d1372818cbabceca78f32d49bf7454a40
+  joystick_drivers:
+    type: git
+    url: https://github.com/ms-iot/joystick_drivers.git
+    version: init_windows
