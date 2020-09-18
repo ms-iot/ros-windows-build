@@ -2,8 +2,7 @@ repositories:
   eigenpy:
     type: git
     url: https://github.com/stack-of-tasks/eigenpy.git
-    # version: v2.3.1
-    version: v1.6.6
+    version: v2.5.0
   orocos_kinematics_dynamics:
     type: git
     url: https://github.com/orocos/orocos_kinematics_dynamics.git
