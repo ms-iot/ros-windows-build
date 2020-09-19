@@ -99,3 +99,7 @@ repositories:
     type: git
     url: https://github.com/ms-iot/joystick_drivers.git
     version: init_windows
+  image_pipeline:
+    type: git
+    url: https://github.com/ms-iot/image_pipeline.git
+    version: windows/1.15.0
