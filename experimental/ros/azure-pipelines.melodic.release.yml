@@ -111,6 +111,12 @@ stages:
       RELEASE_VERSION: ${{ variables.RELEASE_VERSION }}
       REAL_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-desktop_full'
       STUB_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-cartographer_ros'
+  - template: azure-pipelines.stub.yml
+    parameters:
+      ROS_DISTRO: ${{ variables.ROS_DISTRO }}
+      RELEASE_VERSION: ${{ variables.RELEASE_VERSION }}
+      REAL_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-desktop_full'
+      STUB_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-desktop'
 
 - stage: packaging
   displayName: 'Packaging ${{ variables.ROS_DISTRO }}'
