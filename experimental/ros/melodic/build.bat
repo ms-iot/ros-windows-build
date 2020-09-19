@@ -1,6 +1,6 @@
 @echo OFF
 
-set "IGNORED_PACKAGES=stage stage_ros image_view four_wheel_steering_controller moveit_servo moveit_setup_assistant"
+set "IGNORED_PACKAGES=stage stage_ros image_view four_wheel_steering_controller moveit_servo"
 
 copy src\catkin\bin\catkin_make_isolated src\catkin\bin\catkin_make_isolated.py
 python src\catkin\bin\catkin_make_isolated.py ^
