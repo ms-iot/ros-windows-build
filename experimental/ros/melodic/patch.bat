@@ -20,5 +20,3 @@ echo set(SuiteSparse_FOUND TRUE) >> %INSTALL_DIR%\share\suitesparse\suitesparse-
 set ROS_ETC_DIR=%INSTALL_DIR%\etc\ros
 rosdep init
 rosdep update
-rosdep check --from-paths "%WORKSPACE_DIR%\src" --ignore-src 2>&1
-exit 0

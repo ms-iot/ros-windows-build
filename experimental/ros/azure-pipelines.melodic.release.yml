@@ -1,4 +1,11 @@
-trigger: none
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - experimental/ros/melodic/*
+    - experimental/ros/azure-pipelines.melodic.release.yml
 pr:
   branches:
     include:
@@ -12,7 +19,7 @@ resources:
   pipelines:
   - pipeline: ms-iot.external.melodic
     source: vNext/ms-iot.external.melodic
-    version: '20200911.1'
+    version: '20200915.2'
 
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
@@ -92,6 +99,66 @@ stages:
       inputs:
         pathtoPublish: '$(Build.ArtifactStagingDirectory)/symbols.zip'
         artifactName: '$(ROS_DISTRO)-symbols'
+  - template: azure-pipelines.stub.yml
+    parameters:
+      ROS_DISTRO: ${{ variables.ROS_DISTRO }}
+      RELEASE_VERSION: ${{ variables.RELEASE_VERSION }}
+      REAL_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-desktop_full'
+      STUB_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-moveit'
+  - template: azure-pipelines.stub.yml
+    parameters:
+      ROS_DISTRO: ${{ variables.ROS_DISTRO }}
+      RELEASE_VERSION: ${{ variables.RELEASE_VERSION }}
+      REAL_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-desktop_full'
+      STUB_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-cartographer_ros'
+  - template: azure-pipelines.stub.yml
+    parameters:
+      ROS_DISTRO: ${{ variables.ROS_DISTRO }}
+      RELEASE_VERSION: ${{ variables.RELEASE_VERSION }}
+      REAL_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-desktop_full'
+      STUB_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-navigation'
+  - template: azure-pipelines.stub.yml
+    parameters:
+      ROS_DISTRO: ${{ variables.ROS_DISTRO }}
+      RELEASE_VERSION: ${{ variables.RELEASE_VERSION }}
+      REAL_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-desktop_full'
+      STUB_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-desktop'
+  - template: azure-pipelines.stub.yml
+    parameters:
+      ROS_DISTRO: ${{ variables.ROS_DISTRO }}
+      RELEASE_VERSION: ${{ variables.RELEASE_VERSION }}
+      REAL_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-desktop_full'
+      STUB_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-viz'
+  - template: azure-pipelines.stub.yml
+    parameters:
+      ROS_DISTRO: ${{ variables.ROS_DISTRO }}
+      RELEASE_VERSION: ${{ variables.RELEASE_VERSION }}
+      REAL_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-desktop_full'
+      STUB_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-simulators'
+  - template: azure-pipelines.stub.yml
+    parameters:
+      ROS_DISTRO: ${{ variables.ROS_DISTRO }}
+      RELEASE_VERSION: ${{ variables.RELEASE_VERSION }}
+      REAL_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-desktop_full'
+      STUB_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-ros_base'
+  - template: azure-pipelines.stub.yml
+    parameters:
+      ROS_DISTRO: ${{ variables.ROS_DISTRO }}
+      RELEASE_VERSION: ${{ variables.RELEASE_VERSION }}
+      REAL_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-desktop_full'
+      STUB_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-ros_core'
+  - template: azure-pipelines.stub.yml
+    parameters:
+      ROS_DISTRO: ${{ variables.ROS_DISTRO }}
+      RELEASE_VERSION: ${{ variables.RELEASE_VERSION }}
+      REAL_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-desktop_full'
+      STUB_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-robot'
+  - template: azure-pipelines.stub.yml
+    parameters:
+      ROS_DISTRO: ${{ variables.ROS_DISTRO }}
+      RELEASE_VERSION: ${{ variables.RELEASE_VERSION }}
+      REAL_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-desktop_full'
+      STUB_PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-perception'
 
 - stage: packaging
   displayName: 'Packaging ${{ variables.ROS_DISTRO }}'
