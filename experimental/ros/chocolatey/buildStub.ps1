@@ -35,6 +35,10 @@ try
     Copy-Item -Force -Path $templateNuspec -Destination $packageNuspec
 
     $filetext = @"
+`$stubPackageName= '$PackageName'
+`$realPackageName= '$DepPackageName'
+
+Write-Warning "Subpackage `$stubPackageName is going to be deprecated soon. Install `$realPackageName in the future for the same features."
 "@
 
     New-Item -Path $toolsDir -ItemType directory -Force | Out-Null
