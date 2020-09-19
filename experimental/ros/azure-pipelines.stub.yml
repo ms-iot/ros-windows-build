@@ -1,5 +1,5 @@
 jobs:
-- job: stub
+- job: 'stub_${{ parameters.STUB_PACKAGE_NAME }}'
   displayName: 'Create Stub Package ${{ parameters.STUB_PACKAGE_NAME }}'
   pool:
     vmImage: 'windows-2019'
