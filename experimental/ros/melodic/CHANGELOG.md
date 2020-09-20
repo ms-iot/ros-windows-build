@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - SLAM
     - Cartographer
     - OpenKarto
+    - OpenSLAM's GMapping
 - Libraries and Python runtime:
   - Boost 1.66.0
   - CMake 3.18.2
