@@ -42,7 +42,7 @@ repositories:
   diagnostics:
     type: git
     url: https://github.com/ros/diagnostics.git
-    version: 1.9.5
+    version: 1.9.7
   dynamic_reconfigure:
     type: git
     url: https://github.com/ros/dynamic_reconfigure.git
@@ -54,7 +54,7 @@ repositories:
   eigenpy:
     type: git
     url: https://github.com/stack-of-tasks/eigenpy.git
-    version: 2.3.1
+    version: 2.5.0
   executive_smach:
     type: git
     url: https://github.com/ros/executive_smach.git
@@ -198,7 +198,7 @@ repositories:
   navigation:
     type: git
     url: https://github.com/ros-planning/navigation.git
-    version: 1.16.6
+    version: 1.16.7
   navigation_msgs:
     type: git
     url: https://github.com/ros-planning/navigation_msgs.git
@@ -406,7 +406,7 @@ repositories:
   rqt_robot_monitor:
     type: git
     url: https://github.com/ros-visualization/rqt_robot_monitor.git
-    version: 0.5.9
+    version: 0.5.13
   rqt_robot_plugins:
     type: git
     url: https://github.com/ros-visualization/rqt_robot_plugins.git
@@ -522,6 +522,6 @@ repositories:
   xacro:
     type: git
     url: https://github.com/ros/xacro.git
-    version: 1.13.7
+    version: 1.13.8
 
 

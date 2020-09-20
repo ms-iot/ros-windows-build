@@ -3,10 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [20200826.0.0]
+## [20200915.0.0]
 ### Added
-- Melodic release sync to [2020.08.26](https://github.com/ros/rosdistro/tree/melodic/2020-08-26)
-- [ROS Discourse](https://discourse.ros.org/t/preparing-for-melodic-sync-2020-08-19)
+- Melodic release sync to [2020.09.15](https://github.com/ros/rosdistro/tree/melodic/2020-09-15)
+- [ROS Discourse](https://discourse.ros.org/t/preparing-for-melodic-sync-2020-09-10/)
 - Enabled packages:
   - Desktop_full
   - MoveIt
