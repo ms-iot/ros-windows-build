@@ -52,6 +52,15 @@ if errorlevel 1 exit 1
 move /Y %INSTALL_DIR%\lib\theora_image_transport\theora_image_transport.dll %INSTALL_DIR%\bin
 if errorlevel 1 exit 1
 
+move /Y %INSTALL_DIR%\lib\moveit_servo\moveit_servo_cpp_api.dll %INSTALL_DIR%\bin
+if errorlevel 1 exit 1
+
+move /Y %INSTALL_DIR%\lib\rosparam_shortcuts\rosparam_shortcuts.dll %INSTALL_DIR%\bin
+if errorlevel 1 exit 1
+
+move /Y %INSTALL_DIR%\lib\teleop_twist_joy\teleop_twist_joy.dll %INSTALL_DIR%\bin
+if errorlevel 1 exit 1
+
 :: run rosdep check
 set ROS_ETC_DIR=%INSTALL_DIR%\etc\ros
 rosdep check --from-paths "%INSTALL_DIR%\share" --ignore-src 2>&1
