@@ -107,3 +107,7 @@ repositories:
     type: git
     url: https://github.com/ms-iot/ros_comm.git
     version: windows/melodic/1.14.9
+  openslam_gmapping:
+    type: git
+    url: https://github.com/ms-iot/openslam_gmapping.git
+    version: windows/0.2.1

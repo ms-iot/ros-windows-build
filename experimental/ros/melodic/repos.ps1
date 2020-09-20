@@ -28,7 +28,8 @@ try
             'teleop_twist_joy',
             'imu_tools',
             'slam_karto',
-            'rosparam_shortcuts'
+            'rosparam_shortcuts',
+            'slam_gmapping'
         )
     }
 
