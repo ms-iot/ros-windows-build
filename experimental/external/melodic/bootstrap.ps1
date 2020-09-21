@@ -129,9 +129,6 @@ try
     }
     Copy-Item @arguments
 
-    Set-Alias dot (Join-Path $InstallDir "tools\graphviz\dot.exe") -Scope Script
-    dot -c
-
     $PythonInstalled = "C:\opt\python27amd64"
     Get-ChildItem -Path $PythonInstalled | ForEach-Object {
         $arguments = @{
