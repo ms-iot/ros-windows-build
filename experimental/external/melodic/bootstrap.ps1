@@ -107,6 +107,20 @@ try
     Remove-Item $LegacyRosdep -Force -Recurse -ErrorAction SilentlyContinue
     choco install -y --no-progress libgraphviz
 
+    Get-ChildItem -Path $LegacyRosdep | ForEach-Object {
+        if ("bin" -eq $_) {
+            return
+        }
+        $arguments = @{
+            Path = (Join-Path $LegacyRosdep $_)
+            Recurse = $True
+            Destination = $InstallDir
+            Container = $True
+            Force = $True
+        }
+        Copy-Item @arguments
+    }
+
     $arguments = @{
         Path = (Join-Path $LegacyRosdep "bin")
         Recurse = $True
