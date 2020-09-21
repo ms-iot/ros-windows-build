@@ -1,4 +1,11 @@
-trigger: none
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - experimental/ros/external/melodic/*
+    - experimental/ros/azure-pipelines.external.melodic.yml
 pr:
   branches:
     include:
