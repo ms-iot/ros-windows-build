@@ -16,6 +16,7 @@ try
     $scriptsDir = split-path -parent $script:MyInvocation.MyCommand.Definition
     Set-Alias ruplacer (Join-Path $scriptsDir "ruplacer\ruplacer.exe") -Scope Script
 
+
     # Bootstrap legacy rosdeps.
     $chocoPackages = @(
         'ros-python2',
@@ -25,7 +26,6 @@ try
         'freeglut',
         'qt5-sdk',
         'lz4',
-        'libgraphviz',
         'libompl',
         'cppunit',
         'libccd',
@@ -102,6 +102,22 @@ try
         }
         Copy-Item @arguments
     }
+
+    # bootstrap graphviz tools
+    Remove-Item $LegacyRosdep -Force -Recurse -ErrorAction SilentlyContinue
+    choco install -y --no-progress libgraphviz
+
+    $arguments = @{
+        Path = (Join-Path $LegacyRosdep "bin")
+        Recurse = $True
+        Destination = (Join-Path $InstallDir "tools\graphviz")
+        Container = $False
+        Force = $True
+    }
+    Copy-Item @arguments
+
+    Set-Alias dot (Join-Path $InstallDir "tools\graphviz\dot.exe") -Scope Script
+    dot -c
 
     $PythonInstalled = "C:\opt\python27amd64"
     Get-ChildItem -Path $PythonInstalled | ForEach-Object {
