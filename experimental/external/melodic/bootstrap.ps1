@@ -16,7 +16,6 @@ try
     $scriptsDir = split-path -parent $script:MyInvocation.MyCommand.Definition
     Set-Alias ruplacer (Join-Path $scriptsDir "ruplacer\ruplacer.exe") -Scope Script
 
-
     # Bootstrap legacy rosdeps.
     $chocoPackages = @(
         'ros-python2',
