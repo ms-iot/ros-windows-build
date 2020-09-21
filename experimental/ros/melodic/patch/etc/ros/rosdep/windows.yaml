@@ -74,6 +74,8 @@ lcov:
   windows: []
 libazure-iot-sdk-c:
   windows: [] #included
+libblas-dev:
+  windows: [] #included
 libboost-dev:
   windows: []
 libboost-chrono-dev:
@@ -155,6 +157,8 @@ libpoco-dev:
 libqhull:
   windows: []
 libqglviewer-qt4:
+  windows: []
+libqglviewer-qt4-dev:
   windows: []
 libqt4:
   windows: []

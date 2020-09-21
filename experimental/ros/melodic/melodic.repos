@@ -223,6 +223,10 @@ repositories:
     type: git
     url: https://github.com/ros-perception/open_karto.git
     version: 1.2.2
+  openslam_gmapping:
+    type: git
+    url: https://github.com/ros-perception/openslam_gmapping.git
+    version: 0.2.1
   orocos_kinematics_dynamics:
     type: git
     url: https://github.com/orocos/orocos_kinematics_dynamics.git
@@ -459,6 +463,10 @@ repositories:
     type: git
     url: https://github.com/PickNikRobotics/rviz_visual_tools.git
     version: 3.8.0
+  slam_gmapping:
+    type: git
+    url: https://github.com/ros-perception/slam_gmapping.git
+    version: 1.4.1
   slam_karto:
     type: git
     url: https://github.com/ros-perception/slam_karto.git
