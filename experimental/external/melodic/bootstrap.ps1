@@ -25,7 +25,6 @@ try
         'freeglut',
         'qt5-sdk',
         'lz4',
-        'libgraphviz',
         'libompl',
         'cppunit',
         'libccd',
@@ -102,6 +101,33 @@ try
         }
         Copy-Item @arguments
     }
+
+    # bootstrap graphviz tools
+    Remove-Item $LegacyRosdep -Force -Recurse -ErrorAction SilentlyContinue
+    choco install -y --no-progress libgraphviz
+
+    Get-ChildItem -Path $LegacyRosdep | ForEach-Object {
+        if ("bin" -eq $_) {
+            return
+        }
+        $arguments = @{
+            Path = (Join-Path $LegacyRosdep $_)
+            Recurse = $True
+            Destination = $InstallDir
+            Container = $True
+            Force = $True
+        }
+        Copy-Item @arguments
+    }
+
+    $arguments = @{
+        Path = (Join-Path $LegacyRosdep "bin")
+        Recurse = $True
+        Destination = (Join-Path $InstallDir "tools\graphviz")
+        Container = $False
+        Force = $True
+    }
+    Copy-Item @arguments
 
     $PythonInstalled = "C:\opt\python27amd64"
     Get-ChildItem -Path $PythonInstalled | ForEach-Object {
