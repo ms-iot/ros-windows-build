@@ -1,9 +1,8 @@
 repositories:
-  dynamic_reconfigure:
+  rosauth:
     type: git
-    url: https://github.com/ros/dynamic_reconfigure.git
-    # 1.7.0 has Python3 compatibility issues.
-    version: 1.7.1
+    url: https://github.com/gt-rail-release/rosauth-release.git
+    version: release/noetic/rosauth/1.0.1-1
   eigenpy:
     type: git
     url: https://github.com/stack-of-tasks/eigenpy.git
@@ -64,7 +63,7 @@ repositories:
   moveit:
     type: git
     url: https://github.com/ms-iot/moveit.git
-    version: windows/1.1.0-alpha
+    version: windows/1.1.0
   cartographer:
     type: git
     url: https://github.com/ms-iot/cartographer.git
