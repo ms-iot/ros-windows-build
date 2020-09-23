@@ -13,7 +13,7 @@ repositories:
     version: upstream/2.0.2
   ros_comm:
     type: git
-    url: https://github.com/ros/ros_comm.git
+    url: https://github.com/ms-iot/ros_comm.git
     # https://github.com/ros/ros_comm/pull/2051
     # https://github.com/ros/ros_comm/pull/2050
     version: windows/noetic/84d413fa5689891d871680c18f217a6a16d12731
