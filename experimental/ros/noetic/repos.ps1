@@ -17,26 +17,21 @@ try
 
     $arguments = @{
         Distro = "noetic"
-        Version = "noetic/2020-08-31"
+        Version = "noetic/2020-09-18"
         Packages = @(
-            'navigation',
             'desktop_full',
-            'eigenpy',
-            'eigen_stl_containers',
-            'geometric_shapes',
-            'moveit_msgs',
-            'object_recognition_msgs',
-            'octomap_msgs',
-            'random_numbers',
-            'srdfdom',
-            'four_wheel_steering_msgs',
-            'warehouse_ros',
-            'rviz_visual_tools',
-            'graph_msgs',
-            'imu_tools',
+            'navigation',
+            'moveit',
+            'cartographer_ros',
             'rosserial',
+            'imu_tools',
+            'slam_karto',
             'rosparam_shortcuts',
-            'slam_karto'
+            'graph_msgs',
+            'four_wheel_steering_msgs',
+            'rviz_visual_tools',
+            'ros_type_introspection',
+            'rosbridge_suite'
         )
     }
 

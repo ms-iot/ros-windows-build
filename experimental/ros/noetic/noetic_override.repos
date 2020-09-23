@@ -1,9 +1,8 @@
 repositories:
-  dynamic_reconfigure:
+  rosauth:
     type: git
-    url: https://github.com/ros/dynamic_reconfigure.git
-    # 1.7.0 has Python3 compatibility issues.
-    version: 1.7.1
+    url: https://github.com/gt-rail-release/rosauth-release.git
+    version: release/noetic/rosauth/1.0.1-1
   eigenpy:
     type: git
     url: https://github.com/stack-of-tasks/eigenpy.git
@@ -14,8 +13,10 @@ repositories:
     version: upstream/2.0.2
   ros_comm:
     type: git
-    url: https://github.com/ros/ros_comm.git
-    version: 3d137ca91109a9f229d0701e618758ef7f817218
+    url: https://github.com/ms-iot/ros_comm.git
+    # https://github.com/ros/ros_comm/pull/2051
+    # https://github.com/ros/ros_comm/pull/2050
+    version: windows/noetic/84d413fa5689891d871680c18f217a6a16d12731
   random_numbers:
     type: git
     url: https://github.com/ros-planning/random_numbers.git
@@ -64,7 +65,7 @@ repositories:
   moveit:
     type: git
     url: https://github.com/ms-iot/moveit.git
-    version: windows/1.1.0-alpha
+    version: windows/1.1.0
   cartographer:
     type: git
     url: https://github.com/ms-iot/cartographer.git
@@ -77,3 +78,7 @@ repositories:
     type: git
     url: https://github.com/ros-perception/slam_karto.git
     version: 7b5a348d1372818cbabceca78f32d49bf7454a40
+  diagnostics:
+    type: git
+    url: https://github.com/ms-iot/diagnostics.git
+    version: windows/1.10.2
