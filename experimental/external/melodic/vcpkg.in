@@ -1,3 +1,4 @@
 sdl2
 azure-iot-sdk-c
 libusb-win32
+geographiclib
