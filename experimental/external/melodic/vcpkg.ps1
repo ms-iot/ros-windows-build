@@ -35,6 +35,16 @@ try
     Expand-Archive -LiteralPath $vcpkgZip -DestinationPath $vcpkgDir
     & "$vcpkgDir\vcpkg-2020.07\bootstrap-vcpkg.bat"
 
+    # copy the Vcpkg into the install layout.
+    $arguments = @{
+        Path = (Join-Path $vcpkgDir "vcpkg-2020.07")
+        Recurse = $True
+        Destination = (Join-Path $InstallDir "vcpkg")
+        Container = $False
+        Force = $True
+    }
+    Copy-Item @arguments
+
     # build the required ports
     $vcpkgAnswerFile = (Join-Path $scriptsDir "vcpkg.in")
     & "$vcpkgDir\vcpkg-2020.07\vcpkg.exe" install @$vcpkgAnswerFile
