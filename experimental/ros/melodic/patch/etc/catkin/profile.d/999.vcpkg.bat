@@ -10,7 +10,7 @@ set "PATH=C:\opt\ros\melodic\x64\tools\vcpkg;%PATH%"
 
 :: add the installed bin to PATH
 set PATH=%PATH:C:\opt\ros\melodic\x64\tools\vcpkg\installed\x64-windows\bin;=%
-set "PATH=C:\opt\ros\melodic\x64\tools\vcpkginstalled\x64-windows\bin;%PATH%"
+set "PATH=C:\opt\ros\melodic\x64\tools\vcpkg\installed\x64-windows\bin;%PATH%"
 
 :: add the installed root for CMake
 set CMAKE_PREFIX_PATH=%CMAKE_PREFIX_PATH:C:\opt\ros\melodic\x64\tools\vcpkg\installed\x64-windows;=%
