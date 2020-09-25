@@ -20,3 +20,6 @@ echo set(SuiteSparse_FOUND TRUE) >> %INSTALL_DIR%\share\suitesparse\suitesparse-
 set ROS_ETC_DIR=%INSTALL_DIR%\etc\ros
 rosdep init
 rosdep update
+
+:: add CATKIN_IGNORE to reduce the search space and save time
+echo > %INSTALL_DIR%\tools\CATKIN_IGNORE
