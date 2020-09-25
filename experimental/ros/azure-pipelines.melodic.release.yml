@@ -19,11 +19,12 @@ resources:
   pipelines:
   - pipeline: ms-iot.external.melodic
     source: vNext/ms-iot.external.melodic
-    version: '20200921.3'
+    version: '20200924.5'
+
+name: '20200915.0.0.$(Date:yyMMdd)$(Rev:rrrr)'
 
 variables:
-  RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
-  RELEASE_VERSION: '20200915.0.0.$(RELEASE_DATE)'
+  RELEASE_VERSION: $(Build.BuildNumber)
   ROS_DISTRO: 'melodic'
   INSTALL_DIR: 'c:\opt\ros\melodic\x64'
 
