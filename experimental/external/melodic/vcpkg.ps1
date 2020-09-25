@@ -39,7 +39,7 @@ try
     $arguments = @{
         Path = (Join-Path $vcpkgDir "vcpkg-2020.07")
         Recurse = $True
-        Destination = (Join-Path $InstallDir "vcpkg")
+        Destination = (Join-Path $InstallDir "tools\vcpkg")
         Container = $False
         Force = $True
     }
