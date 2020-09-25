@@ -255,6 +255,10 @@ repositories:
     type: git
     url: https://github.com/ros/resource_retriever.git
     version: 1.12.6
+  robot_localization:
+    type: git
+    url: https://github.com/cra-ros-pkg/robot_localization.git
+    version: 2.6.8
   robot_state_publisher:
     type: git
     url: https://github.com/ros/robot_state_publisher.git
