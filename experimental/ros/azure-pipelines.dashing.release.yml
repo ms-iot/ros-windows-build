@@ -1,4 +1,11 @@
-trigger: none
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - experimental/ros/dashing/*
+    - experimental/ros/azure-pipelines.dashing.release.yml
 pr:
   branches:
     include:

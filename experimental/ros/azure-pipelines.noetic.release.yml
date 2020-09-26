@@ -1,4 +1,11 @@
-trigger: none
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - experimental/ros/noetic/*
+    - experimental/ros/azure-pipelines.noetic.release.yml
 pr:
   branches:
     include:
