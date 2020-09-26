@@ -51,19 +51,7 @@ stages:
         mkdir %PDB_OUTPUT_DIRECTORY%
       displayName: 'Clean symbols folder'
     - script: |
-        xcopy /Y /S /I .\experimental\ros\%ROS_DISTRO%\pre-patch %INSTALL_DIR%
-        set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
-        python -m pip config set global.disable-pip-version-check True
-        python -m pip install -U pycryptodomex==3.9.8
-        python -m pip install -U gnupg==2.3.1
-        python -m pip install -U pydot==1.4.1
-        python -m pip install -U paramiko==2.7.2
-        python -m pip install -U wxPython==4.1.0
-        python -m pip install -U matplotlib==3.3.1
-        python -m pip install -U PyOpenGL==3.1.5
-        python -m pip install -U pyassimp==4.1.4
-        python -m pip install -U Sphinx==3.2.1
-        python -m pip install -U cairocffi==1.1.0
+        call %Build_SourcesDirectory%\experimental\ros\noetic\patch.bat
       displayName: 'Pre-patch the install directory'
     - script: |
         call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
@@ -76,22 +64,6 @@ stages:
         xcopy /Y /S /I %Build_SourcesDirectory%\experimental\ros\src_patch src
         call %Build_SourcesDirectory%\experimental\ros\noetic\build.bat
       displayName: 'Build noetic'
-    - script: |
-        move /Y %INSTALL_DIR%\lib\*.dll %INSTALL_DIR%\bin
-        move /Y %INSTALL_DIR%\Lib\gazebo_plugins\gazebo_ros_wheel_slip.dll %INSTALL_DIR%\bin
-        move /Y %INSTALL_DIR%\Lib\laser_filters\laser_scan_filters.dll %INSTALL_DIR%\bin
-        move /Y %INSTALL_DIR%\Lib\laser_filters\pointcloud_filters.dll %INSTALL_DIR%\bin
-        move /Y %INSTALL_DIR%\Lib\nodelet_tutorial_math\nodelet_math.dll %INSTALL_DIR%\bin
-        move /Y %INSTALL_DIR%\Lib\pluginlib_tutorials\pluginlib_tutorials.dll %INSTALL_DIR%\bin
-        move /Y %INSTALL_DIR%\Lib\filters\increment.dll %INSTALL_DIR%\bin
-        move /Y %INSTALL_DIR%\Lib\filters\mean.dll %INSTALL_DIR%\bin
-        move /Y %INSTALL_DIR%\Lib\filters\median.dll %INSTALL_DIR%\bin
-        move /Y %INSTALL_DIR%\Lib\filters\params.dll %INSTALL_DIR%\bin
-        move /Y %INSTALL_DIR%\Lib\filters\transfer_function.dll %INSTALL_DIR%\bin
-        move /Y %INSTALL_DIR%\Lib\rviz_imu_plugin\rviz_imu_plugin.dll %INSTALL_DIR%\bin
-        move /Y %INSTALL_DIR%\Lib\ackermann_steering_controller\ackermann_steering_controller.dll %INSTALL_DIR%\bin
-        move /Y %INSTALL_DIR%\Lib\rosparam_shortcuts\rosparam_shortcuts.dll %INSTALL_DIR%\bin
-      displayName: 'Post-patch the install directory'
     - task: PublishBuildArtifacts@1
       inputs:
         pathtoPublish: '$(WORKSPACE_DIR)\log'
