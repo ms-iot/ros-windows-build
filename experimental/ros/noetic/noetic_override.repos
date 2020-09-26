@@ -90,3 +90,7 @@ repositories:
     type: git
     url: https://github.com/ms-iot/diagnostics.git
     version: windows/1.10.2
+  robot_localization:
+    type: git
+    url: https://github.com/ms-iot/robot_localization.git
+    version: windows/2.6.8
