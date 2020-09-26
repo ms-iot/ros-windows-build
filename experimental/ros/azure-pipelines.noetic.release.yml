@@ -12,7 +12,7 @@ resources:
   pipelines:
   - pipeline: ms-iot.external
     source: vNext/ms-iot.external
-    version: '20200902.1'
+    version: '20200924.1'
 
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]

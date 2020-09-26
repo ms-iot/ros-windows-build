@@ -31,7 +31,8 @@ try
             'four_wheel_steering_msgs',
             'rviz_visual_tools',
             'ros_type_introspection',
-            'rosbridge_suite'
+            'rosbridge_suite',
+            'robot_localization'
         )
     }
 

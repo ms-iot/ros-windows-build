@@ -8,8 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Noetic release sync to [2020-09-18](https://discourse.ros.org/t/new-packages-for-noetic-2020-09-18)
 - Enabled packages:
   - desktop_full
-  - navigation
   - moveit
+  - navigation
   - SLAM
     - Cartographer
     - OpenKarto

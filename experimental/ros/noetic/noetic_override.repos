@@ -1,4 +1,12 @@
 repositories:
+  unique_identifier:
+    type: git
+    url: https://github.com/ros-geographic-info/unique_identifier.git
+    version: unique_identifier-1.0.6
+  geographic_info:
+    type: git
+    url: https://github.com/ros-geographic-info/geographic_info.git
+    version: 0.5.5
   rosauth:
     type: git
     url: https://github.com/gt-rail-release/rosauth-release.git
@@ -82,3 +90,7 @@ repositories:
     type: git
     url: https://github.com/ms-iot/diagnostics.git
     version: windows/1.10.2
+  robot_localization:
+    type: git
+    url: https://github.com/ms-iot/robot_localization.git
+    version: windows/2.6.8
