@@ -20,3 +20,10 @@ python -m pip install -U git+https://github.com/ms-iot/rosdep@windows/0.19.0
 set ROS_ETC_DIR=%INSTALL_DIR%\etc\ros
 rosdep init
 rosdep update
+
+:: bootstrap vcpkg
+powershell .\experimental\ros\%ROS_DISTRO%\vcpkg.ps1 -InstallDir "%INSTALL_DIR%"
+if errorlevel 1 exit 1
+
+:: add CATKIN_IGNORE to reduce the search space and save time
+echo > %INSTALL_DIR%\tools\CATKIN_IGNORE
