@@ -1,11 +1,25 @@
-trigger: none
-pr: none
+trigger:
+  batch: true
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - experimental/external/azure.pipelines.external.yml
+pr:
+  batch: true
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - experimental/external/azure.pipelines.external.yml
 
 resources:
   pipelines:
   - pipeline: ms-iot.python
     source: vNext/ms-iot.python
-    version: '20200830.1'
+    version: '20200926.1'
   - pipeline: ms-iot.vcpkg
     source: vNext/ms-iot.vcpkg
     version: '20200924.1'
