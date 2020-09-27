@@ -7,7 +7,6 @@ trigger:
     include:
     - experimental/external/azure.pipelines.external.yml
 pr:
-  batch: true
   branches:
     include:
     - master
