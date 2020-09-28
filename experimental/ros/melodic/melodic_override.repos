@@ -1,4 +1,12 @@
 repositories:
+  geographic_info:
+    type: git
+    url: https://github.com/ros-geographic-info/geographic_info.git
+    version: geographic_info-0.5.3
+  unique_identifier:
+    type: git
+    url: https://github.com/ros-geographic-info/unique_identifier.git
+    version: unique_identifier-1.0.6
   eigenpy:
     type: git
     url: https://github.com/stack-of-tasks/eigenpy.git
