@@ -29,7 +29,8 @@ try
             'imu_tools',
             'slam_karto',
             'rosparam_shortcuts',
-            'slam_gmapping'
+            'slam_gmapping',
+            'robot_localization'
         )
     }
 
