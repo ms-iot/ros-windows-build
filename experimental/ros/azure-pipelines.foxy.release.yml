@@ -22,9 +22,10 @@ resources:
     source: vNext/ms-iot.external
     version: '20200902.1'
 
+name: '20200925.0.0.$(Date:yyMMdd)$(Rev:rrrr)'
+
 variables:
-  RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
-  RELEASE_VERSION: '20200912.0.0.$(RELEASE_DATE)'
+  RELEASE_VERSION: $(Build.BuildNumber)
   ROS_DISTRO: 'foxy'
   INSTALL_DIR: 'c:\opt\ros\foxy\x64'
 

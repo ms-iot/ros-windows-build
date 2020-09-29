@@ -190,7 +190,7 @@ repositories:
   qt_gui_core:
     type: git
     url: https://github.com/ros-visualization/qt_gui_core.git
-    version: 1.1.1
+    version: 1.1.2
   random_numbers:
     type: git
     url: https://github.com/ros-planning/random_numbers.git
@@ -266,7 +266,7 @@ repositories:
   ros2_tracing:
     type: git
     url: https://gitlab.com/micro-ROS/ros_tracing/ros2_tracing.git
-    version: 1.0.2
+    version: 1.0.4
   ros2cli:
     type: git
     url: https://github.com/ros2/ros2cli.git
@@ -338,7 +338,7 @@ repositories:
   rqt_graph:
     type: git
     url: https://github.com/ros-visualization/rqt_graph.git
-    version: 1.0.4
+    version: 1.1.0
   rqt_image_view:
     type: git
     url: https://github.com/ros-visualization/rqt_image_view.git
@@ -394,7 +394,7 @@ repositories:
   sros2:
     type: git
     url: https://github.com/ros2/sros2.git
-    version: 0.9.2
+    version: 0.9.3
   tango_icons_vendor:
     type: git
     url: https://github.com/ros-visualization/tango_icons_vendor.git
@@ -443,6 +443,10 @@ repositories:
     type: git
     url: https://github.com/ros2/urdf.git
     version: 2.4.0
+  urdf_parser_py:
+    type: git
+    url: https://github.com/ros/urdf_parser_py.git
+    version: 1.0.0
   urdfdom:
     type: git
     url: https://github.com/ros2/urdfdom.git

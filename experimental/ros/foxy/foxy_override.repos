@@ -28,10 +28,6 @@ repositories:
     type: git
     url: https://github.com/ros2/yaml_cpp_vendor.git
     version: b11d00fbbe2cd8c8888f8c11ff172e84fdea9adc
-  urdf_parser_py:
-    type: git
-    url: https://github.com/ros/urdf_parser_py.git
-    version: 1.0.0
   behaviortree_cpp:
     type: git
     url: https://github.com/ms-iot/BehaviorTree.CPP.git
