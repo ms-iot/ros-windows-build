@@ -1,3 +1,4 @@
+REM generated from msft_ros_env/env-hooks/vcpkg.bat.in
 @echo off
 
 :: initialize Vcpkg environments

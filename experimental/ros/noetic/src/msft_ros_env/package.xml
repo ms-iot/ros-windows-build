@@ -1,0 +1,9 @@
+<package>
+  <name>msft_ros_env</name>
+  <version>0.0.2</version>
+  <description>The package adds additonal environment variables for ROS on Windows.</description>
+  <maintainer email="seanyen@microsoft.com">Sean Yen</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>
