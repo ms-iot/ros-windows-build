@@ -1,5 +1,7 @@
 @echo OFF
 
+xcopy /Y /S /I %Build_SourcesDirectory%\experimental\ros\noetic\src src
+
 set "IGNORED_PACKAGES=stage stage_ros image_view theora_image_transport rviz_plugin_tutorials four_wheel_steering_controller"
 
 colcon build ^

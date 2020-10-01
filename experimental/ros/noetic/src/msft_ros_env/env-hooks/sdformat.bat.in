@@ -1,0 +1,4 @@
+REM generated from msft_ros_env/env-hooks/sdformat.bat.in
+@echo OFF
+
+set SDF_PATH=c:\opt\ros\noetic\x64\share\sdformat\1.6
