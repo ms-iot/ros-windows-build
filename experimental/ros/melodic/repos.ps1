@@ -30,7 +30,9 @@ try
             'slam_karto',
             'rosparam_shortcuts',
             'slam_gmapping',
-            'robot_localization'
+            'robot_localization',
+            'ros_type_introspection',
+            'rosbridge_suite'
         )
     }
 

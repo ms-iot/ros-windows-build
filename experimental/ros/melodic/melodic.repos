@@ -307,6 +307,18 @@ repositories:
     type: git
     url: https://github.com/ros/ros_tutorials.git
     version: 0.9.3
+  ros_type_introspection:
+    type: git
+    url: https://github.com/facontidavide/ros_type_introspection.git
+    version: 2.1.0
+  rosauth:
+    type: git
+    url: https://github.com/GT-RAIL/rosauth.git
+    version: 1.0.1
+  rosbridge_suite:
+    type: git
+    url: https://github.com/RobotWebTools/rosbridge_suite.git
+    version: 0.11.10
   rosconsole:
     type: git
     url: https://github.com/ros/rosconsole.git
