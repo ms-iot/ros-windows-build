@@ -3,8 +3,8 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [xxxxxxxx.0.0]
-- Melodic release sync to xxxx-xx-xx.
+## [20201012.0.0]
+- Melodic release sync to [2020-10-12](https://discourse.ros.org/t/new-packages-for-melodic-2020-10-12)
 - Enabled packages:
   - Desktop_full
   - MoveIt
