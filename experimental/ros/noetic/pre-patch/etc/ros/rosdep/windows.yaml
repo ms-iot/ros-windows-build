@@ -74,6 +74,8 @@ libboost-regex-dev:
   windows: []
 libboost-system-dev:
   windows: []
+libboost-thread:
+  windows: []
 libboost-thread-dev:
   windows: []
 libcairo2-dev:
@@ -202,6 +204,10 @@ python-argparse:
       packages: [argparse]
 python3:
   windows: []
+python3-bson:
+  windows:
+    pip:
+      packages: [pymongo]
 python3-cairo:
   windows:
     pip:
@@ -238,10 +244,18 @@ python3-gnupg:
   windows:
     pip:
       packages: [gnupg]
+python3-pyassimp:
+  windows:
+    pip:
+      packages: [pyassimp]
 python3-pygraphviz:
   windows:
     pip:
       packages: [pygraphviz]
+python3-pyproj:
+  windows:
+    pip:
+      packages: [pyproj]
 python3-ifcfg:
   windows:
     pip:
@@ -366,6 +380,10 @@ python3-setuptools:
   windows:
     pip:
       packages: [setuptools]
+python3-twisted:
+  windows:
+    pip:
+      packages: [twisted]
 python3-wxgtk4.0:
   windows:
     pip:
@@ -381,6 +399,8 @@ qtbase5-dev:
 sdl:
   windows: []
 sdl-image:
+  windows: []
+suitesparse:
   windows: []
 tango-icon-theme:
   windows: [] # we don't have this on Windows
