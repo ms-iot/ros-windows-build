@@ -50,6 +50,8 @@ gtest:
   windows: []
 gtk3:
   windows: []
+libblas-dev:
+  windows: []
 libboost-dev:
   windows: []
 libboost-chrono-dev:
@@ -380,6 +382,10 @@ python3-setuptools:
   windows:
     pip:
       packages: [setuptools]
+python3-tornado:
+  windows:
+    pip:
+      packages: [tornado]
 python3-twisted:
   windows:
     pip:
