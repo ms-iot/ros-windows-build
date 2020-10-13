@@ -21,7 +21,7 @@ resources:
     source: vNext/ms-iot.external.melodic
     version: '20200924.5'
 
-name: '20200915.0.0.$(Date:yyMMdd)$(Rev:rrrr)'
+name: '20201012.0.0.$(Date:yyMMdd)$(Rev:rrrr)'
 
 variables:
   RELEASE_VERSION: $(Build.BuildNumber)
