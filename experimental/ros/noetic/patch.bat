@@ -28,6 +28,7 @@ python -m pip install -U twisted==20.3.0
 python -m pip install -U autobahn==20.7.1
 python -m pip install -U pyOpenSSL==19.1.0
 python -m pip install -U service-identity==18.1.0
+python -m pip install -U tornado==6.0.4
 
 :: bootstrap rosdep
 set ROS_ETC_DIR=%INSTALL_DIR%\etc\ros
