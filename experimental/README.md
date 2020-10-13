@@ -46,10 +46,10 @@ This project is using the following version scheme:
 
 `MAJOR.MINOR.PATCH.BUILD`
 
-The `MAJOR.MINOR` matches to the Open Robotics Release Sync versioned string.
+The `MAJOR` matches to the Open Robotics Release Sync versioned string.
 It will be covered later on what's a Open Robotics Release Sync.
 
-The `PATCH` is reserved and currently is not in used.
+The `MINOR` and `PATCH` is reserved and currently is not in used.
 
 The `BUILD` matches to the timestamp of when the pipelines kicks off the build.
 
@@ -77,7 +77,7 @@ The steps are as follows: (Use `noetic` as the example.)
 
 ```Batchfile
 :: Get the latest rosdistro
-pip install -U rosdistro
+pip install -U "rosdistro>=0.8.3"
 
 :: Change directory to the distro folder
 cd .\experimental\ros\noetic
