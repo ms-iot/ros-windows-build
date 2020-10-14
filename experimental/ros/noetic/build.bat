@@ -61,6 +61,15 @@ if errorlevel 1 exit 1
 move /Y %INSTALL_DIR%\Lib\rosparam_shortcuts\rosparam_shortcuts.dll %INSTALL_DIR%\bin
 if errorlevel 1 exit 1
 
+DEL /F /Q %INSTALL_DIR%\Lib\rosbridge_server\rosbridge_tcp
+if errorlevel 1 exit 1
+
+DEL /F /Q %INSTALL_DIR%\Lib\rosbridge_server\rosbridge_udp
+if errorlevel 1 exit 1
+
+DEL /F /Q %INSTALL_DIR%\Lib\rosbridge_server\rosbridge_websocket
+if errorlevel 1 exit 1
+
 :: run rosdep check
 set ROS_ETC_DIR=%INSTALL_DIR%\etc\ros
 rosdep check --from-paths "%INSTALL_DIR%\share" --ignore-src 2>&1
