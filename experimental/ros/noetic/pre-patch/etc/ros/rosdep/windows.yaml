@@ -206,6 +206,10 @@ python-argparse:
       packages: [argparse]
 python3:
   windows: []
+python3-autobahn:
+  windows:
+    pip:
+      packages: [autobahn]
 python3-bson:
   windows:
     pip:
