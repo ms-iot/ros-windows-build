@@ -169,7 +169,7 @@ Hereby, the process can be simplified into:
 4. Kick-off new builds.
 
     Since we reuse the same `ms-iot` forks with the same target branch, we don't need to modify any build recipes in [`ros-windows-build`](https://github.com/ms-iot/ros-windows-build).
-    Instead, one can kick off the builds from the respective pipelines.
+    Instead, one can **manually** kick off the builds from the respective pipelines.
     For examples, at the time of writing, [here](https://ros-win.visualstudio.com/ros-win/_build/results?buildId=8718) is the Melodic one, and [here](https://ros-win.visualstudio.com/ros-win/_build/results?buildId=8717) is the Noetic one.
 
 5. Verify the builds.
