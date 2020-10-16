@@ -172,7 +172,7 @@ Hereby, the process can be simplified into:
     Instead, one can kick off the builds from the respective pipelines.
     For examples, at the time of writing, [here](https://ros-win.visualstudio.com/ros-win/_build/results?buildId=8718) is the Melodic one, and [here](https://ros-win.visualstudio.com/ros-win/_build/results?buildId=8717) is the Noetic one.
 
-5. Validate the builds.
+5. Verify the builds.
 
     Once the build finishes, verify the installation from `<distro>-setup` artifacts as the normal process does.
 
