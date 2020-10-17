@@ -142,6 +142,44 @@ In additions, once a release is out, there are more activities are required:
 
 <TBD>
 
+## Examples
+
+## 2020-10-15 Patch Release
+
+This is a case where a bugfix is not yet included in a released package.
+The [fix](https://github.com/ros-visualization/rviz/pull/1528) is not yet included in RViz releases (`1.13.13`/Melodic and `1.14.1`/Noetic).
+
+In such case, since we only need to cherry-pick this particular commit, we don't redo the whole release sync flow.
+Hereby, the process can be simplified into:
+
+1. Identify the upstream release versions.
+
+    Look it up from [`melodic.repos`](./ros/melodic/melodic.repos) and [`noetic.repos`](./ros/noetic/noetic.repos).
+    And at the time of writing, they are `1.13.13` and `1.14.1` respectively.
+
+2. Check if any `ms-iot` forks exists.
+
+    Look it up from [`melodic_override.repos`](./ros/melodic/melodic_override.repos) and [`noetic_override.repos`](./ros/noetic/noetic_override.repos).
+    And at the time of writing, they are `https://github.com/ms-iot/rviz/tree/windows/1.13.13` and `https://github.com/ms-iot/rviz/tree/windows/1.14.1`.
+
+3. Cherry-pick the relative commit.
+
+    Create the pull requests for the cherry-pick. For examples, [https://github.com/ms-iot/rviz/pull/4](https://github.com/ms-iot/rviz/pull/4) and [https://github.com/ms-iot/rviz/pull/3](https://github.com/ms-iot/rviz/pull/3).
+
+4. Kick-off new builds.
+
+    Since we reuse the same `ms-iot` forks with the same target branch, we don't need to modify any build recipes in [`ros-windows-build`](https://github.com/ms-iot/ros-windows-build).
+    Instead, one can **manually** kick off the builds from the respective pipelines.
+    For examples, at the time of writing, [here](https://ros-win.visualstudio.com/ros-win/_build/results?buildId=8718) is the Melodic one, and [here](https://ros-win.visualstudio.com/ros-win/_build/results?buildId=8717) is the Noetic one.
+
+5. Verify the builds.
+
+    Once the build finishes, verify the installation from `<distro>-setup` artifacts as the normal process does.
+
+6. Approve the releases.
+
+    Once the build is verified, one can approve the release gate and make it available publicly from https://aka.ms/ros/public.
+
 ## Upstream Override Changes
 
 As more releases are exercised, it is common to see a number of cumulative patches in override repos file.
