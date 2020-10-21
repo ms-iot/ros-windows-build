@@ -17,6 +17,7 @@ python -m pip install -U PyOpenGL==3.1.5
 python -m pip install -U pyassimp==4.1.4
 python -m pip install -U Sphinx==3.2.1
 python -m pip install -U cairocffi==1.1.0
+python -m pip install -U pyserial==3.4
 python -m pip install -U git+https://github.com/ms-iot/rosdep@windows/0.19.0
 
 :: rosbridge related dependencies
