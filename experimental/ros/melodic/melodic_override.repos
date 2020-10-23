@@ -70,8 +70,8 @@ repositories:
     version: windows/1.0.6
   cartographer_ros:
     type: git
-    url: https://github.com/cartographer-project/cartographer_ros.git
-    version: bdf8f5921e8e570419c86f56bc8e8a76c764b5e3
+    url: https://github.com/ms-iot/cartographer_ros.git
+    version: windows/melodic/bdf8f5921e8e570419c86f56bc8e8a76c764b5e3
   cartographer:
     type: git
     url: https://github.com/ms-iot/cartographer.git
