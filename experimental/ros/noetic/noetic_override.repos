@@ -32,8 +32,8 @@ repositories:
     version: 42a63e896f71f05d429b057b6e9a3d3d05fa409c
   cartographer_ros:
     type: git
-    url: https://github.com/cartographer-project/cartographer_ros.git
-    version: 9cde1b4f5c3c4683df67c86868b11a8e4d31f1e4
+    url: https://github.com/ms-iot/cartographer_ros.git
+    version: windows/noetic/9cde1b4f5c3c4683df67c86868b11a8e4d31f1e4
   pluginlib:
     type: git
     url: https://github.com/ms-iot/pluginlib.git
