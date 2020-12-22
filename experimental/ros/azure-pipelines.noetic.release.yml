@@ -23,7 +23,7 @@ resources:
 
 variables:
   RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
-  RELEASE_VERSION: '20201009.0.0.$(RELEASE_DATE)'
+  RELEASE_VERSION: '20201214.0.0.$(RELEASE_DATE)'
   ROS_DISTRO: 'noetic'
   INSTALL_DIR: 'c:\opt\ros\noetic\x64'
 
