@@ -35,7 +35,7 @@ repositories:
   catkin:
     type: git
     url: https://github.com/ms-iot/catkin.git
-    version: windows/noetic-devel
+    version: windows/0.8.9
   python_qt_binding:
     type: git
     url: https://github.com/ms-iot/python_qt_binding.git
