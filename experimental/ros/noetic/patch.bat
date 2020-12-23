@@ -6,6 +6,10 @@ set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
 set INCLUDE=C:\opt\ros\noetic\x64\include\python3.8
 set LIB=C:\opt\ros\noetic\x64\Lib
 
+:: remove Vcpkg python38.dll to avoid conflicts
+DEL /F /Q %INSTALL_DIR%\bin\python38.dll
+
+:: install required Python modules
 python -m pip config set global.disable-pip-version-check True
 python -m pip install -U pycryptodomex==3.9.8
 python -m pip install -U gnupg==2.3.1
