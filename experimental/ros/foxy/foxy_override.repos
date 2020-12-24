@@ -58,8 +58,8 @@ repositories:
     version: 2.0.0
   ros2_control:
     type: git
-    url: https://github.com/ros-controls/ros2_control.git
-    version: 0.1.1
+    url: https://github.com/ms-iot/ros2_control.git
+    version: windows/0.1.1
   ros2_controllers:
     type: git
     url: https://github.com/ros-controls/ros2_controllers.git
