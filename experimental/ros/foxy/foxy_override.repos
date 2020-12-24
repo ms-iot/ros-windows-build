@@ -59,11 +59,11 @@ repositories:
   ros2_control:
     type: git
     url: https://github.com/ms-iot/ros2_control.git
-    version: windows/0.1.1
+    version: windows/2c3aad1cb8ad4d23925bceeb5c26e22d6cf859ef
   ros2_controllers:
     type: git
     url: https://github.com/ros-controls/ros2_controllers.git
-    version: 0.1.0
+    version: 8587e079490acdd0fabeb2742a3bec3bf551bbc5
   fake_joint:
     type: git
     url: https://github.com/JafarAbdi/fake_joint.git
