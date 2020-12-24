@@ -21,7 +21,7 @@ resources:
     version: '20200926.1'
   - pipeline: ms-iot.vcpkg
     source: vNext/ms-iot.vcpkg
-    version: '20200924.1'
+    version: '20201223.3'
 
 jobs:
 - job: Build
