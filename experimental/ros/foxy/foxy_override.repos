@@ -74,8 +74,8 @@ repositories:
     version: 2.0.0
   geometric_shapes:
     type: git
-    url: https://github.com/ros-planning/geometric_shapes.git
-    version: 2.0.0
+    url: https://github.com/ms-iot/geometric_shapes.git
+    version: windows/2.0.0
   random_numbers:
     type: git
     url: https://github.com/ros-planning/random_numbers.git
