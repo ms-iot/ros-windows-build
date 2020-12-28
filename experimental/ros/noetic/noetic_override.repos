@@ -22,9 +22,7 @@ repositories:
   ros_comm:
     type: git
     url: https://github.com/ms-iot/ros_comm.git
-    # https://github.com/ros/ros_comm/pull/2051
-    # https://github.com/ros/ros_comm/pull/2050
-    version: windows/noetic/84d413fa5689891d871680c18f217a6a16d12731
+    version: windows/1.15.9
   random_numbers:
     type: git
     url: https://github.com/ros-planning/random_numbers.git
@@ -41,7 +39,7 @@ repositories:
   catkin:
     type: git
     url: https://github.com/ms-iot/catkin.git
-    version: windows/noetic-devel
+    version: windows/0.8.9
   python_qt_binding:
     type: git
     url: https://github.com/ms-iot/python_qt_binding.git
@@ -65,7 +63,7 @@ repositories:
   rviz:
     type: git
     url: https://github.com/ms-iot/rviz.git
-    version: windows/1.14.1
+    version: windows/1.14.4
   gazebo_ros_pkgs:
     type: git
     url: https://github.com/ms-iot/gazebo_ros_pkgs.git
@@ -73,7 +71,7 @@ repositories:
   moveit:
     type: git
     url: https://github.com/ms-iot/moveit.git
-    version: windows/1.1.0
+    version: windows/1.1.1
   cartographer:
     type: git
     url: https://github.com/ms-iot/cartographer.git
