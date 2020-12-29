@@ -87,6 +87,10 @@ repositories:
     type: git
     url: https://github.com/ros-simulation/gazebo_ros_pkgs.git
     version: 3.5.0
+  geometric_shapes:
+    type: git
+    url: https://github.com/ros-planning/geometric_shapes.git
+    version: 2.0.0
   geometry2:
     type: git
     url: https://github.com/ros2/geometry2.git
@@ -147,6 +151,18 @@ repositories:
     type: git
     url: https://github.com/ros2/mimick_vendor.git
     version: 0.2.3
+  moveit:
+    type: git
+    url: https://github.com/ros-planning/moveit2.git
+    version: 2.1.0
+  moveit_msgs:
+    type: git
+    url: https://github.com/ros-planning/moveit_msgs.git
+    version: 2.0.0
+  moveit_resources:
+    type: git
+    url: https://github.com/ros-planning/moveit_resources.git
+    version: 2.0.0
   navigation2:
     type: git
     url: https://github.com/ros-planning/navigation2.git
@@ -159,6 +175,10 @@ repositories:
     type: git
     url: https://github.com/wg-perception/object_recognition_msgs.git
     version: 2.0.0
+  octomap:
+    type: git
+    url: https://github.com/octomap/octomap.git
+    version: 1.9.5
   octomap_msgs:
     type: git
     url: https://github.com/octomap/octomap_msgs.git
@@ -403,6 +423,10 @@ repositories:
     type: git
     url: https://github.com/ros2/spdlog_vendor.git
     version: 1.1.2
+  srdfdom:
+    type: git
+    url: https://github.com/ros-planning/srdfdom.git
+    version: 2.0.0
   sros2:
     type: git
     url: https://github.com/ros2/sros2.git
@@ -475,6 +499,10 @@ repositories:
     type: git
     url: https://github.com/ros-perception/vision_opencv.git
     version: 2.2.1
+  warehouse_ros:
+    type: git
+    url: https://github.com/ros-planning/warehouse_ros.git
+    version: 2.0.0
   xacro:
     type: git
     url: https://github.com/ros/xacro.git

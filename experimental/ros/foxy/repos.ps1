@@ -31,7 +31,9 @@ try
             'xacro',
             'eigen_stl_containers',
             'control_msgs',
-            'urdfdom_py'
+            'urdfdom_py',
+            'moveit_core',
+            'warehouse_ros'
         )
     }
 
