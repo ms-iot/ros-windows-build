@@ -17,7 +17,7 @@ try
 
     $arguments = @{
         Distro = "foxy"
-        Version = "foxy/2020-10-09"
+        Version = "foxy/2020-12-11"
         Packages = @(
             'navigation2',
             'desktop',
@@ -31,7 +31,9 @@ try
             'xacro',
             'eigen_stl_containers',
             'control_msgs',
-            'urdfdom_py'
+            'urdfdom_py',
+            'moveit_core',
+            'warehouse_ros'
         )
     }
 

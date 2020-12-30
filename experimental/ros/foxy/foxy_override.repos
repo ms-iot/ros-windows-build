@@ -6,24 +6,19 @@ repositories:
   fastrtps:
     type: git
     url: https://github.com/eProsima/Fast-DDS.git
-    version: v2.0.1
+    version: v2.0.2
   foonathan_memory_vendor:
     type: git
     url: https://github.com/eProsima/foonathan_memory_vendor.git
     version: v1.0.0
-  ament_cmake:
-    type: git
-    url: https://github.com/ms-iot/ament_cmake.git
-    # cherry-pick https://github.com/ament/ament_cmake/commit/79145a6c724d00ed41aff1140a34e9dcb973a7ef
-    version: windows/0.9.6
   geometry2:
     type: git
     url: https://github.com/ms-iot/geometry2.git
-    version: windows/0.13.5
+    version: windows/0.13.9
   rviz:
     type: git
     url: https://github.com/ms-iot/rviz.git
-    version: windows/8.2.0
+    version: windows/8.2.1
   yaml_cpp_vendor:
     type: git
     url: https://github.com/ros2/yaml_cpp_vendor.git
@@ -43,45 +38,36 @@ repositories:
   navigation2:
     type: git
     url: https://github.com/ms-iot/navigation2.git
-    version: windows/0.4.2
+    version: windows/0.4.5
   vision_opencv:
     type: git
     url: https://github.com/ms-iot/vision_opencv.git
     version: windows/2.2.1
-  moveit2:
+  moveit:
     type: git
     url: https://github.com/ms-iot/moveit2.git
-    version: windows/main/d95e4aecf4ac7a0f8b43fe91742b86251b8762ca
-  moveit_msgs:
-    type: git
-    url: https://github.com/ros-planning/moveit_msgs.git
-    version: ros2
-  moveit_resources:
-    type: git
-    url: https://github.com/ros-planning/moveit_resources.git
-    version: ros2
+    version: windows/2.1.0
   ros2_control:
     type: git
     url: https://github.com/ms-iot/ros2_control.git
-    version: windows/master
+    version: windows/2c3aad1cb8ad4d23925bceeb5c26e22d6cf859ef
   ros2_controllers:
     type: git
     url: https://github.com/ros-controls/ros2_controllers.git
-    version: master
+    version: 8587e079490acdd0fabeb2742a3bec3bf551bbc5
   fake_joint:
     type: git
     url: https://github.com/JafarAbdi/fake_joint.git
     version: foxy
-  srdfdom:
-    type: git
-    url: https://github.com/ms-iot/srdfdom.git
-    # https://github.com/ros-planning/srdfdom/pull/69
-    version: windows/ros2/9acffccdb884d5daeb7bd091af12149b0a85b670
   geometric_shapes:
     type: git
     url: https://github.com/ms-iot/geometric_shapes.git
-    version: dashing-devel
+    version: windows/2.0.0
   random_numbers:
     type: git
     url: https://github.com/ms-iot/random_numbers.git
-    version: windows/1.0.0
+    version: windows/2.0.0
+  warehouse_ros:
+    type: git
+    url: https://github.com/ms-iot/warehouse_ros.git
+    version: windows/2.0.0
