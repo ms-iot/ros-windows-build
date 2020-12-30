@@ -14,7 +14,7 @@ repositories:
   catkin:
     type: git
     url: https://github.com/ros/catkin.git
-    version: 0.7.28
+    version: 0.7.29
   class_loader:
     type: git
     url: https://github.com/ros/class_loader.git
@@ -190,7 +190,7 @@ repositories:
   moveit:
     type: git
     url: https://github.com/ros-planning/moveit.git
-    version: 1.0.6
+    version: 1.0.7
   moveit_msgs:
     type: git
     url: https://github.com/ros-planning/moveit_msgs.git
@@ -210,7 +210,7 @@ repositories:
   navigation_msgs:
     type: git
     url: https://github.com/ros-planning/navigation_msgs.git
-    version: 1.13.0
+    version: 1.14.1
   nodelet_core:
     type: git
     url: https://github.com/ros/nodelet_core.git
@@ -230,7 +230,7 @@ repositories:
   open_karto:
     type: git
     url: https://github.com/ros-perception/open_karto.git
-    version: 1.2.2
+    version: 1.2.3
   openslam_gmapping:
     type: git
     url: https://github.com/ros-perception/openslam_gmapping.git
@@ -278,7 +278,7 @@ repositories:
   robot_localization:
     type: git
     url: https://github.com/cra-ros-pkg/robot_localization.git
-    version: 2.6.7
+    version: 2.6.9
   robot_state_publisher:
     type: git
     url: https://github.com/ros/robot_state_publisher.git
@@ -290,7 +290,7 @@ repositories:
   ros_comm:
     type: git
     url: https://github.com/ros/ros_comm.git
-    version: 1.14.9
+    version: 1.14.10
   ros_comm_msgs:
     type: git
     url: https://github.com/ros/ros_comm_msgs.git
@@ -298,11 +298,11 @@ repositories:
   ros_control:
     type: git
     url: https://github.com/ros-controls/ros_control.git
-    version: 0.18.2
+    version: 0.18.3
   ros_controllers:
     type: git
     url: https://github.com/ros-controls/ros_controllers.git
-    version: 0.17.0
+    version: 0.17.1
   ros_environment:
     type: git
     url: https://github.com/ros/ros_environment.git
@@ -322,11 +322,11 @@ repositories:
   rosbridge_suite:
     type: git
     url: https://github.com/RobotWebTools/rosbridge_suite.git
-    version: 0.11.10
+    version: 0.11.13
   rosconsole:
     type: git
     url: https://github.com/ros/rosconsole.git
-    version: 1.13.17
+    version: 1.13.18
   rosconsole_bridge:
     type: git
     url: https://github.com/ros/rosconsole_bridge.git
@@ -366,7 +366,7 @@ repositories:
   rqt_bag:
     type: git
     url: https://github.com/ros-visualization/rqt_bag.git
-    version: 0.4.14
+    version: 0.5.0
   rqt_common_plugins:
     type: git
     url: https://github.com/ros-visualization/rqt_common_plugins.git
@@ -482,7 +482,7 @@ repositories:
   rviz:
     type: git
     url: https://github.com/ros-visualization/rviz.git
-    version: 1.13.13
+    version: 1.13.15
   rviz_visual_tools:
     type: git
     url: https://github.com/PickNikRobotics/rviz_visual_tools.git
@@ -538,7 +538,7 @@ repositories:
   urdfdom_py:
     type: git
     url: https://github.com/ros/urdf_parser_py.git
-    version: 0.4.3
+    version: 0.4.5
   vision_opencv:
     type: git
     url: https://github.com/ros-perception/vision_opencv.git
@@ -558,6 +558,6 @@ repositories:
   xacro:
     type: git
     url: https://github.com/ros/xacro.git
-    version: 1.13.8
+    version: 1.13.9
 
 
