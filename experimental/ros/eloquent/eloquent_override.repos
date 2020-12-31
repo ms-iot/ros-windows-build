@@ -18,7 +18,7 @@ repositories:
   rviz:
     type: git
     url: https://github.com/ms-iot/rviz.git
-    version: windows/7.0.5
+    version: windows/7.0.7
   vision_opencv:
     type: git
     url: https://github.com/ms-iot/vision_opencv.git
