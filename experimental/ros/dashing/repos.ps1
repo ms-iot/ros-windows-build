@@ -17,7 +17,7 @@ try
 
     $arguments = @{
         Distro = "dashing"
-        Version = "e7655bd9387dc20e00f3a87cbc3d448df148fb12" # dashing/2020-07-22
+        Version = "dashing/2020-12-02"
         Packages = @(
             'desktop'
         )

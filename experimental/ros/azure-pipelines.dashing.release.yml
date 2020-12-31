@@ -21,9 +21,10 @@ resources:
     source: vNext/ms-iot.external
     version: '20200902.1'
 
+name: '20201202.0.0.$(Date:yyMMdd)$(Rev:rrrr)'
+
 variables:
-  RELEASE_DATE: $[format('{0:yyMMddHHmm}', pipeline.startTime)]
-  RELEASE_VERSION: '20200722.0.0.$(RELEASE_DATE)'
+  RELEASE_VERSION: $(Build.BuildNumber)
   IGNORED_PACKAGES: 'rttest test_osrf_testing_tools_cpp tlsf cv_bridge camera_calibration_parsers'
   ROS_DISTRO: 'dashing'
   INSTALL_DIR: 'c:\opt\ros\dashing\x64'
