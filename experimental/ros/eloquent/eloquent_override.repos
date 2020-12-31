@@ -23,3 +23,8 @@ repositories:
     type: git
     url: https://github.com/ms-iot/vision_opencv.git
     version: windows/2.1.4
+  rmw_dds_common:
+    type: git
+    url: https://github.com/ros2/rmw_dds_common.git
+    # required by rmw_cyclonedds_cpp
+    version: 1.1.1
