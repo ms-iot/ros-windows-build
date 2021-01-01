@@ -2,7 +2,7 @@ repositories:
   ament_cmake:
     type: git
     url: https://github.com/ament/ament_cmake.git
-    version: 0.7.5
+    version: 0.7.6
   ament_cmake_ros:
     type: git
     url: https://github.com/ros2/ament_cmake_ros.git
@@ -54,15 +54,15 @@ repositories:
   examples:
     type: git
     url: https://github.com/ros2/examples.git
-    version: 0.7.4
+    version: 0.7.5
   fastcdr:
     type: git
     url: https://github.com/eProsima/Fast-CDR.git
-    version: 1.0.11
+    version: 1.0.13
   fastrtps:
     type: git
     url: https://github.com/eProsima/Fast-DDS.git
-    version: 1.8.2
+    version: 1.8.4
   geometry2:
     type: git
     url: https://github.com/ros2/geometry2.git
@@ -94,7 +94,7 @@ repositories:
   launch_ros:
     type: git
     url: https://github.com/ros2/launch_ros.git
-    version: 0.8.8
+    version: 0.8.9
   libyaml_vendor:
     type: git
     url: https://github.com/ros2/libyaml_vendor.git
@@ -118,7 +118,7 @@ repositories:
   osrf_testing_tools_cpp:
     type: git
     url: https://github.com/osrf/osrf_testing_tools_cpp.git
-    version: 1.2.2
+    version: 1.2.3
   pcl_msgs:
     type: git
     url: https://github.com/ros-perception/pcl_msgs.git
@@ -134,7 +134,7 @@ repositories:
   poco_vendor:
     type: git
     url: https://github.com/ros2/poco_vendor.git
-    version: 1.2.0
+    version: 1.2.1
   python_qt_binding:
     type: git
     url: https://github.com/ros-visualization/python_qt_binding.git
@@ -158,7 +158,7 @@ repositories:
   rclcpp:
     type: git
     url: https://github.com/ros2/rclcpp.git
-    version: 0.7.14
+    version: 0.7.15
   rclpy:
     type: git
     url: https://github.com/ros2/rclpy.git
@@ -170,7 +170,7 @@ repositories:
   rcutils:
     type: git
     url: https://github.com/ros2/rcutils.git
-    version: 0.7.5
+    version: 0.7.6
   realtime_support:
     type: git
     url: https://github.com/ros2/realtime_support.git
@@ -186,11 +186,11 @@ repositories:
   rmw_connext:
     type: git
     url: https://github.com/ros2/rmw_connext.git
-    version: 0.7.5
+    version: 0.7.6
   rmw_fastrtps:
     type: git
     url: https://github.com/ros2/rmw_fastrtps.git
-    version: 0.7.7
+    version: 0.7.8
   rmw_implementation:
     type: git
     url: https://github.com/ros2/rmw_implementation.git
@@ -218,7 +218,7 @@ repositories:
   rosidl:
     type: git
     url: https://github.com/ros2/rosidl.git
-    version: 0.7.9
+    version: 0.7.10
   rosidl_dds:
     type: git
     url: https://github.com/ros2/rosidl_dds.git
@@ -230,7 +230,7 @@ repositories:
   rosidl_python:
     type: git
     url: https://github.com/ros2/rosidl_python.git
-    version: 0.7.10
+    version: 0.7.11
   rosidl_typesupport:
     type: git
     url: https://github.com/ros2/rosidl_typesupport.git
@@ -242,7 +242,7 @@ repositories:
   rosidl_typesupport_fastrtps:
     type: git
     url: https://github.com/ros2/rosidl_typesupport_fastrtps.git
-    version: 0.7.1
+    version: 0.7.2
   rosidl_typesupport_opensplice:
     type: git
     url: https://github.com/ros2/rosidl_typesupport_opensplice.git
@@ -266,11 +266,11 @@ repositories:
   rqt_graph:
     type: git
     url: https://github.com/ros-visualization/rqt_graph.git
-    version: 1.0.4
+    version: 1.0.5
   rqt_image_view:
     type: git
     url: https://github.com/ros-visualization/rqt_image_view.git
-    version: 1.0.4
+    version: 1.0.5
   rqt_msg:
     type: git
     url: https://github.com/ros-visualization/rqt_msg.git
@@ -290,7 +290,7 @@ repositories:
   rqt_reconfigure:
     type: git
     url: https://github.com/ros-visualization/rqt_reconfigure.git
-    version: 1.0.4
+    version: 1.0.6
   rqt_service_caller:
     type: git
     url: https://github.com/ros-visualization/rqt_service_caller.git
@@ -314,7 +314,7 @@ repositories:
   rviz:
     type: git
     url: https://github.com/ros2/rviz.git
-    version: 6.1.6
+    version: 6.1.7
   sros2:
     type: git
     url: https://github.com/ros2/sros2.git
@@ -350,7 +350,7 @@ repositories:
   turtlesim:
     type: git
     url: https://github.com/ros/ros_tutorials.git
-    version: 1.0.2
+    version: 1.0.3
   uncrustify_vendor:
     type: git
     url: https://github.com/ament/uncrustify_vendor.git
@@ -365,7 +365,7 @@ repositories:
     version: 2.2.0
   urdfdom:
     type: git
-    url: https://github.com/ros2/urdfdom.git
+    url: https://github.com/ros/urdfdom.git
     version: 2.2.0
   urdfdom_headers:
     type: git
