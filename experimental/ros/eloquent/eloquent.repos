@@ -2,7 +2,7 @@ repositories:
   ament_cmake:
     type: git
     url: https://github.com/ament/ament_cmake.git
-    version: 0.8.2
+    version: 0.8.3
   ament_cmake_ros:
     type: git
     url: https://github.com/ros2/ament_cmake_ros.git
@@ -14,7 +14,7 @@ repositories:
   ament_lint:
     type: git
     url: https://github.com/ament/ament_lint.git
-    version: 0.8.1
+    version: 0.8.2
   ament_package:
     type: git
     url: https://github.com/ament/ament_package.git
@@ -38,7 +38,7 @@ repositories:
   cyclonedds:
     type: git
     url: https://github.com/eclipse-cyclonedds/cyclonedds.git
-    version: 0.5.1
+    version: 0.7.0
   demos:
     type: git
     url: https://github.com/ros2/demos.git
@@ -58,7 +58,7 @@ repositories:
   examples:
     type: git
     url: https://github.com/ros2/examples.git
-    version: 0.8.2
+    version: 0.8.3
   fastcdr:
     type: git
     url: https://github.com/eProsima/Fast-CDR.git
@@ -74,7 +74,7 @@ repositories:
   geometry2:
     type: git
     url: https://github.com/ros2/geometry2.git
-    version: 0.12.5
+    version: 0.12.6
   googletest:
     type: git
     url: https://github.com/ament/googletest.git
@@ -102,11 +102,11 @@ repositories:
   launch:
     type: git
     url: https://github.com/ros2/launch.git
-    version: 0.9.6
+    version: 0.9.7
   launch_ros:
     type: git
     url: https://github.com/ros2/launch_ros.git
-    version: 0.9.5
+    version: 0.9.6
   libyaml_vendor:
     type: git
     url: https://github.com/ros2/libyaml_vendor.git
@@ -142,7 +142,7 @@ repositories:
   pluginlib:
     type: git
     url: https://github.com/ros/pluginlib.git
-    version: 2.4.1
+    version: 2.4.2
   poco_vendor:
     type: git
     url: https://github.com/ros2/poco_vendor.git
@@ -162,7 +162,7 @@ repositories:
   rcl:
     type: git
     url: https://github.com/ros2/rcl.git
-    version: 0.8.4
+    version: 0.8.5
   rcl_interfaces:
     type: git
     url: https://github.com/ros2/rcl_interfaces.git
@@ -174,11 +174,11 @@ repositories:
   rclcpp:
     type: git
     url: https://github.com/ros2/rclcpp.git
-    version: 0.8.4
+    version: 0.8.5
   rclpy:
     type: git
     url: https://github.com/ros2/rclpy.git
-    version: 0.8.4
+    version: 0.8.5
   rcpputils:
     type: git
     url: https://github.com/ros2/rcpputils.git
@@ -186,7 +186,7 @@ repositories:
   rcutils:
     type: git
     url: https://github.com/ros2/rcutils.git
-    version: 0.8.4
+    version: 0.8.5
   realtime_support:
     type: git
     url: https://github.com/ros2/realtime_support.git
@@ -202,15 +202,15 @@ repositories:
   rmw_connext:
     type: git
     url: https://github.com/ros2/rmw_connext.git
-    version: 0.8.1
+    version: 0.8.2
   rmw_cyclonedds:
     type: git
     url: https://github.com/ros2/rmw_cyclonedds.git
-    version: 0.5.1
+    version: 0.7.0
   rmw_fastrtps:
     type: git
     url: https://github.com/ros2/rmw_fastrtps.git
-    version: 0.8.1
+    version: 0.8.2
   rmw_implementation:
     type: git
     url: https://github.com/ros2/rmw_implementation.git
@@ -225,12 +225,12 @@ repositories:
     version: 2.3.1
   ros2_tracing:
     type: git
-    url: https://gitlab.com/micro-ROS/ros_tracing/ros2_tracing.git
+    url: https://gitlab.com/ros-tracing/ros2_tracing.git
     version: 0.2.12
   ros2cli:
     type: git
     url: https://github.com/ros2/ros2cli.git
-    version: 0.8.7
+    version: 0.8.8
   ros_environment:
     type: git
     url: https://github.com/ros/ros_environment.git
@@ -242,7 +242,7 @@ repositories:
   rosidl:
     type: git
     url: https://github.com/ros2/rosidl.git
-    version: 0.8.2
+    version: 0.8.3
   rosidl_dds:
     type: git
     url: https://github.com/ros2/rosidl_dds.git
@@ -254,7 +254,7 @@ repositories:
   rosidl_python:
     type: git
     url: https://github.com/ros2/rosidl_python.git
-    version: 0.8.1
+    version: 0.8.2
   rosidl_runtime_py:
     type: git
     url: https://github.com/ros2/rosidl_runtime_py.git
@@ -262,7 +262,7 @@ repositories:
   rosidl_typesupport:
     type: git
     url: https://github.com/ros2/rosidl_typesupport.git
-    version: 0.8.0
+    version: 0.8.1
   rosidl_typesupport_connext:
     type: git
     url: https://github.com/ros2/rosidl_typesupport_connext.git
@@ -294,11 +294,11 @@ repositories:
   rqt_graph:
     type: git
     url: https://github.com/ros-visualization/rqt_graph.git
-    version: 1.0.4
+    version: 1.0.5
   rqt_image_view:
     type: git
     url: https://github.com/ros-visualization/rqt_image_view.git
-    version: 1.0.4
+    version: 1.0.5
   rqt_msg:
     type: git
     url: https://github.com/ros-visualization/rqt_msg.git
@@ -318,7 +318,7 @@ repositories:
   rqt_reconfigure:
     type: git
     url: https://github.com/ros-visualization/rqt_reconfigure.git
-    version: 1.0.4
+    version: 1.0.6
   rqt_service_caller:
     type: git
     url: https://github.com/ros-visualization/rqt_service_caller.git
@@ -342,7 +342,7 @@ repositories:
   rviz:
     type: git
     url: https://github.com/ros2/rviz.git
-    version: 7.0.5
+    version: 7.0.7
   spdlog_vendor:
     type: git
     url: https://github.com/ros2/spdlog_vendor.git
@@ -354,7 +354,7 @@ repositories:
   teleop_twist_joy:
     type: git
     url: https://github.com/ros2/teleop_twist_joy.git
-    version: 2.2.2
+    version: 2.3.0
   teleop_twist_keyboard:
     type: git
     url: https://github.com/ros2/teleop_twist_keyboard.git
@@ -379,6 +379,10 @@ repositories:
     type: git
     url: https://github.com/ros2/tlsf.git
     version: 0.5.0
+  turtlesim:
+    type: git
+    url: https://github.com/ros/ros_tutorials.git
+    version: 1.1.2
   uncrustify_vendor:
     type: git
     url: https://github.com/ament/uncrustify_vendor.git
@@ -393,7 +397,7 @@ repositories:
     version: 2.2.0
   urdfdom:
     type: git
-    url: https://github.com/ros2/urdfdom.git
+    url: https://github.com/ros/urdfdom.git
     version: 2.2.0
   urdfdom_headers:
     type: git
@@ -402,7 +406,7 @@ repositories:
   variants:
     type: git
     url: https://github.com/ros2/variants.git
-    version: 0.8.4
+    version: 0.8.5
   vision_opencv:
     type: git
     url: https://github.com/ros-perception/vision_opencv.git

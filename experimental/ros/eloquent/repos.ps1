@@ -17,7 +17,7 @@ try
 
     $arguments = @{
         Distro = "eloquent"
-        Version = "64031e38a3d0ed3516e17f97d5ea7696d7dac369" # eloquent/2020-08-13
+        Version = "eloquent/2020-12-12"
         Packages = @(
             'desktop'
         )
