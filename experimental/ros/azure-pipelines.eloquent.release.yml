@@ -1,4 +1,11 @@
-trigger: none
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - experimental/ros/eloquent/*
+    - experimental/ros/azure-pipelines.eloquent.release.yml
 pr:
   branches:
     include:
