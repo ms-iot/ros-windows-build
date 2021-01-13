@@ -16,6 +16,15 @@ xcopy /Y /S /I %~dp0patch %INSTALL_DIR%
 xcopy /Y /S /I %INSTALL_DIR%\share\suitesparse\suitesparse-5.1.2 %INSTALL_DIR%\share\suitesparse
 echo set(SuiteSparse_FOUND TRUE) >> %INSTALL_DIR%\share\suitesparse\suitesparse-config.cmake
 
+:: remove OMPL old files
+DEL /F /Q %INSTALL_DIR%\bin\ompl_benchmark_statistics.py
+RD /S /Q %INSTALL_DIR%\include\ompl
+DEL /F /Q %INSTALL_DIR%\lib\pkgconfig\ompl.pc
+DEL /F /Q %INSTALL_DIR%\lib\ompl.lib
+RD /S /Q %INSTALL_DIR%\share\ompl
+DEL /F /Q %INSTALL_DIR%\share\man\man1\ompl_benchmark_statistics.1
+DEL /F /Q %INSTALL_DIR%\share\man\man1\plannerarena.1
+
 :: bootstrap rosdep
 set ROS_ETC_DIR=%INSTALL_DIR%\etc\ros
 rosdep init

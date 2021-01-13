@@ -123,3 +123,7 @@ repositories:
     type: git
     url: https://github.com/ms-iot/rosserial.git
     version: windows/0.8.0
+  ompl:
+    type: git
+    url: https://github.com/ompl/ompl
+    version: 1.5.1
