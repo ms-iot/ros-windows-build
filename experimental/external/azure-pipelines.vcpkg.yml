@@ -42,7 +42,7 @@ jobs:
     continueOnError: true
     condition: and(succeeded(), eq(variables.USE_PREVIOUS_CACHING, true))
   - script: |
-      git clone https://github.com/ms-iot/vcpkg.git -b windows/739209b51aaa125a41919f23206c110e79023ce8
+      git clone https://github.com/ms-iot/vcpkg.git -b windows/2020.11-1
       call ".\vcpkg\bootstrap-vcpkg.bat"
       cd vcpkg
       vcpkg version
