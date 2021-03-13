@@ -20,7 +20,7 @@ fcl
 ccd
 dlfcn-win32
 curl
-ogre
+ogre[*]
 zeromq
 cppzmq
 tbb
