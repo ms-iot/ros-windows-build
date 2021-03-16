@@ -76,3 +76,8 @@ jobs:
       pathtoPublish: '$(Build.ArtifactStagingDirectory)/binarycaching.zip'
       artifactName: '$(VCPKG_DEFAULT_TRIPLET)-binarycaching'
     continueOnError: true
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: 'd:\bld\ogre'
+      artifactName: '$(VCPKG_DEFAULT_TRIPLET)-log'
+    continueOnError: true
