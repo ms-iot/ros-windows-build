@@ -20,7 +20,7 @@ fcl
 ccd
 dlfcn-win32
 curl
-ogre[*]
+ogre[assimp,freeimage,overlay,zziplib]
 zeromq
 cppzmq
 tbb
