@@ -1,7 +1,0 @@
-# override by ms-iot
-
-# override by ms-iot (Windows Installation)
-- git:
-    local-name: msft_ros_pkgs
-    uri: https://github.com/ms-iot/msft_ros_pkgs
-    version: master
