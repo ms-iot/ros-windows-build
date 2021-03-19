@@ -1,0 +1,26 @@
+jobs:
+- job: "stub_${{ replace(parameters.STUB_PACKAGE_NAME, '-', '_') }}"
+  displayName: 'Create Stub Package ${{ parameters.STUB_PACKAGE_NAME }}'
+  pool:
+    vmImage: 'windows-2019'
+  variables:
+    ROS_DISTRO: '${{ parameters.ROS_DISTRO }}'
+    RELEASE_VERSION: '${{ parameters.RELEASE_VERSION }}'
+    REAL_PACKAGE_NAME: '${{ parameters.REAL_PACKAGE_NAME }}'
+    STUB_PACKAGE_NAME: '${{ parameters.STUB_PACKAGE_NAME }}'
+  timeoutInMinutes: 360
+  workspace:
+    clean: all
+  steps:
+  - powershell: |
+      .\ros\chocolatey\buildStub.ps1 -PackageName "$Env:STUB_PACKAGE_NAME" -PackageVersion "$Env:RELEASE_VERSION" -DepPackageName "$Env:REAL_PACKAGE_NAME" -DepPackageVersion "$Env:RELEASE_VERSION"
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '.\ros\chocolatey\output'
+      artifactName: '$(ROS_DISTRO)-chocolatey'
+  - powershell: |
+      .\ros\chocolatey\buildStub.ps1 -PackageName "$Env:STUB_PACKAGE_NAME" -PackageVersion "$Env:RELEASE_VERSION-pre" -DepPackageName "$Env:REAL_PACKAGE_NAME" -DepPackageVersion "$Env:RELEASE_VERSION"
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '.\ros\chocolatey\output'
+      artifactName: '$(ROS_DISTRO)-chocolatey-prerelease'
