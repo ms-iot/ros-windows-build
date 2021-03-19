@@ -18,7 +18,7 @@ resources:
   pipelines:
   - pipeline: ms-iot.python
     source: vNext/ms-iot.python
-    version: '20200926.1'
+    version: '20210319.1'
   - pipeline: ms-iot.vcpkg
     source: vNext/ms-iot.vcpkg
     version: '20201223.3'
