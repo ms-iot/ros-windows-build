@@ -23,6 +23,9 @@ jobs:
       foxy:
         INSTALL_DIR: 'c:\opt\ros\foxy\x64'
         DISTRO_NAME: 'foxy'
+      rolling:
+        INSTALL_DIR: 'c:\opt\ros\rolling\x64'
+        DISTRO_NAME: 'rolling'
   workspace:
     clean: all
   steps:
