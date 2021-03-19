@@ -18,7 +18,7 @@ resources:
   pipelines:
   - pipeline: ms-iot.python
     source: vNext/ms-iot.python
-    version: '20200926.1'
+    version: '20210319.1'
   - pipeline: ms-iot.vcpkg
     source: vNext/ms-iot.vcpkg
     version: '20201223.3'
@@ -48,6 +48,10 @@ jobs:
       foxy:
         INSTALL_DIR: 'c:\opt\ros\foxy\x64'
         DISTRO_NAME: 'foxy'
+        VCPKG_DEFAULT_TRIPLET: 'x64-windows'
+      rolling:
+        INSTALL_DIR: 'c:\opt\ros\rolling\x64'
+        DISTRO_NAME: 'rolling'
         VCPKG_DEFAULT_TRIPLET: 'x64-windows'
   workspace:
     clean: all
