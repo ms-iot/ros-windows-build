@@ -1,5 +1,22 @@
-trigger: none
-pr: none
+trigger:
+  batch: true
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - external/azure.pipelines.python.yml
+    - external/bootstrapPython.ps1
+    - external/wheels/*
+pr:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - external/azure.pipelines.python.yml
+    - external/bootstrapPython.ps1
+    - external/wheels/*
 
 jobs:
 - job: Build
@@ -23,6 +40,9 @@ jobs:
       foxy:
         INSTALL_DIR: 'c:\opt\ros\foxy\x64'
         DISTRO_NAME: 'foxy'
+      rolling:
+        INSTALL_DIR: 'c:\opt\ros\rolling\x64'
+        DISTRO_NAME: 'rolling'
   workspace:
     clean: all
   steps:
