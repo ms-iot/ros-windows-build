@@ -1,5 +1,22 @@
-trigger: none
-pr: none
+trigger:
+  batch: true
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - external/azure.pipelines.python.yml
+    - external/bootstrapPython.ps1
+    - external/wheels/*
+pr:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - external/azure.pipelines.python.yml
+    - external/bootstrapPython.ps1
+    - external/wheels/*
 
 jobs:
 - job: Build
