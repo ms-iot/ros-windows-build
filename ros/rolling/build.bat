@@ -1,7 +1,7 @@
 @echo OFF
 
 set ROS_VERSION=2
-set "IGNORED_PACKAGES=pybind11_vendor"
+set "IGNORED_PACKAGES=rttest test_osrf_testing_tools_cpp tlsf pybind11_vendor"
 
 colcon build ^
     --merge-install ^
