@@ -19,3 +19,7 @@ repositories:
     type: git
     url: https://github.com/ms-iot/rviz.git
     version: windows/8.3.1
+  yaml_cpp_vendor:
+    type: git
+    url: https://github.com/ros2/yaml_cpp_vendor.git
+    version: b11d00fbbe2cd8c8888f8c11ff172e84fdea9adc
