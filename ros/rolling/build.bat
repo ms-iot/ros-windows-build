@@ -1,7 +1,7 @@
 @echo OFF
 
 set ROS_VERSION=2
-set "IGNORED_PACKAGES=rttest test_osrf_testing_tools_cpp tlsf pybind11_vendor camera_calibration_parsers rosbag2_storage pcl_conversions"
+set "IGNORED_PACKAGES=rttest test_osrf_testing_tools_cpp tlsf pybind11_vendor camera_calibration_parsers rosbag2_storage pcl_conversions joy_linux"
 
 colcon build ^
     --merge-install ^
