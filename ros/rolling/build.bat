@@ -1,7 +1,7 @@
 @echo OFF
 
 set ROS_VERSION=2
-set "IGNORED_PACKAGES=rttest test_osrf_testing_tools_cpp tlsf pybind11_vendor camera_calibration_parsers joy_linux wiimote spacenav"
+set "IGNORED_PACKAGES=rttest test_osrf_testing_tools_cpp tlsf pybind11_vendor joy_linux wiimote spacenav"
 
 colcon build ^
     --merge-install ^
