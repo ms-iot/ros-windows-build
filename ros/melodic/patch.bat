@@ -9,6 +9,12 @@ python -m pip install -U rosinstall_generator
 python -m pip install -U rosinstall
 python -m pip install -U git+https://github.com/ms-iot/rosdep@windows/0.19.0
 
+:: lock the ninja version to 1.8.2
+:: since Visual Studio 16.9, the inbox Ninja has been upgraded to v1.10
+:: and it appears to break many legacy code.
+:: https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes#summary-of-whats-new-in-this-release-of-visual-studio-2019-version-1690
+python -m pip install -U ninja==1.8.2
+
 copy /Y %INSTALL_DIR%\tools\protobuf\protoc.exe %INSTALL_DIR%\bin
 xcopy /Y /S /I %~dp0patch %INSTALL_DIR%
 
