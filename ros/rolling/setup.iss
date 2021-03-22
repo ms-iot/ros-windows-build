@@ -3,14 +3,14 @@
 
 #include "version.inc"
 
-#define MyAppName "Robot Operating System 2 (ROS 2) rolling Fitzroy"
+#define MyAppName "Robot Operating System 2 (ROS 2) Rolling Ridley"
 #define MyAppPublisher "https://aka.ms/ros"
 #define MyAppURL "https://aka.ms/ros"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{6C002874-2E97-4A9B-A35D-F7FAA02BE572}
+AppId={{bb16c929-2ecc-465d-b973-703b3392e073}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}

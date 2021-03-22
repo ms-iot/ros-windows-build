@@ -41,6 +41,6 @@ try
 }
 catch
 {
-  Write-Warning "Failed to generate Foxy repos."
+  Write-Warning "Failed to generate Rolling repos."
   throw
 }
