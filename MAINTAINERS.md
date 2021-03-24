@@ -2,6 +2,27 @@
 
 This document is to help the release maintainer to gain the required knowledge and understand the activities for a new release.
 
+- [ROS Basic Knowledge](#ros-basic-knowledge)
+- [Supported Matrix for ROS on Windows](#supported-matrix-for-ros-on-windows)
+- [Release Version Scheme](#release-version-scheme)
+- [Working with a New Release](#working-with-a-new-release)
+  * [Open Robotics Release Sync](#open-robotics-release-sync)
+  * [Sorting Out Release Sync Candidates](#sorting-out-release-sync-candidates)
+  * [Building the Pre-release for Validation](#building-the-pre-release-for-validation)
+  * [Distro-specific Override Repos File](#distro-specific-override-repos-file)
+  * [Publish Pre-release Builds](#publish-pre-release-builds)
+  * [Publish Release Builds](#publish-release-builds)
+  * [Available Test Automations](#available-test-automations)
+- [Onboarding a New Distribution](#onboarding-a-new-distribution)
+  * [Creating a new distribution in the matrix of the external dependency build pipelines](#creating-a-new-distribution-in-the-matrix-of-the-external-dependency-build-pipelines)
+  * [Creating a new distribution build pipeline](#creating-a-new-distribution-build-pipeline)
+- [Refreshing External Dependency](#refreshing-external-dependency)
+- [Upstream Override Changes](#upstream-override-changes)
+- [Examples](#examples)
+  * [2020-10-15 Patch Release](#2020-10-15-patch-release)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 ## ROS Basic Knowledge
 
 First, let's start from the required ROS knowledge for a release.
@@ -136,15 +157,75 @@ In additions, once a release is out, there are more activities are required:
 
 ## Onboarding a New Distribution
 
-<TBD>
+To bootstrap a new distribution, the steps can break into the following activities:
+
+  1. Creating a new distribution in the matrix of the external dependency build pipelines.
+     As mentioned earlier, each distribution has its own dependency requirement.
+     The requirement is captured by our external dependency build pipelines.
+     Each distribution has its own copy of the dependencies.
+
+  2. Creating a new distribution build pipeline.
+     Once the satisfied dependencies are bootstrapped, move on creating the build pipeline for the new distribution.
+     Most of this activity is to use the existing pipeline as a template to operate on.
+     Details are covered in the later sections.
+
+### Creating a new distribution in the matrix of the external dependency build pipelines
+
+To do such, two pull requests are required to finish this activity:
+
+  1. Adding the new distribution name and expected location to the Python dependency build pipeline.
+     One can follow [this pull request](https://github.com/ms-iot/ros-windows-build/pull/187), where we add new distro information to the build matrix.
+     After the pull request is merged, you will need to wait for the corresponding build before proceeding.
+
+  2. Adding the new distribution name and the new Python build reference to the external build pipeline.
+     One can follow [this pull request](https://github.com/ms-iot/ros-windows-build/pull/186), where we add new distro information and update the Python build number produced by the step 1.
+     After the pull request is merged, you will need to wait for the corresponding build before proceeding.
+
+### Creating a new distribution build pipeline
+
+To do such, one pull request is required and the activities can break into:
+
+> An example pull request can be found [here](https://github.com/ms-iot/ros-windows-build/pull/185).
+
+  1. Copy and rename `ros/azure-pipelines.old.release.yml` into `ros/azure-pipelines.new.release.yml`.
+  2. Copy and rename `ros/old` folder into `ros/new`.
+  3. Replace the distrobution name in the above copied files.
+  4. Update `ros/new/repos.ps1` and replace the target rosdistro branch with `new/xxxx-xx-xx`.
+  5. Run `ros/new/repos.ps1` to generate distro repos files.
+  6. Update version string in `ros/azure-pipelines.new.release.yml`.
+  7. Generate new GUID and replace it as new AppId in `ros/new/setup.iss`.
+
+After those steps, a new build pipeline definition is now ready to use.
+
+> As the first time bootstrap, it is recommanded to start your composition small and grow it later.
+Edit `ros/new/repos.ps1`, modify `Packages`, and run it again to re-generate new repos files.
+
+Once a satisfied composition is built, now one can merge the pull request and the corresponding build should kick off automatically.
 
 ## Refreshing External Dependency
 
 <TBD>
 
+## Upstream Override Changes
+
+As more releases are exercised, it is common to see a number of cumulative patches in override repos file.
+One responsibility of the release maintainer is to keep the list as short as possible.
+Here we talk about the principles and guides for the release maintainers.
+
+Depending on the override types, there are different activities.
+
+  * **Cherry-picks for Upstream Commits:**
+    In such case, the repository is redirected to a commit which is not in a release tag yet.
+    Be polite and respectful to friendly remind the package maintainer and ask for a new release (of the ROS package) if possible.
+
+  * **Override by ms-iot forks:**
+    In such case, usually it means there are larger patches to ROS packages.
+    Be consistent to carve out time to prepare the pull requests to the upstream repositories.
+    And keep that your changes portable to other platforms and platform-specific delta down to the minimum.
+
 ## Examples
 
-## 2020-10-15 Patch Release
+### 2020-10-15 Patch Release
 
 This is a case where a bugfix is not yet included in a released package.
 The [fix](https://github.com/ros-visualization/rviz/pull/1528) is not yet included in RViz releases (`1.13.13`/Melodic and `1.14.1`/Noetic).
@@ -179,20 +260,3 @@ Hereby, the process can be simplified into:
 6. Approve the releases.
 
     Once the build is verified, one can approve the release gate and make it available publicly from https://aka.ms/ros/public.
-
-## Upstream Override Changes
-
-As more releases are exercised, it is common to see a number of cumulative patches in override repos file.
-One responsibility of the release maintainer is to keep the list as short as possible.
-Here we talk about the principles and guides for the release maintainers.
-
-Depending on the override types, there are different activities.
-
-  * **Cherry-picks for Upstream Commits:**
-    In such case, the repository is redirected to a commit which is not in a release tag yet.
-    Be polite and respectful to friendly remind the package maintainer and ask for a new release (of the ROS package) if possible.
-
-  * **Override by ms-iot forks:**
-    In such case, usually it means there are larger patches to ROS packages.
-    Be consistent to carve out time to prepare the pull requests to the upstream repositories.
-    And keep that your changes portable to other platforms and platform-specific delta down to the minimum.
