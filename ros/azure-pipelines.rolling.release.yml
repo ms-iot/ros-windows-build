@@ -75,6 +75,7 @@ stages:
         vcs import --force --shallow --recursive src < ..\ros\rolling\rolling.repos
         vcs import --force --shallow --recursive src < ..\ros\rolling\rolling_override.repos
         xcopy /Y /S /I ..\ros\src_patch src
+        xcopy /Y /S /I ..\ros\%ROS_DISTRO%\src src
         call ..\ros\rolling\build.bat
       displayName: 'build rolling'
     - task: PublishBuildArtifacts@1
