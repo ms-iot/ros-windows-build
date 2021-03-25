@@ -13,7 +13,7 @@ else()
   set(ROS_DISTRO "rolling")
 endif()
 
-set(ROS_ETC_DIR "${CMAKE_INSTALL_PREFIX}/etc")
+set(ROS_ETC_DIR "${CMAKE_INSTALL_PREFIX}/etc/ros")
 file(TO_NATIVE_PATH "${ROS_ETC_DIR}" ROS_ETC_DIR)
 
 set(
