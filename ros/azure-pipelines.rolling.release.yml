@@ -64,7 +64,7 @@ stages:
         DEL /F /Q %INSTALL_DIR%\lib\pkgconfig\orocos_kdl.pc
       displayName: 'Remove orocos-kdl'
     - script: |
-        xcopy /Y /S /I .\ros\%ROS_DISTRO%\pre-patch %INSTALL_DIR%
+        call %Build_SourcesDirectory%\ros\%ROS_DISTRO%\patch.bat
       displayName: 'Pre-patch the install directory'
     - script: |
         call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"

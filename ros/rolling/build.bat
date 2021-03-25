@@ -21,3 +21,8 @@ if errorlevel 1 exit 1
 :: fix srdfdom.dll location.
 move /Y %INSTALL_DIR%\lib\*.dll %INSTALL_DIR%\bin
 if errorlevel 1 exit 1
+
+:: run rosdep check
+set ROS_ETC_DIR=%INSTALL_DIR%\etc\ros
+rosdep check --from-paths "%INSTALL_DIR%\share" --ignore-src 2>&1
+exit 0
