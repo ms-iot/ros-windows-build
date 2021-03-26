@@ -2,7 +2,7 @@
   <name>msft_ros2_env</name>
   <version>0.0.1</version>
   <description>The package provides the environment variables useful for ROS on Windows.</description>
-  <maintainer email="seanyen@microsoft.com">Sean Yen</maintainer>
+  <maintainer email="riotsquad@microsoft.com">riotsquad</maintainer>
   <license>MIT</license>
 
   <url type="repository">https://github.com/ms-iot/ros-windows-build</url>
