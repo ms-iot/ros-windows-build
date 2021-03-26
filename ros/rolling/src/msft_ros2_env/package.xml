@@ -1,0 +1,15 @@
+<package format="2">
+  <name>msft_ros2_env</name>
+  <version>0.0.1</version>
+  <description>The package provides the environment variables useful for ROS on Windows.</description>
+  <maintainer email="riotsquad@microsoft.com">riotsquad</maintainer>
+  <license>MIT</license>
+
+  <url type="repository">https://github.com/ms-iot/ros-windows-build</url>
+
+  <buildtool_depend>ament_cmake_core</buildtool_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
