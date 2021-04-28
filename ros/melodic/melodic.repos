@@ -30,7 +30,7 @@ repositories:
   common_msgs:
     type: git
     url: https://github.com/ros/common_msgs.git
-    version: 1.12.7
+    version: 1.12.8
   common_tutorials:
     type: git
     url: https://github.com/ros/common_tutorials.git
@@ -166,7 +166,7 @@ repositories:
   laser_geometry:
     type: git
     url: https://github.com/ros-perception/laser_geometry.git
-    version: 1.6.5
+    version: 1.6.7
   laser_pipeline:
     type: git
     url: https://github.com/ros-perception/laser_pipeline.git
@@ -302,7 +302,7 @@ repositories:
   ros_controllers:
     type: git
     url: https://github.com/ros-controls/ros_controllers.git
-    version: 0.17.1
+    version: 0.17.2
   ros_environment:
     type: git
     url: https://github.com/ros/ros_environment.git
@@ -366,7 +366,7 @@ repositories:
   rqt_bag:
     type: git
     url: https://github.com/ros-visualization/rqt_bag.git
-    version: 0.5.0
+    version: 0.5.1
   rqt_common_plugins:
     type: git
     url: https://github.com/ros-visualization/rqt_common_plugins.git
