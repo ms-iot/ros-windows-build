@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [20210317.0.0]
-- galactic release sync to [2021.05.23](https://github.com/ros2/ros2/blob/release-galactic-20210523/ros2.repos)
+- galactic release sync to [2021.05.23](https://github.com/ros2/ros2/blob/galactic-release/ros2.repos)
 - Enabled packages:
   - desktop
 - Libraries and Python:
