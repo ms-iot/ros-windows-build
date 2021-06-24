@@ -40,6 +40,9 @@ jobs:
       foxy:
         INSTALL_DIR: 'c:\opt\ros\foxy\x64'
         DISTRO_NAME: 'foxy'
+      galactic:
+        INSTALL_DIR: 'c:\opt\ros\galactic\x64'
+        DISTRO_NAME: 'galactic'
       rolling:
         INSTALL_DIR: 'c:\opt\ros\rolling\x64'
         DISTRO_NAME: 'rolling'
