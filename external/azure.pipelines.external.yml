@@ -49,6 +49,10 @@ jobs:
         INSTALL_DIR: 'c:\opt\ros\foxy\x64'
         DISTRO_NAME: 'foxy'
         VCPKG_DEFAULT_TRIPLET: 'x64-windows'
+      galactic:
+        INSTALL_DIR: 'c:\opt\ros\galactic\x64'
+        DISTRO_NAME: 'galactic'
+        VCPKG_DEFAULT_TRIPLET: 'x64-windows'
       rolling:
         INSTALL_DIR: 'c:\opt\ros\rolling\x64'
         DISTRO_NAME: 'rolling'
