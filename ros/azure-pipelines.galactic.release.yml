@@ -20,7 +20,7 @@ resources:
   pipelines:
   - pipeline: ms-iot.external
     source: vNext/ms-iot.external
-    version: '20210706.2'
+    version: '20210319.3'
 
 name: '20210317.0.0.$(Date:yyMMdd)$(Rev:rrrr)'
 
