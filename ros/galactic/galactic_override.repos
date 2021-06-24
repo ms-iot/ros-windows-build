@@ -1,0 +1,21 @@
+repositories:
+  vision_opencv:
+    type: git
+    url: https://github.com/ms-iot/vision_opencv.git
+    version: windows/2.2.1
+  rviz:
+    type: git
+    url: https://github.com/ms-iot/rviz.git
+    version: windows/8.3.1
+  yaml_cpp_vendor:
+    type: git
+    url: https://github.com/ros2/yaml_cpp_vendor.git
+    version: b11d00fbbe2cd8c8888f8c11ff172e84fdea9adc
+  pcl_msgs:
+    type: git
+    url: https://github.com/ros-perception/pcl_msgs.git
+    version: 1.0.0
+  geometry2:
+    type: git
+    url: https://github.com/ms-iot/geometry2.git
+    version: windows/0.16.0
