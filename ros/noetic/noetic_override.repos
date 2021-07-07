@@ -96,3 +96,7 @@ repositories:
     type: git
     url: https://github.com/ms-iot/rosserial.git
     version: windows/0.9.1
+  joystick_drivers:
+    type: git
+    url: https://github.com/ms-iot/joystick_drivers.git
+    version: init_windows
