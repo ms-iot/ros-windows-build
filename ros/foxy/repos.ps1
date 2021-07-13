@@ -17,7 +17,7 @@ try
 
     $arguments = @{
         Distro = "foxy"
-        Version = "foxy/2020-12-11"
+        Version = "foxy/2021-06-30"
         Packages = @(
             'navigation2',
             'desktop',
