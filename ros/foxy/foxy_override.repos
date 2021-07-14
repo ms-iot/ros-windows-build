@@ -18,7 +18,7 @@ repositories:
   rviz:
     type: git
     url: https://github.com/ms-iot/rviz.git
-    version: windows/8.2.1
+    version: windows/8.2.2
   yaml_cpp_vendor:
     type: git
     url: https://github.com/ros2/yaml_cpp_vendor.git
@@ -71,3 +71,7 @@ repositories:
     type: git
     url: https://github.com/ms-iot/rosbag2.git
     version: windows/0.3.7
+  joystick_drivers:
+    type: git
+    url: https://github.com/ms-iot/joystick_drivers.git
+    version: windows/3.0.0
