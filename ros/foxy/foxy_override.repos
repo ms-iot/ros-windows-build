@@ -1,16 +1,4 @@
 repositories:
-  fastcdr:
-    type: git
-    url: https://github.com/eProsima/Fast-CDR.git
-    version: v1.0.13
-  fastrtps:
-    type: git
-    url: https://github.com/eProsima/Fast-DDS.git
-    version: v2.0.2
-  foonathan_memory_vendor:
-    type: git
-    url: https://github.com/eProsima/foonathan_memory_vendor.git
-    version: v1.0.0
   geometry2:
     type: git
     url: https://github.com/ms-iot/geometry2.git
@@ -49,25 +37,25 @@ repositories:
     version: windows/2.1.0
   ros2_control:
     type: git
-    url: https://github.com/ms-iot/ros2_control.git
-    version: windows/2c3aad1cb8ad4d23925bceeb5c26e22d6cf859ef
+    url: https://github.com/ros-controls/ros2_control.git
+    version: 8018f45e291801408ceac955d04504cb011e4f23
   ros2_controllers:
     type: git
     url: https://github.com/ros-controls/ros2_controllers.git
-    version: 8587e079490acdd0fabeb2742a3bec3bf551bbc5
-  fake_joint:
-    type: git
-    url: https://github.com/JafarAbdi/fake_joint.git
-    version: foxy
+    version: 0.4.1
   geometric_shapes:
     type: git
-    url: https://github.com/ms-iot/geometric_shapes.git
-    version: windows/2.0.0
-  random_numbers:
-    type: git
-    url: https://github.com/ms-iot/random_numbers.git
-    version: windows/2.0.0
+    url: https://github.com/ros-planning/geometric_shapes.git
+    version: 2e809db4377ed99f598480e4b3b48471ff3c0667
   warehouse_ros:
     type: git
-    url: https://github.com/ms-iot/warehouse_ros.git
-    version: windows/2.0.0
+    url: https://github.com/ros-planning/warehouse_ros.git
+    version: 2.0.3
+  control_toolbox:
+    type: git
+    url: https://github.com/ros-controls/control_toolbox.git
+    version: 2.0.2
+  rosbag2:
+    type: git
+    url: https://github.com/ms-iot/rosbag2.git
+    version: windows/0.3.7
