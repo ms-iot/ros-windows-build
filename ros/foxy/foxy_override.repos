@@ -31,10 +31,6 @@ repositories:
     type: git
     url: https://github.com/ms-iot/cartographer_ros.git
     version: 1.0.9001/windows
-  gazebo_ros_pkgs:
-    type: git
-    url: https://github.com/ms-iot/gazebo_ros_pkgs.git
-    version: windows/3.5.3
   navigation2:
     type: git
     url: https://github.com/ms-iot/navigation2.git
