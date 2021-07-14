@@ -14,7 +14,7 @@ repositories:
   geometry2:
     type: git
     url: https://github.com/ms-iot/geometry2.git
-    version: windows/0.13.9
+    version: windows/0.13.10
   rviz:
     type: git
     url: https://github.com/ms-iot/rviz.git
@@ -26,7 +26,7 @@ repositories:
   behaviortree_cpp:
     type: git
     url: https://github.com/ms-iot/BehaviorTree.CPP.git
-    version: windows/3.5.3
+    version: windows/3.5.6
   cartographer_ros:
     type: git
     url: https://github.com/ms-iot/cartographer_ros.git
@@ -34,7 +34,7 @@ repositories:
   gazebo_ros_pkgs:
     type: git
     url: https://github.com/ms-iot/gazebo_ros_pkgs.git
-    version: windows/3.5.0
+    version: windows/3.5.3
   navigation2:
     type: git
     url: https://github.com/ms-iot/navigation2.git
