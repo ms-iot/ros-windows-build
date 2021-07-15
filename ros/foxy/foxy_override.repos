@@ -42,7 +42,7 @@ repositories:
   moveit:
     type: git
     url: https://github.com/ms-iot/moveit2.git
-    version: windows/2.1.0
+    version: master
   ros2_control:
     type: git
     url: https://github.com/ros-controls/ros2_control.git
