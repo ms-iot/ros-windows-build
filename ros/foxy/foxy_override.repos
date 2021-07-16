@@ -34,7 +34,7 @@ repositories:
   navigation2:
     type: git
     url: https://github.com/ms-iot/navigation2.git
-    version: windows/0.4.7
+    version: windows/0.4.5
   vision_opencv:
     type: git
     url: https://github.com/ms-iot/vision_opencv.git
