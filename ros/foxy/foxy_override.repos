@@ -71,3 +71,7 @@ repositories:
     type: git
     url: https://github.com/ms-iot/joystick_drivers.git
     version: windows/3.0.0
+  srdfdom:
+    type: git
+    url: https://github.com/ros-planning/srdfdom.git
+    version: cadab16ca1ecf93e29ecb5b8e14505ccae080ebb
