@@ -1,7 +1,7 @@
 @echo OFF
 
 set ROS_VERSION=2
-set "IGNORED_PACKAGES=rttest test_osrf_testing_tools_cpp tlsf moveit_servo"
+set "IGNORED_PACKAGES=rttest test_osrf_testing_tools_cpp tlsf moveit_servo gripper_controllers"
 
 colcon build ^
     --merge-install ^
