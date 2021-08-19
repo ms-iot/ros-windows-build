@@ -41,8 +41,8 @@ repositories:
     version: windows/2.2.1
   moveit:
     type: git
-    url: https://github.com/ms-iot/moveit2.git
-    version: pr_530
+    url: https://github.com/ros-planning/moveit2.git
+    version: cdd25871fe0519f1869e42490c1f801e55d1e8db
   ros2_control:
     type: git
     url: https://github.com/ros-controls/ros2_control.git

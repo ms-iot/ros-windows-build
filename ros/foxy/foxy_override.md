@@ -14,7 +14,7 @@ All notable package overrides will be explained and documented here.
 | cartographer_ros |Not included |     N/A      |https://github.com/ms-iot/cartographer_ros.git|     1.0.9001/windows    | Not included in foxy.repos, its being included because its universally used|
 | navigation2 |Not included |     N/A      |https://github.com/ms-iot/navigation2.git|     windows/0.4.5    |Fixing tests and port fixes including type changes and making sleep functionality compatible with windows|
 | vision_opencv |https://github.com/ros-perception/vision_opencv.git |  2.2.1   |https://github.com/ms-iot/vision_opencv.git|     windows/2.2.1    |Fixes for windows such as install location and boost version |
-| moveit |https://github.com/ros-planning/moveit2.git |  2.1.4   |https://github.com/ms-iot/moveit2.git|     windows/2.1.0    |Window fixes including adding visibility headers |
+| moveit |https://github.com/ros-planning/moveit2.git |  2.1.4   |https://github.com/ros-planning/moveit2.git|  cdd25871fe0519f1869e42490c1f801e55d1e8db  |Window fixes are upstream but not in latest tag. |
 | ros2_control |Not included |  N/A  |https://github.com/ros-controls/ros2_control.git|  8018f45e291801408ceac955d04504cb011e4f23    |Not included in foxy.repos, this is the latest commit on master |
 | ros2_controllers |Not included |  N/A  |https://github.com/ros-controls/ros2_controllers.git|  0.4.1    |Not in foxy.repos, 0.4.1 is latest version and has Windows fixes |
 | geometric_shapes |https://github.com/ros-planning/geometric_shapes.git |  2.1.0  |https://github.com/ros-planning/geometric_shapes.git|  2e809db4377ed99f598480e4b3b48471ff3c0667    |Windows fix is upstream but not included in version 2.1.0, override is pinned to a later commit until next release|
