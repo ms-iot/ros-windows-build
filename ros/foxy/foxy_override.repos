@@ -55,6 +55,10 @@ repositories:
     type: git
     url: https://github.com/ros-planning/geometric_shapes.git
     version: 2e809db4377ed99f598480e4b3b48471ff3c0667
+  warehouse_ros:
+    type: git
+    url: https://github.com/ros-planning/warehouse_ros.git
+    version: 2.0.3
   control_toolbox:
     type: git
     url: https://github.com/ros-controls/control_toolbox.git
