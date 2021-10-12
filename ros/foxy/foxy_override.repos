@@ -75,3 +75,11 @@ repositories:
     type: git
     url: https://github.com/ros-planning/srdfdom.git
     version: cadab16ca1ecf93e29ecb5b8e14505ccae080ebb
+  image_transport_plugins:
+    type: git
+    url: https://github.com/ms-iot/image_transport_plugins.git
+    version: c48eb117b38ea6487ee9657304fcfce01df29f74
+  diagnostics:
+    type: git
+    url: https://github.com/ros/diagnostics.git
+    version: foxy/2.0.8

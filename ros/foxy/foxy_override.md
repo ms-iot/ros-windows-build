@@ -24,3 +24,4 @@ All notable package overrides will be explained and documented here.
 | rosbag2 |https://github.com/ros2/rosbag2.git |  0.3.7  |https://github.com/ms-iot/rosbag2.git|  windows/0.3.7  |Replaced patch with git apply: Changed patch to git apply to build on Windows, ms-iot/rosbag2@03271a8 (github.com) |
 | joystick_drivers |https://github.com/ros-drivers/joystick_drivers.git |  3.0.0  |https://github.com/ms-iot/joystick_drivers.git|  windows/3.0.0  |Added colcon ignore for wiimote package because of the missing bluetooth dependency |
 | srdfdom | https://github.com/ros-planning/srdfdom.git | 2.0.2 | https://github.com/ros-planning/srdfdom.git | cadab16ca1ecf93e29ecb5b8e14505ccae080ebb | Windows fixes not in 2.0.2 can remove override in future release |
+| image_transport_plugins | Not included | Not included | https://github.com/ms-iot/image_transport_plugins.git | c48eb117b38ea6487ee9657304fcfce01df29f74 | Contains Window fixes that have not been upstreamed yet |
