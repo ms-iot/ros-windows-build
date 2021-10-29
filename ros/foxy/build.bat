@@ -1,5 +1,7 @@
 @echo OFF
 
+xcopy /Y /S /I %Build_SourcesDirectory%\ros\foxy\src src
+
 set ROS_VERSION=2
 set "IGNORED_PACKAGES=rttest test_osrf_testing_tools_cpp tlsf moveit_servo gripper_controllers"
 

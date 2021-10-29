@@ -22,7 +22,7 @@ resources:
     source: vNext/ms-iot.external
     version: '20201224.3'
 
-name: '20201211.0.0.$(Date:yyMMdd)$(Rev:rrrr)'
+name: '20211105.0.0.$(Date:yyMMdd)$(Rev:rrrr)'
 
 variables:
   RELEASE_VERSION: $(Build.BuildNumber)
@@ -63,6 +63,9 @@ stages:
         DEL /F /Q %INSTALL_DIR%\lib\pkgconfig\orocos-kdl.pc
         DEL /F /Q %INSTALL_DIR%\lib\pkgconfig\orocos_kdl.pc
       displayName: 'Remove orocos-kdl'
+    - script: |
+        call %Build_SourcesDirectory%\ros\foxy\patch.bat
+      displayName: 'Pre-patch the install directory'
     - script: |
         call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
         set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
