@@ -78,7 +78,7 @@ repositories:
   image_transport_plugins:
     type: git
     url: https://github.com/ms-iot/image_transport_plugins.git
-    version: c48eb117b38ea6487ee9657304fcfce01df29f74
+    version: foxy-devel
   diagnostics:
     type: git
     url: https://github.com/ros/diagnostics.git
