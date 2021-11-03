@@ -20,6 +20,8 @@ colcon build ^
     2>&1
 if errorlevel 1 exit 1
 
+xcopy /Y /S /I %~dp0patch %INSTALL_DIR%
+
 :: fix srdfdom.dll location.
 move /Y %INSTALL_DIR%\lib\*.dll %INSTALL_DIR%\bin
 if errorlevel 1 exit 1
