@@ -8,6 +8,8 @@ DEL /F /Q %INSTALL_DIR%\bin\python38.dll
 :: https://github.com/pytest-dev/pytest-rerunfailures/issues/128
 pip install pytest==6.0.0
 
+xcopy /Y /S /I %~dp0patch %INSTALL_DIR%
+
 :: bootstrap vcpkg
 powershell .\ros\%ROS_DISTRO%\vcpkg.ps1 -InstallDir "%INSTALL_DIR%"
 if errorlevel 1 exit 1
