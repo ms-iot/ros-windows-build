@@ -14,11 +14,11 @@ repositories:
   geometry2:
     type: git
     url: https://github.com/ms-iot/geometry2.git
-    version: windows/0.13.10
+    version: windows/0.13.11
   rviz:
     type: git
     url: https://github.com/ms-iot/rviz.git
-    version: windows/8.2.2
+    version: windows/8.2.3
   yaml_cpp_vendor:
     type: git
     url: https://github.com/ros2/yaml_cpp_vendor.git
@@ -42,23 +42,23 @@ repositories:
   moveit:
     type: git
     url: https://github.com/ros-planning/moveit2.git
-    version: cdd25871fe0519f1869e42490c1f801e55d1e8db
+    version: ed844d4b46f70ed6e97d0c1f971ab2b9a45f156d
+  moveit_resources:
+    type: git
+    url: https://github.com/ros-planning/moveit_resources.git
+    version: 2.0.3
   ros2_control:
     type: git
     url: https://github.com/ros-controls/ros2_control.git
-    version: 8018f45e291801408ceac955d04504cb011e4f23
+    version: 0.8.1
   ros2_controllers:
     type: git
     url: https://github.com/ros-controls/ros2_controllers.git
-    version: 0.4.1
+    version: 0.5.1
   geometric_shapes:
     type: git
     url: https://github.com/ros-planning/geometric_shapes.git
     version: 2e809db4377ed99f598480e4b3b48471ff3c0667
-  warehouse_ros:
-    type: git
-    url: https://github.com/ros-planning/warehouse_ros.git
-    version: 2.0.3
   control_toolbox:
     type: git
     url: https://github.com/ros-controls/control_toolbox.git
@@ -66,7 +66,7 @@ repositories:
   rosbag2:
     type: git
     url: https://github.com/ms-iot/rosbag2.git
-    version: windows/0.3.7
+    version: windows/0.3.8
   joystick_drivers:
     type: git
     url: https://github.com/ms-iot/joystick_drivers.git
