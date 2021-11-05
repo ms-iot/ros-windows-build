@@ -1,8 +1,6 @@
 @echo OFF
 set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
 
-xcopy /Y /S /I .\ros\foxy\patch %INSTALL_DIR%
-
 :: remove Vcpkg python38.dll to avoid conflicts
 DEL /F /Q %INSTALL_DIR%\bin\python38.dll
 
