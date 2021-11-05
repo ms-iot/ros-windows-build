@@ -13,10 +13,6 @@ python -m pip config set global.disable-pip-version-check True
 python -m pip install pytest==6.0.0
 python -m pip install -U git+https://github.com/ms-iot/rosdep@windows/0.20.0
 
-set ROS_ETC_DIR=%INSTALL_DIR%\etc\ros
-rosdep init
-rosdep update
-
 :: bootstrap vcpkg
 powershell .\ros\%ROS_DISTRO%\vcpkg.ps1 -InstallDir "%INSTALL_DIR%"
 if errorlevel 1 exit 1
