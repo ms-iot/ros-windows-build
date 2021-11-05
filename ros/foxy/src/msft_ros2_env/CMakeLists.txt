@@ -19,7 +19,7 @@ file(TO_NATIVE_PATH "${ROS_ETC_DIR}" ROS_ETC_DIR)
 set(
   hooks
   "999.ros_etc_dir"
-  "vcpkg.bat.in"
+  "vcpkg"
 )
 set(shells "dsv")
 if(CMAKE_HOST_UNIX)
