@@ -10,6 +10,7 @@ mkdir %INSTALL_DIR%\libs
 xcopy %INSTALL_DIR%\Lib\Python38.lib %INSTALL_DIR%\libs\
 
 colcon build ^
+    --event-handlers=console_cohesion+ ^
     --merge-install ^
     --packages-skip-by-dep %IGNORED_PACKAGES% ^
     --packages-skip %IGNORED_PACKAGES% ^
