@@ -16,6 +16,9 @@ endif()
 set(ROS_ETC_DIR "${CMAKE_INSTALL_PREFIX}/etc/ros")
 file(TO_NATIVE_PATH "${ROS_ETC_DIR}" ROS_ETC_DIR)
 
+set(VCPKG_INSTALL "${CMAKE_INSTALL_PREFIX}/tools/vcpkg")
+file(TO_NATIVE_PATH "${VCPKG_INSTALL}" VCPKG_INSTALL)
+
 set(
   hooks
   "999.ros_etc_dir"

@@ -1,0 +1,5 @@
+set;VCPKG_ROOT;@VCPKG_INSTALL@
+set;VCPKG_DEFAULT_TRIPLET;x64-windows
+prepend-non-duplicate;PATH;@VCPKG_INSTALL@
+prepend-non-duplicate;PATH;@VCPKG_INSTALL@\installed\x64-windows\bin
+prepend-non-duplicate;CMAKE_PREFIX_PATH;@VCPKG_INSTALL@\installed\x64-windows
