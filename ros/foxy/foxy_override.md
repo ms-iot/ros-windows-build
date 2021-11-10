@@ -7,7 +7,6 @@ All notable package overrides will be explained and documented here.
 | fastcdr |https://github.com/eProsima/Fast-CDR.git|    1.0.13      |https://github.com/eProsima/Fast-CDR.git|     v1.0.13      |Appending a "v" to maintain consistency with GitHub|
 | fastrtps|https://github.com/eProsima/Fast-DDS.git|     2.0.2      |https://github.com/eProsima/Fast-DDS.git|     v2.0.2       |Appending a "v" to maintain consistency with GitHub|
 | foonathan_memory_vendor |https://github.com/eProsima/foonathan_memory_vendor.git|    1.0.0      |https://github.com/eProsima/foonathan_memory_vendor.git|     v1.0.0      |Appending a "v" to maintain consistency with GitHub|
-| rviz|https://github.com/ros2/rviz.git|     8.2.5     |https://github.com/ms-iot/rviz.git|     windows/8.2.3   |Clean up Ogre, add symbol visibility to interactive marker |
 |yaml_cpp_vendor|https://github.com/ros2/yaml_cpp_vendor.git|     7.0.2      |https://github.com/ros2/yaml_cpp_vendor.git|     b11d00fbbe2cd8c8888f8c11ff172e84fdea9adc      |Use system installed yaml-cpp 0.6 if available |
 | behaviortree_cpp |https://github.com/BehaviorTree/BehaviorTree.CPP.git|     3.5.6      |https://github.com/ms-iot/BehaviorTree.CPP.git|     windows/3.5.6       |Fix type comparison and export symbols, added ZMQ lib dependency|
 | cartographer_ros |Not included |     N/A      |https://github.com/ms-iot/cartographer_ros.git|     1.0.9001/windows    | Not included in foxy.repos, its being included because its universally used|
