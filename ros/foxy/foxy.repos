@@ -94,7 +94,7 @@ repositories:
   geometry2:
     type: git
     url: https://github.com/ros2/geometry2.git
-    version: 0.13.11
+    version: 0.13.12
   google_benchmark_vendor:
     type: git
     url: https://github.com/ament/google_benchmark_vendor.git
@@ -134,7 +134,7 @@ repositories:
   launch_ros:
     type: git
     url: https://github.com/ros2/launch_ros.git
-    version: 0.11.3
+    version: 0.11.4
   libstatistics_collector:
     type: git
     url: https://github.com/ros-tooling/libstatistics_collector.git
@@ -162,7 +162,7 @@ repositories:
   moveit_resources:
     type: git
     url: https://github.com/ros-planning/moveit_resources.git
-    version: 2.0.2
+    version: 2.0.3
   navigation2:
     type: git
     url: https://github.com/ros-planning/navigation2.git
@@ -202,7 +202,7 @@ repositories:
   perception_pcl:
     type: git
     url: https://github.com/ros-perception/perception_pcl.git
-    version: 2.2.0
+    version: 2.2.1
   performance_test_fixture:
     type: git
     url: https://github.com/ros2/performance_test_fixture.git
@@ -250,7 +250,7 @@ repositories:
   rclpy:
     type: git
     url: https://github.com/ros2/rclpy.git
-    version: 1.0.6
+    version: 1.0.7
   rcpputils:
     type: git
     url: https://github.com/ros2/rcpputils.git
@@ -306,7 +306,7 @@ repositories:
   ros2cli:
     type: git
     url: https://github.com/ros2/ros2cli.git
-    version: 0.9.9
+    version: 0.9.10
   ros_environment:
     type: git
     url: https://github.com/ros/ros_environment.git
@@ -422,7 +422,7 @@ repositories:
   rviz:
     type: git
     url: https://github.com/ros2/rviz.git
-    version: 8.2.3
+    version: 8.2.5
   spdlog_vendor:
     type: git
     url: https://github.com/ros2/spdlog_vendor.git
@@ -510,7 +510,7 @@ repositories:
   xacro:
     type: git
     url: https://github.com/ros/xacro.git
-    version: 2.0.6
+    version: 2.0.7
   yaml_cpp_vendor:
     type: git
     url: https://github.com/ros2/yaml_cpp_vendor.git
