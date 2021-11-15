@@ -19,10 +19,14 @@ file(TO_NATIVE_PATH "${ROS_ETC_DIR}" ROS_ETC_DIR)
 set(VCPKG_INSTALL "${CMAKE_INSTALL_PREFIX}/tools/vcpkg")
 file(TO_NATIVE_PATH "${VCPKG_INSTALL}" VCPKG_INSTALL)
 
+set(SDF_PATH "${CMAKE_INSTALL_PREFIX}/share/sdformat/1.6")
+file(TO_NATIVE_PATH "${SDF_PATH}" SDF_PATH)
+
 set(
   hooks
   "999.ros_etc_dir"
   "vcpkg"
+  "sdf"
 )
 set(shells "dsv")
 if(CMAKE_HOST_UNIX)
