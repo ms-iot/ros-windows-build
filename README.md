@@ -1,4 +1,4 @@
-![ROS Logo](http://www.ros.org/wp-content/uploads/2013/10/rosorg-logo1.png)
+![ROS Logo](media/ros-logo.png)
 
 # ROS on Windows build system
 
