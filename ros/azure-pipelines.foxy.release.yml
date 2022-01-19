@@ -22,7 +22,7 @@ resources:
     source: vNext/ms-iot.external
     version: '20201224.3'
 
-name: '20211109.0.0.$(Build.BuildNumber)'
+name: '20211109.0.$(Date:yyMMdd).$(Rev:rrrr)'
 
 variables:
   RELEASE_VERSION: $(Build.BuildNumber)
