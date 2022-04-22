@@ -1,3 +1,4 @@
+source;@MAKE_VCPKG@
 set;VCPKG_ROOT;@VCPKG_INSTALL@
 set;VCPKG_DEFAULT_TRIPLET;x64-windows
 prepend-non-duplicate;PATH;@VCPKG_INSTALL@

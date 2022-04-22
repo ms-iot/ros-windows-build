@@ -22,11 +22,15 @@ file(TO_NATIVE_PATH "${VCPKG_INSTALL}" VCPKG_INSTALL)
 set(SDF_PATH "${CMAKE_INSTALL_PREFIX}/share/sdformat/1.6")
 file(TO_NATIVE_PATH "${SDF_PATH}" SDF_PATH)
 
+set(MAKE_VCPKG "${CMAKE_INSTALL_PREFIX}/share/msft_ros2_env/environment/make_vcpkg.bat")
+file(TO_NATIVE_PATH "${MAKE_VCPKG}" MAKE_VCPKG)
+
 set(
   hooks
   "999.ros_etc_dir"
   "vcpkg"
   "sdf"
+  "gazebo"
 )
 set(shells "dsv")
 if(CMAKE_HOST_UNIX)
