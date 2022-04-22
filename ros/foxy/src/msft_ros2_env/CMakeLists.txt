@@ -31,6 +31,7 @@ set(
   "vcpkg"
   "sdf"
   "gazebo"
+  "make_vcpkg"
 )
 set(shells "dsv")
 if(CMAKE_HOST_UNIX)
