@@ -1,0 +1,12 @@
+prefix=${pcfiledir}/../..
+exec_prefix=${prefix}/bin
+includedir=${prefix}/include/OGRE/Overlay
+libdir=${prefix}/lib
+plugindir=${prefix}/../bin
+
+Name: OGRE-Overlay
+Description:  Overlay component for OGRE
+Version: 1.12.9
+Requires:
+Libs: -L${libdir} -lOgreOverlay
+Cflags: -I${includedir}

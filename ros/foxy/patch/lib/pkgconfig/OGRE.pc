@@ -1,12 +1,12 @@
 prefix=${pcfiledir}/../..
 exec_prefix=${prefix}/bin
-includedir=${prefix}/include
-libdir=${prefix}/lib
-plugindir=${prefix}/../bin
+includedir=${prefix}/include/OGRE
+libdir=${prefix}/Lib 
+plugindir=${prefix}/bin
 
 Name: ogre
 Description: OGRE 
 Version: 1.12.9
 Requires:
-Libs: -L${libdir} -lRenderSystem_Direct3D11 -lRenderSystem_GL
+Libs: -L${libdir} -L${prefix}/Lib/manual-link -L${prefix}/Lib/OGRE -lOgreMain -lRenderSystem_Direct3D11 -lRenderSystem_GL -lOgreGLSupport -lRenderSystem_GL3Plus
 Cflags: -I${includedir}

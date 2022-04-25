@@ -1,0 +1,12 @@
+prefix=${pcfiledir}/../..
+exec_prefix=${prefix}/bin
+includedir=${prefix}/include/OGRE/Paging
+libdir=${prefix}/lib
+plugindir=${prefix}/../bin
+
+Name: OGRE-Paging
+Description:  General purpose paging component for OGRE
+Version: 1.12.9
+Requires:
+Libs: -L${libdir} -lOgrePaging
+Cflags: -I${includedir}
