@@ -5,67 +5,51 @@ trigger:
     - master
   paths:
     include:
-    - external/azure.pipelines.external.yml
+    - external/azure.pipelines.external-vs2022.yml
 pr:
   branches:
     include:
     - master
   paths:
     include:
-    - external/azure.pipelines.external.yml
+    - external/azure.pipelines.external-vs2022.yml
 
 resources:
   pipelines:
   - pipeline: ms-iot.python
-    source: vNext/ms-iot.python
+    source: vNext/ms-iot.python-vs2022
     version: '20210624.1'
   - pipeline: ms-iot.vcpkg
-    source: vNext/ms-iot.vcpkg
+    source: vNext/ms-iot.vcpkg-vs2022
     version: '20201223.3'
 
 jobs:
 - job: Build
-  pool: Edge-Robotics-VS2019
+  pool: Edge-Robotics-VS202022
   timeoutInMinutes: 360
   strategy:
     matrix:
-      melodic:
-        INSTALL_DIR: 'c:\opt\ros\melodic\x64'
-        DISTRO_NAME: 'melodic'
+      humble:
+        INSTALL_DIR: 'c:\opt\ros\humble\x64'
+        DISTRO_NAME: 'humble'
         VCPKG_DEFAULT_TRIPLET: 'x64-windows'
-      noetic:
-        INSTALL_DIR: 'c:\opt\ros\noetic\x64'
-        DISTRO_NAME: 'noetic'
-        VCPKG_DEFAULT_TRIPLET: 'x64-windows'
-      dashing:
-        INSTALL_DIR: 'c:\opt\ros\dashing\x64'
-        DISTRO_NAME: 'dashing'
-        VCPKG_DEFAULT_TRIPLET: 'x64-windows'
-      eloquent:
-        INSTALL_DIR: 'c:\opt\ros\eloquent\x64'
-        DISTRO_NAME: 'eloquent'
-        VCPKG_DEFAULT_TRIPLET: 'x64-windows'
-      foxy:
-        INSTALL_DIR: 'c:\opt\ros\foxy\x64'
-        DISTRO_NAME: 'foxy'
-        VCPKG_DEFAULT_TRIPLET: 'x64-windows'
-      galactic:
-        INSTALL_DIR: 'c:\opt\ros\galactic\x64'
-        DISTRO_NAME: 'galactic'
+      rolling:
+        INSTALL_DIR: 'c:\opt\ros\rolling\x64'
+        DISTRO_NAME: 'rolling'
         VCPKG_DEFAULT_TRIPLET: 'x64-windows'
   workspace:
     clean: all
   steps:
-  - download: ms-iot.vcpkg
-  - download: ms-iot.python
+  - download: ms-iot.vcpkg-vs2022
+  - download: ms-iot.python-vs022
   - task: ExtractFiles@1
     inputs:
-      archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.vcpkg\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
+      archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.vcpkg-vs2022\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
       destinationFolder: 'd:\installed'
       cleanDestinationFolder: true
   - task: ExtractFiles@1
     inputs:
-      archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.python\$(DISTRO_NAME)-python\python.zip'
+      archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.python-vs2022\$(DISTRO_NAME)-python\python.zip'
       destinationFolder: '$(INSTALL_DIR)'
       cleanDestinationFolder: true
   - powershell: |
