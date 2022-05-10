@@ -47,7 +47,7 @@ jobs:
       cd vcpkg
       vcpkg version
       vcpkg install @..\external\humble\vcpkg.in --x-buildtrees-root=d:\bld --binarysource=clear --binarysource=files,d:\binarycaching,readwrite
-    continueOnError: false
+    continueOnError: true
   - task: ArchiveFiles@2
     inputs:
       rootFolderOrFile: 'd:\binarycaching'
