@@ -28,7 +28,7 @@ jobs:
     inputs:
       buildType: 'specific' # Options: current, specific
       project: 'ros-win' # Required when source == Specific
-      pipeline: 97 # Required when source == Specific
+      pipeline: 145 # Required when source == Specific
       buildVersionToDownload: 'latest' # Required when source == Specific# Options: latest, latestFromBranch, specific
       artifactName: '$(VCPKG_DEFAULT_TRIPLET)-binarycaching'
       allowPartiallySucceededBuilds: true
