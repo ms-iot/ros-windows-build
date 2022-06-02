@@ -27,10 +27,6 @@ tbb
 qwt
 freeimage
 protobuf
-ignition-cmake0
-ignition-math4
-ignition-msgs1
-ignition-transport4
 sdformat6
 gtest
 orocos-kdl
