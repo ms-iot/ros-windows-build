@@ -1,0 +1,3 @@
+REM generated from msft_ros2_env/env-hooks/999.ros_etc_dir.bat.in
+
+set ROS_ETC_DIR=@ROS_ETC_DIR@
