@@ -1,2 +1,11 @@
+qt5
+asio
+assimp
+tinyxml
+tinyxml2
+log4cxx
+eigen3
+opencv
+bullet3
 ogre
 
