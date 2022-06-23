@@ -17,11 +17,11 @@ pr:
 resources:
   pipelines:
   - pipeline: ms-iot.python
-    source: vNext/ms-iot.python-vs2022
-    version: '20210624.1'
+    source: ms-iot.python-vs2022
+    version: '20220603.1'
   - pipeline: ms-iot.vcpkg
-    source: vNext/ms-iot.vcpkg-vs2022
-    version: '20201223.3'
+    source: ms-iot.vcpkg-vs2022
+    version: '20220603.1'
 
 jobs:
 - job: Build
