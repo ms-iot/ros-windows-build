@@ -1,3 +1,5 @@
+protobuf
+grpc
 qt5
 asio
 assimp
@@ -26,14 +28,12 @@ cppzmq
 tbb
 qwt
 freeimage
-protobuf
 gtest
 orocos-kdl
 yaml-cpp
 gtk
 flann
 libusb-win32
-grpc
 libogg
 libtheora
 sdl2
