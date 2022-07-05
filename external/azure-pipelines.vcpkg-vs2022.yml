@@ -6,7 +6,7 @@ variables:
 
 jobs:
 - job: Vcpkg
-  pool: Edge-Robotics-VS2022
+  pool: Edge-Robotics-VS2022-ESBuild
   timeoutInMinutes: 360
   strategy:
     matrix:
