@@ -1,9 +1,6 @@
 trigger: none
 pr: none
 
-variables:
-  USE_PREVIOUS_CACHING: $(USE_PREVIOUS_CACHE)
-
 jobs:
 - job: Vcpkg
   pool: Edge-Robotics-VS2022-ESBuild
@@ -18,46 +15,11 @@ jobs:
   - script: 'reg add HKLM\SYSTEM\CurrentControlSet\Control\FileSystem /v LongPathsEnabled /t REG_DWORD /d 1 /f'
     displayName: 'Enable long paths on Windows'
   - script: |
-      rd /s /q d:\bld
-      mkdir d:\bld
-      rd /s /q d:\binarycaching
-      mkdir d:\binarycaching
-      rd /s /q d:\installed
-      mkdir d:\installed
-    displayName: 'Create buildtrees'
-    continueOnError: true
-  - task: DownloadBuildArtifacts@0
-    inputs:
-      buildType: 'specific' # Options: current, specific
-      project: 'ros-win' # Required when source == Specific
-      pipeline: 146 # Required when source == Specific
-      buildVersionToDownload: 'latest' # Required when source == Specific# Options: latest, latestFromBranch, specific
-      artifactName: '$(VCPKG_DEFAULT_TRIPLET)-binarycaching'
-      allowPartiallySucceededBuilds: true
-    continueOnError: true
-    condition: and(succeeded(), eq(variables.USE_PREVIOUS_CACHING, true))
-  - task: ExtractFiles@1
-    inputs:
-      archiveFilePatterns: '$(System.ArtifactsDirectory)\$(VCPKG_DEFAULT_TRIPLET)-binarycaching\binarycaching.zip'
-      destinationFolder: 'd:\binarycaching'
-      cleanDestinationFolder: true
-    continueOnError: true
-    condition: and(succeeded(), eq(variables.USE_PREVIOUS_CACHING, true))
-  - script: |
       git clone https://github.com/ms-iot/vcpkg.git -b windows/2022.04.12
       call ".\vcpkg\bootstrap-vcpkg.bat"
       cd vcpkg
       vcpkg version
       vcpkg install @..\external\humble\vcpkgmin.in --x-buildtrees-root=d:\bld --binarysource=clear --binarysource=files,d:\binarycaching,readwrite
-    continueOnError: true
-  - task: ArchiveFiles@2
-    inputs:
-      rootFolderOrFile: 'd:\binarycaching'
-      includeRootFolder: false
-      archiveType: 'zip' # Options: zip, 7z, tar, wim
-      tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
-      archiveFile: '$(Build.ArtifactStagingDirectory)/binarycaching.zip'
-      replaceExistingArchive: true
     continueOnError: true
   - task: ArchiveFiles@2
     inputs:
@@ -68,27 +30,8 @@ jobs:
       archiveFile: '$(Build.ArtifactStagingDirectory)/installed.zip'
       replaceExistingArchive: true
     continueOnError: true
-  - task: ArchiveFiles@2
-    inputs:
-      rootFolderOrFile: 'd:\bld'
-      includeRootFolder: false
-      archiveType: 'zip' # Options: zip, 7z, tar, wim
-      tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
-      archiveFile: '$(Build.ArtifactStagingDirectory)/build.zip'
-      replaceExistingArchive: true
-    continueOnError: true
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: '$(Build.ArtifactStagingDirectory)/installed.zip'
       artifactName: '$(VCPKG_DEFAULT_TRIPLET)-installed'
-    continueOnError: true
-  - task: PublishBuildArtifacts@1
-    inputs:
-      pathtoPublish: '$(Build.ArtifactStagingDirectory)/build.zip'
-      artifactName: '$(VCPKG_DEFAULT_TRIPLET)-build'
-    continueOnError: true
-  - task: PublishBuildArtifacts@1
-    inputs:
-      pathtoPublish: '$(Build.ArtifactStagingDirectory)/binarycaching.zip'
-      artifactName: '$(VCPKG_DEFAULT_TRIPLET)-binarycaching'
     continueOnError: true
