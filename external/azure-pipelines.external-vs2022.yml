@@ -45,7 +45,7 @@ jobs:
   - task: ExtractFiles@1
     inputs:
       archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.vcpkg-vs2022\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
-      destinationFolder: 'd:\installed'
+      destinationFolder: 'c:\installed'
       cleanDestinationFolder: true
   - task: ExtractFiles@1
     inputs:
@@ -53,7 +53,7 @@ jobs:
       destinationFolder: '$(INSTALL_DIR)'
       cleanDestinationFolder: true
   - powershell: |
-      & .\external\copyVcpkgInstalled.ps1 -InstallDir $Env:INSTALL_DIR -VcpkgInstalled "d:\installed\$Env:VCPKG_DEFAULT_TRIPLET"
+      & .\external\copyVcpkgInstalled.ps1 -InstallDir $Env:INSTALL_DIR -VcpkgInstalled "c:\installed\$Env:VCPKG_DEFAULT_TRIPLET"
   - script: |
       DEL /F /Q %INSTALL_DIR%\share\tinyxml\tinyxml-config.cmake
       DEL /F /Q %INSTALL_DIR%\share\tinyxml\tinyxmlTargets-release.cmake
