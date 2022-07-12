@@ -18,8 +18,10 @@ resources:
   pipelines:
   - pipeline: ms-iot.python
     source: ms-iot.python-vs2022
+    version: 20220711.2
   - pipeline: ms-iot.vcpkg
     source: ms-iot.vcpkg-vs2022
+    version: 20220712.1
 
 jobs:
 - job: Build
