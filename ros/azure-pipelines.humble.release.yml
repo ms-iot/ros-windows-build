@@ -18,8 +18,8 @@ pr:
 
 resources:
   pipelines:
-  - pipeline: ms-iot.external-vs2022
-    source: ms-iot.external-vs2022
+  - pipeline: ms-iot.ros-external-vs2022
+    source: ms-iot.ros-external-vs2022
     version: '20220712.7'
 
 name: '20220713.0.$(Date:yyMMdd).$(Rev:rrrr)'
@@ -44,11 +44,11 @@ stages:
     steps:
     - script: 'reg add HKLM\SYSTEM\CurrentControlSet\Control\FileSystem /v LongPathsEnabled /t REG_DWORD /d 1 /f'
       displayName: 'Enable long paths on Windows'
-    - download: ms-iot.external-vs2022
+    - download: ms-iot.ros-external-vs2022
       artifact: '${{ variables.ROS_DISTRO }}-external-vs2022'
     - task: ExtractFiles@1
       inputs:
-        archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.external-vs2022\$(ROS_DISTRO)-external-vs2022\external.zip'
+        archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.ros-external-vs2022\$(ROS_DISTRO)-external-vs2022\external.zip'
         destinationFolder: '$(INSTALL_DIR)'
         cleanDestinationFolder: true
     - script: |
