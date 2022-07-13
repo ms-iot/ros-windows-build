@@ -18,11 +18,11 @@ pr:
 
 resources:
   pipelines:
-  - pipeline: ms-iot.external
-    source: vNext/ms-iot.external-vs2022
-    version: '20201224.3'
+  - pipeline: ms-iot.external-vs2022
+    source: ms-iot.external-vs2022
+    version: '20220712.7'
 
-name: '20220704.0.$(Date:yyMMdd).$(Rev:rrrr)'
+name: '20220713.0.$(Date:yyMMdd).$(Rev:rrrr)'
 
 variables:
   RELEASE_VERSION: $(Build.BuildNumber)
@@ -34,7 +34,7 @@ stages:
   displayName: 'Build ${{ variables.ROS_DISTRO }}'
   jobs:
   - job: Build
-    pool: 'Edge-Robotics-VS2022'
+    pool: Edge-Robotics-VS2022-ESBuild
     variables:
       PDB_OUTPUT_DIRECTORY: 'd:\symbols'
       ROS_VERSION: '2'
@@ -48,7 +48,7 @@ stages:
       artifact: '${{ variables.ROS_DISTRO }}-external-vs2022'
     - task: ExtractFiles@1
       inputs:
-        archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.external\$(ROS_DISTRO)-external-vs2022\external.zip'
+        archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.external-vs2022\$(ROS_DISTRO)-external-vs2022\external.zip'
         destinationFolder: '$(INSTALL_DIR)'
         cleanDestinationFolder: true
     - script: |
