@@ -25,19 +25,17 @@ try
 
         New-Item -Path $_ -ItemType directory -Force | Out-Null
     }
+    
+    $versionDate = '2022-03-30'
 
     # download the Vcpkg
-    $url = "https://github.com/microsoft/vcpkg/archive/2022.05.10.zip"
-    $vcpkgZip = (Join-Path $vcpkgDir "vcpkg-2022.05.10.zip")
-    Invoke-WebRequest -Uri $url -OutFile $vcpkgZip
-
-    # install the Vcpkg
-    Expand-Archive -LiteralPath $vcpkgZip -DestinationPath $vcpkgDir
-    & "$vcpkgDir\vcpkg-2022.05.10\bootstrap-vcpkg.bat"
+    $url = "https://github.com/microsoft/vcpkg-tool/releases/download/$versionDate/vcpkg.exe"
+    $vcpkgExe = (Join-Path $vcpkgDir "vcpkg.exe")
+    Invoke-WebRequest -Uri $url -OutFile $vcpkgExe
 
     # copy the Vcpkg into the install layout.
     $arguments = @{
-        Path = (Join-Path $vcpkgDir "vcpkg-2021.05.12")
+        Path = (Join-Path $vcpkgDir "vcpkg.exe")
         Recurse = $True
         Destination = (Join-Path $InstallDir "tools\vcpkg")
         Container = $False
