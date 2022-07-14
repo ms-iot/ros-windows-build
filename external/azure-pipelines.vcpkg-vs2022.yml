@@ -19,7 +19,7 @@ jobs:
       call ".\vcpkg\bootstrap-vcpkg.bat"
       cd vcpkg
       vcpkg version
-      vcpkg install @..\external\humble\vcpkg.in --x-buildtrees-root=d:\bld --binarysource=clear --binarysource=files,d:\binarycaching,readwrite
+      vcpkg install @..\external\humble\vcpkgmin.in --x-buildtrees-root=d:\bld --binarysource=clear --binarysource=files,d:\binarycaching,readwrite
     continueOnError: true
   - task: ArchiveFiles@2
     inputs:
