@@ -71,7 +71,7 @@ stages:
         set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
         mkdir ws\src
         cd ws
-        vcs import --force --shallow --recursive src < ..\ros\humble\humble.repos
+        vcs import --force --shallow --recursive src < ..\ros\humble\humblemin.repos
         xcopy /Y /S /I ..\ros\src_patch src
         call ..\ros\humble\build.bat
       displayName: 'build humble'
