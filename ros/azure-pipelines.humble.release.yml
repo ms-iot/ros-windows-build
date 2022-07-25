@@ -56,18 +56,10 @@ stages:
         mkdir %PDB_OUTPUT_DIRECTORY%
       displayName: 'Clean symbols folder'
     - script: |
-        rd /s /q %INSTALL_DIR%\include\kdl
-        rd /s /q %INSTALL_DIR%\share\orocos_kdl
-        rd /s /q %INSTALL_DIR%\share\orocos-kdl
-        DEL /F /Q %INSTALL_DIR%\lib\orocos-kdl.lib
-        DEL /F /Q %INSTALL_DIR%\lib\pkgconfig\orocos-kdl.pc
-        DEL /F /Q %INSTALL_DIR%\lib\pkgconfig\orocos_kdl.pc
-      displayName: 'Remove orocos-kdl'
-    - script: |
         call %Build_SourcesDirectory%\ros\humble\patch.bat
       displayName: 'Pre-patch the install directory'
     - script: |
-        call "C:\Program Files (x86)\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+        call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
         set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
         mkdir ws\src
         cd ws
