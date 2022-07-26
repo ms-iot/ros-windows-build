@@ -59,7 +59,6 @@ stages:
         call %Build_SourcesDirectory%\ros\humble\patch.bat
     - script: |
         call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-        pip3 install --force-reinstall -U git+https://github.com/colcon/colcon-cmake.git
         set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
         mkdir ws\src
         cd ws
