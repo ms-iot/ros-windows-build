@@ -7,7 +7,7 @@ set "IGNORED_PACKAGES=rttest test_osrf_testing_tools_cpp tlsf gripper_controller
 
 :: workaround for pybind11_vendor which has hardcoded python lib location
 mkdir %INSTALL_DIR%\libs
-xcopy %INSTALL_DIR%\Lib\Python38.lib %INSTALL_DIR%\libs\
+xcopy %INSTALL_DIR%\Lib\Python*.lib %INSTALL_DIR%\libs\
 
 colcon build ^
     --event-handlers=console_cohesion+ ^
