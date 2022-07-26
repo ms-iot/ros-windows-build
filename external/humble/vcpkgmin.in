@@ -1,3 +1,5 @@
+protobuf
+grpc
 qt5
 asio
 assimp
@@ -7,6 +9,14 @@ log4cxx
 eigen3
 opencv
 bullet3
+boost
+pcl
+poco
+ompl
+qhull
+sdl2-image
+graphicsmagick
+ceres[*]
 ogre
 fcl
 ccd
