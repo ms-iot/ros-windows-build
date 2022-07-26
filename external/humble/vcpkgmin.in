@@ -16,7 +16,6 @@ ompl
 qhull
 sdl2-image
 graphicsmagick
-ceres[*]
 ogre
 fcl
 ccd
