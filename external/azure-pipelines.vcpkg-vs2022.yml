@@ -16,12 +16,13 @@ jobs:
   - script: |
       dir c:\
       dir d:\
+      dir d:\
       cd c:\
       git clone https://github.com/ms-iot/vcpkg.git -b humble c:\vcpkg
       call "c:\vcpkg\bootstrap-vcpkg.bat"
       cd /d c:\vcpkg
       vcpkg version
-      vcpkg install @..\external\humble\vcpkgmin.in
+      :vcpkg install @..\external\humble\vcpkgmin.in
     continueOnError: true
   - task: ArchiveFiles@2
     inputs:
