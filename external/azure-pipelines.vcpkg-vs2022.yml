@@ -4,7 +4,6 @@ pr: none
 jobs:
 - job: Vcpkg
   pool: Edge-Robotics-VS2022-ESBuild
-  timeoutInMinutes: 700
   strategy:
     matrix:
       x64-windows:
@@ -18,9 +17,9 @@ jobs:
       dir c:\
       dir d:\
       cd c:\
-      git clone https://github.com/ms-iot/vcpkg.git -b windows/2022.04.12
-      cd vcpkg
-      call ".\bootstrap-vcpkg.bat"
+      git clone https://github.com/ms-iot/vcpkg.git -b humble c:\vcpkg
+      call "c:\vcpkg\bootstrap-vcpkg.bat"
+      cd /d c:\vcpkg
       vcpkg version
       vcpkg install @..\external\humble\vcpkgmin.in
     continueOnError: true
