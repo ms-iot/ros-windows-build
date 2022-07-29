@@ -16,7 +16,7 @@ jobs:
   - script: |
       dir c:\
       dir d:\
-      dir d:\
+      dir e:\
       cd c:\
       git clone https://github.com/ms-iot/vcpkg.git -b humble c:\vcpkg
       call "c:\vcpkg\bootstrap-vcpkg.bat"
