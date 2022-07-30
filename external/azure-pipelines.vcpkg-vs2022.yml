@@ -4,6 +4,7 @@ pr: none
 jobs:
 - job: Vcpkg
   pool: Edge-Robotics-VS2022-ESBuild
+  timeoutInMinutes: 2000
   strategy:
     matrix:
       x64-windows:
