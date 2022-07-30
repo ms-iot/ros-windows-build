@@ -20,8 +20,6 @@ jobs:
       call ".\bootstrap-vcpkg.bat"
       vcpkg version
       vcpkg install @..\external\humble\vcpkgmin.in
-      dir c:\
-      dir d:\
     continueOnError: true
   - task: ArchiveFiles@2
     inputs:
