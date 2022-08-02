@@ -27,11 +27,11 @@ jobs:
       includeRootFolder: false
       archiveType: 'zip' # Options: zip, 7z, tar, wim
       tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
-      archiveFile: 'c:\installed.zip'
+      archiveFile: 'c:\\installed.zip'
       replaceExistingArchive: true
     continueOnError: false
   - task: PublishBuildArtifacts@1
     inputs:
-      pathtoPublish: 'c:\installed.zip'
+      pathtoPublish: 'c:\\installed.zip'
       artifactName: '$(VCPKG_DEFAULT_TRIPLET)-installed'
     continueOnError: true
