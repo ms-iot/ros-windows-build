@@ -59,26 +59,31 @@ jobs:
       archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.vcpkg-vs2022-core\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
       destinationFolder: 'c:\installed'
       cleanDestinationFolder: false
+      overwriteExistingFiles: true
   - task: ExtractFiles@1
     inputs:
       archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.vcpkg-vs2022-boost\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
       destinationFolder: 'c:\installed'
       cleanDestinationFolder: false
+      overwriteExistingFiles: true
   - task: ExtractFiles@1
     inputs:
       archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.vcpkg-vs2022-qt\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
       destinationFolder: 'c:\installed'
       cleanDestinationFolder: false
+      overwriteExistingFiles: true
   - task: ExtractFiles@1
     inputs:
       archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.vcpkg-vs2022-graphics\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
       destinationFolder: 'c:\installed'
       cleanDestinationFolder: false
+      overwriteExistingFiles: true
   - task: ExtractFiles@1
     inputs:
       archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.python-vs2022\$(DISTRO_NAME)-python\python.zip'
       destinationFolder: '$(INSTALL_DIR)'
       cleanDestinationFolder: false
+      overwriteExistingFiles: true
   - powershell: |
       & .\external\copyVcpkgInstalled.ps1 -InstallDir $Env:INSTALL_DIR -VcpkgInstalled "c:\installed\$Env:VCPKG_DEFAULT_TRIPLET"
   - script: |
