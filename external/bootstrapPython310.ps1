@@ -31,10 +31,10 @@ try
     # bootstrap settings
     $requirements = (Join-Path $scriptsDir "requirements.txt")
 
-    # download the embedded Python
-    $url = "https://www.python.org/ftp/python/3.10.6/python-3.10.6-embed-amd64.zip"
-    $embeddedPython = (Join-Path $workingDir "python-3.10.6-embed-amd64.zip")
-    Invoke-WebRequest -Uri $url -OutFile $embeddedPython
+    # download the Python
+    $url = "https://www.python.org/ftp/python/3.10.6/python-3.10.6-amd64.exe"
+    $PythonInstaller = (Join-Path $workingDir "python-3.10.6-amd64.exe")
+    Invoke-WebRequest -Uri $url -OutFile $PythonInstaller
 
     # download Get-Pip
     $getpipUrl = "https://bootstrap.pypa.io/get-pip.py"
@@ -42,9 +42,8 @@ try
     Invoke-WebRequest -Uri $getpipUrl -OutFile $getpip
 
     # install the Python environment
-    Expand-Archive -LiteralPath $embeddedPython -DestinationPath $installDir
-    Add-Content -Path (Join-Path $installDir "python310._pth") -Value "Lib\site-packages"
     $Env:PATH = "$installDir\Scripts;$Env:PATH"
+    $PythonInstaller TargetDir="$installDir" /quiet 
     python $getpip
     python -m pip install -r $requirements
     python -m pip install netifaces --find-links $wheelsDir

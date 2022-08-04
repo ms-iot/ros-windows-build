@@ -5,10 +5,6 @@ xcopy /Y /S /I %Build_SourcesDirectory%\ros\humble\src src
 set ROS_VERSION=2
 set "IGNORED_PACKAGES=rttest test_osrf_testing_tools_cpp tlsf gripper_controllers"
 
-:: workaround for pybind11_vendor which has hardcoded python lib location
-mkdir %INSTALL_DIR%\libs
-xcopy %INSTALL_DIR%\python*.lib %INSTALL_DIR%\libs\
-
 colcon build ^
     --event-handlers=console_cohesion+ ^
     --merge-install ^
