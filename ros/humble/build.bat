@@ -1,4 +1,4 @@
-@echo OFF
+::@echo OFF
 
 xcopy /Y /S /I %Build_SourcesDirectory%\ros\humble\src src
 
@@ -7,7 +7,7 @@ set "IGNORED_PACKAGES=rttest test_osrf_testing_tools_cpp tlsf gripper_controller
 
 :: workaround for pybind11_vendor which has hardcoded python lib location
 mkdir %INSTALL_DIR%\libs
-xcopy %INSTALL_DIR%\Lib\Python*.lib %INSTALL_DIR%\libs\
+xcopy %INSTALL_DIR%\python*.lib %INSTALL_DIR%\libs\
 
 colcon build ^
     --event-handlers=console_cohesion+ ^
@@ -23,10 +23,10 @@ colcon build ^
         -DCMAKE_PROGRAM_PATH=%INSTALL_DIR%\tools\protobuf;%INSTALL_DIR%\tools\qt5\bin ^
         -DCMAKE_PDB_OUTPUT_DIRECTORY=%PDB_OUTPUT_DIRECTORY% ^
     2>&1
-if errorlevel 1 exit 1
+:: if errorlevel 1 exit 1
 
 xcopy /Y /S /I %~dp0patch %INSTALL_DIR%
 
 :: fix srdfdom.dll location.
 move /Y %INSTALL_DIR%\lib\*.dll %INSTALL_DIR%\bin
-if errorlevel 1 exit 1
+::if errorlevel 1 exit 1

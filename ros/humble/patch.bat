@@ -1,4 +1,3 @@
-@echo OFF
 set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
 
 python -m pip config set global.disable-pip-version-check True
@@ -17,4 +16,3 @@ rosdep update
 
 :: bootstrap vcpkg
 powershell .\ros\%ROS_DISTRO%\vcpkg.ps1 -InstallDir "%INSTALL_DIR%"
-if errorlevel 1 exit 1
