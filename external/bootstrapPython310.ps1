@@ -32,21 +32,28 @@ try
     $requirements = (Join-Path $scriptsDir "requirements.txt")
 
     # download the Python
-    $url = "https://www.python.org/ftp/python/3.10.6/python-3.10.6-amd64.exe"
     $PythonInstaller = (Join-Path $workingDir "python-3.10.6-amd64.exe")
-    Invoke-WebRequest -Uri $url -OutFile $PythonInstaller
+    if (!(Test-Path $PythonInstaller))
+    {
+        $url = "https://www.python.org/ftp/python/3.10.6/python-3.10.6-amd64.exe"
+        Invoke-WebRequest -Uri $url -OutFile $PythonInstaller
+    }
 
     # download Get-Pip
-    $getpipUrl = "https://bootstrap.pypa.io/get-pip.py"
     $getpip = (Join-Path $workingDir "get-pip.py")
-    Invoke-WebRequest -Uri $getpipUrl -OutFile $getpip
+    if (!(Test-Path $getpip))
+    {
+        $getpipUrl = "https://bootstrap.pypa.io/get-pip.py"
+        Invoke-WebRequest -Uri $getpipUrl -OutFile $getpip
+    }
 
     # install the Python environment
     $Env:PATH = "$installDir\Scripts;$Env:PATH"
-    $PythonInstaller TargetDir="$installDir" /quiet 
-    python $getpip
-    python -m pip install -r $requirements
-    python -m pip install netifaces --find-links $wheelsDir
+    $targetDir = "TargetDir=$InstallDir"
+    & $PythonInstaller $targetDir "/quiet"
+    & $InstallDir\python.exe $getpip
+    & $InstallDir\python.exe -m pip install -r $requirements
+    & $InstallDir\pythone.exe -m pip install netifaces --find-links $wheelsDir
 }
 catch
 {
