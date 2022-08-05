@@ -18,7 +18,7 @@ resources:
   pipelines:
   - pipeline: ms-iot.python-vs2022
     source: ms-iot.python-vs2022
-    version: '20220711.2'
+    version: '20220805.3'
   - pipeline: ms-iot.vcpkg-vs2022-core
     source: ms-iot.vcpkg-vs2022-core
     version: '20220802.1'
