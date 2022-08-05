@@ -17,9 +17,9 @@ try
     $workingDir = (Join-Path $scriptsDir "working")
     $wheelsDir = (Join-Path $scriptsDir "wheels")
 
-    Set-Alias python (Join-Path $installDir "python.exe") -Scope Script
+    Set-Alias python (Join-Path $InstallDir "python.exe") -Scope Script
 
-    $workingDir, $installDir | ForEach-Object {
+    $workingDir, $InstallDir | ForEach-Object {
         Remove-Item $_ -Force -Recurse -ErrorAction SilentlyContinue
         if (Test-Path $_ -PathType Container) {
             throw "cannot remove $_"
@@ -48,12 +48,12 @@ try
     }
 
     # install the Python environment
-    $Env:PATH = "$installDir\Scripts;$Env:PATH"
+    $Env:PATH = "$InstallDir\Scripts;$Env:PATH"
     $targetDir = "TargetDir=$InstallDir"
     & $PythonInstaller $targetDir "/quiet"
-    & $InstallDir\python.exe $getpip
-    & $InstallDir\python.exe -m pip install -r $requirements
-    & $InstallDir\pythone.exe -m pip install netifaces --find-links $wheelsDir
+    & python $getpip
+    & python -m pip install -r $requirements
+    & python -m pip install netifaces --find-links $wheelsDir
 }
 catch
 {
