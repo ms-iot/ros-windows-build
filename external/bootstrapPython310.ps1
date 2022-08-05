@@ -19,14 +19,14 @@ try
 
     Set-Alias python (Join-Path $InstallDir "python.exe") -Scope Script
 
-#    $workingDir, $InstallDir | ForEach-Object {
-#        Remove-Item $_ -Force -Recurse -ErrorAction SilentlyContinue
-#        if (Test-Path $_ -PathType Container) {
-#            throw "cannot remove $_"
-#        }
+    $workingDir, $InstallDir | ForEach-Object {
+        Remove-Item $_ -Force -Recurse -ErrorAction SilentlyContinue
+        if (Test-Path $_ -PathType Container) {
+            throw "cannot remove $_"
+        }
 
-#        New-Item -Path $_ -ItemType directory -Force | Out-Null
-#    }
+        New-Item -Path $_ -ItemType directory -Force | Out-Null
+    }
 
     # bootstrap settings
     $requirements = (Join-Path $scriptsDir "requirements.txt")
