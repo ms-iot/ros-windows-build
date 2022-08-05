@@ -19,14 +19,14 @@ try
 
     Set-Alias python (Join-Path $InstallDir "python.exe") -Scope Script
 
-    $workingDir, $InstallDir | ForEach-Object {
-        Remove-Item $_ -Force -Recurse -ErrorAction SilentlyContinue
-        if (Test-Path $_ -PathType Container) {
-            throw "cannot remove $_"
-        }
+#    $workingDir, $InstallDir | ForEach-Object {
+#        Remove-Item $_ -Force -Recurse -ErrorAction SilentlyContinue
+#        if (Test-Path $_ -PathType Container) {
+#            throw "cannot remove $_"
+#        }
 
-        New-Item -Path $_ -ItemType directory -Force | Out-Null
-    }
+#        New-Item -Path $_ -ItemType directory -Force | Out-Null
+#    }
 
     # bootstrap settings
     $requirements = (Join-Path $scriptsDir "requirements.txt")
@@ -36,6 +36,7 @@ try
     if (!(Test-Path $PythonInstaller))
     {
         $url = "https://www.python.org/ftp/python/3.10.6/python-3.10.6-amd64.exe"
+        Write "Downloading $url to $PythonInstaller"
         Invoke-WebRequest -Uri $url -OutFile $PythonInstaller
     }
 
@@ -49,11 +50,17 @@ try
 
     # install the Python environment
     $Env:PATH = "$InstallDir\Scripts;$Env:PATH"
+
+    Set-Alias PythonInstaller $PythonInstaller -Scope Script
+
     $targetDir = "TargetDir=$InstallDir"
-    & $PythonInstaller $targetDir "/quiet"
-    & python $getpip
-    & python -m pip install -r $requirements
-    & python -m pip install netifaces --find-links $wheelsDir
+    Write "Invoking $PythonInstaller $targetDir /quiet"
+    Start-Process $PythonInstaller -ArgumentList "TargetDir=$InstallDir", "/quiet" -wait
+
+    Write "Executing $InstallDir\python.exe $getpip"
+    python $getpip
+    python -m pip install -r $requirements
+    python -m pip install netifaces --find-links $wheelsDir
 }
 catch
 {
