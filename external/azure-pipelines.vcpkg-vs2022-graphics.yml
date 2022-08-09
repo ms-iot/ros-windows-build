@@ -20,7 +20,7 @@ jobs:
       cd vcpkg
       dir
       vcpkg version
-      vcpkg install @..\external\humble\vcpkg-boost.in
+      vcpkg install @..\external\humble\vcpkg-graphics.in
     continueOnError: true
   - task: ArchiveFiles@2
     inputs:
