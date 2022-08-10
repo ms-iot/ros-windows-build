@@ -30,7 +30,7 @@ resources:
     version: '20220802.3'
   - pipeline: ms-iot.vcpkg-vs2022-graphics
     source: ms-iot.vcpkg-vs2022-graphics
-    version: '20220802.1'
+    version: '20220809.2'
 
 jobs:
 - job: Build
