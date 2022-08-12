@@ -1,0 +1,5 @@
+repositories:
+  orocos_kdl_vendor:
+    type: git
+    url: https://github.com/ms-iot/orocos_kdl_vendor.git
+    version: humble

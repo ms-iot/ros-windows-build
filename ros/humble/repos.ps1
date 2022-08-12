@@ -32,8 +32,8 @@ try
             'eigen_stl_containers',
             'control_msgs',
             'urdfdom_py',
-            'moveit_core',
-            'warehouse_ros'
+            'warehouse_ros',
+            'diagnostics'
         )
     }
 
@@ -41,6 +41,6 @@ try
 }
 catch
 {
-  Write-Warning "Failed to generate Foxy repos."
+  Write-Warning "Failed to generate Humble repos."
   throw
 }
