@@ -197,8 +197,8 @@ repositories:
     version: 5.1.0
   pybind11_vendor:
     type: git
-    url: https://github.com/ros2/pybind11_vendor.git
-    version: 2.4.1
+    url: https://github.com/ms-iot/pybind11_vendor.git
+    version: humble
   python_cmake_module:
     type: git
     url: https://github.com/ros2/python_cmake_module.git
