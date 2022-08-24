@@ -65,7 +65,7 @@ stages:
         set
         mkdir ws\src
         cd ws
-        vcs import --force --shallow --recursive src < ..\ros\humble\humblemin.repos
+        vcs import --force --shallow --recursive src <  %Build_SourcesDirectory%\ros\humble\humblemin.repos
         dir src
         xcopy /Y /S /I ..\ros\src_patch src
         call ..\ros\humble\build.bat
