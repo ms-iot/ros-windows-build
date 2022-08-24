@@ -435,6 +435,10 @@ repositories:
     type: git
     url: https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
     version: 2.2.1
+  turtlesim:
+    type: git
+    url: https://github.com/ros/ros_tutorials.git
+    version: 1.4.2
   uncrustify_vendor:
     type: git
     url: https://github.com/ament/uncrustify_vendor.git
@@ -475,5 +479,3 @@ repositories:
     type: git
     url: https://github.com/ros2/yaml_cpp_vendor.git
     version: 8.0.1
-
-
