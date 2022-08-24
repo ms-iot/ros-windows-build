@@ -60,6 +60,8 @@ stages:
     - script: |
         call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
         set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
+        where python
+        dir %INSTALL_DIR%
         mkdir ws\src
         cd ws
         vcs import --force --shallow --recursive src < ..\ros\humble\humblemin.repos
