@@ -62,10 +62,12 @@ stages:
         set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
         where python
         dir %INSTALL_DIR%
+        set
         mkdir ws\src
         cd ws
         vcs import --force --shallow --recursive src < ..\ros\humble\humblemin.repos
         xcopy /Y /S /I ..\ros\src_patch src
+        call ..\ros\humble\patch.bat
         call ..\ros\humble\build.bat
       displayName: 'build humble'
     - task: PublishBuildArtifacts@1
