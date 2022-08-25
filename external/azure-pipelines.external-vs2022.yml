@@ -31,6 +31,9 @@ resources:
   - pipeline: ms-iot.vcpkg-vs2022-graphics
     source: ms-iot.vcpkg-vs2022-graphics
     version: '20220809.2'
+  - pipeline: ms-iot.vcpkg-vs2022-nav
+    source: ms-iot.vcpkg-vs2022-nav
+    version: '20220825.1'
 
 jobs:
 - job: Build
@@ -75,6 +78,12 @@ jobs:
   - task: ExtractFiles@1
     inputs:
       archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.vcpkg-vs2022-graphics\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
+      destinationFolder: 'c:\installed'
+      cleanDestinationFolder: false
+      overwriteExistingFiles: true
+  - task: ExtractFiles@1
+    inputs:
+      archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.vcpkg-vs2022-nav\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
       destinationFolder: 'c:\installed'
       cleanDestinationFolder: false
       overwriteExistingFiles: true
