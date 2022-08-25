@@ -56,6 +56,7 @@ jobs:
   - download: ms-iot.vcpkg-vs2022-boost
   - download: ms-iot.vcpkg-vs2022-qt
   - download: ms-iot.vcpkg-vs2022-graphics
+  - download: ms-iot.vcpkg-vs2022-nav
   - download: ms-iot.python-vs2022
   - task: ExtractFiles@1
     inputs:
