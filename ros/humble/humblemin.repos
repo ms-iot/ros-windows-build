@@ -44,7 +44,7 @@ repositories:
     url: https://github.com/eclipse-cyclonedds/cyclonedds.git
     version: 0.9.0
   diagnostics:
-    type:git
+    type: git
     url: https://github.com/ros/diagnostics
     version: 3.0.0
   demos:
