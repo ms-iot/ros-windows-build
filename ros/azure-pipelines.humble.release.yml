@@ -58,6 +58,8 @@ stages:
     - script: |
         call %Build_SourcesDirectory%\ros\humble\patch.bat
     - script: |
+        set PYTHONIOENCODING=utf-8
+        set PYTHONLEGACYWINDOWSSTDIO=utf-8
         call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
         set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
         where python
