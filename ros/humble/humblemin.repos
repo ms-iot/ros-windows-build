@@ -44,7 +44,7 @@ repositories:
     url: https://github.com/eclipse-cyclonedds/cyclonedds.git
     version: 0.9.0
   diagnostics:
-    type:git
+    type: git
     url: https://github.com/ros/diagnostics
     version: 3.0.0
   demos:
@@ -74,15 +74,15 @@ repositories:
   fastcdr:
     type: git
     url: https://github.com/eProsima/Fast-CDR.git
-    version: 1.0.24
+    version: v1.0.24
   fastrtps:
     type: git
     url: https://github.com/eProsima/Fast-DDS.git
-    version: 2.6.0
+    version: v2.6.0
   foonathan_memory_vendor:
     type: git
     url: https://github.com/eProsima/foonathan_memory_vendor.git
-    version: 1.2.0
+    version: v1.2.0
   geometry2:
     type: git
     url: https://github.com/ros2/geometry2.git
