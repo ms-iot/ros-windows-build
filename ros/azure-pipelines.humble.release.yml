@@ -63,6 +63,7 @@ stages:
         call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
         set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
         where python
+        copy %INSTALL_DIR%\python.exe %INSTALL_DIR%\python3.exe
         dir %INSTALL_DIR%
         set
         mkdir ws\src
