@@ -1,3 +1,4 @@
+graphicsmagick
 gtk
 flann
 libusb-win32
@@ -13,7 +14,6 @@ pcl
 ompl
 qhull
 sdl2-image
-graphicsmagick
 ogre
 ccd
 dlfcn-win32

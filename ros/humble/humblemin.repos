@@ -397,8 +397,8 @@ repositories:
     version: 1.2.3
   rviz:
     type: git
-    url: https://github.com/ros2/rviz.git
-    version: 11.2.2
+    url: https://github.com/ms-iot/rviz.git
+    version: humble
   spdlog_vendor:
     type: git
     url: https://github.com/ros2/spdlog_vendor.git
