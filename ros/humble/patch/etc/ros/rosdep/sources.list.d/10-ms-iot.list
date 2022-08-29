@@ -1,2 +1,2 @@
 # os-specific listings first
-yaml file://localhost/c:\opt\ros\foxy\x64\etc\ros\rosdep\windows.yaml windows
+yaml file://localhost/%ROS_ETC_DIR%\ros\rosdep\windows.yaml windows

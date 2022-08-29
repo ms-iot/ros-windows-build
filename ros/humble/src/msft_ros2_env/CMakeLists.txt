@@ -10,19 +10,19 @@ set(ROS_PYTHON_VERSION "3")
 if(DEFINED ENV{ROS_DISTRO_OVERRIDE})
   set(ROS_DISTRO $ENV{ROS_DISTRO_OVERRIDE})
 else()
-  set(ROS_DISTRO "foxy")
+  set(ROS_DISTRO "humble")
 endif()
 
-set(ROS_ETC_DIR "${CMAKE_INSTALL_PREFIX}/etc/ros")
+set(ROS_ETC_DIR "etc/ros")
 file(TO_NATIVE_PATH "${ROS_ETC_DIR}" ROS_ETC_DIR)
 
-set(VCPKG_INSTALL "${CMAKE_INSTALL_PREFIX}/tools/vcpkg")
+set(VCPKG_INSTALL "tools/vcpkg")
 file(TO_NATIVE_PATH "${VCPKG_INSTALL}" VCPKG_INSTALL)
 
-set(SDF_PATH "${CMAKE_INSTALL_PREFIX}/share/sdformat/1.6")
+set(SDF_PATH "share/sdformat/1.6")
 file(TO_NATIVE_PATH "${SDF_PATH}" SDF_PATH)
 
-set(MAKE_VCPKG "${CMAKE_INSTALL_PREFIX}/share/msft_ros2_env/environment/make_vcpkg.bat")
+set(MAKE_VCPKG "share/msft_ros2_env/environment/make_vcpkg.bat")
 file(TO_NATIVE_PATH "${MAKE_VCPKG}" MAKE_VCPKG)
 
 set(

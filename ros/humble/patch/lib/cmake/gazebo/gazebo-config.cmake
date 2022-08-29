@@ -5,14 +5,14 @@ set(GAZEBO_CONFIG_INCLUDED TRUE)
 set(GAZEBO_VERSION 10.2)
 set(GAZEBO_MAJOR_VERSION 10)
 
-set(GAZEBO_PLUGIN_PATH "C:/opt/ros/foxy/x64/lib/gazebo-10/plugins")
+set(GAZEBO_PLUGIN_PATH "$ENV{GAZEBO_RESOURCE_PATH}/plugins")
 
 # The media path contains the location on disk where images,
 # materials scripts, shaders, and other related resources are stored.
-set(GAZEBO_MEDIA_PATH "C:/opt/ros/foxy/x64/share/gazebo-10/media")
+set(GAZEBO_MEDIA_PATH "$ENV{GAZEBO_RESOURCE_PATH}/media")
 
 # The model path contains the location on disk where models are stored.
-set(GAZEBO_MODEL_PATH "C:/opt/ros/foxy/x64/share/gazebo-10/models")
+set(GAZEBO_MODEL_PATH "$ENV{GAZEBO_RESOURCE_PATH}/models")
 
 # Set whether Gazebo was built with Bullet support
 set (GAZEBO_HAS_BULLET FALSE)
@@ -72,24 +72,24 @@ include (FindPkgConfig)
 # target_link_libraries(your_package GAZEBO_PROTO_LIBRARIES)
 #
 set(GAZEBO_PROTO_PATH
-  "C:/opt/ros/foxy/x64/include/gazebo-10/gazebo/msgs/proto")
+  "$ENV{GAZEBO_RESOURCE_PATH}/gazebo/msgs/proto")
 find_library(gazebo_proto_msgs_lib gazebo_msgs
-  PATHS "C:/opt/ros/foxy/x64/lib" NO_DEFAULT_PATH)
+  PATHS $ENV{GAZEBO_LIB_PATH} NO_DEFAULT_PATH)
 list(APPEND GAZEBO_PROTO_LIBRARIES ${gazebo_proto_msgs_lib})
 list(APPEND GAZEBO_PROTO_INCLUDE_DIRS
-  "C:/opt/ros/foxy/x64/include/gazebo-10/gazebo/msgs")
+  "$ENV{GAZEBO_RESOURCE_PATH}/gazebo/msgs")
 # End GAZEBO_PROTO_PATH, GAZEBO_PROTO_INCLUDE_DIRS, and
 # GAZEBO_PROTO_LIBRARIES
 
-list(APPEND GAZEBO_INCLUDE_DIRS C:/opt/ros/foxy/x64/include)
-list(APPEND GAZEBO_INCLUDE_DIRS C:/opt/ros/foxy/x64/include/gazebo-10)
+list(APPEND GAZEBO_INCLUDE_DIRS $ENV{GAZEBO_INCLUDE_PATH})
+list(APPEND GAZEBO_INCLUDE_DIRS $ENV{GAZEBO_INCLUDE_PATH}/gazebo-10)
 
-list(APPEND GAZEBO_LIBRARY_DIRS C:/opt/ros/foxy/x64/lib)
-list(APPEND GAZEBO_LIBRARY_DIRS C:/opt/ros/foxy/x64/lib/OGRE)
-list(APPEND GAZEBO_LIBRARY_DIRS C:/opt/ros/foxy/x64/lib/gazebo-10/plugins)
+list(APPEND GAZEBO_LIBRARY_DIRS $ENV{GAZEBO_LIB_PATH})
+list(APPEND GAZEBO_LIBRARY_DIRS $ENV{GAZEBO_LIB_PATH}/OGRE)
+list(APPEND GAZEBO_LIBRARY_DIRS $ENV{GAZEBO_LIB_PATH}/gazebo-10/plugins)
 
-list(APPEND GAZEBO_CFLAGS -IC:/opt/ros/foxy/x64/include)
-list(APPEND GAZEBO_CFLAGS -IC:/opt/ros/foxy/x64/include/gazebo-10)
+list(APPEND GAZEBO_CFLAGS -I$ENV{GAZEBO_INCLUDE_PATH})
+list(APPEND GAZEBO_CFLAGS -I$ENV{GAZEBO_INCLUDE_PATH}/gazebo-10)
 
 if (GAZEBO_HAS_BULLET)
   if (PKG_CONFIG_FOUND)
