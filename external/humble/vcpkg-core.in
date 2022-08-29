@@ -1,0 +1,12 @@
+gtest
+orocos-kdl
+yaml-cpp
+tinyxml
+tinyxml2
+log4cxx
+eigen3
+poco
+zeromq
+cppzmq
+curl
+fcl

@@ -1,0 +1,7 @@
+prepend-non-duplicate;PATH;bin
+prepend-non-duplicate;PATH;C:\opt\ros\foxy\x64\lib\gazebo-10\plugins
+set-if-unset;HOME;%HOMEDRIVE%%HOMEPATH%
+set-if-unset;GAZEBO_RESOURCE_PATH;C:\opt\ros\foxy\x64\share\gazebo-10
+set-if-unset;GAZEBO_PLUGIN_PATH;C:\opt\ros\foxy\x64\lib\gazebo-10\plugins
+set-if-unset;GAZEBO_MODEL_PATH;C:\opt\ros\foxy\x64\share\gazebo-10\models
+set-if-unset;OGRE_RESOURCE_PATH;C:/opt/ros/foxy/x64/bin
