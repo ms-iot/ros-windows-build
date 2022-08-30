@@ -114,7 +114,20 @@ stages:
       ROS_DISTRO: ${{ variables.ROS_DISTRO }}
       RELEASE_VERSION: ${{ variables.RELEASE_VERSION }}
       PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-desktop'
-
+- stage: signing
+  displayName: 'Signing ${{ variables.ROS_DISTRO }}'
+  jobs:
+  - job: Sign
+    steps:
+    - task: EsrpCodeSigning@1
+      inputs:
+        ConnectedServiceName: 'ESRP Signing'
+        FolderPath: '.\ros\$(variables.ROS_DISTRO)\Output'
+        Pattern: '*.exe'
+        signConfigType: 'inlineSignParams'
+        SessionTimeout: '360'
+        MaxConcurrency: '50'
+        MaxRetryAttempts: '5'
 - stage: publish_prerelease
   displayName: 'Publish Prerelase ${{ variables.ROS_DISTRO }}'
   dependsOn:
