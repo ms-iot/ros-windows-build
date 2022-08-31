@@ -122,7 +122,7 @@ stages:
     - task: EsrpCodeSigning@1
       inputs:
         ConnectedServiceName: 'ESRP Signing'
-        FolderPath: '.\ros\$(variables.ROS_DISTRO)\Output'
+        FolderPath: ./ros/$(variables.ROS_DISTRO)/Output
         Pattern: '*.exe'
         signConfigType: 'inlineSignParams'
         SessionTimeout: '360'
