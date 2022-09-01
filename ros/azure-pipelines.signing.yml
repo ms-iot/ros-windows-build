@@ -27,5 +27,5 @@ jobs:
       MaxRetryAttempts: '5'
   - task: PublishBuildArtifacts@1
     inputs:
-      pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      pathtoPublish: '$(PIPELINE.WORKSPACE)\ms-iot.humble.release'
       artifactName: 'ros-$(ROS_DISTRO)-setup-signed'
