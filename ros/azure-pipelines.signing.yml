@@ -3,31 +3,32 @@ resources:
   - pipeline: ms-iot.humble.release
     source: ms-iot.humble.release
     version: '220831.0006'
+
 jobs:
 - job: Packaging
   pool: Edge-Robotics-VS2022-ESBuild
   variables:
-    ROS_DISTRO: '${{ parameters.ROS_DISTRO }}'
+    ROS_DISTRO: 'humble'
   timeoutInMinutes: 360
   workspace:
     clean: all
-steps:
-- download: ms-iot.humble.release
-- task: ExtractFiles@1
+  steps:
+  - download: ms-iot.humble.release
+  - task: ExtractFiles@1
+      inputs:
+        archiveFilePatterns: '$(PIPELINE.WORKSPACE)\$(ROS_DISTRO)-setup\ros-$(ROS_DISTRO)-setup*.exe'
+        destinationFolder: '$(Build.ArtifactStagingDirectory)'
+        cleanDestinationFolder: true
+  - task: EsrpCodeSigning@1
     inputs:
-      archiveFilePatterns: '$(PIPELINE.WORKSPACE)\$(ROS_DISTRO)-setup\ros-$(ROS_DISTRO)-setup*.exe'
-      destinationFolder: '$(Build.ArtifactStagingDirectory)'
-      cleanDestinationFolder: true
-- task: EsrpCodeSigning@1
-  inputs:
-    ConnectedServiceName: 'ESRP Signing'
-    FolderPath: '$(PIPELINE.WORKSPACE)\setup'
-    Pattern: '*.exe'
-    signConfigType: 'inlineSignParams'
-    SessionTimeout: '360'
-    MaxConcurrency: '50'
-    MaxRetryAttempts: '5'
-  - task: PublishBuildArtifacts@1
-    inputs:
-      pathtoPublish: '$(Build.ArtifactStagingDirectory)'
-      artifactName: 'ros-$(ROS_DISTRO)-setup-signed'
+      ConnectedServiceName: 'ESRP Signing'
+      FolderPath: '$(PIPELINE.WORKSPACE)\setup'
+      Pattern: '*.exe'
+      signConfigType: 'inlineSignParams'
+      SessionTimeout: '360'
+      MaxConcurrency: '50'
+      MaxRetryAttempts: '5'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        artifactName: 'ros-$(ROS_DISTRO)-setup-signed'
