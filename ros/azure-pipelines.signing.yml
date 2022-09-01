@@ -16,15 +16,10 @@ jobs:
   - download: ms-iot.humble.release
     artifact: humble-setup
 
-  - task: ExtractFiles@1
-    inputs:
-      archiveFilePatterns: '$(PIPELINE.WORKSPACE)\$(ROS_DISTRO)-setup\ros-$(ROS_DISTRO)-setup*.exe'
-      destinationFolder: '$(Build.ArtifactStagingDirectory)'
-      cleanDestinationFolder: true
   - task: EsrpCodeSigning@1
     inputs:
       ConnectedServiceName: 'ESRP Signing'
-      FolderPath: '$(PIPELINE.WORKSPACE)\setup'
+      FolderPath: $(PIPELINE.WORKSPACE)\ms-iot.humble.release\
       Pattern: '*.exe'
       signConfigType: 'inlineSignParams'
       SessionTimeout: '360'
