@@ -5,7 +5,7 @@ resources:
     version: '220831.0006'
 
 jobs:
-- job: Packaging
+- job: Signing
   pool: Edge-Robotics-VS2022-ESBuild
   variables:
     ROS_DISTRO: 'humble'
@@ -28,7 +28,7 @@ jobs:
       SessionTimeout: '360'
       MaxConcurrency: '50'
       MaxRetryAttempts: '5'
-    - task: PublishBuildArtifacts@1
-      inputs:
-        pathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        artifactName: 'ros-$(ROS_DISTRO)-setup-signed'
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      artifactName: 'ros-$(ROS_DISTRO)-setup-signed'
