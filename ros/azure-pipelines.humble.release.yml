@@ -122,7 +122,7 @@ stages:
     - task: DownloadBuildArtifacts@0
       inputs:
         buildType: 'current' # Options: current, specific
-        artifactName: ${{ROS_DISTRO}}-setup
+        artifactName: ${{variables.ROS_DISTRO}}-setup
     - task: ExtractFiles@1
       inputs:
         archiveFilePatterns: $(System.ArtifactsDirectory)\${{variables.ROS_DISTRO}}-setup\*.exe
