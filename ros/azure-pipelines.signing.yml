@@ -14,6 +14,8 @@ jobs:
     clean: all
   steps:
   - download: ms-iot.humble.release
+    artifact: humble-setup
+
   - task: ExtractFiles@1
     inputs:
       archiveFilePatterns: '$(PIPELINE.WORKSPACE)\$(ROS_DISTRO)-setup\ros-$(ROS_DISTRO)-setup*.exe'
