@@ -125,8 +125,8 @@ stages:
         artifactName: ${{ROS_DISTRO}}-setup
     - task: ExtractFiles@1
       inputs:
-        archiveFilePatterns: '$(System.ArtifactsDirectory)\$(ROS_DISTRO)-setup\*.exe'
-        destinationFolder: $(ROS_DISTRO)-setup
+        archiveFilePatterns: $(System.ArtifactsDirectory)\${{variables.ROS_DISTRO}}-setup\*.exe
+        destinationFolder: ${{variables.ROS_DISTRO}}-setup
         cleanDestinationFolder: true
     - task: EsrpCodeSigning@1
       inputs:
