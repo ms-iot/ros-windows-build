@@ -36,7 +36,7 @@ resources:
     version: '20220830.1'
   - pipeline: ms-iot.vcpkg-vs2022-gz
     source: ms-iot.vcpkg-vs2022-gz
-    version: '20220831.1'
+    version: '20220901.1'
 
 jobs:
 - job: Build
