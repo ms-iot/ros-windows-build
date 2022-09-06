@@ -1,4 +1,6 @@
 prepend-non-duplicate;PATH;bin
+prepend-non-duplicate;RUBY_DLL_PATH;bin
+prepend-non-duplicate;RUBY_DLL_PATH;
 prepend-non-duplicate;PATH;lib\gazebo-10\plugins
 set-if-unset;HOME;%HOMEDRIVE%%HOMEPATH%
 set-if-unset;GAZEBO_INCLUDE_PATH;include
