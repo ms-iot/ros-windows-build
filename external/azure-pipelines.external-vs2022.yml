@@ -30,7 +30,7 @@ resources:
     version: '20220906.1'
   - pipeline: ms-iot.vcpkg-vs2022-graphics
     source: ms-iot.vcpkg-vs2022-graphics
-    version: '20220906.2'
+    version: '20220906.1'
   - pipeline: ms-iot.vcpkg-vs2022-nav
     source: ms-iot.vcpkg-vs2022-nav
     version: '20220830.1'
