@@ -20,7 +20,7 @@ resources:
   pipelines:
   - pipeline: ms-iot.ros-external-vs2022
     source: ms-iot.ros-external-vs2022
-    version: '20220831.1'
+    version: '20220906.3'
 
 name: '$(Date:yyMMdd).$(Rev:rrrr)'
 
