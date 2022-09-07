@@ -25,17 +25,19 @@ try
 
         New-Item -Path $_ -ItemType directory -Force | Out-Null
     }
-    
-    $versionDate = '2022-03-30'
 
     # download the Vcpkg
-    $url = "https://github.com/microsoft/vcpkg-tool/releases/download/$versionDate/vcpkg.exe"
-    $vcpkgExe = (Join-Path $vcpkgDir "vcpkg.exe")
-    Invoke-WebRequest -Uri $url -OutFile $vcpkgExe
+    $url = "https://github.com/ms-iot/vcpkg/archive/refs/heads/humble.zip"
+    $vcpkgZip = (Join-Path $vcpkgDir "humble.zip")
+    Invoke-WebRequest -Uri $url -OutFile $vcpkgZip
+
+    # install the Vcpkg
+    Expand-Archive -LiteralPath $vcpkgZip -DestinationPath $vcpkgDir
+    & "$vcpkgDir\humble\bootstrap-vcpkg.bat"
 
     # copy the Vcpkg into the install layout.
     $arguments = @{
-        Path = (Join-Path $vcpkgDir "vcpkg.exe")
+        Path = (Join-Path $vcpkgDir "humble")
         Recurse = $True
         Destination = (Join-Path $InstallDir "tools\vcpkg")
         Container = $False
