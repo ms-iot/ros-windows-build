@@ -2,7 +2,7 @@ resources:
   pipelines:
   - pipeline: ms-iot.humble.release
     source: ms-iot.humble.release
-    version: '220831.0006'
+    version: '220906.0001'
 
 jobs:
 - job: Signing
