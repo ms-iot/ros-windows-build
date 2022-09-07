@@ -12,10 +12,9 @@ pcl
 ompl
 qhull
 sdl2-image
-ogre
 ccd
 dlfcn-win32
-ogre
+ogre-next
 tbb
 qwt
 freeimage
