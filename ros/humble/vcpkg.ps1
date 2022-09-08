@@ -28,12 +28,12 @@ try
 
     # download the Vcpkg
     $url = "https://github.com/ms-iot/vcpkg/archive/refs/heads/humble.zip"
-    $vcpkgZip = (Join-Path $vcpkgDir "humble.zip")
+    $vcpkgZip = (Join-Path $vcpkgDir "vcpkg-humble.zip")
     Invoke-WebRequest -Uri $url -OutFile $vcpkgZip
 
     # install the Vcpkg
     Expand-Archive -LiteralPath $vcpkgZip -DestinationPath $vcpkgDir
-    & "$vcpkgDir\humble\bootstrap-vcpkg.bat"
+    & "$vcpkgDir\vcpkg-humble\bootstrap-vcpkg.bat"
 
     # copy the Vcpkg into the install layout.
     $arguments = @{
