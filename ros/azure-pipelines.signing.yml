@@ -11,11 +11,10 @@ jobs:
     inputs:
       buildType: 'current' # Options: current, specific
       artifactName: '$(ROS_DISTRO)-setup'
-      
   - task: EsrpCodeSigning@1
     inputs:
       ConnectedServiceName: 'ESRP Signing'
-      FolderPath: '$(PIPELINE.WORKSPACE)\ms-iot.$(ROS_DISTRO).release\'
+      FolderPath: '$(System.ArtifactsDirectory)\$(ROS_DISTRO)-setup'
       Pattern: '*.exe'
       signConfigType: 'inlineSignParams'
       inlineOperation: |
