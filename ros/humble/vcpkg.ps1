@@ -33,7 +33,7 @@ try
 
     # install the Vcpkg
     Expand-Archive -LiteralPath $vcpkgZip -DestinationPath $vcpkgDir
-    & "$vcpkgDir\vcpkg-humble\bootstrap-vcpkg.bat"
+    & "$vcpkgDir\humble\bootstrap-vcpkg.bat"
 
     # copy the Vcpkg into the install layout.
     $arguments = @{
