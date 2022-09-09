@@ -116,58 +116,14 @@ stages:
       PACKAGE_NAME: 'ros-${{ variables.ROS_DISTRO }}-desktop'
 - stage: signing
   displayName: 'Signing ${{ variables.ROS_DISTRO }}'
+  dependsOn:
+  - packaging
+  condition: ne(variables['Build.Reason'], 'PullRequest')
   jobs:
-  - job: Sign
-    steps:
-    - task: DownloadBuildArtifacts@0
-      inputs:
-        buildType: 'current' # Options: current, specific
-        artifactName: ${{variables.ROS_DISTRO}}-setup
-    - task: ExtractFiles@1
-      inputs:
-        archiveFilePatterns: $(System.ArtifactsDirectory)\${{variables.ROS_DISTRO}}-setup\*.exe
-        destinationFolder: ${{variables.ROS_DISTRO}}-setup
-        cleanDestinationFolder: true
-    - task: EsrpCodeSigning@1
-      inputs:
-        ConnectedServiceName: 'ESRP Signing'
-        FolderPath: $(PIPELINE.WORKSPACE)\ms-iot.humble.release\
-        Pattern: '*.exe'
-        signConfigType: 'inlineSignParams'
-        inlineOperation: |
-          [
-            {
-              "keyCode": "CP-230800",
-              "operationSetCode": "SigntoolSign",
-              "parameters": [
-                {
-                  "parameterName": "OpusName",
-                  "parameterValue": "Microsoft"
-                },
-                {
-                  "parameterName": "OpusInfo",
-                  "parameterValue": "http://www.microsoft.com"
-                },
-                {
-                  "parameterName": "PageHash",
-                  "parameterValue": "/NPH"
-                },
-                {
-                  "parameterName": "FileDigest",
-                  "parameterValue": "/fd sha256"
-                },
-                {
-                  "parameterName": "TimeStamp",
-                  "parameterValue": "/tr \"http://rfc3161.gtm.corp.microsoft.com/TSS/HttpTspServer\" /td sha256"
-                }
-              ],
-              "toolName": "signtool.exe",
-              "toolVersion": "6.2.9304.0"
-            }
-          ]
-        SessionTimeout: '360'
-        MaxConcurrency: '50'
-        MaxRetryAttempts: '5'
+  - template: azure-pipelines.publish.signing.yml
+    parameters:
+      ROS_DISTRO: ${{ variables.ROS_DISTRO }}
+      
 - stage: publish_prerelease
   displayName: 'Publish Prerelase ${{ variables.ROS_DISTRO }}'
   dependsOn:
