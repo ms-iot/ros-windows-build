@@ -1,9 +1,3 @@
-resources:
-  pipelines:
-  - pipeline: ms-iot.humble.release
-    source: ms-iot.humble.release
-    version: '220906.0001'
-
 jobs:
 - job: Signing
   pool: Edge-Robotics-VS2022-ESBuild
@@ -13,13 +7,15 @@ jobs:
   workspace:
     clean: all
   steps:
-  - download: ms-iot.humble.release
-    artifact: humble-setup
-
+  - task: DownloadBuildArtifacts@0
+    inputs:
+      buildType: 'current' # Options: current, specific
+      artifactName: '$(ROS_DISTRO)-setup'
+      
   - task: EsrpCodeSigning@1
     inputs:
       ConnectedServiceName: 'ESRP Signing'
-      FolderPath: $(PIPELINE.WORKSPACE)\ms-iot.humble.release\
+      FolderPath: '$(PIPELINE.WORKSPACE)\ms-iot.$(ROS_DISTRO).release\'
       Pattern: '*.exe'
       signConfigType: 'inlineSignParams'
       inlineOperation: |
@@ -58,5 +54,5 @@ jobs:
       MaxRetryAttempts: '5'
   - task: PublishBuildArtifacts@1
     inputs:
-      pathtoPublish: '$(PIPELINE.WORKSPACE)\ms-iot.humble.release'
+      pathtoPublish: '$(PIPELINE.WORKSPACE)\ms-iot.$(ROS_DISTRO).release'
       artifactName: 'ros-$(ROS_DISTRO)-setup-signed'
