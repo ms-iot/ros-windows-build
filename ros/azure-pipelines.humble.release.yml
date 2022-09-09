@@ -120,7 +120,7 @@ stages:
   - packaging
   condition: ne(variables['Build.Reason'], 'PullRequest')
   jobs:
-  - template: azure-pipelines.publish.signing.yml
+  - template: azure-pipelines.signing.yml
     parameters:
       ROS_DISTRO: ${{ variables.ROS_DISTRO }}
       
