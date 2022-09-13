@@ -25,7 +25,7 @@ resources:
 
 jobs:
 - job: Build
-  pool: Edge-Robotics-VS2019
+  pool: Edge-Robotics-VS2019-ES
   timeoutInMinutes: 360
   strategy:
     matrix:
