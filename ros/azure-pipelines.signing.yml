@@ -53,5 +53,5 @@ jobs:
       MaxRetryAttempts: '5'
   - task: PublishBuildArtifacts@1
     inputs:
-      pathtoPublish: '$(PIPELINE.WORKSPACE)\ms-iot.$(ROS_DISTRO).release'
+      pathtoPublish: '$(System.ArtifactsDirectory)\$(ROS_DISTRO)-setup'
       artifactName: 'ros-$(ROS_DISTRO)-setup-signed'
