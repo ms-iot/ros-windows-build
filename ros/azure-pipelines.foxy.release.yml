@@ -34,7 +34,7 @@ stages:
   displayName: 'Build ${{ variables.ROS_DISTRO }}'
   jobs:
   - job: Build
-    pool: 'Edge-Robotics-VS2019'
+    pool: 'Edge-Robotics-VS2019-ES'
     variables:
       PDB_OUTPUT_DIRECTORY: 'd:\symbols'
       ROS_VERSION: '2'
