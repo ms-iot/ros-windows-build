@@ -77,5 +77,5 @@ repositories:
     version: foxy
   rcutils:
     type: git
-    url: https://github.com/ros2/rcutils.git
+    url: https://github.com/ms-iot/rcutils.git
     version: foxy
