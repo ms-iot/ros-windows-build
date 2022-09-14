@@ -75,3 +75,7 @@ repositories:
     type: git
     url: https://github.com/ms-iot/imu_tools
     version: foxy
+  rcutils:
+    type: git
+    url: https://github.com/ros2/rcutils.git
+    version: foxy
