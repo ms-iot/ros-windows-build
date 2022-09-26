@@ -8,6 +8,8 @@ pip install sphinx
 
 choco install lua
 
+refreshenv
+
 colcon build ^
     --merge-install ^
     --packages-skip-by-dep %IGNORED_PACKAGES% ^
