@@ -6,7 +6,7 @@ set "IGNORED_PACKAGES=stage stage_ros image_view theora_image_transport rviz_plu
 
 pip install sphinx
 
-choco install lua
+choco install lua52
 
 set PATH=C:\Program Files (x86)\Lua\5.1\;%PATH%
 
