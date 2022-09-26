@@ -6,6 +6,8 @@ set "IGNORED_PACKAGES=stage stage_ros image_view theora_image_transport rviz_plu
 
 pip install sphinx
 
+choco install lua
+
 colcon build ^
     --merge-install ^
     --packages-skip-by-dep %IGNORED_PACKAGES% ^
