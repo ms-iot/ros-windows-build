@@ -8,7 +8,7 @@ pip install sphinx
 
 choco install lua
 
-refreshenv
+set PATH=C:\Program Files (x86)\Lua\5.1\;%PATH%
 
 colcon build ^
     --merge-install ^
