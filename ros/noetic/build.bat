@@ -4,6 +4,8 @@ xcopy /Y /S /I %Build_SourcesDirectory%\ros\noetic\src src
 
 set "IGNORED_PACKAGES=stage stage_ros image_view theora_image_transport rviz_plugin_tutorials four_wheel_steering_controller moveit_resources_prbt_ikfast_manipulator_plugin"
 
+pip install sphinx
+
 colcon build ^
     --merge-install ^
     --packages-skip-by-dep %IGNORED_PACKAGES% ^
