@@ -8,7 +8,7 @@ pip install sphinx
 
 choco install lua52
 
-set PATH=C:\Program Files (x86)\Lua\5.1\;%PATH%
+set PATH=C:\ProgramData\chocolatey\lib\lua52\tools;%PATH%
 
 colcon build ^
     --merge-install ^
