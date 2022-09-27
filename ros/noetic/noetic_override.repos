@@ -75,7 +75,7 @@ repositories:
   cartographer:
     type: git
     url: https://github.com/ms-iot/cartographer.git
-    version: windows/2137b8477e2e42a1615ca34d7e4a7af69feb65fe
+    version: noetic
   moveit_visual_tools:
     type: git
     url: https://github.com/ms-iot/moveit_visual_tools.git
