@@ -22,6 +22,7 @@ colcon build ^
         -DCATKIN_SKIP_TESTING=ON ^
         -DBUILD_TESTING:BOOL=False ^
         -DCMAKE_PROGRAM_PATH=%INSTALL_DIR%\tools\protobuf;%INSTALL_DIR%\tools\qt5\bin ^
+        -Wno-dev ^
     2>&1
 if errorlevel 1 exit 1
 
