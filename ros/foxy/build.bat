@@ -22,7 +22,7 @@ colcon build ^
         -DBUILD_TESTING:BOOL=False ^
         -DCMAKE_PROGRAM_PATH=%INSTALL_DIR%\tools\protobuf;%INSTALL_DIR%\tools\qt5\bin ^
         -DCMAKE_PDB_OUTPUT_DIRECTORY=%PDB_OUTPUT_DIRECTORY% ^
-        -D_CRT_INTERNAL_NONSTDC_NAMES=0 ^
+        -D_CRT_NONSTDC_NO_WARNINGS=1 ^
     2>&1
 if errorlevel 1 exit 1
 
