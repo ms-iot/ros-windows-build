@@ -67,7 +67,7 @@ stages:
         call %Build_SourcesDirectory%\ros\foxy\patch.bat
       displayName: 'Pre-patch the install directory'
     - script: |
-        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat" -winsdk=10.0.19041.0
+        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat" 10.0.19041.0
         set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
         mkdir ws\src
         cd ws
