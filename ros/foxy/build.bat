@@ -10,7 +10,7 @@ mkdir %INSTALL_DIR%\libs
 xcopy %INSTALL_DIR%\Lib\Python38.lib %INSTALL_DIR%\libs\
 
 colcon build ^
-    --event-handlers=console_cohesion+ ^
+    --event-handlers=console_direct+ ^
     --merge-install ^
     --packages-skip-by-dep %IGNORED_PACKAGES% ^
     --packages-skip %IGNORED_PACKAGES% ^
@@ -21,8 +21,7 @@ colcon build ^
         -DCURL_NO_CURL_CMAKE=ON ^
         -DBUILD_TESTING:BOOL=False ^
         -DCMAKE_PROGRAM_PATH=%INSTALL_DIR%\tools\protobuf;%INSTALL_DIR%\tools\qt5\bin ^
-        -DCMAKE_PDB_OUTPUT_DIRECTORY=%PDB_OUTPUT_DIRECTORY% ^
-        -D_CRT_NONSTDC_NO_WARNINGS=1 ^
+        -DCMAKE_PDB_OUTPUT_DIRECTORY=%PDB_OUTPUT_DIRECTORY%
     2>&1
 if errorlevel 1 exit 1
 
