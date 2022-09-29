@@ -69,6 +69,7 @@ stages:
     - script: |
         call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat" 10.0.19041.0
         set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
+        copy c:\opt\ros\foxy\x64\python.exe c:\opt\ros\foxy\x64\python3.exe
         set 
         mkdir ws\src
         cd ws
