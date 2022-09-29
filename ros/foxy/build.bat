@@ -9,6 +9,8 @@ set "IGNORED_PACKAGES=rttest test_osrf_testing_tools_cpp tlsf gripper_controller
 mkdir %INSTALL_DIR%\libs
 xcopy %INSTALL_DIR%\Lib\Python38.lib %INSTALL_DIR%\libs\
 
+set CMAKE_WINDOWS_KITS_10_DIR=C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\
+
 colcon build ^
     --event-handlers=console_direct+ ^
     --merge-install ^
