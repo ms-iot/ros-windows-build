@@ -24,7 +24,7 @@ colcon build ^
         -DBUILD_TESTING:BOOL=False ^
         -DCMAKE_PROGRAM_PATH=%INSTALL_DIR%\tools\protobuf;%INSTALL_DIR%\tools\qt5\bin ^
         -DCMAKE_PDB_OUTPUT_DIRECTORY=%PDB_OUTPUT_DIRECTORY% ^
-        -DCMAKE_SYSTEM_VERSION=10.0.19041.0
+        -DCMAKE_SYSTEM_VERSION=10.0.19041.0 ^
     2>&1
 if errorlevel 1 exit 1
 
