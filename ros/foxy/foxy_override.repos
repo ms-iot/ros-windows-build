@@ -79,3 +79,7 @@ repositories:
     type: git
     url: https://github.com/ms-iot/rcutils.git
     version: foxy
+  gazebo_ros_pkgs:
+    type: git
+    url: https://github.com/ros-simulation/gazebo_ros_pkgs.git
+    version: 3.5.2
