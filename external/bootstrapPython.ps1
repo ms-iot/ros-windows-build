@@ -17,9 +17,9 @@ try
     $workingDir = (Join-Path $scriptsDir "working")
     $wheelsDir = (Join-Path $scriptsDir "wheels")
 
-    Set-Alias python (Join-Path $installDir "python.exe") -Scope Script
+    Set-Alias python (Join-Path $InstallDir "python.exe") -Scope Script
 
-    $workingDir, $installDir | ForEach-Object {
+    $workingDir, $InstallDir | ForEach-Object {
         Remove-Item $_ -Force -Recurse -ErrorAction SilentlyContinue
         if (Test-Path $_ -PathType Container) {
             throw "cannot remove $_"
@@ -31,20 +31,36 @@ try
     # bootstrap settings
     $requirements = (Join-Path $scriptsDir "requirements.txt")
 
-    # download the embedded Python
-    $url = "https://www.python.org/ftp/python/3.8.3/python-3.8.3-embed-amd64.zip"
-    $embeddedPython = (Join-Path $workingDir "python-3.8.3-embed-amd64.zip")
-    Invoke-WebRequest -Uri $url -OutFile $embeddedPython
+    # download the Python
+    $PythonInstaller = (Join-Path $workingDir "python-3.8.3-amd64.exe")
+    if (!(Test-Path $PythonInstaller))
+    {
+        $url = "https://www.python.org/ftp/python/3.8.3/python-3.8.3-amd64.exe"
+        Write "Downloading $url to $PythonInstaller"
+        Invoke-WebRequest -Uri $url -OutFile $PythonInstaller
+    }
 
     # download Get-Pip
-    $getpipUrl = "https://bootstrap.pypa.io/get-pip.py"
     $getpip = (Join-Path $workingDir "get-pip.py")
-    Invoke-WebRequest -Uri $getpipUrl -OutFile $getpip
+    if (!(Test-Path $getpip))
+    {
+        $getpipUrl = "https://bootstrap.pypa.io/get-pip.py"
+        Invoke-WebRequest -Uri $getpipUrl -OutFile $getpip
+    }
 
     # install the Python environment
-    Expand-Archive -LiteralPath $embeddedPython -DestinationPath $installDir
-    Add-Content -Path (Join-Path $installDir "python38._pth") -Value "Lib\site-packages"
-    $Env:PATH = "$installDir\Scripts;$Env:PATH"
+    $Env:PATH = "$InstallDir\Scripts;$Env:PATH"
+
+    Set-Alias PythonInstaller $PythonInstaller -Scope Script
+
+    $targetDir = "TargetDir=$InstallDir"
+    Write "Invoking $PythonInstaller $targetDir /quiet"
+    Start-Process $PythonInstaller -ArgumentList "TargetDir=$InstallDir", "/quiet" -wait
+
+    Write "Copying Python.exe - > Python3.exe since it is used by name"
+    Copy-Item $InstallDir\python.exe $InstallDir\python3.exe
+
+    Write "Executing $InstallDir\python.exe $getpip"
     python $getpip
     python -m pip install -r $requirements
     python -m pip install netifaces --find-links $wheelsDir

@@ -57,6 +57,9 @@ try
     Write "Invoking $PythonInstaller $targetDir /quiet"
     Start-Process $PythonInstaller -ArgumentList "TargetDir=$InstallDir", "/quiet" -wait
 
+    Write "Copying Python.exe - > Python3.exe since it is used by name"
+    Copy-Item $InstallDir\python.exe $InstallDir\python3.exe
+
     Write "Executing $InstallDir\python.exe $getpip"
     python $getpip
     python -m pip install -r $requirements
