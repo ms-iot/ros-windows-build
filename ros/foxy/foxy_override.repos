@@ -58,7 +58,7 @@ repositories:
   joystick_drivers:
     type: git
     url: https://github.com/ms-iot/joystick_drivers.git
-    version: windows/3.0.0
+    version: foxy
   srdfdom:
     type: git
     url: https://github.com/ros-planning/srdfdom.git
