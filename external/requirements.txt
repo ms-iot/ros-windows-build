@@ -33,3 +33,4 @@ rospkg
 rosinstall-generator
 opencv-python
 nose
+MatPlotLib
