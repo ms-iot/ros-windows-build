@@ -1,6 +1,6 @@
 prepend-non-duplicate;PATH;bin
 prepend-non-duplicate;RUBY_DLL_PATH;bin
-prepend-non-duplicate;RUBY_DLL_PATH;
+prepend-non-duplicate;RUBY_DLL_PATH;opt\rviz_ogre_vendor\bin
 prepend-non-duplicate;PATH;lib\gazebo-10\plugins
 set-if-unset;HOME;%HOMEDRIVE%%HOMEPATH%
 set-if-unset;GAZEBO_INCLUDE_PATH;include
@@ -9,3 +9,4 @@ set-if-unset;GAZEBO_RESOURCE_PATH;share\gazebo-10
 set-if-unset;GAZEBO_PLUGIN_PATH;lib\gazebo-10\plugins
 set-if-unset;GAZEBO_MODEL_PATH;share\gazebo-10\models
 set-if-unset;OGRE_RESOURCE_PATH;bin
+set-if-unset;IGN_GUI_PLUGIN_PATH;lib\ign-gui-6\plugins
