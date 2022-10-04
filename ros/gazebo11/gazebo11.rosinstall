@@ -13,7 +13,7 @@ repositories:
     version: ign-fuel-tools7
   gz-sim:
     type: git
-    url: https://github.com/gazebosim/gz-sim
+    url: https://github.com/ms-iot/gz-sim
     version: ign-gazebo6
   gz-gui:
     type: git
@@ -29,11 +29,11 @@ repositories:
     version: ign-math6
   gz-msgs:
     type: git
-    url: https://github.com/gazebosim/gz-msgs
+    url: https://github.com/ms-iot/gz-msgs
     version: ign-msgs8
   gz-physics:
     type: git
-    url: https://github.com/gazebosim/gz-physics
+    url: https://github.com/ms-iot/gz-physics
     version: ign-physics5
   gz-plugin:
     type: git
@@ -41,7 +41,7 @@ repositories:
     version: ign-plugin1
   gz-rendering:
     type: git
-    url: https://github.com/gazebosim/gz-rendering
+    url: https://github.com/ms-iot/gz-rendering
     version: ign-rendering6
   gz-sensors:
     type: git
@@ -53,7 +53,7 @@ repositories:
     version: ign-tools1
   gz-transport:
     type: git
-    url: https://github.com/gazebosim/gz-transport
+    url: https://github.com/ms-iot/gz-transport
     version: ign-transport11
   gz-utils:
     type: git
