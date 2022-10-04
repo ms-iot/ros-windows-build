@@ -182,6 +182,8 @@ octomap:
   windows: []
 ompl:
   windows: []
+opencv2:
+  windows: []  
 opengl:
   windows: []
 openssl:
