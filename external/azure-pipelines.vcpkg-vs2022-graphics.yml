@@ -16,12 +16,13 @@ jobs:
     displayName: 'Enable long paths on Windows'
   - script: |
       git clone https://github.com/ms-iot/vcpkg.git -b humble
-      cd vcpkg
+      pushd vcpkg
       set VCPKG_ROOT=%CD%
       call ".\bootstrap-vcpkg.bat"
       dir
       .\vcpkg.exe version
       .\vcpkg.exe install @..\external\humble\vcpkg-graphics.in
+      popd vcpkg
     continueOnError: true
   - powershell: |
       & ..\ros\collectDisclosures.ps1 -Path .\vcpkg\buildtrees -outputfile .\vcpkg\installed\graphics_license.txt
