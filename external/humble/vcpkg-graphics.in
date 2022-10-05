@@ -1,11 +1,3 @@
-gtk
-flann
-libusb-win32
-libogg
-libtheora
-sdl2
-sdl2-image
-geographiclib
 opencv
 bullet3
 pcl
@@ -14,9 +6,7 @@ qhull
 sdl2-image
 ccd
 dlfcn-win32
-ogre-next
 tbb
-qwt
 freeimage
 gtk
 flann
@@ -24,4 +14,5 @@ libusb-win32
 libogg
 libtheora
 sdl2
+sdl2-image
 geographiclib

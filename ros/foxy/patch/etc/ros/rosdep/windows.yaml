@@ -22,6 +22,10 @@ cppcheck:
   windows: [cppcheck]
 curl:
   windows: []
+cv_bridge:
+  windows:
+    pip:
+      packages: [cvbridge3]
 dfu-util:
   windows: [dfu-util]
 doxygen:
@@ -182,6 +186,8 @@ octomap:
   windows: []
 ompl:
   windows: []
+opencv2:
+  windows: []  
 opengl:
   windows: []
 openssl:

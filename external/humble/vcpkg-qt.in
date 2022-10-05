@@ -1,3 +1,4 @@
 protobuf
 grpc
+qwt
 qt5[quickcontrols, quickcontrols2, svg, 3d, gamepad]

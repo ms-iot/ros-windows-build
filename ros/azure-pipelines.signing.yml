@@ -2,7 +2,7 @@ jobs:
 - job: Signing
   pool: Edge-Robotics-VS2022-ESBuild
   variables:
-    ROS_DISTRO: 'humble'
+    ROS_DISTRO: '${{ parameters.ROS_DISTRO }}'
   timeoutInMinutes: 360
   workspace:
     clean: all
