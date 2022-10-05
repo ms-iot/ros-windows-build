@@ -18,6 +18,7 @@ jobs:
       git clone https://github.com/ms-iot/vcpkg.git -b humble
       call ".\vcpkg\bootstrap-vcpkg.bat"
       cd vcpkg
+      set VCPKG_ROOT=%CD%
       dir
       .\vcpkg.exe version
       .\vcpkg.exe install @..\external\humble\vcpkg-graphics.in
