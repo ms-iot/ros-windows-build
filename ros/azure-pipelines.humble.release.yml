@@ -52,7 +52,7 @@ stages:
         destinationFolder: '$(INSTALL_DIR)'
         cleanDestinationFolder: true
     - powershell: |
-        & ..\ros\collectDisclosures.ps1 -Path $(INSTALL_DIR) -outputfile .\humble\LICENSE.txt
+        & .\collectDisclosures.ps1 -Path $(INSTALL_DIR) -outputfile .\humble\LICENSE.txt
     - script: |
         rd /s /q %PDB_OUTPUT_DIRECTORY% 2>&1
         mkdir %PDB_OUTPUT_DIRECTORY%
