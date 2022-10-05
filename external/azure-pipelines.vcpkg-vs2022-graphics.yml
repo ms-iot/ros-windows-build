@@ -22,6 +22,8 @@ jobs:
       .\vcpkg\vcpkg.exe version
       .\vcpkg\vcpkg.exe install @..\external\humble\vcpkg-graphics.in
     continueOnError: true
+  - powershell: |
+      & ..\ros\collectDisclosures.ps1 -Path .\vcpkg\buildtrees -outputfile .\vcpkg\installed\graphics_license.txt
   - task: ArchiveFiles@2
     inputs:
       rootFolderOrFile: '.\vcpkg\installed'

@@ -51,6 +51,8 @@ stages:
         archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.ros-external-vs2022\$(ROS_DISTRO)-external\external.zip'
         destinationFolder: '$(INSTALL_DIR)'
         cleanDestinationFolder: true
+    - powershell: |
+        & ..\ros\collectDisclosures.ps1 -Path $(INSTALL_DIR) -outputfile .\humble\LICENSE.txt
     - script: |
         rd /s /q %PDB_OUTPUT_DIRECTORY% 2>&1
         mkdir %PDB_OUTPUT_DIRECTORY%

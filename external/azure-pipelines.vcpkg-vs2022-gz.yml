@@ -19,9 +19,11 @@ jobs:
       call ".\vcpkg\bootstrap-vcpkg.bat"
       cd vcpkg
       dir
-      vcpkg version
-      vcpkg install @..\external\humble\vcpkg-gz.in
+      .\vcpkg version
+      .\vcpkg install @..\external\humble\vcpkg-gz.in
     continueOnError: true
+  - powershell: |
+      & ..\ros\collectDisclosures.ps1 -Path .\vcpkg\buildtrees -outputfile .\vcpkg\installed\gz_license.txt
   - task: ArchiveFiles@2
     inputs:
       rootFolderOrFile: '.\vcpkg\installed'

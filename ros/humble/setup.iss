@@ -32,6 +32,7 @@ WizardStyle=modern
 CloseApplications=force
 RestartApplications=no
 ArchitecturesAllowed=x64
+LicenseFile=License.txt
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
