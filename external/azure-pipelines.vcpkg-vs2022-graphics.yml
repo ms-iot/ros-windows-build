@@ -18,9 +18,10 @@ jobs:
       git clone https://github.com/ms-iot/vcpkg.git -b humble
       call ".\vcpkg\bootstrap-vcpkg.bat"
       cd vcpkg
+      set VCPKG_ROOT=%CD%
       dir
-      .\vcpkg\vcpkg.exe version
-      .\vcpkg\vcpkg.exe install @..\external\humble\vcpkg-graphics.in
+      .\vcpkg.exe version
+      .\vcpkg.exe install @..\external\humble\vcpkg-graphics.in
     continueOnError: true
   - powershell: |
       & ..\ros\collectDisclosures.ps1 -Path .\vcpkg\buildtrees -outputfile .\vcpkg\installed\graphics_license.txt
