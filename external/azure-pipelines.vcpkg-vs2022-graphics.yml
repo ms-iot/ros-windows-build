@@ -19,8 +19,8 @@ jobs:
       call ".\vcpkg\bootstrap-vcpkg.bat"
       cd vcpkg
       dir
-      .\vcpkg\vcpkg.exe version
-      .\vcpkg\vcpkg.exe install @..\external\humble\vcpkg-graphics.in
+      .\vcpkg.exe version
+      .\vcpkg.exe install @..\external\humble\vcpkg-graphics.in
     continueOnError: true
   - task: ArchiveFiles@2
     inputs:
