@@ -16,12 +16,13 @@ jobs:
     displayName: 'Enable long paths on Windows'
   - script: |
       git clone https://github.com/ms-iot/vcpkg.git -b humble
-      cd vcpkg
+      pushd vcpkg
       set VCPKG_ROOT=%CD%
       call ".\bootstrap-vcpkg.bat"
       dir
       .\vcpkg version
       .\vcpkg install @..\external\humble\vcpkg-nav.in
+      popd
     continueOnError: true
   - powershell: |
       & ..\ros\collectDisclosures.ps1 -Path .\vcpkg\buildtrees -outputfile .\vcpkg\installed\nav_license.txt
