@@ -34,7 +34,7 @@ jobs:
     clean: all
   steps:
   - powershell: |
-      & .\external\bootstrapRuby310.ps1 -InstallDir $Env:INSTALL_DIR
+      & .\external\bootstrapRuby.ps1 -InstallDir $Env:INSTALL_DIR
     continueOnError: true
   - task: ArchiveFiles@2
     inputs:
