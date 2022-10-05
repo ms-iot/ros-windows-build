@@ -17,6 +17,7 @@ jobs:
   - script: |
       git clone https://github.com/ms-iot/vcpkg.git -b humble
       cd vcpkg
+      set VCPKG_ROOT=%CD%
       call ".\bootstrap-vcpkg.bat"
       vcpkg version
       vcpkg install @..\external\humble\vcpkgmin.in

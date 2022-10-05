@@ -16,8 +16,9 @@ jobs:
     displayName: 'Enable long paths on Windows'
   - script: |
       git clone https://github.com/ms-iot/vcpkg.git -b humble
-      call ".\vcpkg\bootstrap-vcpkg.bat"
       cd vcpkg
+      set VCPKG_ROOT=%CD%
+      call ".\bootstrap-vcpkg.bat"
       dir
       .\vcpkg version
       .\vcpkg install @..\external\humble\vcpkg-qt.in
