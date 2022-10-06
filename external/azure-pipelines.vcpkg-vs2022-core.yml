@@ -16,15 +16,16 @@ jobs:
     displayName: 'Enable long paths on Windows'
   - script: |
       git clone https://github.com/ms-iot/vcpkg.git -b humble
-      cd vcpkg
+      pushd vcpkg
       set VCPKG_ROOT=%CD%
       call ".\bootstrap-vcpkg.bat"
       dir
       .\vcpkg version
       .\vcpkg install @..\external\humble\vcpkg-core.in
+      popd
     continueOnError: true
   - powershell: |
-      & ..\ros\collectDisclosures.ps1 -Path .\vcpkg\buildtrees -outputfile .\vcpkg\installed\core_license.txt
+      & $(Build.Repository.LocalPath)\ros\collectDisclosures.ps1 -Path $(Build.Repository.LocalPath)\vcpkg\buildtrees -outputfile $(Build.Repository.LocalPath)\vcpkg\installed\nav_license.txt
   - task: ArchiveFiles@2
     inputs:
       rootFolderOrFile: '.\vcpkg\installed'

@@ -25,7 +25,7 @@ jobs:
       popd vcpkg
     continueOnError: true
   - powershell: |
-      & ..\ros\collectDisclosures.ps1 -Path .\vcpkg\buildtrees -outputfile .\vcpkg\installed\graphics_license.txt
+      & $(Build.Repository.LocalPath)\ros\collectDisclosures.ps1 -Path $(Build.Repository.LocalPath)\vcpkg\buildtrees -outputfile $(Build.Repository.LocalPath)\vcpkg\installed\nav_license.txt
   - task: ArchiveFiles@2
     inputs:
       rootFolderOrFile: '.\vcpkg\installed'
