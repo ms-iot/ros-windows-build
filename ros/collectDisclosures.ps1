@@ -21,8 +21,16 @@ Function Get-FileContent
         if (!$seenLicenseFileHashes.Contains($hash.Hash))
         {
             $seenLicenseFileHashes += $hash.Hash
-            $_.FullName >> $outputfile
-            Get-Content $_ >> $outputfile
+            try
+            {
+                $_.FullName >> $outputfile
+                Get-Content $_ >> $outputfile
+            }
+            catch 
+            {
+                Write-Host "Could not get the license text:"
+                Write-Host $_                
+            }
         }
     }
 }
