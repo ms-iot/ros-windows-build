@@ -16,6 +16,9 @@ pr:
 
 resources:
   pipelines:
+  - pipeline: ms-iot.ruby-vs2022
+    source: ms-iot.ruby-vs2022
+    version: '20221005.2'
   - pipeline: ms-iot.python-vs2022
     source: ms-iot.python-vs2022
     version: '20220830.1'
@@ -37,6 +40,9 @@ resources:
   - pipeline: ms-iot.vcpkg-vs2022-gz
     source: ms-iot.vcpkg-vs2022-gz
     version: '20220901.1'
+  - pipeline: ms-iot.vcpkg-vs2022-flaky
+    source: ms-iot.vcpkg-vs2022-flaky
+    version: '20221010.3'
 
 jobs:
 - job: Build
@@ -61,7 +67,9 @@ jobs:
   - download: ms-iot.vcpkg-vs2022-graphics
   - download: ms-iot.vcpkg-vs2022-nav
   - download: ms-iot.vcpkg-vs2022-gz
+  - download: ms-iot.vcpkg-vs2022-flaky
   - download: ms-iot.python-vs2022
+  - download: ms-iot.ruby-vs2022
   - task: ExtractFiles@1
     inputs:
       archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.vcpkg-vs2022-core\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
@@ -100,7 +108,19 @@ jobs:
       overwriteExistingFiles: true
   - task: ExtractFiles@1
     inputs:
+      archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.vcpkg-vs2022-flaky\$(VCPKG_DEFAULT_TRIPLET)-installed\installed.zip'
+      destinationFolder: 'c:\installed'
+      cleanDestinationFolder: false
+      overwriteExistingFiles: true
+  - task: ExtractFiles@1
+    inputs:
       archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.python-vs2022\$(DISTRO_NAME)-python\python.zip'
+      destinationFolder: '$(INSTALL_DIR)'
+      cleanDestinationFolder: false
+      overwriteExistingFiles: true
+  - task: ExtractFiles@1
+    inputs:
+      archiveFilePatterns: '$(PIPELINE.WORKSPACE)\ms-iot.ruby-vs2022\$(DISTRO_NAME)-ruby\ruby.zip'
       destinationFolder: '$(INSTALL_DIR)'
       cleanDestinationFolder: false
       overwriteExistingFiles: true
