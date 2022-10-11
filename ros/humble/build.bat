@@ -18,6 +18,7 @@ colcon build ^
         -DCMAKE_BUILD_TYPE=RelWithDebInfo ^
         -DCURL_NO_CURL_CMAKE=ON ^
         -DBUILD_TESTING:BOOL=False ^
+        -DBUILD_DOCS:BOOL=False ^
         -DTHIRDPARTY_Asio=FORCE ^
         -DCMAKE_PROGRAM_PATH=%INSTALL_DIR%\tools\protobuf;%INSTALL_DIR%\tools\qt5\bin ^
         -DCMAKE_PDB_OUTPUT_DIRECTORY=%PDB_OUTPUT_DIRECTORY% ^
