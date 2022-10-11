@@ -40,8 +40,8 @@ resources:
   - pipeline: ms-iot.vcpkg-vs2022-gz
     source: ms-iot.vcpkg-vs2022-gz
     version: '20220901.1'
-  - pipeline: ms-iot.vcpkg-vs2022-flaky
-    source: ms-iot.vcpkg-vs2022-flaky
+  - pipeline: ms-iot.vcpkg-vc2022-flaky
+    source: ms-iot.vcpkg-vc2022-flaky
     version: '20221010.3'
 
 jobs:
