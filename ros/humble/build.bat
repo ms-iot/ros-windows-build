@@ -5,6 +5,8 @@ xcopy /Y /S /I %Build_SourcesDirectory%\ros\humble\src src
 set ROS_VERSION=2
 set "IGNORED_PACKAGES=rttest test_osrf_testing_tools_cpp tlsf gripper_controllers"
 
+xcopy /Y /S /I %~dp0patch %INSTALL_DIR%
+
 colcon build ^
     --event-handlers=console_cohesion+ ^
     --merge-install ^
