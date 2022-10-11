@@ -45,7 +45,7 @@ repositories:
     version: ign-rendering6
   gz-sensors:
     type: git
-    url: https://github.com/gazebosim/gz-sensors
+    url: https://github.com/ms-iot/gz-sensors
     version: ign-sensors6
   gz-tools:
     type: git
