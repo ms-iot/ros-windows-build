@@ -20,6 +20,7 @@ Function Get-FileContent
         $hash = Get-FileHash $_
         if (!$seenLicenseFileHashes.Contains($hash.Hash))
         {
+            Write-Host "Collecting : $_"
             $seenLicenseFileHashes += $hash.Hash
             try
             {
