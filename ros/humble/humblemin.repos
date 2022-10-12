@@ -85,8 +85,8 @@ repositories:
     version: v1.2.0
   geometry2:
     type: git
-    url: https://github.com/ros2/geometry2.git
-    version: 0.25.0
+    url: https://github.com/ms-iot/geometry2.git
+    version: humble
   google_benchmark_vendor:
     type: git
     url: https://github.com/ament/google_benchmark_vendor.git
