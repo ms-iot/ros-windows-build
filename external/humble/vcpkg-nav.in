@@ -1,2 +1,4 @@
 octomap
 ceres[*]
+graphicsmagick
+nlohmann-json
