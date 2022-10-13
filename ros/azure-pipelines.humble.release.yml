@@ -75,7 +75,7 @@ stages:
         call ..\ros\humble\build.bat
       displayName: 'build humble'
     - powershell: |
-        & $(Build.Repository.LocalPath)\ros\collectDisclosures.ps1 -Path $Env:INSTALL_DIR -outputfile %Build_SourcesDirectory%\ros\humble\License.txt
+        & $(Build.Repository.LocalPath)\ros\collectDisclosures.ps1 -Path $Env:INSTALL_DIR -outputfile $Env:Build_SourcesDirectory\ros\humble\License.txt
     - task: PublishBuildArtifacts@1
       inputs:
         pathtoPublish: .\ws\log
