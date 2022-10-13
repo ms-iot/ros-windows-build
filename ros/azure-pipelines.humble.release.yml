@@ -70,6 +70,7 @@ stages:
         cd ws
         vcs import --force --shallow --recursive src <  %Build_SourcesDirectory%\ros\humble\humblemin.repos
         vcs import --force --shallow --recursive src <  %Build_SourcesDirectory%\ros\gazebo11\gazebo11.rosinstall
+        vcs import --force --shallow --recursive src <  %Build_SourcesDirectory%\ros\humble\nav2.repos
         dir src
         xcopy /Y /S /I ..\ros\src_patch src
         call ..\ros\humble\build.bat
