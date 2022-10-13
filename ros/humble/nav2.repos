@@ -1,0 +1,17 @@
+repositories:
+  bond_core:
+    type: git
+    url: https://github.com/ms-iot/bond_core.git
+    version: humble
+  behaviortree_cpp:
+    type: git
+    url: https://github.com/ms-iot/BehaviorTree.CPP.git
+    version: windows/3.5.6
+  slam_toolbox:
+    type: git
+    url: https://github.com/ms-iot/slam_toolbox.git
+    version: humble
+  navigation2:
+    type: git
+    url: https://github.com/ms-iot/navigation2.git
+    version: humble
