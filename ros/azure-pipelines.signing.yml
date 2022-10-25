@@ -11,7 +11,7 @@ jobs:
     inputs:
       buildType: 'current' # Options: current, specific
       artifactName: '$(ROS_DISTRO)-setup'
-  - task: EsrpCodeSigning@1
+  - task: EsrpCodeSigning@2
     inputs:
       ConnectedServiceName: 'ESRP Signing'
       FolderPath: '$(System.ArtifactsDirectory)\$(ROS_DISTRO)-setup'
