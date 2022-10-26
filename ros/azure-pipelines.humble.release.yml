@@ -97,9 +97,9 @@ stages:
         mkdir nav2_ws\src
         pushd nav2_ws
         vcs import --force --shallow --recursive src <  %Build_SourcesDirectory%\ros\humble\nav2.repos
-        colcon build --event-handlers=console_cohesion+ --merge-install --install-base %INSTALL_DIR% --cmake-target install --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_TESTING:BOOL=False -DBUILD_DOCS:BOOL=False -DCMAKE_PDB_OUTPUT_DIRECTORY=%PDB_OUTPUT_DIRECTORY%
+        :: colcon build --event-handlers=console_cohesion+ --merge-install --install-base %INSTALL_DIR% --cmake-target install --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_TESTING:BOOL=False -DBUILD_DOCS:BOOL=False -DCMAKE_PDB_OUTPUT_DIRECTORY=%PDB_OUTPUT_DIRECTORY%
         popd
-      displayName: 'build gazebo'
+      displayName: 'build Nav2'
     - powershell: |
         & $(Build.Repository.LocalPath)\ros\collectDisclosures.ps1 -Path $Env:INSTALL_DIR -outputfile $Env:Build_SourcesDirectory\ros\humble\LICENSE.txt
     - task: PublishBuildArtifacts@1
