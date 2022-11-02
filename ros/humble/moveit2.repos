@@ -1,0 +1,33 @@
+repositories:
+  control_toolbox:
+    type: git
+    url: https://github.com/ros-controls/control_toolbox.git
+    version: 2.10
+  geometric_shapes:
+    type: git
+    url: https://github.com/ms-iot/geometric_shapes.git
+    version: humble
+  moveit2:
+    type: git
+    url: https://github.com/ms-iot/moveit2.git
+    version: humble
+  moveit_msgs:
+    type: git
+    url: https://github.com/ros-planning/moveit_msgs.git
+    version: ros2
+  ros2_control:
+    type: git
+    url: https://github.com/ms-iot/ros2_control.git
+    version: humble
+  ruckig:
+    type: git
+    url: https://github.com/ms-iot/ruckig.git
+    version: humble
+  srdfdom:
+    type: git
+    url: https://github.com/ms-iot/srdfdom.git
+    version: humble
+  warehouse_ros:
+    type: git
+    url: https://github.com/ros-planning/warehouse_ros.git
+    version: 2.0.4
