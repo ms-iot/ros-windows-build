@@ -2,7 +2,7 @@ repositories:
   control_toolbox:
     type: git
     url: https://github.com/ros-controls/control_toolbox.git
-    version: 2.10
+    version: 2.1.0
   geometric_shapes:
     type: git
     url: https://github.com/ms-iot/geometric_shapes.git
