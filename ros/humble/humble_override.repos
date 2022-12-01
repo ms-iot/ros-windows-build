@@ -7,3 +7,7 @@ repositories:
     type: git
     url: https://github.com/ms-iot/geometry2.git
     version: humble
+  image_transport_plugins:
+    type: git
+    url: https://github.com/ms-iot/image_transport_plugins.git
+    version: humble
