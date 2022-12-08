@@ -15,3 +15,7 @@ repositories:
     type: git
     url: https://github.com/ms-iot/ros_gz.git
     version: humble
+  ros2_control:
+    type: git
+    url: https://github.com/ms-iot/ros2_control.git
+    version: humble

@@ -15,10 +15,6 @@ repositories:
     type: git
     url: https://github.com/ros-planning/moveit_msgs.git
     version: ros2
-  ros2_control:
-    type: git
-    url: https://github.com/ms-iot/ros2_control.git
-    version: humble
   ruckig:
     type: git
     url: https://github.com/ms-iot/ruckig.git
