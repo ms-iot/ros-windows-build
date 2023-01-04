@@ -6,4 +6,8 @@ repositories:
   micro-ROS-Agent:
     type: git
     url: https://github.com/ms-iot/micro-ROS-Agent.git
-    version: humble    
+    version: humble
+  Micro-XRCE-DDS-Agent:
+    type: git
+    url: https://github.com/ms-iot/Micro-XRCE-DDS-Agent.git
+    version: ros2
