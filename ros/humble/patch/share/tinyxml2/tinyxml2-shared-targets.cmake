@@ -60,7 +60,12 @@ add_library(tinyxml2::tinyxml2 SHARED IMPORTED)
 ###
 ## Gazebo links to upper case, but this doesn't resolve correctly because this version of tinyxml is lower case?
 ###
-add_library(TINYXML2::TINYXML2 ALIAS tinyxml2::tinyxml2)
+get_target_property(TINXML2_IS_ALIASED TINYXML2::TINYXML2 ALIASED_TARGET)
+if (TINXML2_IS_ALIASED)
+   message(STATUS "TINYXML2 is aliased already")
+else()
+  add_library(TINYXML2::TINYXML2 ALIAS tinyxml2::tinyxml2)
+endif()
 
 set_target_properties(tinyxml2::tinyxml2 PROPERTIES
   INTERFACE_COMPILE_DEFINITIONS "\$<\$<CONFIG:Debug>:TINYXML2_DEBUG>;\$<\$<BOOL:ON>:TINYXML2_IMPORT>"
