@@ -60,8 +60,7 @@ add_library(tinyxml2::tinyxml2 SHARED IMPORTED)
 ###
 ## Gazebo links to upper case, but this doesn't resolve correctly because this version of tinyxml is lower case?
 ###
-get_target_property(TINXML2_IS_ALIASED TINYXML2::TINYXML2 ALIASED_TARGET)
-if (TINXML2_IS_ALIASED)
+if (TARGET TINYXML2::TINYXML2)
    message(STATUS "TINYXML2 is aliased already")
 else()
   add_library(TINYXML2::TINYXML2 ALIAS tinyxml2::tinyxml2)
