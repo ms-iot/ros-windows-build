@@ -11,10 +11,6 @@ repositories:
     type: git
     url: https://github.com/ms-iot/image_transport_plugins.git
     version: humble
-  ros_gz:
-    type: git
-    url: https://github.com/ms-iot/ros_gz.git
-    version: humble
   ros2_control:
     type: git
     url: https://github.com/ms-iot/ros2_control.git
