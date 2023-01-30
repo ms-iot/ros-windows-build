@@ -10,3 +10,4 @@ zeromq
 cppzmq
 curl
 fcl
+fmt
