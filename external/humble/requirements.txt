@@ -34,3 +34,4 @@ rosinstall-generator
 opencv-python
 nose
 typeguard
+jinja2
