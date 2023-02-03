@@ -85,7 +85,7 @@ stages:
         mkdir microros2_ws\src
         pushd microros2_ws
         vcs import --force --shallow --recursive src <  %Build_SourcesDirectory%\ros\humble\microros.repos
-        colcon build --event-handlers=console_cohesion+ --merge-install --install-base %INSTALL_DIR% --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_TESTING:BOOL=False -DBUILD_DOCS:BOOL=False -DCMAKE_PDB_OUTPUT_DIRECTORY=%PDB_OUTPUT_DIRECTORY%   -DUAGENT_USE_SYSTEM_LOGGER=ON -DMICROROSAGENT_SUPERBUILD=OFF -DUAGENT_SUPERBUILD=OFF
+        :: colcon build --event-handlers=console_cohesion+ --merge-install --install-base %INSTALL_DIR% --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_TESTING:BOOL=False -DBUILD_DOCS:BOOL=False -DCMAKE_PDB_OUTPUT_DIRECTORY=%PDB_OUTPUT_DIRECTORY%   -DUAGENT_USE_SYSTEM_LOGGER=ON -DMICROROSAGENT_SUPERBUILD=OFF -DUAGENT_SUPERBUILD=OFF
         popd
       displayName: 'build MicroROS2'
     - script: |
@@ -194,7 +194,7 @@ stages:
   displayName: 'Signing ${{ variables.ROS_DISTRO }}'
   dependsOn:
   - packaging
-  condition: ne(variables['Build.Reason'], 'PullRequest')
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
   jobs:
   - template: azure-pipelines.signing.yml
     parameters:
@@ -204,7 +204,7 @@ stages:
   displayName: 'Publish Prerelase ${{ variables.ROS_DISTRO }}'
   dependsOn:
   - packaging
-  condition: ne(variables['Build.Reason'], 'PullRequest')
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
   jobs:
   - template: azure-pipelines.publish.prerelease.yml
     parameters:
@@ -214,7 +214,7 @@ stages:
   displayName: 'Publish Release ${{ variables.ROS_DISTRO }}'
   dependsOn:
   - packaging
-  condition: ne(variables['Build.Reason'], 'PullRequest')
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
   jobs:
   - template: azure-pipelines.publish.release.yml
     parameters:
