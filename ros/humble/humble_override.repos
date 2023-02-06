@@ -15,7 +15,32 @@ repositories:
     type: git
     url: https://github.com/ms-iot/ros2_control.git
     version: humble
+  ros2_controllers:
+    type: git
+    url: https://github.com/ms-iot/ros2_controllers.git
+    version: humble  
   control_msgs:
     type: git
     url: https://github.com/ros-controls/control_msgs.git
     version: humble
+  backward_ros:
+    type: git
+    url: https://github.com/ms-iot/backward_ros
+    version: foxy-devel
+  cpp_polyfills:
+    type: git
+    url: https://github.com/PickNikRobotics/cpp_polyfills
+    version: main
+  generate_parameter_library:
+    type: git
+    url: https://github.com/ms-iot/generate_parameter_library
+    version: main
+  kinematics_interface:
+    type: git
+    url: https://github.com/ros-controls/kinematics_interface
+    version: master
+  RSL:
+    type: git
+    url: https://github.com/ms-iot/RSL
+    version: master
+
