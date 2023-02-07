@@ -29,7 +29,7 @@ try
     }
 
     # bootstrap settings
-    $requirements = (Join-Path $scriptsDir "requirements.txt")
+    $requirements = (Join-Path $scriptsDir "humble/requirements.txt")
 
     # download the Python
     $PythonInstaller = (Join-Path $workingDir "python-3.10.6-amd64.exe")
