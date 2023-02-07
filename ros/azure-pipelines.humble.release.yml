@@ -59,10 +59,12 @@ stages:
         call %Build_SourcesDirectory%\ros\humble\patch.bat
     - script: |
         set CMAKE_FIND_USE_INSTALL_PREFIX=TRUE
+        set Python3_FIND_REGISTRY=FALSE
         set PYTHONIOENCODING=utf-8
         set PYTHONLEGACYWINDOWSSTDIO=utf-8
         set PYTHON3_EXECUTABLE=%INSTALL_DIR%\python3.exe
         set PYTHON_EXECUTABLE=%INSTALL_DIR%\python.exe
+        set Python3_ROOT_DIR=%INSTALL_DIR%
         call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
         set PATH=%INSTALL_DIR%\Scripts;%INSTALL_DIR%;%INSTALL_DIR%\bin;%PATH%
         where python
