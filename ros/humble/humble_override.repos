@@ -43,4 +43,7 @@ repositories:
     type: git
     url: https://github.com/ms-iot/RSL
     version: main
-
+  control_toolbox:
+    type: git
+    url: https://github.com/ros-controls/control_toolbox.git
+    version: 2.1.0
