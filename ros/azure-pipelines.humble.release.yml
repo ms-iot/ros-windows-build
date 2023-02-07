@@ -58,6 +58,7 @@ stages:
     - script: |
         call %Build_SourcesDirectory%\ros\humble\patch.bat
     - script: |
+        set CMAKE_FIND_USE_INSTALL_PREFIX=TRUE
         set PYTHONIOENCODING=utf-8
         set PYTHONLEGACYWINDOWSSTDIO=utf-8
         set PYTHON3_EXECUTABLE=%INSTALL_DIR%\python3.exe
