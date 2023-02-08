@@ -25,6 +25,6 @@ colcon build ^
         -DTHIRDPARTY_Asio=FORCE ^
         -DCMAKE_PROGRAM_PATH=%INSTALL_DIR%\tools\protobuf;%INSTALL_DIR%\tools\qt5\bin ^
         -DCMAKE_PDB_OUTPUT_DIRECTORY=%PDB_OUTPUT_DIRECTORY% ^
-        -DPython3_EXECUTABLE=%Python3_EXECUTABLE%
+        -DPython3_EXECUTABLE=%Python3_EXECUTABLE% ^
     2>&1
 if errorlevel 1 exit 1
