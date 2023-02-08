@@ -3,6 +3,10 @@ repositories:
     type: git
     url: https://github.com/ms-iot/robot_localization
     version: ros2
+  geographic_info:
+    type: git
+    url: https://github.com/ms-iot/geographic_info
+    version: ros2    
   bond_core:
     type: git
     url: https://github.com/ms-iot/bond_core.git
