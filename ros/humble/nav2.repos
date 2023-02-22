@@ -2,7 +2,7 @@ repositories:
   robot_localization:
     type: git
     url: https://github.com/ms-iot/robot_localization
-    version: ros2
+    version: humble-devel
   geographic_info:
     type: git
     url: https://github.com/ms-iot/geographic_info
