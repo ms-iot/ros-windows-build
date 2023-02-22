@@ -26,4 +26,4 @@ repositories:
   twist_mux:
     type: git
     url: https://github.com/ms-iot/twist_mux
-    version: rolling
+    version: humble
