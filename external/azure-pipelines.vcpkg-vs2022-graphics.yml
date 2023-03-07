@@ -44,7 +44,6 @@ jobs:
       archiveFile: '$(Build.ArtifactStagingDirectory)/buildtrees.zip'
       replaceExistingArchive: true
     continueOnError: true
-    condition: failed()    
   - task: PublishBuildArtifacts@1
     inputs:
       pathtoPublish: '$(Build.ArtifactStagingDirectory)/installed.zip'
@@ -55,4 +54,4 @@ jobs:
       pathtoPublish: '$(Build.ArtifactStagingDirectory)/buildtrees.zip'
       artifactName: '$(VCPKG_DEFAULT_TRIPLET)-buildtrees'
     continueOnError: true
-    condition: failed()    
+    
