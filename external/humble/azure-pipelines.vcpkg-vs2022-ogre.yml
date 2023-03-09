@@ -23,6 +23,7 @@ jobs:
       .\vcpkg.exe version
       .\vcpkg.exe install tbb:x64-windows
       .\vcpkg.exe install @..\external\humble\vcpkg-ogre.in
+      .\vcpkg.exe install @..\external\humble\vcpkg-ogre.in
       popd vcpkg
     continueOnError: true    
   - powershell: |
