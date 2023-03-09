@@ -18,6 +18,7 @@ jobs:
       git clone https://github.com/ms-iot/vcpkg.git -b humble
       pushd vcpkg
       set VCPKG_ROOT=%CD%
+      set VCPKG_MAX_CONCURRENCY=1
       call ".\bootstrap-vcpkg.bat"
       dir
       .\vcpkg.exe version
