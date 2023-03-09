@@ -21,16 +21,7 @@ jobs:
       call ".\bootstrap-vcpkg.bat"
       dir
       .\vcpkg.exe version
-      .\vcpkg.exe install @..\external\humble\vcpkg-ogre.in
-      popd vcpkg
-    continueOnError: true
-  - script: |
-      git clone https://github.com/ms-iot/vcpkg.git -b humble
-      pushd vcpkg
-      set VCPKG_ROOT=%CD%
-      call ".\bootstrap-vcpkg.bat"
-      dir
-      .\vcpkg.exe version
+      .\vcpkg.exe install tbb:x64-windows
       .\vcpkg.exe install @..\external\humble\vcpkg-ogre.in
       popd vcpkg
     continueOnError: true    
