@@ -21,6 +21,7 @@ jobs:
       call ".\bootstrap-vcpkg.bat"
       dir
       .\vcpkg.exe version
+      .\vcpkg.exe build tbb:x64-windows
       .\vcpkg.exe install tbb:x64-windows
       .\vcpkg.exe install ogre-next:x64-windows
       popd vcpkg
