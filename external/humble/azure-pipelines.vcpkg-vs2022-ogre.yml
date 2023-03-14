@@ -23,7 +23,21 @@ jobs:
       .\vcpkg.exe version
       .\vcpkg.exe build tbb:x64-windows
       .\vcpkg.exe install tbb:x64-windows
-      .\vcpkg.exe build ogre-next:x64-windows
+      .\vcpkg.exe install boost-date-time[core]:x64-windows
+      .\vcpkg.exe install boost-thread[core]:x64-windows
+      .\vcpkg.exe install freeimage[core]:x64-windows
+      .\vcpkg.exe install freetype[brotli]:x64-windows
+      .\vcpkg.exe install freetype[bzip2]:x64-windows
+      .\vcpkg.exe install freetype[core]:x64-windows
+      .\vcpkg.exe install freetype[png]:x64-windows
+      .\vcpkg.exe install freetype[zlib]:x64-windows
+      .\vcpkg.exe install openvr[core]:x64-windows
+      .\vcpkg.exe install poco[core]:x64-windows
+      .\vcpkg.exe install rapidjson[core]:x64-windows
+      .\vcpkg.exe install sdl2[core]:x64-windows
+      .\vcpkg.exe install tinyxml[core]:x64-windows
+      .\vcpkg.exe install zlib[core]:x64-windows
+      .\vcpkg.exe install zziplib[core]:x64-windows      
       .\vcpkg.exe install ogre-next:x64-windows
       popd vcpkg
     continueOnError: true    
