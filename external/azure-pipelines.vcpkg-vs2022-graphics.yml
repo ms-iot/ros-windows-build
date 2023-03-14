@@ -21,6 +21,8 @@ jobs:
       call ".\bootstrap-vcpkg.bat"
       dir
       .\vcpkg.exe version
+      .\vcpkg.exe build tbb:x64-windows
+      .\vcpkg.exe install tbb:x64-windows
       .\vcpkg.exe install @..\external\humble\vcpkg-graphics.in
       popd vcpkg
     continueOnError: true
