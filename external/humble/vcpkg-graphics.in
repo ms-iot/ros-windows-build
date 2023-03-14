@@ -6,8 +6,7 @@ qhull
 sdl2-image
 ccd
 dlfcn-win32
-tbb
-freeimage
+freeimage[*]
 gtk
 flann
 libusb-win32
